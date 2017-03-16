@@ -4,11 +4,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new
+    @user = User.new(user_params)
     if @user.save
-      redirect_to "/msg", notice: "#{@user.email} account created!"
+      redirect_to "/pages/intro", notice: "#{@user.email} account created!"
     else
-      render :new, alert: "Error occurred during sign up, please try again."
+      render :new
     end
   end
 
