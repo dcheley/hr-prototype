@@ -5,12 +5,12 @@
 <div class="container">
   <%= form_for(@user) do |f| %>
     <% if @user.errors.any? %>
-        <h2 class="error-header"><%= pluralize(@user.errors.count, "error") %>occurred!</h2>
-        <ul>
-          <% @user.errors.full_messages.each do |msg| %>
-            <li class="error-msg"><%= msg %></li>
-          <% end %>
-        </ul>
+      <h2 class="error-header"><%= pluralize(@user.errors.count, "error") %>occurred!</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li class="error-msg"><%= msg %></li>
+        <% end %>
+      </ul>
     <% end %>
 
     <div class="field">
@@ -23,7 +23,7 @@
       <%= f.text_area :feedback, class:"field-input", placeholder:"When you clicked the link in the email, what were you hoping to gain from this service?" %>
     </div>
 
-      <%= f.submit "Sign Up", class:"sign-up" %>
+    <%= f.submit "Sign Up", class:"sign-up" %>
 
   <% end %>
 </div>
