@@ -15,12 +15,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-$(".field-input").focus(function() {
-  $(this).parent().addClass("active complete");
-});
+$(document).ready(function() {
+  $(".field-input").focus(function() {
+    $(this).parent().addClass("active complete");
+  });
 
-$(".field-input").focusout(function() {
-  if($(this).val() === "")
-    $(this).parent().removeClass("complete");
-  $(this).parent().removeClass("active");
-})
+  $(".field-input").focusout(function() {
+    if($(this).val() === "")
+      $(this).parent().removeClass("complete");
+    $(this).parent().removeClass("active");
+  });
+});
