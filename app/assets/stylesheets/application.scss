@@ -42,7 +42,15 @@
 }
 
 //might be useless
-.field:after {
-  background-color: white;
+.field::after {
+  background-color: #0000CD;
   transform: scaleX(0);
+}
+
+.active::after {
+  transform: scaleX(1);
+}
+
+.active .field-label {
+  color: #0000CD;
 }
