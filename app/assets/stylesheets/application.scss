@@ -54,3 +54,8 @@
 .active .field-label {
   color: #0000CD;
 }
+
+.complete .field-label {
+  font-size: 12px;
+  transform: translateY(0);
+}
