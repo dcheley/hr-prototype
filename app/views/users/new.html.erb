@@ -1,24 +1,28 @@
-<h1>Welcome!</h1>
 
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited change!</h2>
-      <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+
+<div class="container">
+  <h1 style="text-align: center;">Welcome!</h1>
+
+  <%= form_for(@user) do |f| %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited change!</h2>
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :email, class:"field-label" %>
+      <%= f.text_field :email, class:"field-input" %>
     </div>
+
+    <div class="actions">
+      <%= f.submit "Sign Up", class:"sign-up" %>
+    </div>
+
   <% end %>
-
-  <div class="field">
-    <%= f.label :email, class:"field-label" %>
-    <%= f.text_field :email, class:"field-input" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign Up", class:"sign-up" %>
-  </div>
-
-<% end %>
+</div>
