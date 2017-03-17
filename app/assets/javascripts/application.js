@@ -23,6 +23,6 @@ $(document).ready(function() {
   $(".field-input").focusout(function() {
     if($(this).val() === "")
       $(this).parent().removeClass("complete");
-    $(this).parent().removeClass("active");
+      $(this).parent().removeClass("active");
   });
 });
