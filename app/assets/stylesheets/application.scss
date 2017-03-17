@@ -1,1 +1,24 @@
 @import "bootstrap";
+
+.field-label {
+  display: block;
+  font-size: 16px;
+  transform: translateY(25px);
+  color: #A9A9A9;
+  transition: all 0.5s;
+}
+
+.field-input {
+  position: relative;
+  background: transparent;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 8px 0;
+  font-size: 16px;
+}
+
+.field {
+  padding: 30px 0 0 0;
+  position: relative;
+}
