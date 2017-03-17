@@ -5,7 +5,7 @@
 <div class="container">
   <%= form_for(@user) do |f| %>
     <% if @user.errors.any? %>
-      <h2 class="error-header"><%= pluralize(@user.errors.count, "error") %>occurred!</h2>
+      <h2 class="error-header"><%= pluralize(@user.errors.count, "error") %> occurred!</h2>
 
       <ul class="error-list">
         <% @user.errors.full_messages.each do |msg| %>
