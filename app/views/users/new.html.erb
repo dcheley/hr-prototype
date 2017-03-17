@@ -6,11 +6,13 @@
   <%= form_for(@user) do |f| %>
     <% if @user.errors.any? %>
       <h2 class="error-header"><%= pluralize(@user.errors.count, "error") %>occurred!</h2>
-      <ul>
+
+      <ul class="error-list">
         <% @user.errors.full_messages.each do |msg| %>
           <li class="error-msg"><%= msg %></li>
         <% end %>
       </ul>
+
     <% end %>
 
     <div class="field">
@@ -20,7 +22,7 @@
 
     <div class="field">
       <%= f.label :feedback, class:"field-label" %>
-      <%= f.text_area :feedback, class:"field-input", placeholder:"When you clicked the link in the email, what were you hoping to gain from this service?" %>
+      <%= f.text_area :feedback, class:"field-input", placeholder:"When you clicked the link in the email, what were you hoping to achieve by signing up for this service?" %>
     </div>
 
     <%= f.submit "Sign Up", class:"sign-up" %>
