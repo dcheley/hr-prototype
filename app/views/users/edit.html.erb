@@ -1,6 +1,6 @@
 <div class="background">
 
-  <h1 class="form-title">Edit <%= @user.name %>'s Settings</h1>
+  <h1 class="form-title">Edit Account Settings</h1>
 
   <div class="container">
     <%= form_for(@user) do |f| %>
@@ -35,7 +35,7 @@
         <%= f.text_area :feedback, class:"field-input", placeholder:"What sort of progress were you hoping to achieve by signing up for this service?" %>
       </div>
 
-      <%= f.submit "Sign Up", class:"sign-up" %>
+      <%= f.submit "Submit", class:"submit" %>
 
     <% end %>
   </div>
