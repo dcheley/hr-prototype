@@ -1,8 +1,6 @@
-<h1 style="text-align: center; padding-top: 10px;">Welcome!</h1>
+<h1 class="form-title">Employee Engagement App</h1>
 
-</br><p style="text-align: center;">Please enter your work email below:</p></br>
-
-<div class="form-container">
+<div class="container">
   <%= form_for(@user) do |f| %>
     <% if @user.errors.any? %>
       <h2 class="error-header"><%= pluralize(@user.errors.count, "error") %> occurred!</h2>
@@ -14,6 +12,8 @@
       </ul>
 
     <% end %>
+
+    <h5 class="form-instructions">Please enter your work email below:</h5>
 
     <div class="field">
       <%= f.label :email, class:"field-label" %>
