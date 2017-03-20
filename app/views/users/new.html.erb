@@ -1,31 +1,35 @@
-<h1 class="form-title">Employee Engagement App</h1>
+<div class="background">
+  
+  <h1 class="form-title">Employee Engagement App</h1>
 
-<div class="container">
-  <%= form_for(@user) do |f| %>
-    <% if @user.errors.any? %>
-      <h2 class="error-header"><%= pluralize(@user.errors.count, "error") %> occurred!</h2>
+  <div class="container">
+    <%= form_for(@user) do |f| %>
+      <% if @user.errors.any? %>
+        <h2 class="error-header"><%= pluralize(@user.errors.count, "error") %> occurred!</h2>
 
-      <ul class="error-list">
-        <% @user.errors.full_messages.each do |msg| %>
-          <li class="error-msg"><%= msg %></li>
-        <% end %>
-      </ul>
+        <ul class="error-list">
+          <% @user.errors.full_messages.each do |msg| %>
+            <li class="error-msg"><%= msg %></li>
+          <% end %>
+        </ul>
+
+      <% end %>
+
+      <h5 class="form-instructions">Please enter your work email below:</h5>
+
+      <div class="field">
+        <%= f.label :email, class:"field-label" %>
+        <%= f.text_field :email, class:"field-input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :feedback, class:"field-label" %>
+        <%= f.text_area :feedback, class:"field-input", placeholder:"What sort of progress were you hoping to achieve by signing up for this service?" %>
+      </div>
+
+      <%= f.submit "Sign Up", class:"sign-up" %>
 
     <% end %>
+  </div>
 
-    <h5 class="form-instructions">Please enter your work email below:</h5>
-
-    <div class="field">
-      <%= f.label :email, class:"field-label" %>
-      <%= f.text_field :email, class:"field-input" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :feedback, class:"field-label" %>
-      <%= f.text_area :feedback, class:"field-input", placeholder:"What sort of progress were you hoping to achieve by signing up for this service?" %>
-    </div>
-
-    <%= f.submit "Sign Up", class:"sign-up" %>
-
-  <% end %>
 </div>
