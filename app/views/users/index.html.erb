@@ -1,3 +1,8 @@
 <div class="background">
+
   <h1 class="org-chart-title">Ministry of Economic Development & Growth</h1>
+
+  <% @users.each do |u| %>
+    <%= link_to "#{u.name}", edit_user_url(u)  %>
+  <% end %>
 </div>
