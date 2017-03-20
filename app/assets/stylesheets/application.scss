@@ -1,7 +1,7 @@
 @import "bootstrap";
 
 .background {
-  background-color: #00C8F8;
+  background-color: #2081A1;
   height: 700px;
 }
 
@@ -21,7 +21,7 @@
 
 .form-instructions {
   text-align: center;
-  color: #FF4C65;
+  color: rgb(102,102,102);
   padding-top: 20px;
   margin-bottom: 0;
 }
@@ -35,7 +35,7 @@
   display: block;
   font-size: 16px;
   transform: translateY(25px);
-  color: #FF4C65;
+  color: rgb(102,102,102);
   transition: all 0.5s;
   padding-bottom: 5px;
 }
@@ -56,7 +56,7 @@
   display: block;
   width: 100%;
   height: 3px;
-  background-color: #FF4C65;
+  background-color: rgb(102,102,102);
   bottom: 0;
   left: 0;
   transition: all 0.5s;
@@ -81,8 +81,7 @@
 }
 
 .sign-up {
-  background-color: #00C8F8;
-  color: #FF4C65;
+  background-color: #2081A1;
   border: none;
   display: block;
   margin: 35px auto;
@@ -121,7 +120,7 @@
 }
 
 .intro-text-box {
-  background-color: #FFC33C;
+  background-color: #2081A1;
   width: 100%;
   text-align: justify;
   padding-top: 70px;
@@ -131,7 +130,7 @@
 }
 
 .intro-footer {
-  background-color: #FF4C65;
+  background-color: rgb(102,102,102);
   text-align: center;
   width: 100%;
   height: 30%;
