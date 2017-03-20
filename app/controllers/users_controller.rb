@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :load_user, only: [:show, :edit]
+
   def new
     @user = User.new
   end
@@ -12,7 +14,23 @@ class UsersController < ApplicationController
     end
   end
 
-  private
+  def edit
+  end
+
+  def update
+    if @user.update_attributes(user_params)
+      flash[:alert] = "Settings successfully updated!"
+      redirect_to user_url
+    else
+      render :edit
+    end
+  end
+
+private
+  def load_user
+    @user = User.find(params[:id])
+  end
+
   def user_params
     params.require(:user).permit(:email)
   end
