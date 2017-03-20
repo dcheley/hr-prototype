@@ -2,7 +2,7 @@
 
 </br><p style="text-align: center;">Please enter your work email below:</p></br>
 
-<div class="container">
+<div class="form-container">
   <%= form_for(@user) do |f| %>
     <% if @user.errors.any? %>
       <h2 class="error-header"><%= pluralize(@user.errors.count, "error") %> occurred!</h2>
