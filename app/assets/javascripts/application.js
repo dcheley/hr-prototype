@@ -24,4 +24,9 @@ $(document).ready(function() {
       $(this).parent().removeClass("complete");
       $(this).parent().removeClass("active");
   });
+
+  //Org Chart:
+  var $levelParentClass = '.level';
+  var $listParentClass = '.list';
+  var $activeParentClass = '.active';
 });
