@@ -35,7 +35,7 @@
         <%= f.text_area :feedback, class:"field-input", placeholder:"What sort of progress were you hoping to achieve by signing up for this service?" %>
       </div>
 
-      <h5 style="padding-top: 15px;">Please check the relevant boxes</h5>
+      <h5 style="padding-top: 15px;">Please check the relevant managerial level</h5>
 
       <div class="check-box">
         <%= f.check_box :adm %>
@@ -52,14 +52,26 @@
         <%= f.label :manager %>
       </div>
 
+      <h5 style="padding-top: 15px;">Please check the relevant branch</h5>
+
       <div class="check-box">
-        <%= f.check_box :human_resources %>
-        <%= f.label :human_resources %>
+        <%= f.check_box :adm_office%>
+        <%= f.label :adm_office %>
       </div>
 
       <div class="check-box">
-        <%= f.check_box :finance %>
-        <%= f.label :finance %>
+        <%= f.check_box :strategic_human_resources %>
+        <%= f.label :strategic_human_resources %>
+      </div>
+
+      <div class="check-box">
+        <%= f.check_box :service_management_and_facilities %>
+        <%= f.label :service_management_and_facilities %>
+      </div>
+
+      <div class="check-box">
+        <%= f.check_box :business_planning_and_finance %>
+        <%= f.label :business_planning_and_finance %>
       </div>
 
       <%= f.submit "SUBMIT", class:"submit" %>
