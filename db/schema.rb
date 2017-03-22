@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170321181558) do
+ActiveRecord::Schema.define(version: 20170322141426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20170321181558) do
     t.boolean  "strategic_human_resources"
     t.boolean  "service_management_and_facilities"
     t.boolean  "business_planning_and_finance"
+    t.string   "password_digest"
   end
 
 end
