@@ -18,7 +18,19 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def org_charts
+  def admo_org_chart
+    @users = User.all
+  end
+
+  def bpf_org_chart
+    @users = User.all
+  end
+
+  def hr_org_chart
+    @users = User.all
+  end
+
+  def smf_org_chart
     @users = User.all
   end
 
