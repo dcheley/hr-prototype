@@ -1,5 +1,6 @@
 <h1 class="org-title">ADM's Office</h1>
 
+<% @users.where(adm: true).each do |u| %>
 <section class="org-container">
   <div id="level-0" class="level expanded">
     <div class="level-wrap">
@@ -9,7 +10,7 @@
           <div class="org-box">
 
             <div class="org-header">
-              <h4 class="branch">JOB TITLE<i class="fa fa-chevron-right" aria-hidden="true" style="font-size: 11px;"></i></h4>
+              <h4 class="branch"><%= "#{u.title}" %><i class="fa fa-chevron-right" aria-hidden="true" style="font-size: 11px;"></i></h4>
 
               <div class="context">
                 <i class="fa fa-building-o" title="National facilities" aria-hidden="true"></i>
@@ -17,7 +18,7 @@
             </div>
 
             <div class="org-details">
-              <p class="boss-name">Placeholder Name</p>
+              <p class="boss-name"><%= "#{u.name}" %></p>
             </div>
 
             <a href="#" class="info-btn"><i class="fa fa-info" aria-hidden="true"></i></a>
@@ -29,6 +30,7 @@
     </div>
   </div>
   </div>
+<% end %>
 
   <div id="level-1" class="level">
     <div class="level-wrap">
