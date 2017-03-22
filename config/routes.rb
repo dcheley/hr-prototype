@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "users#new"
 
-  get '/users/admo_org_chart' => 'users#org_charts'
-  get '/users/bpf_org_chart' => 'users#org_charts'
-  get '/users/hr_org_chart' => 'users#org_charts'
-  get '/users/smf_org_chart' => 'users#org_charts'
+  get '/users/admo_org_chart' => 'users#admo_org_chart'
+  get '/users/bpf_org_chart' => 'users#bpf_org_chart'
+  get '/users/hr_org_chart' => 'users#hr_org_chart'
+  get '/users/smf_org_chart' => 'users#smf_org_chart'
 
   resources :users, only: [:new, :create, :show, :edit, :update, :index]
 
