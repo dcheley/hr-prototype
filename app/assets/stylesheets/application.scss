@@ -321,3 +321,149 @@
   right: 0px;
   bottom: -15px;
 }
+
+//Active Class
+.active .element,
+.list .selection {
+  border: 2px solid #0385AA;
+  background: #f5f5f5;
+}
+
+.active .org-header,
+.active .context,
+.list .selection .org-header,
+.list .selection .context {
+  background: #0385AA;
+  color: white;
+}
+
+.active .context:after,
+.list .selection .context:after{
+  border-right-color: #0385AA;
+}
+
+.list .selection {
+  opacity: 0.5;
+  background: white;
+  pointer-events: none;
+}
+
+.active .element:empty{
+  border-color: #E5E5E5;
+  min-height: 122px;
+  background: repeating-linear-gradient(
+    45deg,
+    #F2F2F2,
+    #F2F2F2 10px,
+    #E5E5E5 10px,
+    #E5E5E5 20px
+  );
+}
+
+.active .element:empty:before {
+  content: "Select an Org Unit";
+  color: grey;
+  text-align: center;
+  display: block;
+  position: absolute;
+  font-size: 12px;
+  width: 100%;
+  top: calc(50% - 14px);
+  background: #e5e5e5;
+  padding: 5px 0;
+}
+
+.active .element {
+  opacity: 1;
+}
+
+.expanded .active:after {
+  content: " ";
+  position: absolute;
+  height: 100%;
+  left: 110px;
+  bottom: -35px;
+  border-left: 2px solid #0385AA;
+  z-index: -1;
+}
+
+.expanded:last-of-type .active:after {
+  display: none;
+}
+
+.list .selection:after {
+  content: " ";
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-top:6px solid transparent;
+  border-bottom:0px solid transparent;
+  border-left:14px solid #0385AA;
+  left: -12px;
+  bottom: 2px;
+
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+/* ---- hover ---- */
+
+.info-header:hover,
+.info-header:hover .context,
+.info-btn:hover {
+  cursor: pointer;
+  background: #444444;
+  color: white;
+}
+
+.element-item.hover .context:after {
+  border-right-color: #444444;
+}
+
+.element-item.hover {
+  border-color: #444444;
+}
+
+.item-list .element-item .info-header:hover,
+.item-list .element-item .info-header:hover .context,
+.item-list .element-item .info-header:hover h4 {
+  cursor: pointer;
+  background: #444444;
+  color: white;
+}
+
+.item-list .element-item:hover .info-header:hover + .context:after{
+  border-right-color: #444444;
+}
+
+.item-list .element-item:hover {
+  background: #fdfdfd;
+}
+
+.hover-expanded .item-active:after,
+.hover-children .level-wrap:before {
+  border-color: #444444 !important;
+}
+
+/* ---- misc ---- */
+
+.hidden {
+  display: none;
+}
+
+.org-name {
+  color: #0385AA;
+}
+
+.selection .org-name, .item-active .org-name{
+  color: #ffffff;
+}
+
+/* Disable arrow */
+.element-item .context:after {
+  display: none;
+}
