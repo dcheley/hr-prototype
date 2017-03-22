@@ -412,63 +412,64 @@
 
 /* ---- hover ---- */
 
-.info-header:hover,
-.info-header:hover .context,
+.org-header:hover,
+.org-header:hover .context,
 .info-btn:hover {
   cursor: pointer;
   background: #444444;
   color: white;
 }
 
-.element-item.hover .context:after {
+.element.hover .context:after {
   border-right-color: #444444;
 }
 
-.element-item.hover {
+.element.hover {
   border-color: #444444;
 }
 
-.item-list .element-item .info-header:hover,
-.item-list .element-item .info-header:hover .context,
-.item-list .element-item .info-header:hover h4 {
+.list .element .org-header:hover,
+.list .element .org-header:hover .context,
+.list .element .org-header:hover h4 {
   cursor: pointer;
   background: #444444;
   color: white;
 }
 
-.item-list .element-item:hover .info-header:hover + .context:after{
+.list .element:hover .org-header:hover + .context:after{
   border-right-color: #444444;
 }
 
-.item-list .element-item:hover {
+.item-list .element:hover {
   background: #fdfdfd;
 }
 
-.hover-expanded .item-active:after,
+.hover-expanded .active:after,
 .hover-children .level-wrap:before {
   border-color: #444444 !important;
 }
 
-/* ---- misc ---- */
+// Extra swag
 
 .hidden {
   display: none;
 }
 
-.org-name {
+.boss-name {
   color: #0385AA;
 }
 
-.selection .org-name, .item-active .org-name{
+.selection .boss-name, .active .boss-name{
   color: #ffffff;
 }
 
-/* Disable arrow */
-.element-item .context:after {
+// Disable arrow
+.element .context:after {
   display: none;
 }
 
-.org-box {
+// To display users on heroku
+.test-box {
   height: 600px;
   width: 600px;
   margin: auto;
