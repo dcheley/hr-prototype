@@ -25,6 +25,16 @@
       </div>
 
       <div class="field">
+        <%= f.label :password, class:"field-label" %>
+        <%= f.password_field :password, class:"field-input", placeholder:"At least 6 characters" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, class:"field-label" %>
+        <%= f.password_field :password_confirmation, class:"field-input", placeholder:"At least 6 characters" %>
+      </div>
+
+      <div class="field">
         <%= f.label :feedback, class:"field-label" %>
         <%= f.text_area :feedback, class:"field-input", placeholder:"What sort of progress were you hoping to achieve by signing up for this service?" %>
       </div>
