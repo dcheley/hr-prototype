@@ -72,13 +72,24 @@ $(document).ready(function() {
       moveSelected($(this).closest('.element'));
   });
 
-  $(document).on('mouseenter','.org-header', function (event) {
+  $(document).on('mouseenter','.org-header', function(event) {
      $(this).closest('.element').addClass('hover');
      $(this).closest('.level').addClass('hover-expanded');
      $(this).closest('.level').next('.level').addClass('hover-children');
-  }).on('mouseleave','.info-header',  function(){
-     $(this).closest('.element-item').removeClass('hover');
+  }).on('mouseleave','.org-header',  function() {
+     $(this).closest('.element').removeClass('hover');
      $(this).closest('.level').removeClass('hover-expanded');
      $(this).closest('.level').next('.level').removeClass('hover-children');
   });
+
+  $(document).on('mouseenter','.org-menu-header', function(event) {
+     $(this).closest('.element').addClass('hover');
+     $(this).closest('.level').addClass('hover-expanded');
+     $(this).closest('.level').next('.level').addClass('hover-children');
+  }).on('mouseleave','.org-menu-header',  function() {
+     $(this).closest('.element').removeClass('hover');
+     $(this).closest('.level').removeClass('hover-expanded');
+     $(this).closest('.level').next('.level').removeClass('hover-children');
+  });
+
 });

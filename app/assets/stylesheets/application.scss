@@ -252,7 +252,7 @@
   height: 100%;
 }
 
-.org-header {
+.org-header, .org-menu-header {
   display: block;
   background: #BFBFC7;
   padding: 5px 35px 5px 10px;
@@ -414,6 +414,8 @@
 
 .org-header:hover,
 .org-header:hover .context,
+.org-menu-header:hover,
+.org-menu-header:hover .context,
 .info-btn:hover {
   cursor: pointer;
   background: #444444;
