@@ -39,6 +39,6 @@ private
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :phone, :title, :feedback, :adm, :director, :manager, :human_resources, :finance)
+    params.require(:user).permit(:name, :email, :password_digest, :phone, :title, :feedback, :adm, :director, :manager, :adm_office, :strategic_human_resources, :service_management_and_facilities, :business_planning_and_finance)
   end
 end
