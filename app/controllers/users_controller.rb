@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to "/pages/intro", notice: "#{@user.email} account created!"
+      redirect_to "/pages/org_charts", notice: "#{@user.email} account created!"
     else
       render :new
     end
