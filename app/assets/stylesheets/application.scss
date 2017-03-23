@@ -4,7 +4,6 @@ $dark-blue: #2081A1;
 $dark-yellow: #FFC33C;
 $grey: rgb(102,102,102);
 $medium-grey: #BFBFC7;
-$light-grey: #efefef; //So far only for very faded dotted line on Org Chart
 $bright-dark-blue: #0000CD;
 $dark-turquoise: #0385AA;
 $turquoise: #00C8F8; //So far only for /pages/intro
@@ -20,7 +19,7 @@ $green: #90D150; //" "
 }
 
 .container {
-  background-color: #FFC33C;
+  background-color: $medium-grey; //yellow
   width: 600px;
   margin-bottom: 50px;
   border-radius: 25px;
@@ -121,6 +120,10 @@ $green: #90D150; //" "
   margin-bottom: 0;
 }
 
+.home-link {
+  color: $grey;
+}
+
 .intro-container {
   height: 800px;
   margin: 0;
@@ -170,7 +173,7 @@ $green: #90D150; //" "
 }
 
 .tracker-info {
-  background-color: #FFC33C;
+  background-color: #FFC33C; //yellow
   margin: auto;
   margin-bottom: 10px;
   width: 230px;
@@ -246,7 +249,7 @@ $green: #90D150; //" "
 
 .level .col-1-3 {
   margin-left: 220px;
-  border-left: 2px dashed $light-grey; //Very thin dotted line going vertically
+  border-left: 2px dashed $white-smoke; //Very thin dotted line going vertically
   padding-left: 10px;
   height:100%;
 }
