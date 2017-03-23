@@ -4,16 +4,18 @@ $dark-blue: #2081A1;
 $dark-yellow: #FFC33C;
 $grey: rgb(102,102,102);
 $medium-grey: #BFBFC7;
-$medium-light-grey: #E5E5E5;
-$light-grey: #efefef;
+$light-grey: #efefef; //So far only for very faded dotted line on Org Chart
 $bright-dark-blue: #0000CD;
 $dark-turquoise: #0385AA;
-$turquoise: #00C8F8;
+$turquoise: #00C8F8; //So far only for /pages/intro
 $white: #ffffff;
 $white-smoke: #f5f5f5;
+$red: #D42246; //Unused but brand colour
+$error-text: #CC0000; //" "
+$green: #90D150; //" "
 
 .background {
-  background-color: #2081A1;
+  background-color: $dark-blue;
   height: 100%;
 }
 
@@ -35,7 +37,7 @@ $white-smoke: #f5f5f5;
 
 .form-instructions {
   text-align: center;
-  color: rgb(102,102,102);
+  color: $grey;
   padding-top: 20px;
   margin-bottom: 0;
 }
@@ -49,7 +51,7 @@ $white-smoke: #f5f5f5;
   display: block;
   font-size: 16px;
   transform: translateY(25px);
-  color: rgb(102,102,102);
+  color: $grey;
   transition: all 0.5s;
   padding-bottom: 5px;
 }
@@ -70,14 +72,14 @@ $white-smoke: #f5f5f5;
   display: block;
   width: 100%;
   height: 3px;
-  background-color: rgb(102,102,102);
+  background-color: $grey;
   bottom: 0;
   left: 0;
   transition: all 0.5s;
 }
 
 .field::after {
-  background-color: #0000CD;
+  background-color: $bright-dark-blue;
   transform: scaleX(0);
 }
 
@@ -86,7 +88,7 @@ $white-smoke: #f5f5f5;
 }
 
 .active .field-label {
-  color: #0000CD;
+  color: $bright-dark-blue;
 }
 
 .complete .field-label {
@@ -95,7 +97,7 @@ $white-smoke: #f5f5f5;
 }
 
 .submit {
-  background-color: #2081A1;
+  background-color: $dark-blue;
   border: none;
   display: block;
   margin: 35px auto;
@@ -125,7 +127,7 @@ $white-smoke: #f5f5f5;
 }
 
 .intro-title {
-  background-color: #00C8F8;
+  background-color: $turquoise;
   margin-bottom: 0;
   padding-top: 35px;
   text-align: center;
@@ -134,7 +136,7 @@ $white-smoke: #f5f5f5;
 }
 
 .intro-text-box {
-  background-color: #2081A1;
+  background-color: $dark-blue;
   width: 100%;
   text-align: justify;
   padding-top: 70px;
@@ -144,7 +146,7 @@ $white-smoke: #f5f5f5;
 }
 
 .intro-footer {
-  background-color: rgb(102,102,102);
+  background-color: $grey;
   text-align: center;
   width: 100%;
   height: 30%;
@@ -177,7 +179,7 @@ $white-smoke: #f5f5f5;
 
 .tracker-link {
   text-decoration: none;
-  color: rgb(102,102,102);
+  color: $grey;
   font-weight: bold;
 }
 
@@ -237,14 +239,14 @@ $white-smoke: #f5f5f5;
   left: -2px;
   width: 100%;
   height: 10px;
-  border: 2px solid #2081A1;
+  border: 2px solid $dark-blue;
   border-bottom: none;
   background: white;
 }
 
 .level .col-1-3 {
   margin-left: 220px;
-  border-left: 2px dashed #efefef; //check if showing
+  border-left: 2px dashed $light-grey; //Very thin dotted line going vertically
   padding-left: 10px;
   height:100%;
 }
@@ -271,7 +273,7 @@ $white-smoke: #f5f5f5;
   width: 200px;
   margin: 5px;
   background: #ffffff;
-  border: 2px solid #BFBFC7;
+  border: 2px solid $medium-grey;
   color: black;
 }
 
@@ -283,7 +285,7 @@ $white-smoke: #f5f5f5;
 
 .org-header, .org-menu-header {
   display: block;
-  background: #BFBFC7;
+  background: $medium-grey;
   padding: 5px 35px 5px 10px;
   color: black;
   position: relative;
@@ -312,8 +314,8 @@ $white-smoke: #f5f5f5;
   position: absolute;
   bottom: 0;
   left: 10px;
-  background: #2081A1;
-  color: white;
+  background: $dark-blue;
+  color: $white;
   border-radius: 100px;
   display: flex;
   align-items: center;
@@ -329,7 +331,7 @@ $white-smoke: #f5f5f5;
 .element .context {
   position: absolute;
   border-left: 1px solid rgba(0, 0, 0, 0.05);
-  background: #BFBFC7;
+  background: $medium-grey;
   text-align: center;
   width: 26px;
   height: 100%;
@@ -346,7 +348,7 @@ $white-smoke: #f5f5f5;
   height: 0;
   border-bottom: 15px solid transparent;
   border-top: 0px solid transparent;
-  border-right: 26px solid #BFBFC7;
+  border-right: 26px solid $medium-grey;
   right: 0px;
   bottom: -15px;
 }
@@ -354,38 +356,38 @@ $white-smoke: #f5f5f5;
 //Active Class
 .active .element,
 .list .selection {
-  border: 2px solid #0385AA;
-  background: #f5f5f5;
+  border: 2px solid $dark-turquoise;
+  background: $white-smoke;
 }
 
 .active .org-header,
 .active .context,
 .list .selection .org-header,
 .list .selection .context {
-  background: #0385AA;
-  color: white;
+  background: $dark-turquoise;
+  color: $white;
 }
 
 .active .context:after,
 .list .selection .context:after{
-  border-right-color: #0385AA;
+  border-right-color: $dark-turquoise;
 }
 
 .list .selection {
   opacity: 0.5;
-  background: white;
+  background: $white;
   pointer-events: none;
 }
 
 .active .element:empty{
-  border-color: #E5E5E5;
+  border-color: $medium-grey;
   min-height: 122px;
   background: repeating-linear-gradient(
     45deg,
     $white-smoke,
     $white-smoke 10px,
-    #E5E5E5 10px,
-    #E5E5E5 20px
+    $medium-grey 10px,
+    $medium-grey 20px
   );
 }
 
@@ -398,7 +400,7 @@ $white-smoke: #f5f5f5;
   font-size: 12px;
   width: 100%;
   top: calc(50% - 14px);
-  background: #e5e5e5;
+  background: $medium-grey;
   padding: 5px 0;
 }
 
@@ -412,7 +414,7 @@ $white-smoke: #f5f5f5;
   height: 100%;
   left: 110px;
   bottom: -35px;
-  border-left: 2px solid #0385AA;
+  border-left: 2px solid $dark-turquoise;
   z-index: -1;
 }
 
@@ -427,7 +429,7 @@ $white-smoke: #f5f5f5;
   height: 0px;
   border-top:6px solid transparent;
   border-bottom:0px solid transparent;
-  border-left:14px solid #0385AA;
+  border-left:14px solid $dark-turquoise;
   left: -12px;
   bottom: 2px;
 
@@ -448,7 +450,7 @@ $white-smoke: #f5f5f5;
 .info-btn:hover {
   cursor: pointer;
   background: #444444;
-  color: white;
+  color: $white;
 }
 
 .element.hover .context:after {
@@ -464,7 +466,7 @@ $white-smoke: #f5f5f5;
 .list .element .org-header:hover h4 {
   cursor: pointer;
   background: #444444;
-  color: white;
+  color: $white;
 }
 
 .list .element:hover .org-header:hover + .context:after{
@@ -486,7 +488,7 @@ $white-smoke: #f5f5f5;
 }
 
 .boss-name {
-  color: #0385AA;
+  color: $dark-turquoise;
 }
 
 // .selection .boss-name, .active .boss-name{
