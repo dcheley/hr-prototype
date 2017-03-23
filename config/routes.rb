@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root "users#new"
+  root "sessions#new"
 
   get '/users/admo_org_chart' => 'users#admo_org_chart'
   get '/users/bpf_org_chart' => 'users#bpf_org_chart'
