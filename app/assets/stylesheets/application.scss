@@ -22,6 +22,7 @@ $white-smoke: #f5f5f5;
   background-position: center;
 }
 
+//User form fields
 .form-title {
   text-align: center;
   padding-top: 10px;
@@ -151,33 +152,36 @@ $white-smoke: #f5f5f5;
   padding-top: 10px;
 }
 
-.org-chart-title {
+//User#index
+.tracker-title {
   text-align: center;
   padding-top: 10px;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
-.org-chart {
+.tracker-container {
   text-align: center;
 }
 
-// .org-box {
-//   background-color: #FFC33C;
-//   margin: auto;
-//   width: 230px;
-//   height: 135px;
-// }
+.tracker-info {
+  background-color: #FFC33C;
+  margin: auto;
+  margin-bottom: 10px;
+  width: 230px;
+  height: 135px;
+}
 
-.org-chart-link {
+.tracker-link {
   text-decoration: none;
   color: rgb(102,102,102);
   font-weight: bold;
 }
 
-.org-chart-item {
+.tracker-item {
   list-style: none;
 }
 
+//Org Charts
 .org-title {
   text-align: center;
   padding-top: 15px;

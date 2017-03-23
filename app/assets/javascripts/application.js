@@ -15,16 +15,6 @@
 //= require turbolinks
 //= require_tree .
 $(document).ready(function() {
-  $(".field-input").focus(function() {
-    $(this).parent().addClass("active complete");
-  });
-
-  $(".field-input").focusout(function() {
-    if($(this).val() === "")
-      $(this).parent().removeClass("complete");
-      $(this).parent().removeClass("active");
-  });
-
   //Org Chart:
   var $levelParentClass = '.level';
   var $listParentClass = '.list';
@@ -72,6 +62,7 @@ $(document).ready(function() {
       moveSelected($(this).closest('.element'));
   });
 
+  //Org Chart hover animations
   $(document).on('mouseenter','.org-header', function(event) {
      $(this).closest('.element').addClass('hover');
      $(this).closest('.level').addClass('hover-expanded');
@@ -90,6 +81,17 @@ $(document).ready(function() {
      $(this).closest('.element').removeClass('hover');
      $(this).closest('.level').removeClass('hover-expanded');
      $(this).closest('.level').next('.level').removeClass('hover-children');
+  });
+
+  //User form input animations
+  $(".field-input").focus(function() {
+    $(this).parent().addClass("active complete");
+  });
+
+  $(".field-input").focusout(function() {
+    if($(this).val() === "")
+      $(this).parent().removeClass("complete");
+      $(this).parent().removeClass("active");
   });
 
 });
