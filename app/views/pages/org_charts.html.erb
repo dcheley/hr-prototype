@@ -1,95 +1,99 @@
-<h1 class="org-title">Interactive Organizational Chart</h1>
+<% if current_user %>
+  <h1 class="org-title">Interactive Organizational Chart</h1>
 
-<section class="org-menu-container">
-  <div id="level-1" class="level">
-    <div class="level-wrap">
+  <section class="org-menu-container">
+    <div id="level-1" class="level">
+      <div class="level-wrap">
 
-      <div id="level-1-list" class="col-1-3 list">
-        <ul>
+        <div id="level-1-list" class="col-1-3 list">
+          <ul>
 
-          <li class="element">
-            <div class="org-box">
-              <div class="org-menu-header">
-                <h4 class="branch">ADM's Office <i class="fa fa-chevron-right" aria-hidden="true" style="font-size: 11px;"></i></h4>
+            <li class="element">
+              <div class="org-box">
+                <div class="org-menu-header">
+                  <h4 class="branch">ADM's Office <i class="fa fa-chevron-right" aria-hidden="true" style="font-size: 11px;"></i></h4>
 
-                <div class="context">
-                  <i class="fa fa-building-o" title="National facilities" aria-hidden="true"></i>
+                  <div class="context">
+                    <i class="fa fa-building-o" title="National facilities" aria-hidden="true"></i>
+                  </div>
                 </div>
-              </div>
 
-              <div class="org-details">
-                <p class="boss-name">Placeholder Name</p>
-              </div>
-
-              <a href="/users/admo_org_chart" class="info-btn">
-                <i class="fa fa-info" aria-hidden="true"></i>
-              </a>
-            </div>
-          </li>
-
-          <li class="element">
-            <div class="org-box">
-              <div class="org-menu-header">
-                <h4 class="branch">Strategic Human Resources <i class="fa fa-chevron-right" aria-hidden="true" style="font-size: 11px;"></i></h4>
-
-                <div class="context">
-                  <i class="fa fa-building-o" title="National facilities" aria-hidden="true"></i>
+                <div class="org-details">
+                  <p class="boss-name">Placeholder Name</p>
                 </div>
+
+                <a href="/users/admo_org_chart" class="info-btn">
+                  <i class="fa fa-info" aria-hidden="true"></i>
+                </a>
               </div>
+            </li>
 
-              <div class="org-details">
-                <p class="boss-name">Placeholder Name</p>
-              </div>
+            <li class="element">
+              <div class="org-box">
+                <div class="org-menu-header">
+                  <h4 class="branch">Strategic Human Resources <i class="fa fa-chevron-right" aria-hidden="true" style="font-size: 11px;"></i></h4>
 
-              <a href="/users/hr_org_chart" class="info-btn">
-                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-              </a>
-            </div>
-          </li>
-
-          <li class="element">
-            <div class="org-box">
-              <div class="org-menu-header">
-                <h4 class="branch">Service Management & Facilities <i class="fa fa-chevron-right" aria-hidden="true" style="font-size: 11px;"></i></h4>
-
-                <div class="context">
-                  <i class="fa fa-building-o" title="National facilities" aria-hidden="true"></i>
+                  <div class="context">
+                    <i class="fa fa-building-o" title="National facilities" aria-hidden="true"></i>
+                  </div>
                 </div>
-              </div>
 
-              <div class="org-details">
-                <p class="boss-name">Placeholder Name</p>
-              </div>
-
-              <a href="/users/smf_org_chart" class="info-btn">
-                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-              </a>
-            </div>
-          </li>
-
-          <li class="element">
-            <div class="org-box">
-              <div class="org-menu-header">
-                <h4 class="branch">Business Planning and Finance<i class="fa fa-chevron-right" aria-hidden="true" style="font-size: 11px;"></i></h4>
-
-                <div class="context">
-                  <i class="fa fa-building-o" title="National facilities" aria-hidden="true"></i>
+                <div class="org-details">
+                  <p class="boss-name">Placeholder Name</p>
                 </div>
+
+                <a href="/users/hr_org_chart" class="info-btn">
+                  <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                </a>
               </div>
+            </li>
 
-              <div class="org-details">
-                <p class="boss-name">Placeholder Name</p>
+            <li class="element">
+              <div class="org-box">
+                <div class="org-menu-header">
+                  <h4 class="branch">Service Management & Facilities <i class="fa fa-chevron-right" aria-hidden="true" style="font-size: 11px;"></i></h4>
+
+                  <div class="context">
+                    <i class="fa fa-building-o" title="National facilities" aria-hidden="true"></i>
+                  </div>
+                </div>
+
+                <div class="org-details">
+                  <p class="boss-name">Placeholder Name</p>
+                </div>
+
+                <a href="/users/smf_org_chart" class="info-btn">
+                  <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                </a>
               </div>
+            </li>
 
-              <a href="/users/bpf_org_chart" class="info-btn">
-                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-              </a>
-            </div>
-          </li>
+            <li class="element">
+              <div class="org-box">
+                <div class="org-menu-header">
+                  <h4 class="branch">Business Planning and Finance<i class="fa fa-chevron-right" aria-hidden="true" style="font-size: 11px;"></i></h4>
 
-        </ul>
+                  <div class="context">
+                    <i class="fa fa-building-o" title="National facilities" aria-hidden="true"></i>
+                  </div>
+                </div>
+
+                <div class="org-details">
+                  <p class="boss-name">Placeholder Name</p>
+                </div>
+
+                <a href="/users/bpf_org_chart" class="info-btn">
+                  <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                </a>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
+<% else %>
+  <h1 class="login-message"><%= link_to "LOGIN", :login %> to view Interactive Org Chart</h1>
+<% end %>
