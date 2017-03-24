@@ -58,21 +58,21 @@ $(document).ready(function() {
 
   // listeners
   $(".org-header").on("click", function(){
-      scrollParent($(this).closest('.level'));
-      moveSelected($(this).closest('.element'));
+    scrollParent($(this).closest('.level'));
+    moveSelected($(this).closest('.element'));
   });
 
   //Org Chart hover animations
   $('.org-header', '.org-menu-header').mouseenter(function() {
-     $(this).closest('.element').addClass('hover');
-     $(this).closest('.level').addClass('hover-expanded');
-     $(this).closest('.level').next('.level').addClass('hover-children');
+    $(this).closest('.element').addClass('hover');
+    $(this).closest('.level').addClass('hover-expanded');
+    $(this).closest('.level').next('.level').addClass('hover-children');
   });
 
   $('.org-header', '.org-menu-header').mouseleave(function() {
-     $(this).closest('.element').removeClass('hover');
-     $(this).closest('.level').removeClass('hover-expanded');
-     $(this).closest('.level').next('.level').removeClass('hover-children');
+    $(this).closest('.element').removeClass('hover');
+    $(this).closest('.level').removeClass('hover-expanded');
+    $(this).closest('.level').next('.level').removeClass('hover-children');
   });
 
   //User form input animations
@@ -85,5 +85,4 @@ $(document).ready(function() {
       $(this).parent().removeClass("complete");
       $(this).parent().removeClass("active");
   });
-
 });
