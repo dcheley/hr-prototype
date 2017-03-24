@@ -161,8 +161,14 @@ $green: #90D150; //" "
   padding-top: 10px;
 }
 
-.profile-title a {
-  color: $grey;
+.login-message {
+  text-align: center;
+  padding-top: 300px;
+  padding-bottom: 300px;
+}
+
+.login-message a {
+  color: $error-text;
 }
 
 //User#index
