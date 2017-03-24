@@ -2,6 +2,6 @@
   <% if !current_user %>
     <h1 class="profile-title"><%= @user.name %>'s Profile</h1>
   <% else %>
-    <h1 class="profile-title"><%= link_to "#{@user.name}", "/users/#{@user.id}/edit" %>'s Profile</h1>
+    <h1 class="profile-title"><%= link_to "Edit Settings", "/users/#{@user.id}/edit" %></h1>
   <% end %>
 </div>
