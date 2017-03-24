@@ -22,8 +22,9 @@
                 <p class="boss-name"><%= "#{a.name}" %></p>
               </div>
 
-              <%= link_to "", "/users/#{a.id}", class:"info-btn" %>
-
+                <%= link_to "/users/#{a.id}", class:"info-btn" do %>
+                  <span class="glyphicon glyphicon-user"></span>
+                <% end %>
             </div>
           </div>
 
@@ -60,7 +61,9 @@
                   <p class="boss-name"><%= "#{b.name}" %></p>
                 </div>
 
-                <%= link_to "", "/users/#{b.id}", class:"info-btn" %>
+                <%= link_to "/users/#{b.id}", class:"info-btn" do %>
+                  <span class="glyphicon glyphicon-user"></span>
+                <% end %>
 
               </div>
             </li>
