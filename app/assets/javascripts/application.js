@@ -63,21 +63,13 @@ $(document).ready(function() {
   });
 
   //Org Chart hover animations
-  $(document).on('mouseenter','.org-header', function(event) {
+  $('.org-header', '.org-menu-header').mouseenter(function() {
      $(this).closest('.element').addClass('hover');
      $(this).closest('.level').addClass('hover-expanded');
      $(this).closest('.level').next('.level').addClass('hover-children');
-  }).on('mouseleave','.org-header',  function() {
-     $(this).closest('.element').removeClass('hover');
-     $(this).closest('.level').removeClass('hover-expanded');
-     $(this).closest('.level').next('.level').removeClass('hover-children');
   });
 
-  $(document).on('mouseenter','.org-menu-header', function(event) {
-     $(this).closest('.element').addClass('hover');
-     $(this).closest('.level').addClass('hover-expanded');
-     $(this).closest('.level').next('.level').addClass('hover-children');
-  }).on('mouseleave','.org-menu-header',  function() {
+  $('.org-header', '.org-menu-header').mouseleave(function() {
      $(this).closest('.element').removeClass('hover');
      $(this).closest('.level').removeClass('hover-expanded');
      $(this).closest('.level').next('.level').removeClass('hover-children');
