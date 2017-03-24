@@ -1,7 +1,7 @@
 <div class="background">
-  <% if !current_user %>
-    <h1 class="profile-title"><%= @user.name %>'s Profile</h1>
-  <% else %>
+  <% if current_user == @user %>
     <h1 class="profile-title"><%= link_to "Edit Settings", "/users/#{@user.id}/edit" %></h1>
+  <% else %>
+    <h1 class="profile-title"><%= @user.name %>'s Profile</h1>
   <% end %>
 </div>
