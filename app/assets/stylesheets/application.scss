@@ -38,6 +38,18 @@ $green: #90D150; //" "
   color: $white-smoke;
 }
 
+.btn-default {
+  color: $white-smoke;
+  background-color: $dark-blue;
+  border: 0;
+}
+
+.btn-default:hover {
+  color: $grey;
+  background-color: $medium-grey;
+  border: 0;
+}
+
 //User form fields
 .form-title {
   text-align: center;
