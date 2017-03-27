@@ -28,6 +28,16 @@ $green: #90D150; //" "
   background-position: center;
 }
 
+//Navbar
+.navbar {
+  background-color: $grey;
+}
+
+.navbar-default .navbar-nav > li > a {
+  font-weight: bold;
+  color: $white-smoke;
+}
+
 //User form fields
 .form-title {
   text-align: center;
