@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="org-details">
-                  <p class="boss-name"><%= @users.count %></p>
+                  <p class="boss-name"><b>Office Size:</b> <%= @users.where(adm_office: true).count %></p>
                 </div>
 
                 <a href="/users/admo_org_chart" class="info-btn">
@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="org-details">
-                  <p class="boss-name">Placeholder Name</p>
+                  <p class="boss-name"><b>Office Size:</b> <%= @users.where(strategic_human_resources: true).count %></p>
                 </div>
 
                 <a href="/users/hr_org_chart" class="info-btn">
@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="org-details">
-                  <p class="boss-name">Placeholder Name</p>
+                  <p class="boss-name"><b>Office Size:</b> <%= @users.where(service_management_and_facilities: true).count %></p>
                 </div>
 
                 <a href="/users/smf_org_chart" class="info-btn">
@@ -79,7 +79,7 @@
                 </div>
 
                 <div class="org-details">
-                  <p class="boss-name">Placeholder Name</p>
+                  <p class="boss-name"><b>Office Size:</b> <%= @users.where(business_planning_and_finance: true).count %></p>
                 </div>
 
                 <a href="/users/bpf_org_chart" class="info-btn">
