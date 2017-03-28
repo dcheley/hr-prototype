@@ -218,6 +218,22 @@ $green: #90D150; //" "
   text-align: center;
 }
 
+.default-pic {
+  text-align: center;
+  margin: 20px;
+}
+
+.default-pic img {
+  height: 88px;
+}
+
+.pic-info {
+  list-style: none;
+  font-size: 18px;
+  text-align: center;
+  margin: 20px;
+}
+
 //Multiple pages
 .login-message {
   text-align: center;
