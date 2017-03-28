@@ -35,6 +35,12 @@
           <%= f.text_area :feedback, class:"field-input", placeholder:"What sort of progress were you hoping to achieve by signing up for this service?" %>
         </div>
 
+        <div class="file-button">
+        <%= form_for @user, url: users_path, html: { multipart: true } do |form| %>
+          <%= form.file_field :avatar %>
+        <% end %>
+        </div>
+
         <h5 style="padding-top: 15px;">Please check the relevant managerial level</h5>
 
         <div class="check-box">
