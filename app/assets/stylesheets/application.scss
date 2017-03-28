@@ -193,6 +193,7 @@ $green: #90D150; //" "
   padding-top: 60px;
 }
 
+//User show & edit
 .profile-title {
   text-align: center;
   padding-top: 15px;
@@ -201,6 +202,14 @@ $green: #90D150; //" "
 
 .profile-title a {
   color: $grey;
+}
+
+.profile-pic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  margin-top: 30px;
 }
 
 //Multiple pages
