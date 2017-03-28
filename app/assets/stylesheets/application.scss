@@ -67,6 +67,16 @@ $green: #90D150; //" "
   margin-bottom: 0;
 }
 
+.avatar_container {
+  margin-top: 40px;
+  border-bottom: 1px;
+}
+
+.divider {
+  margin-top: 20px;
+  border-bottom: 3px solid $grey;
+}
+
 .field {
   padding: 30px 0 0 0;
   position: relative;
