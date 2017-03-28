@@ -1,15 +1,26 @@
 <div class="background">
-
   <h1 class="form-title">Welcome!</h1>
 
   <h1 class="form-title">Employee Engagement Application</h1>
 
-  <div class="container">
-    <h3 class="form-title", style="padding-top: 20px;"><%= link_to 'LOGIN', :login, class:'home-link' %></h3>
+  <% if !current_user %>
+    <div class="container">
+      <h3 class="form-title", style="padding-top: 20px;"><%= link_to 'LOGIN', :login, class:'home-link' %></h3>
 
-    <h4 style="text-align: center;">or</h4>
+      <h4 style="text-align: center;">or</h4>
 
-    <h3 class="form-title"><%= link_to 'SIGN UP', '/users/new', class:'home-link' %></h3>
-  </div>
+      <h3 class="form-title"><%= link_to 'SIGN UP', '/users/new', class:'home-link' %></h3>
+    </div>
 
+  <% else %>
+    <div class="container">
+      <h2 class="form-title", style="padding-top: 25px;"><b>COMING SOON...</b></h2>
+
+      <h3 class="form-title">Opportunities</h3>
+
+      <h3 class="form-title">Feedback</h3>
+
+      <h3 class="form-title">Networking Events</h3>
+    </div>
+  <% end %>
 </div>
