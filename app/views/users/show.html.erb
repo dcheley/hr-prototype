@@ -4,10 +4,22 @@
 
     <%= image_tag @user.avatar.url(:medium), class:"profile-pic" %>
 
+    <ul>
+      <li class="profile-info"><b>Title:</b> <%= @user.title %></li>
+      <li class="profile-info"><b>Email:</b> <%= @user.email %></li>
+      <li class="profile-info"><b>Phone:</b> <%= @user.phone %></li>
+    </ul>
+
   <% else %>
     <h1 class="profile-title"><%= @user.name %>'s Profile</h1>
 
     <%= image_tag @user.avatar.url(:medium), class:"profile-pic" %>
+
+    <ul>
+      <li class="profile-info"><b>Title:</b> <%= @user.title %></li>
+      <li class="profile-info"><b>Email:</b> <%= @user.email %></li>
+      <li class="profile-info"><b>Phone:</b> <%= @user.phone %></li>
+    </ul>
 
   <% end %>
 </div>
