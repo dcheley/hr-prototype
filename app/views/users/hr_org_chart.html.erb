@@ -1,6 +1,8 @@
 <% if current_user %>
   <h1 class="org-title">Strategic Human Resources</h1>
 
+  <h4 class="org-title"><b>*</b>To <b>find yourself</b> refer to the <b>name provided in email.</b></h4>
+
   <section class="org-container">
     <% @users.where(strategic_human_resources: true, director: true).each do |a| %>
     <div id="level-0" class="level expanded">
