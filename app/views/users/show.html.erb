@@ -22,7 +22,7 @@
 
     <% @user.badges.each do |b| %>
     <ul>
-      <li class="profile-badges"><%= b.name %></li>
+      <li class="profile-badges"><%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}/edit" %></li>
     </ul>
     <% end %>
 
@@ -48,7 +48,7 @@
 
     <% @user.badges.each do |b| %>
     <ul>
-      <li class="profile-badges"><%= b.name %></li>
+      <li class="profile-badges"><%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}/edit" %></li>
     </ul>
     <% end %>
 
