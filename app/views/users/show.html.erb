@@ -35,5 +35,16 @@
       <li class="profile-info"><b>Phone:</b> <%= @user.phone %></li>
     </ul>
 
+    <% @user.badges.each do |b| %>
+    <ul>
+      <li><%= b.name %></li>
+      <% @user.badges.attributes.each do |k, v| %>
+        <% if v == true %>
+          <li> <%= k %></li>
+        <% end  %>
+      <% end  %>
+    </ul>
+    <% end %>
+
   <% end %>
 </div>
