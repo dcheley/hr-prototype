@@ -23,11 +23,11 @@
 
       <p class="profile-link"><%= link_to 'ADD Badge', "/users/#{@user.id}/badges/new" %></p>
 
-      <% @user.badges.each do |b| %>
       <ul>
-        <li class="profile-badges"><%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}/edit" %></li>
+        <% @user.badges.each do |b| %>
+          <li class="profile-badges"><%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}/edit" %></li>
+        <% end %>
       </ul>
-      <% end %>
     </div>
 
   <% else %>
@@ -53,11 +53,11 @@
 
       <p class="profile-link"><%= link_to 'ADD Badge', "/users/#{@user.id}/badges/new" %></p>
 
-      <% @user.badges.each do |b| %>
       <ul>
-        <li class="profile-badges"><%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}/edit" %></li>
+        <% @user.badges.each do |b| %>
+          <li class="profile-badges"><%= b.name %></li>
+        <% end %>
       </ul>
-      <% end %>
     </div>
 
   <% end %>
