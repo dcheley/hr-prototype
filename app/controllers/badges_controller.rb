@@ -1,5 +1,6 @@
 class BadgesController < ApplicationController
   before_action :load_badge, only: [:edit, :update, :destroy]
+  before_action :load_user, only: [:new, :create]
 
   def new
     @badge = Badge.new
@@ -7,11 +8,10 @@ class BadgesController < ApplicationController
 
   def create
     @badge = Badge.new(badge_params)
-
     if @badge.save
       redirect_to user_url(@user), notice: "#{@badge.name} created!"
     else
-      render edit_badge_url, alert: "Failed to create badge."
+      render :new
     end
   end
 
@@ -31,7 +31,6 @@ class BadgesController < ApplicationController
   end
 
 private
-
   def load_user
     @user = User.find(params[:user_id])
   end
