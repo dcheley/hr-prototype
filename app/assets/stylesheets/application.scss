@@ -204,6 +204,18 @@ $green: #90D150; //" "
   color: $grey;
 }
 
+.profile-link {
+  text-decoration: none;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.profile-link a {
+  color: $white;
+}
+
 .profile-pic {
   display: block;
   margin-left: auto;

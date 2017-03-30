@@ -11,11 +11,20 @@
       </div>
       <li class="pic-info">Add a profile pic through the settings page (link at top)</li>
     <% end %>
+
     <ul>
       <li class="profile-info"><b>Title:</b> <%= @user.title %></li>
       <li class="profile-info"><b>Email:</b> <%= @user.email %></li>
       <li class="profile-info"><b>Phone:</b> <%= @user.phone %></li>
     </ul>
+
+    <p class="profile-link"><%= link_to 'ADD Badge', "/users/#{@user.id}/badges/new" %></p>
+
+    <% @user.badges.each do |b| %>
+    <ul>
+      <li><%= b.name %></li>
+    </ul>
+    <% end %>
 
   <% else %>
     <h1 class="profile-title"><%= @user.name %>'s Profile</h1>
@@ -35,14 +44,11 @@
       <li class="profile-info"><b>Phone:</b> <%= @user.phone %></li>
     </ul>
 
+    <p class="profile-link"><%= link_to 'ADD Badge', "/users/#{@user.id}/badges/new" %></p>
+
     <% @user.badges.each do |b| %>
     <ul>
       <li><%= b.name %></li>
-      <% @user.badges.attributes.each do |k, v| %>
-        <% if v == true %>
-          <li> <%= k %></li>
-        <% end  %>
-      <% end  %>
     </ul>
     <% end %>
 
