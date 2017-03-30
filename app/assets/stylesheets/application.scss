@@ -217,6 +217,14 @@ $green: #90D150; //" "
   color: $white;
 }
 
+.badge-container {
+  background-color: $grey;
+}
+
+.badge-container ul {
+  padding-bottom: 60px;
+}
+
 .profile-badges {
   list-style: none;
   padding-left: 10%;
@@ -227,6 +235,7 @@ $green: #90D150; //" "
 .badge-title {
   text-align: left;
   padding-left: 10%;
+  padding-top: 5%;
 }
 
 .profile-pic {

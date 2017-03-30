@@ -18,15 +18,17 @@
       <li class="profile-info"><b>Phone:</b> <%= @user.phone %></li>
     </ul>
 
-    <h2 class="badge-title">Current badges:</h2>
+    <div class="badge-container">
+      <h2 class="badge-title">Current badges:</h2>
 
-    <p class="profile-link"><%= link_to 'ADD Badge', "/users/#{@user.id}/badges/new" %></p>
+      <p class="profile-link"><%= link_to 'ADD Badge', "/users/#{@user.id}/badges/new" %></p>
 
-    <% @user.badges.each do |b| %>
-    <ul>
-      <li class="profile-badges"><%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}/edit" %></li>
-    </ul>
-    <% end %>
+      <% @user.badges.each do |b| %>
+      <ul>
+        <li class="profile-badges"><%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}/edit" %></li>
+      </ul>
+      <% end %>
+    </div>
 
   <% else %>
     <h1 class="profile-title"><%= @user.name %>'s Profile</h1>
@@ -46,15 +48,17 @@
       <li class="profile-info"><b>Phone:</b> <%= @user.phone %></li>
     </ul>
 
-    <h3 class="badge-title"><%= "#{@user.name}" %>'s badges</h3>
+    <div class="badge-container">
+      <h2 class="badge-title"><%= "#{@user.name}" %>'s badges</h2>
 
-    <p class="profile-link"><%= link_to 'ADD Badge', "/users/#{@user.id}/badges/new" %></p>
+      <p class="profile-link"><%= link_to 'ADD Badge', "/users/#{@user.id}/badges/new" %></p>
 
-    <% @user.badges.each do |b| %>
-    <ul>
-      <li class="profile-badges"><%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}/edit" %></li>
-    </ul>
-    <% end %>
+      <% @user.badges.each do |b| %>
+      <ul>
+        <li class="profile-badges"><%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}/edit" %></li>
+      </ul>
+      <% end %>
+    </div>
 
   <% end %>
 </div>
