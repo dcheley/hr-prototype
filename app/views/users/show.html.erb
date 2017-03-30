@@ -25,7 +25,10 @@
 
       <ul>
         <% @user.badges.each do |b| %>
-          <li class="profile-badges"><%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}/edit" %></li> | <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete %>
+          <li class="profile-badges">
+            <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}/edit" %>
+            <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, class:"btn-default" %>
+          </li>
         <% end %>
       </ul>
     </div>
