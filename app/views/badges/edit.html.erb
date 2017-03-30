@@ -1,2 +1,69 @@
-<h1>Badges#edit</h1>
-<p>Find me in app/views/badges/edit.html.erb</p>
+<div class="background">
+  <% if current_user == @badge.user %>
+    <h1 class="form-title">Edit Badge</h1>
+
+    <div class="container">
+      <%= form_for([@user, @badge]) do |f| %>
+        <% if @badge.errors.any? %>
+          <h2 class="error-header"><%= pluralize(@badge.errors.count, "error") %> occurred!</h2>
+
+          <ul class="error-list">
+            <% @badge.errors.full_messages.each do |msg| %>
+              <li class="error-msg"><%= msg %></li>
+            <% end %>
+          </ul>
+
+        <% end %>
+
+        <div class="field">
+          <%= f.label :name, class:"field-label" %>
+          <%= f.text_field :name, class:"field-input" %>
+        </div>
+
+        <div class="divider"></div>
+
+        <h5 style="padding-top: 15px;">Choose a colour!</h5>
+
+        <div class="check-box">
+          <%= f.check_box :red %>
+          <%= f.label :red %>
+        </div>
+
+        <div class="check-box">
+          <%= f.check_box :blue %>
+          <%= f.label :blue %>
+        </div>
+
+        <div class="check-box">
+          <%= f.check_box :yellow %>
+          <%= f.label :yellow %>
+        </div>
+
+        <div class="check-box">
+          <%= f.check_box :green %>
+          <%= f.label :green %>
+        </div>
+
+        <div class="check-box">
+          <%= f.check_box :purple %>
+          <%= f.label :purple %>
+        </div>
+
+        <div class="check-box">
+          <%= f.check_box :pink %>
+          <%= f.label :pink %>
+        </div>
+
+        <div class="check-box">
+          <%= f.check_box :grey %>
+          <%= f.label :grey %>
+        </div>
+
+        <%= f.submit "SUBMIT", class:"submit" %>
+
+      <% end %>
+    </div>
+  <% else %>
+    <h1 class="login-message"><%= link_to "LOGIN", :login %> to edit badges</h1>
+  <% end %>
+</div>
