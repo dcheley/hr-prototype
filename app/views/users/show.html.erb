@@ -18,6 +18,8 @@
       <li class="profile-info"><b>Phone:</b> <%= @user.phone %></li>
     </ul>
 
+    <h2 class="badge-title">Current badges:</h2>
+
     <p class="profile-link"><%= link_to 'ADD Badge', "/users/#{@user.id}/badges/new" %></p>
 
     <% @user.badges.each do |b| %>
@@ -43,6 +45,8 @@
       <li class="profile-info"><b>Email:</b> <%= @user.email %></li>
       <li class="profile-info"><b>Phone:</b> <%= @user.phone %></li>
     </ul>
+
+    <h3 class="badge-title"><%= "#{@user.name}" %>'s badges</h3>
 
     <p class="profile-link"><%= link_to 'ADD Badge', "/users/#{@user.id}/badges/new" %></p>
 
