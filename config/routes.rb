@@ -12,6 +12,10 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :show, :edit, :update, :index]
 
+  resources :users do
+    resources :badges, only: [:create, :update, :edit, :destroy]
+  end
+
   get 'login' => 'sessions#new', as: :login
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy', as: :logout
