@@ -1,4 +1,6 @@
 class BadgesController < ApplicationController
+  before_action :load_badge, only: [:edit, :update, :destroy]
+  
   def new
     @badge = @user.badge.build
   end
@@ -14,6 +16,12 @@ class BadgesController < ApplicationController
   end
 
   def update
+    if @badge.update_attributes(badge_params)
+      flash[:notice] = "Badge successfully updated!"
+      redirect_to user_url(@user)
+    else
+      render :edit
+    end
   end
 
   def edit
