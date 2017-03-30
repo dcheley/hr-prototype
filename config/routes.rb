@@ -1,14 +1,4 @@
 Rails.application.routes.draw do
-  get 'badges/new'
-
-  get 'badges/create'
-
-  get 'badges/update'
-
-  get 'badges/edit'
-
-  get 'badges/destroy'
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "pages#home"
 
