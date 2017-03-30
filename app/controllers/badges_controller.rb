@@ -1,12 +1,12 @@
 class BadgesController < ApplicationController
   before_action :load_badge, only: [:edit, :update, :destroy]
-  
+
   def new
-    @badge = @user.badge.build
+    @badge = Badge.new
   end
 
   def create
-    @badge = @user.build_badge(badge_params)
+    @badge = Badge.new(badge_params)
 
     if @badge.save
       redirect_to user_url(@user), notice: "#{@badge.name} created!"
