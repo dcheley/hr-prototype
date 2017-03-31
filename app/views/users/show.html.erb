@@ -32,7 +32,6 @@
           </li></br>
           <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %>
         </div>
-
         <% end %>
         <!-- Display Blue Badges -->
         <% @user.badges.where(blue: true).each do |b| %>
