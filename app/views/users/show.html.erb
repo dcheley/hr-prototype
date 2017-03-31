@@ -30,19 +30,19 @@
           <li class="profile-badges">
             <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}/edit" %>
           </li>
+          <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %>
         </div>
-        <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %>
 
-        <% end %></br></br></br>
+        <% end %>
         <!-- Display Blue Badges -->
         <% @user.badges.where(blue: true).each do |b| %>
         <div class="badge-blue">
           <li class="profile-badges">
             <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}/edit" %>
+            <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %>
           </li>
         </div>
-        <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %>
-        <% end %></br></br></br>
+        <% end %>
         <!-- Display Yellow Badges -->
         <% @user.badges.where(yellow: true).each do |b| %>
         <div class="badge-yellow">
@@ -51,7 +51,7 @@
             <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %>
           </li>
         </div>
-        <% end %></br></br></br>
+        <% end %>
         <!-- Display Green Badges -->
         <% @user.badges.where(green: true).each do |b| %>
         <div class="badge-green">
@@ -60,7 +60,7 @@
             <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %>
           </li>
         </div>
-        <% end %></br></br></br>
+        <% end %>
         <!-- Display Purple Badges -->
         <% @user.badges.where(purple: true).each do |b| %>
         <div class="badge-purple">
@@ -69,7 +69,7 @@
             <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %>
           </li>
         </div>
-        <% end %></br></br></br>
+        <% end %>
         <!-- Display Pink Badges -->
         <div class="badge-pink">
         <% @user.badges.where(pink: true).each do |b| %>
@@ -78,7 +78,7 @@
             <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %>
           </li>
         </div>
-        <% end %></br></br></br>
+        <% end %>
         <!-- Display Grey Badges -->
         <% @user.badges.where(grey: true).each do |b| %>
         <div class="badge-grey">
@@ -87,7 +87,7 @@
             <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %>
           </li>
         </div>
-        <% end %></br></br></br>
+        <% end %>
       </ul>
     </div>
 
