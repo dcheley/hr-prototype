@@ -21,6 +21,14 @@ $(document).ready(function() {
     var $levelParentClass = '.level';
     var $listParentClass = '.list';
     var $activeParentClass = '.active';
+    //Check boxes
+    var $checkBox = $('input[type=checkbox]');
+
+    //Only one check at a time
+    $checkBox.click(function() {
+      $checkBox.prop('checked', false);
+      $(this).prop('checked', true);
+    })
 
     // move items
     function moveSelected($itemSelected) {
