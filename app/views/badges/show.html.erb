@@ -1,69 +1,69 @@
-<div class="badge-container">
+<div class="badge-container" style="background-color: #2081A1;">
   <% if current_user && @badge.user_id == @user.id %>
-    <h2 class="badge-title"><%= "#{@user.name}" %>'s badges</h2>
+    <h2 class="badge-title" style="padding-top: 2%; margin-top: 0;"><%= "#{@user.name}" %>'s badges</h2>
 
     <ul>
       <!-- Display Red Badge -->
       <% @user.badges.where(red: true, id: @badge.id).each do |b| %>
-      <div class="badge-red">
-        <li class="profile-badges">
+      <div class="badge-red", style="height: 200px; width: 200px; border-radius: 125px;">
+        <h2 class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
-          <%= b.description %>
-        </li></br>
+        </h2>
       </div>
+        <p class="badge-description"><%= b.description %></p>
       <% end %>
       <!-- Display Blue Badges -->
       <% @user.badges.where(blue: true, id: @badge.id).each do |b| %>
-      <div class="badge-blue">
-        <li class="profile-badges">
+      <div class="badge-blue", style="height: 200px; width: 200px; border-radius: 125px;">
+        <li class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
           <%= b.description %>
-        </li></br>
+        </li>
       </div>
       <% end %>
       <!-- Display Yellow Badges -->
       <% @user.badges.where(yellow: true, id: @badge.id).each do |b| %>
-      <div class="badge-yellow">
-        <li class="profile-badges">
+      <div class="badge-yellow", style="height: 200px; width: 200px; border-radius: 125px;">
+        <li class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
           <%= b.description %>
-        </li></br>
+        </li>
       </div>
       <% end %>
       <!-- Display Green Badges -->
       <% @user.badges.where(green: true, id: @badge.id).each do |b| %>
-      <div class="badge-green">
-        <li class="profile-badges">
+      <div class="badge-green", style="height: 200px; width: 200px; border-radius: 125px;">
+        <li class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
           <%= b.description %>
-        </li></br>
+        </li>
       </div>
       <% end %>
       <!-- Display Purple Badges -->
       <% @user.badges.where(purple: true, id: @badge.id).each do |b| %>
-      <div class="badge-purple">
-        <li class="profile-badges">
+      <div class="badge-purple", style="height: 200px; width: 200px; border-radius: 125px;">
+        <li class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
           <%= b.description %>
-        </li></br>
+        </li>
       </div>
       <% end %>
       <!-- Display Pink Badges -->
       <% @user.badges.where(pink: true, id: @badge.id).each do |b| %>
-      <div class="badge-pink">
-        <li class="profile-badges">
+      <div class="badge-pink", style="height: 200px; width: 200px; border-radius: 125px;">
+        <li class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
           <%= b.description %>
-        </li></br>
+        </li>
       </div>
       <% end %>
       <!-- Display Grey Badges -->
       <% @user.badges.where(grey: true, id: @badge.id).each do |b| %>
-      <div class="badge-grey">
-        <li class="profile-badges">
+      <div class="badge-grey", style="height: 200px; width: 200px; border-radius: 125px;">
+        <li class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
           <%= b.description %>
-        </li></br>
+        </li>
       </div>
       <% end %>
     </ul>
