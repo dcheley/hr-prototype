@@ -10,7 +10,7 @@ class BadgesController < ApplicationController
     @badge = Badge.new(badge_params)
     @badge.user_id = @user.id
     if @badge.save
-      redirect_to user_url(@user), notice: "#{@badge.name} created!"
+      redirect_to user_url(@user), notice: "#{@badge.name} created! Scroll down to create more badges."
     else
       render :new
     end
@@ -35,6 +35,14 @@ class BadgesController < ApplicationController
     @badge.destroy
     flash[:notice] = "#{@badge.name} successfully deleted!"
     redirect_to user_url(@user)
+  end
+
+  def create_marketing
+    @badge = Badge.create(
+      name: "Marketing",
+      description: "Completed several Marketing initiatives",
+      blue: true
+    )
   end
 
 private
