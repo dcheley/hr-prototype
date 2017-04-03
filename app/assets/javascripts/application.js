@@ -28,7 +28,7 @@ $(document).ready(function() {
     $checkBox.click(function() {
       $checkBox.prop('checked', false);
       $(this).prop('checked', true);
-    })
+    });
 
     // move items
     function moveSelected($itemSelected) {
@@ -52,7 +52,7 @@ $(document).ready(function() {
       // show next row (should load new items)
       $($levelParent).next().removeClass('hidden');
       $($levelParent).addClass('expanded');
-    }
+    };
 
     // smooth scroll to current level
     function scrollParent($scrollTarget) {
@@ -64,7 +64,7 @@ $(document).ready(function() {
           }, 700);
           return false;
         }
-    }
+    };
 
     // listeners
     $(".org-header").on("click", function(){
