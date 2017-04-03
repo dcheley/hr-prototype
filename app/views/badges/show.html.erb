@@ -10,16 +10,16 @@
           <%= b.name %>
         </h2>
       </div>
-        <p class="badge-description"><%= b.description %></p>
+      <p class="badge-description"><%= b.description %></p>
       <% end %>
       <!-- Display Blue Badges -->
       <% @user.badges.where(blue: true, id: @badge.id).each do |b| %>
       <div class="badge-blue", style="height: 200px; width: 200px; border-radius: 125px;">
         <li class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
-          <%= b.description %>
         </li>
       </div>
+      <p class="badge-description"><%= b.description %></p>
       <% end %>
       <!-- Display Yellow Badges -->
       <% @user.badges.where(yellow: true, id: @badge.id).each do |b| %>
@@ -35,36 +35,36 @@
       <div class="badge-green", style="height: 200px; width: 200px; border-radius: 125px;">
         <li class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
-          <%= b.description %>
         </li>
       </div>
+      <p class="badge-description"><%= b.description %></p>
       <% end %>
       <!-- Display Purple Badges -->
       <% @user.badges.where(purple: true, id: @badge.id).each do |b| %>
       <div class="badge-purple", style="height: 200px; width: 200px; border-radius: 125px;">
         <li class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
-          <%= b.description %>
         </li>
       </div>
+      <p class="badge-description"><%= b.description %></p>
       <% end %>
       <!-- Display Pink Badges -->
       <% @user.badges.where(pink: true, id: @badge.id).each do |b| %>
       <div class="badge-pink", style="height: 200px; width: 200px; border-radius: 125px;">
         <li class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
-          <%= b.description %>
         </li>
       </div>
+      <p class="badge-description"><%= b.description %></p>
       <% end %>
       <!-- Display Grey Badges -->
       <% @user.badges.where(grey: true, id: @badge.id).each do |b| %>
       <div class="badge-grey", style="height: 200px; width: 200px; border-radius: 125px;">
         <li class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
-          <%= b.description %>
         </li>
       </div>
+      <p class="badge-description"><%= b.description %></p>
       <% end %>
     </ul>
   <% else  %>
