@@ -1,15 +1,15 @@
 <div class="background">
-  <% if current_user.id == @user.id %>
+  <% if current_user %>
     <h1 class="form-title">Create A Custom Badge</h1>
     <%= render 'badges_form' %>
       <h3 style="padding-top: 15px; text-align: center;"><b>OR</b> pick an existing badge:</h3>
-      <%= button_to 'Marketing Badge', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Marketing", :blue => true, :description => "Exposure to various Marketing initiatives"}}, method: :post, class:"submit" %>
-      <%= button_to 'Finance Badge', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Finance", :red => true, :description => "Exposure to various Marketing initiatives"}}, method: :post, class:"submit", style:"background-color: #CC0000;" %>
-      <%= button_to 'Sales Badge', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Sales", :green => true, :description => "Exposure to various Marketing initiatives"}}, method: :post, class:"submit", style:"background-color: #90D150;"  %>
-      <%= button_to 'Human Resources', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Human Resources", :yellow => true, :description => "Exposure to various Marketing initiatives"}}, method: :post, class:"submit", style:"background-color: #FFC33C;" %>
-      <%= button_to 'Project Management Badge', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Project Management", :purple => true, :description => "Exposure to various Marketing initiatives"}}, method: :post, class:"submit", style:"background-color: #4B0082;" %>
-      <%= button_to 'Design Badge', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Design", :pink => true, :description => "Exposure to various Marketing initiatives"}}, method: :post, class:"submit", style:"background-color: #FF69B4;" %>
-      <%= button_to 'Accounting Badge', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Accounting", :grey => true, :description => "Exposure to various Marketing initiatives"}}, method: :post, class:"submit", style:"background-color: rgb(102,102,102);" %>
+      <%= button_to 'Marketing Badge', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Marketing", :blue => true, :description => "Exposure to various Marketing initiatives."}}, method: :post, class:"submit" %>
+      <%= button_to 'Finance Badge', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Finance", :red => true, :description => "Highly experienced in Financial matters."}}, method: :post, class:"submit", style:"background-color: #CC0000;" %>
+      <%= button_to 'Sales Badge', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Sales", :green => true, :description => "Proven track record meeting demanding sales targets."}}, method: :post, class:"submit", style:"background-color: #90D150;"  %>
+      <%= button_to 'Human Resources', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Human Resources", :yellow => true, :description => "Widely recognized for understanding of HR strategy."}}, method: :post, class:"submit", style:"background-color: #FFC33C;" %>
+      <%= button_to 'Project Management Badge', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Project Management", :purple => true, :description => "Extremely organized and comfortable working within tight deadlines."}}, method: :post, class:"submit", style:"background-color: #4B0082;" %>
+      <%= button_to 'Design Badge', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Design", :pink => true, :description => "Beautiful and creative designs throughout past projects."}}, method: :post, class:"submit", style:"background-color: #FF69B4;" %>
+      <%= button_to 'Accounting Badge', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Accounting", :grey => true, :description => "Excellent command of bookkeeping best practices."}}, method: :post, class:"submit", style:"background-color: rgb(102,102,102);" %>
     </div>
   <% else %>
     <h1 class="login-message"><%= link_to "LOGIN", :login %> to create a badge</h1>

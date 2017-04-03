@@ -1,7 +1,7 @@
 <div class="background", style="height: 800px;">
-  <% if current_user == @user %>
+  <% if current_user && current_user == @user %>
     <!-- <h1 class="profile-title"><%= link_to "Edit Settings", "/users/#{@user.id}/edit" %></h1> -->
-  </br><h1 class="profile-title">Your Profile</h1>
+    </br><h1 class="profile-title">Your Profile</h1>
 
     <% if @user.avatar.file? == true %>
       <%= image_tag @user.avatar.url(:medium), class:"profile-pic" %>
@@ -90,7 +90,7 @@
       </ul>
     </div>
 
-  <% else %>
+  <% elsif current_user && current_user != @user %>
     </br><h1 class="profile-title"><%= @user.name %>'s Profile</h1>
 
     <% if @user.avatar.file? == true %>
@@ -120,7 +120,6 @@
           <li class="profile-badges">
             <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}" %>
           </li></br>
-          <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %>
         </div>
         <% end %>
         <!-- Display Blue Badges -->
@@ -129,7 +128,6 @@
           <li class="profile-badges">
             <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}" %>
           </li></br>
-          <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %>
         </div>
         <% end %>
         <!-- Display Yellow Badges -->
@@ -138,7 +136,6 @@
           <li class="profile-badges">
             <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}" %>
           </li></br>
-          <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %>
         </div>
         <% end %>
         <!-- Display Green Badges -->
@@ -147,7 +144,6 @@
           <li class="profile-badges">
             <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}" %>
           </li></br>
-          <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %>
         </div>
         <% end %>
         <!-- Display Purple Badges -->
@@ -156,7 +152,6 @@
           <li class="profile-badges">
             <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}" %>
           </li></br>
-          <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %>
         </div>
         <% end %>
         <!-- Display Pink Badges -->
@@ -165,7 +160,6 @@
           <li class="profile-badges">
             <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}" %>
           </li></br>
-          <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %>
         </div>
         <% end %>
         <!-- Display Grey Badges -->
@@ -174,10 +168,11 @@
           <li class="profile-badges">
             <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}", style:"color: black;" %>
           </li></br>
-          <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %>
         </div>
         <% end %>
       </ul>
     </div>
+    <% else %>
+      <h1 class="login-message"><%= link_to "LOGIN", :login %> to view profiles</h1>
+    <% end %>
 </div>
-  <% end %>

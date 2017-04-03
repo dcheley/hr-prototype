@@ -1,5 +1,5 @@
 <div class="background">
-  <% if current_user.id == @user.id %>
+  <% if current_user == @user %>
     <h1 class="form-title">Edit Badge</h1>
     <%= render 'badges_form' %>
   </div>
