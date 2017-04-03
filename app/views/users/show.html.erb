@@ -19,7 +19,7 @@
     </ul>
 
   </br><div class="badge-container">
-      <h2 class="badge-title">Current badges:</h2>
+      <h2 class="badge-title">Current badges (<b>click</b> to <b>edit</b>):</h2>
 
       <p class="profile-link"><%= link_to 'ADD Badge', "/users/#{@user.id}/badges/new" %></p>
 
@@ -109,7 +109,7 @@
     </ul>
 
     </br><div class="badge-container">
-      <h2 class="badge-title"><%= "#{@user.name}" %>'s badges</h2>
+      <h2 class="badge-title"><%= "#{@user.name}" %>'s badges (<b>click</b> to view <b>details</b>):</h2>
 
       <p class="profile-link"><%= link_to 'GIVE Badge', "/users/#{@user.id}/badges/new" %></p>
 
