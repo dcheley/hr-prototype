@@ -1,0 +1,75 @@
+<div class="badge-container">
+  <% if current_user && @badge.user_id == @user.id %>
+    <h2 class="badge-title"><%= "#{@user.name}" %>'s badges</h2>
+
+    <ul>
+      <!-- Display Red Badge -->
+      <% @user.badges.where(red: true, id: @badge.id).each do |b| %>
+      <div class="badge-red">
+        <li class="profile-badges">
+          <%= b.name %>
+          <%= b.description %>
+        </li></br>
+      </div>
+      <% end %>
+      <!-- Display Blue Badges -->
+      <% @user.badges.where(blue: true, id: @badge.id).each do |b| %>
+      <div class="badge-blue">
+        <li class="profile-badges">
+          <%= b.name %>
+          <%= b.description %>
+        </li></br>
+      </div>
+      <% end %>
+      <!-- Display Yellow Badges -->
+      <% @user.badges.where(yellow: true, id: @badge.id).each do |b| %>
+      <div class="badge-yellow">
+        <li class="profile-badges">
+          <%= b.name %>
+          <%= b.description %>
+        </li></br>
+      </div>
+      <% end %>
+      <!-- Display Green Badges -->
+      <% @user.badges.where(green: true, id: @badge.id).each do |b| %>
+      <div class="badge-green">
+        <li class="profile-badges">
+          <%= b.name %>
+          <%= b.description %>
+        </li></br>
+      </div>
+      <% end %>
+      <!-- Display Purple Badges -->
+      <% @user.badges.where(purple: true, id: @badge.id).each do |b| %>
+      <div class="badge-purple">
+        <li class="profile-badges">
+          <%= b.name %>
+          <%= b.description %>
+        </li></br>
+      </div>
+      <% end %>
+      <!-- Display Pink Badges -->
+      <% @user.badges.where(pink: true, id: @badge.id).each do |b| %>
+      <div class="badge-pink">
+        <li class="profile-badges">
+          <%= b.name %>
+          <%= b.description %>
+        </li></br>
+      </div>
+      <% end %>
+      <!-- Display Grey Badges -->
+      <% @user.badges.where(grey: true, id: @badge.id).each do |b| %>
+      <div class="badge-grey">
+        <li class="profile-badges">
+          <%= b.name %>
+          <%= b.description %>
+        </li></br>
+      </div>
+      <% end %>
+    </ul>
+  <% else  %>
+    <div class="background">
+      <h1 class="login-message"><%= link_to "LOGIN", :login %> to view <%= @user.name %>'s badge</h1>
+    </div>
+  <% end %>
+</div>

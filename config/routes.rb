@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :update, :index] #Edit route blocked for now
 
   resources :users do
-    resources :badges, only: [:new, :create, :update, :edit, :destroy]
+    resources :badges, only: [:new, :create, :show, :update, :edit, :destroy]
   end
 
   get 'login' => 'sessions#new', as: :login

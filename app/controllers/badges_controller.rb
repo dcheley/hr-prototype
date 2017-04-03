@@ -1,6 +1,6 @@
 class BadgesController < ApplicationController
-  before_action :load_badge, only: [:edit, :update, :destroy]
-  before_action :load_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :load_badge, only: [:show, :edit, :update, :destroy]
+  before_action :load_user, only: [:new, :create, :show, :edit, :update, :destroy]
 
   def new
     @badge = Badge.new
@@ -14,6 +14,9 @@ class BadgesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
   end
 
   def update
