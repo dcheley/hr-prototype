@@ -2,6 +2,7 @@
   <% if current_user.id == @user.id %>
     <h1 class="form-title">Edit Badge</h1>
     <%= render 'badges_form' %>
+  </div>
   <% else %>
     <h1 class="login-message"><%= link_to "LOGIN", :login %> to edit badges</h1>
   <% end %>

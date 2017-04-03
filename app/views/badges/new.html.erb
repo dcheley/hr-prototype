@@ -2,6 +2,11 @@
   <% if current_user.id == @user.id %>
     <h1 class="form-title">Create A Custom Badge</h1>
     <%= render 'badges_form' %>
+
+    <h3 style="padding-top: 15px; text-align: center;"><b>OR</b> pick an existing badge:</h3>
+
+    <%= button_to 'Marketing Badge', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Marketing", :blue => true, :description => "Exposure to various Marketing initiatives"}}, method: :post, class:"submit" %>
+  </div>
   <% else %>
     <h1 class="login-message"><%= link_to "LOGIN", :login %> to create a badge</h1>
   <% end %>
