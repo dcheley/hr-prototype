@@ -61,4 +61,9 @@
     <%= f.submit "SUBMIT", class:"submit" %>
 
   <% end %>
+
+  <h3 style="padding-top: 15px; text-align: center;"><b>OR</b> pick an existing badge:</h3>
+
+  <%= button_to 'Marketing Badge', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Marketing", :blue => true, :description => "Exposure to various Marketing initiatives"}}, method: :post, class:"submit" %>
+
 </div>

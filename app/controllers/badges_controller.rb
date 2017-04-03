@@ -37,14 +37,6 @@ class BadgesController < ApplicationController
     redirect_to user_url(@user)
   end
 
-  def create_marketing
-    @badge = Badge.create(
-      name: "Marketing",
-      description: "Completed several Marketing initiatives",
-      blue: true
-    )
-  end
-
 private
   def load_user
     @user = User.find(params[:user_id])

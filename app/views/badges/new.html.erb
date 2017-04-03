@@ -1,6 +1,6 @@
 <div class="background">
-  <% if current_user %>
-    <h1 class="form-title">Create Badge</h1>
+  <% if current_user.id == @user.id %>
+    <h1 class="form-title">Create A Custom Badge</h1>
     <%= render 'badges_form' %>
   <% else %>
     <h1 class="login-message"><%= link_to "LOGIN", :login %> to create a badge</h1>

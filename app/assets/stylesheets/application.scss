@@ -55,6 +55,10 @@ $pink: #FF69B4;
   border: 0;
 }
 
+.submit:hover {
+  background-color: $grey;
+}
+
 //User form fields
 .form-title {
   text-align: center;
@@ -163,6 +167,7 @@ $pink: #FF69B4;
   color: $grey;
 }
 
+//Intro View
 .intro-container {
   height: 800px;
   margin: 0;
