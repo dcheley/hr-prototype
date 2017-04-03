@@ -1,7 +1,6 @@
 <div class="background">
-  <h1 class="form-title">Edit Badge</h1>
-
-  <% if current_user.id == @badge.user_id %>
+  <% if current_user.id == @user.id %>
+    <h1 class="form-title">Edit Badge</h1>
     <%= render 'badges_form' %>
   <% else %>
     <h1 class="login-message"><%= link_to "LOGIN", :login %> to edit badges</h1>
