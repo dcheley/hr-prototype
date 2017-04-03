@@ -26,9 +26,9 @@
       <div class="badge-yellow", style="height: 200px; width: 200px; border-radius: 125px;">
         <li class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
-          <%= b.description %>
         </li>
       </div>
+      <p class="badge-description"><%= b.description %></p>
       <% end %>
       <!-- Display Green Badges -->
       <% @user.badges.where(green: true, id: @badge.id).each do |b| %>
