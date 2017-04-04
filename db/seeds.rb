@@ -88,11 +88,3 @@ User.create([{ name: "Rob B.", email: "robb@email.com", phone: "(416) 327-3682",
   { name: "Sher Lo.", email: "slo@email.com", phone: "(416) 325-6991", title: "Corporate Coordinator", business_planning_and_finance: true, staff: true, password: "123456" },
   { name: "S. B. N.", email: "sbn@email.com", phone: "(416) 325-2987", title: "Corporate Coordinator", business_planning_and_finance: true, staff: true, password: "123456" },
   { name: "Tahm No.", email: "ta.n@email.com", phone: "(416) 212-0727", title: "Jr. Advisor", business_planning_and_finance: true, staff: true, password: "123456" }])
-
-Badge.create([{ name: "Finance", red: true },
-  { name: "Marketing", blue: true },
-  { name: "Business Planning", green: true },
-  { name: "Human Resources", yellow: true },
-  { name: "Project Management", purple: true },
-  { name: "Design", pink: true },
-  { name: "Accounting", grey: true }])
