@@ -30,7 +30,14 @@ $(document).ready(function() {
       $(this).prop('checked', true);
     });
 
-    // move items
+    //Popup Alert for new users
+    var currentPage = window.location.href.match(/localhost:3000\/(.*)/)[1];
+
+    if (currentPage === 'users/org_charts') {
+        alert('Click the "Profile" navbar link in the top right to add Badges!');
+      }
+
+    //Moving Org Chart items
     function moveSelected($itemSelected) {
       var $levelParent = $($itemSelected).closest($levelParentClass);
       var $listParent = $($itemSelected).closest($listParentClass);
@@ -38,23 +45,23 @@ $(document).ready(function() {
       var $destination = $($listParent).siblings($activeParentClass).children().first();
       var $newContent = $($itemSelected).html();
 
-      // update selected content section
+      //Update selected content section
       $($destination).html($newContent);
 
-      // fade animation to look like refresh
+      //Fade animation to look like refresh
       $($listParent).siblings($activeParentClass).fadeOut(0).fadeIn(300);
       $($levelParent).nextAll().not('.hidden').fadeOut(0).fadeIn(300);
 
-      // toggle active item
+      //Toggle active item
       $($itemContainer).children().removeClass('selection');
       $($itemSelected).addClass('selection');
 
-      // show next row (should load new items)
+      //Show next row (should load new items)
       $($levelParent).next().removeClass('hidden');
       $($levelParent).addClass('expanded');
     };
 
-    // smooth scroll to current level
+    //Smooth scroll to current level
     function scrollParent($scrollTarget) {
       var target = $scrollTarget;
       event.preventDefault();
