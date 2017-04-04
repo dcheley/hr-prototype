@@ -30,13 +30,6 @@ $(document).ready(function() {
       $(this).prop('checked', true);
     });
 
-    //Popup Alert for new users
-    var currentPage = window.location.href.match(/localhost:3000\/(.*)/)[1];
-
-    if (currentPage === 'users/org_charts') {
-        alert('Click the "Profile" navbar link in the top right to add Badges!');
-      }
-
     //Moving Org Chart items
     function moveSelected($itemSelected) {
       var $levelParent = $($itemSelected).closest($levelParentClass);
