@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require bootstrap-sprockets
 $(document).ready(function() {
   //Add turbolinks event listener for jQuery
   $(document).on('turbolinks:load', function() {
@@ -29,6 +30,11 @@ $(document).ready(function() {
       $checkBox.prop('checked', false);
       $(this).prop('checked', true);
     });
+
+    //Carousel
+    $('.carousel').carousel({
+      interval: 3000
+    })
 
     //Moving Org Chart items
     function moveSelected($itemSelected) {
@@ -95,6 +101,7 @@ $(document).ready(function() {
         $(this).parent().removeClass("complete");
         $(this).parent().removeClass("active");
     });
+
   });
 
 });

@@ -759,3 +759,19 @@ $pink: #FF69B4;
 .element .context:after {
   display: none;
 }
+
+.carousel {
+  height: 400px;
+  margin: 40px;
+
+}
+
+.carousel-caption {
+  color: black;
+  position: static;
+}
+
+.carousel-inner {
+  height: 100%;
+  background: $light-grey;
+}
