@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     @opportunity_2 = Opportunity.find(2)
     @opportunity_3 = Opportunity.find(3)
     @opportunity_4 = Opportunity.find(4)
-    # @opportunity = @user.opportunities.find(params[:id])
+    @badge = current_user.badges.build
   end
 
   def admo_org_chart

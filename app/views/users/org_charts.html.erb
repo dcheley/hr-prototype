@@ -113,24 +113,32 @@
           <div class="carousel-caption">
             <h3><%= @opportunity_1.name %></h3>
             <p class="carousel-text"><%= @opportunity_1.description %></p>
+            <%= form_for([@opportunity_1, @badge]) do |f| %>
+            <% end %>
           </div>
         </div>
         <div class="item">
           <div class="carousel-caption">
             <h3><%= @opportunity_2.name %></h3>
             <p class="carousel-text"><%= @opportunity_2.description %></p>
+            <%= form_for([@opportunity_2, @badge]) do |f| %>
+            <% end %>
           </div>
         </div>
         <div class="item">
           <div class="carousel-caption">
             <h3><%= @opportunity_3.name %></h3>
             <p class="carousel-text"><%= @opportunity_3.description %></p>
+            <%= form_for([@opportunity_3, @badge]) do |f| %>
+            <% end %>
           </div>
         </div>
         <div class="item">
           <div class="carousel-caption">
             <h3><%= @opportunity_4.name %></h3>
             <p class="carousel-text"><%= @opportunity_4.description %></p>
+            <%= form_for([@opportunity_4, @badge]) do |f| %>
+            <% end %>
           </div>
         </div>
       </div>
