@@ -148,9 +148,11 @@
 
   <script type="text/javascript">
   //Popup Alert for new users
+    var profileLink = '<%= link_to "Profile", "/users/#{current_user.id}" %>'
+    var htmlLink = $.parseHTML(profileLink)
     // var currentPage = window.location.href.match(/localhost:3000\/(.*)/)[1];
     // currentPage === 'users/org_charts' &&
     if (<%= current_user.badges.empty? == true %>) {
-      alert('Click the "Profile" navbar link in the top right to add Badges!');
+      alert('Click the "Profile" navbar link in the top right to add Badges!' + "\n\n" + 'OR ' + "\n\n" + 'copy the following url: ' + htmlLink);
     }
   </script>
