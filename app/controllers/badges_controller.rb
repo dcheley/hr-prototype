@@ -1,17 +1,28 @@
 class BadgesController < ApplicationController
   before_action :load_badge, only: [:show, :edit, :update, :destroy]
-  before_action :load_user, only: [:new, :create, :show, :edit, :update, :destroy]
+  before_action :load_user, only: [:new, :show, :edit, :update, :destroy]
 
   def new
     @badge = Badge.new
   end
 
   def create
-    @badge = @user.badges.build(badge_params)
-    if @badge.save
+    # Same as users#org_charts
+    @users = User.all
+    @opportunity_1 = Opportunity.find(1)
+    @opportunity_2 = Opportunity.find(2)
+    @opportunity_3 = Opportunity.find(3)
+    @opportunity_4 = Opportunity.find(4)
+
+    @badge = Badge.new(badge_params)
+    if @badge.save && @user != nil
       redirect_to user_url(@user), notice: "#{@badge.name} created! Scroll down to create more badges."
-    else
+    elsif @badge.save && @user == nil
+      redirect_to user_url(current_user), notice: "Successfully signed up for #{@badge.name}! View details below."
+    elsif @badge.save == false && @user != nil
       render :new
+    else
+      render 'users/org_charts'
     end
   end
 

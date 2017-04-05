@@ -115,13 +115,18 @@
             <p class="carousel-text"><%= @opportunity_1.description %></p>
             <%= form_for([@opportunity_1, @badge]) do |f| %>
               <% if @badge.errors.any? %>
-                <h2 class="error-header"><%= pluralize(@badge.errors.count, "error") %> occred!</h2>
+                <h2 class="error-header"><%= pluralize(@badge.errors.count, "error") %> occurred!</h2>
                 <ul>
                 <% @badge.errors.full_messages.each do |msg| %>
                   <li class="error-msg"><%= msg %></li>
                 <% end %>
                 </ul>
               <% end %>
+              <div class="field">
+                <%= f.label :name, class:"field-label" %>
+                <%= f.text_field :name, class:"field-input" %>
+              </div>
+              <%= f.submit "SUBMIT", class:"submit" %>
             <% end %>
           </div>
         </div>
