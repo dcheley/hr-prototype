@@ -88,3 +88,8 @@ User.create([{ name: "Rob B.", email: "robb@email.com", phone: "(416) 327-3682",
   { name: "Sher Lo.", email: "slo@email.com", phone: "(416) 325-6991", title: "Corporate Coordinator", business_planning_and_finance: true, staff: true, password: "123456" },
   { name: "S. B. N.", email: "sbn@email.com", phone: "(416) 325-2987", title: "Corporate Coordinator", business_planning_and_finance: true, staff: true, password: "123456" },
   { name: "Tahm No.", email: "ta.n@email.com", phone: "(416) 212-0727", title: "Jr. Advisor", business_planning_and_finance: true, staff: true, password: "123456" }])
+
+  Opportunity.create([{ name: "Meet & Greet", description: "Visit our new team! Excited to form new connections." },
+    { name: 'Lunch & Learn', description: "You're invited to a 5 course, authentic Italian meal with our guest speaker. He will share his experience as a secret agent with us." },
+    { name: 'Networking Event', description: "Rack up your acquaintences here!" },
+    { name: 'Party!', description: "Title says it all, let's enjoy the night." }])
