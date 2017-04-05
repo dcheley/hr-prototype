@@ -19,6 +19,11 @@ class UsersController < ApplicationController
   end
 
   def org_charts
+    @opportunity_1 = Opportunity.find(1)
+    @opportunity_2 = Opportunity.find(2)
+    @opportunity_3 = Opportunity.find(3)
+    @opportunity_4 = Opportunity.find(4)
+    # @opportunity = @user.opportunities.find(params[:id])
   end
 
   def admo_org_chart
