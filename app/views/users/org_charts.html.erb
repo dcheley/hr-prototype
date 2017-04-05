@@ -114,6 +114,14 @@
             <h3><%= @opportunity_1.name %></h3>
             <p class="carousel-text"><%= @opportunity_1.description %></p>
             <%= form_for([@opportunity_1, @badge]) do |f| %>
+              <% if @badge.errors.any? %>
+                <h2 class="error-header"><%= pluralize(@badge.errors.count, "error") %> occred!</h2>
+                <ul>
+                <% @badge.errors.full_messages.each do |msg| %>
+                  <li class="error-msg"><%= msg %></li>
+                <% end %>
+                </ul>
+              <% end %>
             <% end %>
           </div>
         </div>
@@ -122,6 +130,14 @@
             <h3><%= @opportunity_2.name %></h3>
             <p class="carousel-text"><%= @opportunity_2.description %></p>
             <%= form_for([@opportunity_2, @badge]) do |f| %>
+              <% if @badge.errors.any? %>
+                <h2 class="error-header"><%= pluralize(@badge.errors.count, "error") %> occred!</h2>
+                <ul>
+                <% @badge.errors.full_messages.each do |msg| %>
+                  <li class="error-msg"><%= msg %></li>
+                <% end %>
+                </ul>
+              <% end %>
             <% end %>
           </div>
         </div>
@@ -130,6 +146,14 @@
             <h3><%= @opportunity_3.name %></h3>
             <p class="carousel-text"><%= @opportunity_3.description %></p>
             <%= form_for([@opportunity_3, @badge]) do |f| %>
+              <% if @badge.errors.any? %>
+                <h2 class="error-header"><%= pluralize(@badge.errors.count, "error") %> occred!</h2>
+                <ul>
+                <% @badge.errors.full_messages.each do |msg| %>
+                  <li class="error-msg"><%= msg %></li>
+                <% end %>
+                </ul>
+              <% end %>
             <% end %>
           </div>
         </div>
@@ -138,6 +162,14 @@
             <h3><%= @opportunity_4.name %></h3>
             <p class="carousel-text"><%= @opportunity_4.description %></p>
             <%= form_for([@opportunity_4, @badge]) do |f| %>
+              <% if @badge.errors.any? %>
+                <h2 class="error-header"><%= pluralize(@badge.errors.count, "error") %> occred!</h2>
+                <ul>
+                <% @badge.errors.full_messages.each do |msg| %>
+                  <li class="error-msg"><%= msg %></li>
+                <% end %>
+                </ul>
+              <% end %>
             <% end %>
           </div>
         </div>
