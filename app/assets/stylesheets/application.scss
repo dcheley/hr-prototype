@@ -55,7 +55,31 @@ $pink: #FF69B4;
   border: 0;
 }
 
-.submit:hover {
+.delete {
+  color: white;
+  background-color: $error-text;
+  border: none;
+  display: block;
+  margin: 35px auto;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit {
+  color: white;
+  background-color: $dark-blue;
+  border: none;
+  display: block;
+  margin: 35px auto;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit:hover, .delete:hover {
   background-color: $grey;
 }
 
@@ -136,18 +160,6 @@ $pink: #FF69B4;
 .complete .field-label {
   font-size: 12px;
   transform: translateY(0);
-}
-
-.submit {
-  color: white;
-  background-color: $dark-blue;
-  border: none;
-  display: block;
-  margin: 35px auto;
-  padding: 15px 30px;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
 }
 
 .error-header {
@@ -276,6 +288,7 @@ $pink: #FF69B4;
 .profile-badges {
   list-style: none;
   font-size: 18px;
+  min-width: 30px;
 }
 
 .badge-description {
@@ -291,10 +304,8 @@ $pink: #FF69B4;
   border: 2px solid white;
   border-radius: 12px; /* one half of ( (border * 2) + height + padding ) */
   box-shadow: 1px 1px 1px black;
-  color: white;
   font: bold 15px/13px;
   height: 34px;
-  min-width: 14px;
   padding: 4px 3px 0 3px;
   text-align: center;
 }
@@ -310,7 +321,6 @@ $pink: #FF69B4;
   box-shadow: 1px 1px 1px black;
   font: bold 15px/13px;
   height: 34px;
-  min-width: 14px;
   padding: 4px 3px 0 3px;
   text-align: center;
 }
@@ -326,7 +336,6 @@ $pink: #FF69B4;
   box-shadow: 1px 1px 1px black;
   font: bold 15px/13px;
   height: 34px;
-  min-width: 14px;
   padding: 4px 3px 0 3px;
   text-align: center;
 }
@@ -342,7 +351,6 @@ $pink: #FF69B4;
   box-shadow: 1px 1px 1px black;
   font: bold 15px/13px;
   height: 34px;
-  min-width: 14px;
   padding: 4px 3px 0 3px;
   text-align: center;
 }
@@ -358,7 +366,6 @@ $pink: #FF69B4;
   box-shadow: 1px 1px 1px black;
   font: bold 15px/13px;
   height: 34px;
-  min-width: 14px;
   padding: 4px 3px 0 3px;
   text-align: center;
 }
@@ -374,7 +381,6 @@ $pink: #FF69B4;
   box-shadow: 1px 1px 1px black;
   font: bold 15px/13px;
   height: 34px;
-  min-width: 14px;
   padding: 4px 3px 0 3px;
   text-align: center;
 }
@@ -390,7 +396,6 @@ $pink: #FF69B4;
   box-shadow: 1px 1px 1px black;
   font: bold 15px/13px;
   height: 34px;
-  min-width: 14px;
   padding: 4px 3px 0 3px;
   text-align: center;
 }
