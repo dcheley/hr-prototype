@@ -14,7 +14,6 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :badges, only: [:new, :create, :show, :update, :edit, :destroy]
-    resources :opportunities, only: [:index, :show]
   end
 
   resources :opportunities do
