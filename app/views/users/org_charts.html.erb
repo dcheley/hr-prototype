@@ -187,7 +187,7 @@
   // var htmlLink = $.parseHTML(profileLink)
   // var currentPage = window.location.href.match(/localhost:3000\/(.*)/)[1];
   // currentPage === 'users/org_charts' &&
-  if (<%= current_user.badges.empty? %>) {
-    alert('Click the "Profile" navbar link in the top right to add Badges!');
+  if (<%= current_user.badges.ids == [] %>) {
+    alert('Click the "Profile" link in the top right to add Badges!');
   }
 </script>
