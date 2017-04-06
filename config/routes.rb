@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   get '/users/hr_org_chart' => 'users#hr_org_chart'
   get '/users/smf_org_chart' => 'users#smf_org_chart'
 
-  get '/badges/signup' => 'badges#signup'
-
   resources :users, only: [:new, :create, :show, :update, :index] #Edit route blocked for now
 
   resources :users do

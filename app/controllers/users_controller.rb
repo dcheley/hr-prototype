@@ -24,7 +24,6 @@ class UsersController < ApplicationController
     @opportunity_3 = Opportunity.find(3)
     @opportunity_4 = Opportunity.find(4)
     @badge = current_user.badges.build
-    # @user = current_user
   end
 
   def admo_org_chart
