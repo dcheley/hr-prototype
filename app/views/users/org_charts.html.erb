@@ -181,14 +181,13 @@
 <% else %>
   <h1 class="login-message"><%= link_to "LOGIN", :login %> to view Interactive Org Chart</h1>
 <% end %>
-
-  <script type="text/javascript">
-  //Popup Alert for new users
-    // var profileLink = '<%= link_to "Profile", "/users/#{current_user.id}" %>'
-    // var htmlLink = $.parseHTML(profileLink)
-    // var currentPage = window.location.href.match(/localhost:3000\/(.*)/)[1];
-    // currentPage === 'users/org_charts' &&
-    if (<%= current_user.badges.empty? %>) {
-      alert('Click the "Profile" navbar link in the top right to add Badges!');
-    }
-  </script>
+<script type="text/javascript">
+//Popup Alert for new users
+  // var profileLink = '<%= link_to "Profile", "/users/#{current_user.id}" %>'
+  // var htmlLink = $.parseHTML(profileLink)
+  // var currentPage = window.location.href.match(/localhost:3000\/(.*)/)[1];
+  // currentPage === 'users/org_charts' &&
+  if (<%= current_user.badges.empty? %>) {
+    alert('Click the "Profile" navbar link in the top right to add Badges!');
+  }
+</script>
