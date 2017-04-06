@@ -4,7 +4,13 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:email])
-    if user && user.authenticate(params[:password])
+    if user && user.authenticate(params[:password]) && user.badges.ids == []
+      session[:user_id] = user.id
+      Badge.create(name: "Signed up",
+        user_id: user.id,
+        blue: true)
+      redirect_to "/users/org_charts", notice: "Logged in! Thanks for signing up!"
+    elsif user && user.authenticate(params[:password]) && user.badges.ids != []
       session[:user_id] = user.id
       redirect_to "/users/org_charts", notice: "Logged in!"
     else

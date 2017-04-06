@@ -13,13 +13,24 @@ class BadgesController < ApplicationController
     @opportunity_2 = Opportunity.find(2)
     @opportunity_3 = Opportunity.find(3)
     @opportunity_4 = Opportunity.find(4)
-
     @badge = Badge.new(badge_params)
-    if @badge.save && @user != nil
-      redirect_to user_url(@user), notice: "#{@badge.name} created! Scroll down to create more badges."
-    elsif @badge.save && @user == nil
+    if params[:user_id] != nil
+      @user = User.find(params[:user_id])
+    else
+      @user = current_user
+    end
+
+    if current_user != @user
+      @badge.user_id = @user.id
+    else
+      @badge.user_id = current_user.id
+    end
+
+    if @badge.save && @badge.opportunity_id == nil
+      redirect_to user_url(@user), notice: "#{@badge.name} created! View details below."
+    elsif @badge.save && @badge.opportunity_id != nil
       redirect_to user_url(current_user), notice: "Successfully signed up for #{@badge.name}! View details below."
-    elsif @badge.save == false && @user != nil
+    elsif @badge.save == false && @badge.opportunity_id == nil
       render :new
     else
       render 'users/org_charts'
