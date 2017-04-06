@@ -60,7 +60,7 @@
       <!-- Display Grey Badges -->
       <% @user.badges.where(grey: true, id: @badge.id).each do |b| %>
       <div class="badge-grey", style="height: 200px; width: 200px; border-radius: 125px;">
-        <li class="profile-badges", style="margin-top: 80px;">
+        <li class="profile-badges", style="margin-top: 80px; color: black;">
           <%= b.name %>
         </li>
       </div>
