@@ -114,19 +114,12 @@
             <h3><%= @opportunity_1.name %></h3>
             <p class="carousel-text"><%= @opportunity_1.description %></p>
             <%= form_for([@opportunity_1, @badge]) do |f| %>
-              <% if @badge.errors.any? %>
-                <h2 class="error-header"><%= pluralize(@badge.errors.count, "error") %> occurred!</h2>
-                <ul>
-                <% @badge.errors.full_messages.each do |msg| %>
-                  <li class="error-msg"><%= msg %></li>
-                <% end %>
-                </ul>
-              <% end %>
-              <div class="field">
-                <%= f.label :name, class:"field-label" %>
-                <%= f.text_field :name, class:"field-input" %>
-              </div>
-              <%= f.submit "SUBMIT", class:"submit" %>
+              <%= f.hidden_field :name, value: @opportunity_1.name %>
+              <%= f.hidden_field :description, value: @opportunity_1.description %>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <%= f.hidden_field :opportunity_id, value: @opportunity_1.id %>
+              <%= f.hidden_field :red, value: true %>
+              <%= f.submit "SIGN UP", class:"submit" %>
             <% end %>
           </div>
         </div>
@@ -135,14 +128,12 @@
             <h3><%= @opportunity_2.name %></h3>
             <p class="carousel-text"><%= @opportunity_2.description %></p>
             <%= form_for([@opportunity_2, @badge]) do |f| %>
-              <% if @badge.errors.any? %>
-                <h2 class="error-header"><%= pluralize(@badge.errors.count, "error") %> occred!</h2>
-                <ul>
-                <% @badge.errors.full_messages.each do |msg| %>
-                  <li class="error-msg"><%= msg %></li>
-                <% end %>
-                </ul>
-              <% end %>
+              <%= f.hidden_field :name, value: @opportunity_2.name %>
+              <%= f.hidden_field :description, value: @opportunity_2.description %>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <%= f.hidden_field :opportunity_id, value: @opportunity_2.id %>
+              <%= f.hidden_field :blue, value: true %>
+              <%= f.submit "SIGN UP", class:"submit" %>
             <% end %>
           </div>
         </div>
@@ -151,14 +142,12 @@
             <h3><%= @opportunity_3.name %></h3>
             <p class="carousel-text"><%= @opportunity_3.description %></p>
             <%= form_for([@opportunity_3, @badge]) do |f| %>
-              <% if @badge.errors.any? %>
-                <h2 class="error-header"><%= pluralize(@badge.errors.count, "error") %> occred!</h2>
-                <ul>
-                <% @badge.errors.full_messages.each do |msg| %>
-                  <li class="error-msg"><%= msg %></li>
-                <% end %>
-                </ul>
-              <% end %>
+              <%= f.hidden_field :name, value: @opportunity_3.name %>
+              <%= f.hidden_field :description, value: @opportunity_3.description %>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <%= f.hidden_field :opportunity_id, value: @opportunity_3.id %>
+              <%= f.hidden_field :green, value: true %>
+              <%= f.submit "SIGN UP", class:"submit" %>
             <% end %>
           </div>
         </div>
@@ -167,14 +156,12 @@
             <h3><%= @opportunity_4.name %></h3>
             <p class="carousel-text"><%= @opportunity_4.description %></p>
             <%= form_for([@opportunity_4, @badge]) do |f| %>
-              <% if @badge.errors.any? %>
-                <h2 class="error-header"><%= pluralize(@badge.errors.count, "error") %> occred!</h2>
-                <ul>
-                <% @badge.errors.full_messages.each do |msg| %>
-                  <li class="error-msg"><%= msg %></li>
-                <% end %>
-                </ul>
-              <% end %>
+              <%= f.hidden_field :name, value: @opportunity_4.name %>
+              <%= f.hidden_field :description, value: @opportunity_4.description %>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <%= f.hidden_field :opportunity_id, value: @opportunity_4.id %>
+              <%= f.hidden_field :purple, value: true %>
+              <%= f.submit "SIGN UP", class:"submit" %>
             <% end %>
           </div>
         </div>
@@ -201,7 +188,7 @@
     // var htmlLink = $.parseHTML(profileLink)
     // var currentPage = window.location.href.match(/localhost:3000\/(.*)/)[1];
     // currentPage === 'users/org_charts' &&
-    if (<%= current_user.badges.empty? == true %>) {
+    if (<%= current_user.badges.empty? %>) {
       alert('Click the "Profile" navbar link in the top right to add Badges!');
     }
   </script>
