@@ -12,7 +12,11 @@
       <!-- <li class="pic-info">Add a profile pic through the settings page (link at top)</li> -->
     <% end %>
 
-    <ul>
+
+
+
+    <ul style="padding-left: 0;">
+      <li class="profile-info"><%= link_to "TEAM", "/users/bpf_org_chart", style:"color: white; font-weight: bold;"%></li>
       <li class="profile-info"><b>Title:</b> <%= @user.title %></li>
       <li class="profile-info"><b>Email:</b> <%= @user.email %></li>
       <li class="profile-info"><b>Phone:</b> <%= @user.phone %></li>
