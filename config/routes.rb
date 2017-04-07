@@ -20,6 +20,13 @@ Rails.application.routes.draw do
     resources :badges, only: [:new, :create]
   end
 
+  resources :badges do
+    member do
+      get 'like'
+      get 'unlike'
+    end
+  end
+
   get 'login' => 'sessions#new', as: :login
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy', as: :logout
