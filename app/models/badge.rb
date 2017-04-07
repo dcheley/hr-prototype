@@ -1,4 +1,6 @@
 class Badge < ApplicationRecord
+  acts_as_votable
+  
   belongs_to :users, optional: true
   belongs_to :opportunities, optional: true
 
