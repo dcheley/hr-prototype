@@ -1,5 +1,5 @@
 class BadgesController < ApplicationController
-  before_action :load_badge, only: [:show, :edit, :update, :destroy]
+  before_action :load_badge, only: [:show, :edit, :update, :destroy, :like, :unlike]
   before_action :load_user, only: [:new, :show, :edit, :update, :destroy]
 
   def new
@@ -56,6 +56,22 @@ class BadgesController < ApplicationController
     @badge.destroy
     flash[:notice] = "#{@badge.name} successfully deleted!"
     redirect_to user_url(@user)
+  end
+
+  def like
+    @badge.liked_by current_user
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
+  end
+
+  def unlike
+    @badge.unliked_by current_user
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
   end
 
 private
