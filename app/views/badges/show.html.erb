@@ -9,14 +9,15 @@
         <h2 class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
         </h2>
+        <% if current_user.liked? @badge %>
+          <%= link_to '', unlike_badge_path(@badge), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-heart" %>
+        <% else %>
+          <%= link_to '', like_badge_path(@badge), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-heart-empty" %>
+        <% end %>
       </div>
-      <% if current_user.liked? @badge %>
-        <%= link_to '', unlike_badge_path(@badge), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-heart" %>
-      <% else %>
-        <%= link_to '', like_badge_path(@badge), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-heart-empty" %>
-      <% end %>
       <p class="badge-description"><%= b.description %></p>
       <% end %>
+
       <!-- Display Blue Badges -->
       <% @user.badges.where(blue: true, id: @badge.id).each do |b| %>
       <div class="badge-blue", style="height: 200px; width: 200px; border-radius: 125px;">

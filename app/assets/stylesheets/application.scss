@@ -294,6 +294,7 @@ $pink: #FF69B4;
 
 .badge-description {
   padding-top: 200px;
+  font-size: 20px;
 }
 
 .badge-red {
@@ -399,6 +400,12 @@ $pink: #FF69B4;
   height: 34px;
   padding: 4px 3px 0 3px;
   text-align: center;
+}
+
+.glyphicon.glyphicon-heart,
+.glyphicon.glyphicon-heart-empty, {
+  font-size: 32px;
+  color: white;
 }
 
 //Multiple pages
