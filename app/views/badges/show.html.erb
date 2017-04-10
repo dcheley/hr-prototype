@@ -10,9 +10,9 @@
           <%= b.name %>
         </h2>
         <% if current_user.liked? @badge %>
-          <%= link_to '', unlike_badge_path(@badge), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-heart" %>
+          <%= link_to '', unlike_badge_path(@badge), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-up" %>
         <% else %>
-          <%= link_to '', like_badge_path(@badge), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-heart-empty" %>
+          <%= link_to '', like_badge_path(@badge), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-down" %>
         <% end %>
       </div>
       <p class="badge-description"><%= b.description %></p>
