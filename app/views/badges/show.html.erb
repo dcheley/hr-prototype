@@ -11,9 +11,11 @@
         </h2>
         <% if current_user.liked? @badge %>
           <%= link_to '', unlike_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-down" %>
+          <p class="profile-badges">(Refresh page after click)</p>
           <%= render 'likes' %>
         <% else %>
           <%= link_to '', like_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-up" %>
+          <p class="profile-badges">(Refresh page after click)</p>
           <%= render 'likes' %>
         <% end %>
       </div>
@@ -27,10 +29,12 @@
           <%= b.name %>
         </h2>
         <% if current_user.liked? @badge %>
-          <%= link_to '', unlike_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-down" %>
+          <%= link_to '', unlike_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-down" %>
+          <p class="profile-badges">(Refresh page after click)</p>
           <%= render 'likes' %>
         <% else %>
-          <%= link_to '', like_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-up" %>
+          <%= link_to '', like_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-up" %>
+          <p class="profile-badges">(Refresh page after click)</p>
           <%= render 'likes' %>
         <% end %>
       </div>
@@ -44,10 +48,12 @@
           <%= b.name %>
         </h2>
         <% if current_user.liked? @badge %>
-          <%= link_to '', unlike_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-down" %>
+          <%= link_to '', unlike_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-down" %>
+          <p class="profile-badges">(Refresh page after click)</p>
           <%= render 'likes' %>
         <% else %>
-          <%= link_to '', like_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-up" %>
+          <%= link_to '', like_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-up" %>
+          <p class="profile-badges">(Refresh page after click)</p>
           <%= render 'likes' %>
         <% end %>
       </div>
@@ -62,10 +68,12 @@
         </h2>
       </div>
       <% if current_user.liked? @badge %>
-        <%= link_to '', unlike_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-down" %>
+        <%= link_to '', unlike_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-down" %>
+        <p class="profile-badges">(Refresh page after click)</p>
         <%= render 'likes' %>
       <% else %>
-        <%= link_to '', like_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-up" %>
+        <%= link_to '', like_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-up" %>
+        <p class="profile-badges">(Refresh page after click)</p>
         <%= render 'likes' %>
       <% end %>
       <p class="badge-description"><%= b.description %></p>
@@ -78,10 +86,12 @@
           <%= b.name %>
         </h2>
         <% if current_user.liked? @badge %>
-          <%= link_to '', unlike_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-down" %>
+          <%= link_to '', unlike_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-down" %>
+          <p class="profile-badges">(Refresh page after click)</p>
           <%= render 'likes' %>
         <% else %>
-          <%= link_to '', like_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-up" %>
+          <%= link_to '', like_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-up" %>
+          <p class="profile-badges">(Refresh page after click)</p>
           <%= render 'likes' %>
         <% end %>
       </div>
@@ -95,10 +105,12 @@
           <%= b.name %>
         </h2>
         <% if current_user.liked? @badge %>
-          <%= link_to '', unlike_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-down" %>
+          <%= link_to '', unlike_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-down" %>
+          <p class="profile-badges">(Refresh page after click)</p>
           <%= render 'likes' %>
         <% else %>
-          <%= link_to '', like_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-up" %>
+          <%= link_to '', like_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-up" %>
+          <p class="profile-badges">(Refresh page after click)</p>
           <%= render 'likes' %>
         <% end %>
       </div>
@@ -112,10 +124,12 @@
           <%= b.name %>
         </h2>
         <% if current_user.liked? @badge %>
-          <%= link_to '', unlike_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-down" %>
+          <%= link_to '', unlike_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-down" %>
+          <p class="profile-badges">(Refresh page after click)</p>
           <%= render 'likes' %>
         <% else %>
-          <%= link_to '', like_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-up" %>
+          <%= link_to '', like_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-up" %>
+          <p class="profile-badges">(Refresh page after click)</p>
           <%= render 'likes' %>
         <% end %>
       </div>
