@@ -1,6 +1,6 @@
 module BadgesHelper
   def display_likes(badge)
-    votes = badge.votes_for.up.by_type(User)
+    votes = badge.votes_for.up.by_type('User')
     return list_likers(votes) if votes.size <= 8
     count_likers(votes)
   end
