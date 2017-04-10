@@ -5,7 +5,7 @@
     <ul>
       <!-- Display Red Badge -->
       <% @user.badges.where(red: true, id: @badge.id).each do |b| %>
-      <div class="badge-red", style="height: 200px; width: 200px; border-radius: 125px;">
+      <div class="badge-red", style="height: 300px; width: 300px; border-radius: 150px;">
         <h2 class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
         </h2>
@@ -22,55 +22,102 @@
 
       <!-- Display Blue Badges -->
       <% @user.badges.where(blue: true, id: @badge.id).each do |b| %>
-      <div class="badge-blue", style="height: 200px; width: 200px; border-radius: 125px;">
-        <li class="profile-badges", style="margin-top: 80px;">
+      <div class="badge-blue", style="height: 300px; width: 300px; border-radius: 150px;">
+        <h2 class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
-        </li>
+        </h2>
+        <% if current_user.liked? @badge %>
+          <%= link_to '', unlike_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-down" %>
+          <%= render 'likes' %>
+        <% else %>
+          <%= link_to '', like_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-up" %>
+          <%= render 'likes' %>
+        <% end %>
       </div>
       <p class="badge-description"><%= b.description %></p>
       <% end %>
+
       <!-- Display Yellow Badges -->
       <% @user.badges.where(yellow: true, id: @badge.id).each do |b| %>
-      <div class="badge-yellow", style="height: 200px; width: 200px; border-radius: 125px;">
-        <li class="profile-badges", style="margin-top: 80px;">
+      <div class="badge-yellow", style="height: 300px; width: 300px; border-radius: 150px;">
+        <h2 class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
-        </li>
+        </h2>
+        <% if current_user.liked? @badge %>
+          <%= link_to '', unlike_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-down" %>
+          <%= render 'likes' %>
+        <% else %>
+          <%= link_to '', like_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-up" %>
+          <%= render 'likes' %>
+        <% end %>
       </div>
       <p class="badge-description"><%= b.description %></p>
       <% end %>
+
       <!-- Display Green Badges -->
       <% @user.badges.where(green: true, id: @badge.id).each do |b| %>
-      <div class="badge-green", style="height: 200px; width: 200px; border-radius: 125px;">
-        <li class="profile-badges", style="margin-top: 80px;">
+      <div class="badge-green", style="height: 300px; width: 300px; border-radius: 150px;">
+        <h2 class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
-        </li>
+        </h2>
       </div>
+      <% if current_user.liked? @badge %>
+        <%= link_to '', unlike_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-down" %>
+        <%= render 'likes' %>
+      <% else %>
+        <%= link_to '', like_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-up" %>
+        <%= render 'likes' %>
+      <% end %>
       <p class="badge-description"><%= b.description %></p>
       <% end %>
+
       <!-- Display Purple Badges -->
       <% @user.badges.where(purple: true, id: @badge.id).each do |b| %>
-      <div class="badge-purple", style="height: 200px; width: 200px; border-radius: 125px;">
-        <li class="profile-badges", style="margin-top: 80px;">
+      <div class="badge-purple", style="height: 300px; width: 300px; border-radius: 150px;">
+        <h2 class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
-        </li>
+        </h2>
+        <% if current_user.liked? @badge %>
+          <%= link_to '', unlike_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-down" %>
+          <%= render 'likes' %>
+        <% else %>
+          <%= link_to '', like_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-up" %>
+          <%= render 'likes' %>
+        <% end %>
       </div>
       <p class="badge-description"><%= b.description %></p>
       <% end %>
+
       <!-- Display Pink Badges -->
       <% @user.badges.where(pink: true, id: @badge.id).each do |b| %>
-      <div class="badge-pink", style="height: 200px; width: 200px; border-radius: 125px;">
-        <li class="profile-badges", style="margin-top: 80px;">
+      <div class="badge-pink", style="height: 300px; width: 300px; border-radius: 150px;">
+        <h2 class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
-        </li>
+        </h2>
+        <% if current_user.liked? @badge %>
+          <%= link_to '', unlike_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-down" %>
+          <%= render 'likes' %>
+        <% else %>
+          <%= link_to '', like_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-up" %>
+          <%= render 'likes' %>
+        <% end %>
       </div>
       <p class="badge-description"><%= b.description %></p>
       <% end %>
+
       <!-- Display Grey Badges -->
       <% @user.badges.where(grey: true, id: @badge.id).each do |b| %>
-      <div class="badge-grey", style="height: 200px; width: 200px; border-radius: 125px;">
-        <li class="profile-badges", style="margin-top: 80px; color: black;">
+      <div class="badge-grey", style="height: 300px; width: 300px; border-radius: 150px;">
+        <h2 class="profile-badges", style="margin-top: 80px; color: black;">
           <%= b.name %>
-        </li>
+        </h2>
+        <% if current_user.liked? @badge %>
+          <%= link_to '', unlike_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-down" %>
+          <%= render 'likes' %>
+        <% else %>
+          <%= link_to '', like_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-up" %>
+          <%= render 'likes' %>
+        <% end %>
       </div>
       <p class="badge-description"><%= b.description %></p>
       <% end %>

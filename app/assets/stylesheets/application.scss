@@ -408,6 +408,15 @@ $pink: #FF69B4;
   color: white;
 }
 
+.likes {
+  color: white;
+}
+
+.likes a {
+  font-weight: bold;
+  color: $grey;
+}
+
 //Multiple pages
 .login-message {
   text-align: center;
