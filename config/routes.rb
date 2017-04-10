@@ -22,8 +22,8 @@ Rails.application.routes.draw do
 
   resources :badges do
     member do
-      get 'like'
-      get 'unlike'
+      put 'like'
+      put 'unlike'
     end
   end
 
