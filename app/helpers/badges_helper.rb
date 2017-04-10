@@ -12,7 +12,7 @@ private
     unless votes.blank?
       votes.voters.each do |v|
         names.push(link_to v.name,
-        user_path(v.name),
+        user_path(v.id),
         class: 'name')
       end
       names.to_sentence.html_safe + like_plural(votes)

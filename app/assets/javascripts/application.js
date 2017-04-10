@@ -90,6 +90,11 @@ $(document).ready(function() {
         $(this).parent().removeClass("active");
     });
 
+    //Endorsement animations
+    $("#like_<%= @badge.id %>").removeClass('glyphicon-thumbs-up').addClass('glyphicon-thumbs-down');
+    $("#like_<%= @badge.id %>").attr("href", '/badges/<%= @badge.id %>/unlike');
+    $("#likes_<%= @badge.id %>").html("<%= j (render partial: 'badges/likes', locals: { badge: @badge } ) %>");
+    
   });
 
 });

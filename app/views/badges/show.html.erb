@@ -10,9 +10,11 @@
           <%= b.name %>
         </h2>
         <% if current_user.liked? @badge %>
-          <%= link_to '', unlike_badge_path(@badge), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-up" %>
+          <%= link_to '', unlike_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-down" %>
+          <%= render 'likes' %>
         <% else %>
-          <%= link_to '', like_badge_path(@badge), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-down" %>
+          <%= link_to '', like_badge_path(@badge.id), remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-thumbs-up" %>
+          <%= render 'likes' %>
         <% end %>
       </div>
       <p class="badge-description"><%= b.description %></p>
@@ -79,10 +81,3 @@
     </div>
   <% end %>
 </div>
-
-<script type="text/javascript">
-  //Endorsement animations
-  $("#like_<%= @badge.id %>").removeClass('glyphicon-thumbs-up').addClass('glyphicon-thumbs-down');
-  $("#like_<%= @badge.id %>").attr("href", '/badges/<%= @badge.id %>/unlike');
-  $("#likes_<%= @badge.id %>").html(" <%= j (render partial: 'badges/likes', locals: { badge: @badge } ) %>");
-</script>
