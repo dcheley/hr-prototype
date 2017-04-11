@@ -62,7 +62,7 @@ class BadgesController < ApplicationController
     @badge.liked_by current_user
     respond_to do |format|
       format.html { redirect_to :back }
-      format.js
+      format.json { @badge }
     end
   end
 
@@ -70,7 +70,7 @@ class BadgesController < ApplicationController
     @badge.unliked_by current_user
     respond_to do |format|
       format.html { redirect_to :back }
-      format.js
+      format.json { @badge }
     end
   end
 
