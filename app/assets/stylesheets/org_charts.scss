@@ -1,0 +1,303 @@
+@import "variables";
+
+//Org Charts
+.org-title {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.org-menu-container {
+  margin: 2rem auto;
+  max-width: 1088px;
+  position: absolute;
+  padding-left: 16%;
+}
+
+.org-container {
+  margin: 2rem auto;
+  max-width: 1088px;
+}
+
+@media screen and (max-width: 1121px) {
+  .org-container {
+  max-width: 878px;
+  }
+}
+@media screen and (max-width: 911px) {
+  .org-container {
+  max-width: 668px;
+  }
+}
+
+.org-container * {
+  box-sizing: border-box; //Padding & border included in total width & height
+}
+
+.level {
+  display: block;
+}
+
+.level-wrap {
+  padding: 8px;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.level:nth-child(n+2) .level-wrap:before {
+  content: " ";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 100%;
+  height: 10px;
+  border: 2px solid $dark-blue;
+  border-bottom: none;
+  background: white;
+}
+
+.level .col-1-3 {
+  margin-left: 220px;
+  border-left: 2px dashed $white-smoke; //Very thin dotted line going vertically
+  padding-left: 10px;
+  height:100%;
+}
+
+//Center this later
+.level .col-1-3:first-of-type {
+  float: left;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.level ul {
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: stretch;
+}
+
+.element {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  margin: 5px;
+  background: #ffffff;
+  border: 2px solid $medium-grey;
+  color: black;
+}
+
+.org-box {
+  position: relative;
+  display: block;
+  height: 100%;
+}
+
+.org-header, .org-menu-header {
+  display: block;
+  background: $medium-grey;
+  padding: 5px 35px 5px 10px;
+  color: black;
+  position: relative;
+}
+
+.org-box h4 {
+  margin: 0 0 2px;
+  font-size: 16px;
+}
+
+.org-box p {
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+.org-box p:last-child {
+  margin: 10px 0 0 80px;
+}
+
+.org-details {
+  padding: 0 10px;
+  margin-bottom: 40px;
+}
+
+.info-btn {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  background: $dark-blue;
+  color: $white;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  width: 55px;
+  height: 52px;
+  font-size: 14px;
+  margin: -2px 0 10px -2px;
+}
+
+//Image container
+.element .context {
+  position: absolute;
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+  background: $medium-grey;
+  text-align: center;
+  width: 26px;
+  height: 100%;
+  padding: 4px 2px 4px 4px;
+  right: 0;
+  top: 0;
+}
+
+//Might not need
+.element .context:after {
+  content: " ";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-bottom: 15px solid transparent;
+  border-top: 0px solid transparent;
+  border-right: 26px solid $medium-grey;
+  right: 0px;
+  bottom: -15px;
+}
+
+//Active Class
+.active .element,
+.list .selection {
+  border: 2px solid $dark-turquoise;
+  background: $white-smoke;
+}
+
+.active .org-header,
+.active .context,
+.list .selection .org-header,
+.list .selection .context {
+  background: $dark-turquoise;
+  color: $white;
+}
+
+.active .context:after,
+.list .selection .context:after{
+  border-right-color: $dark-turquoise;
+}
+
+.list .selection {
+  opacity: 0.5;
+  background: $white;
+  pointer-events: none;
+}
+
+.active .element:empty{
+  border-color: $medium-grey;
+  min-height: 122px;
+  background: repeating-linear-gradient(
+    45deg,
+    $white-smoke,
+    $white-smoke 10px,
+    $medium-grey 10px,
+    $medium-grey 20px
+  );
+}
+
+.active .element:empty:before {
+  content: "Select an Org Unit";
+  color: grey;
+  text-align: center;
+  display: block;
+  position: absolute;
+  font-size: 12px;
+  width: 100%;
+  top: calc(50% - 14px);
+  background: $medium-grey;
+  padding: 5px 0;
+}
+
+.active .element {
+  opacity: 1;
+}
+
+.expanded .active:after {
+  content: " ";
+  position: absolute;
+  height: 100%;
+  left: 110px;
+  bottom: -35px;
+  border-left: 2px solid $dark-turquoise;
+  z-index: -1;
+}
+
+.expanded:last-of-type .active:after {
+  display: none;
+}
+
+.list .selection:after {
+  content: " ";
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-top:6px solid transparent;
+  border-bottom:0px solid transparent;
+  border-left:14px solid $dark-turquoise;
+  left: -12px;
+  bottom: 2px;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+//Hover
+.org-header:hover,
+.org-header:hover .context,
+.org-menu-header:hover,
+.org-menu-header:hover .context,
+.info-btn:hover {
+  cursor: pointer;
+  background: #444444;
+  color: $white;
+}
+
+.element.hover .context:after {
+  border-right-color: #444444;
+}
+
+.element.hover {
+  border-color: #444444;
+}
+
+.list .element .org-header:hover,
+.list .element .org-header:hover .context,
+.list .element .org-header:hover h4 {
+  cursor: pointer;
+  background: #444444;
+  color: $white;
+}
+
+.list .element:hover .org-header:hover + .context:after{
+  border-right-color: #444444;
+}
+
+.list .element:hover {
+  background: #fdfdfd;
+}
+
+.hover-expanded .active:after,
+.hover-children .level-wrap:before {
+  border-color: #444444 !important;
+}
+
+// Extra swag
+.hidden {
+  display: none;
+}
+
+.boss-name {
+  color: $dark-turquoise;
+}
