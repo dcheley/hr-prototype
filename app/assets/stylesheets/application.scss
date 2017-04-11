@@ -5,6 +5,7 @@
 @import "badges";
 @import "org_charts";
 @import "opportunities";
+@import "practice";
 
 .background {
   background-color: $dark-blue;
@@ -175,31 +176,4 @@
 
 .tracker-item {
   list-style: none;
-}
-
-// Disable arrow
-.element .context:after {
-  display: none;
-}
-
-.carousel {
-  height: 400px;
-  margin: 40px;
-
-}
-
-.carousel-caption {
-  color: black;
-  position: static;
-}
-
-.carousel-inner {
-  height: 100%;
-  background: $light-grey;
-}
-
-.carousel-text {
-  padding-left: 10%;
-  padding-right: 10%;
-  margin-top: 60px;
 }
