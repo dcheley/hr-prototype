@@ -1,7 +1,7 @@
 <% if current_user %>
   <h1 class="org-title">ADM's Office</h1>
 
-  <h4 class="org-title"><b>*</b>To <b>find yourself</b> refer to the <b>name provided in email.</b></h4>
+  <h4 class="org-title"><b>*</b>Click a <b>silhouette</b> to view user profiles.</h4>
 
   <section class="org-container">
     <% @users.where(adm_office: true, adm: true).each do |a| %>
