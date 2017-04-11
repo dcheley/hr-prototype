@@ -26,7 +26,7 @@ a:hover {
 }
 
 .contain {
-  width: 80%;
+  width: 100%;
   margin: auto;
 }
 
@@ -53,6 +53,12 @@ a:hover {
   cursor: pointer;
   transition: $duration all;
   transform-origin: center left;
+}
+
+.tile-header {
+  margin-top: -2.5%;
+  margin-left: 5%;
+  margin-bottom: 0;
 }
 
 .tile__img {
@@ -113,14 +119,13 @@ a:hover {
 }
 
 .tile__title {
-  position: absolute;
-  bottom: 10%;
-  padding: 10px;
+  // position: absolute;
+  padding: 15px;
   color: white;
+  max-width: 200px;
 }
 
 // * Hover effects
-
 // We assume when you hover .row, you're also hovering a .tile
 // First, move the whole row towards the left
 .row__inner:hover {

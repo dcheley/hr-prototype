@@ -1,71 +1,81 @@
-<div class="contain">
+<h1 class="org-title">Development Opportunities</h1>
 
-  <h1 class="org-title">Development Opportunities</h1>
+<div id="carousel-dev-ops" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-dev-ops" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-dev-ops" data-slide-to="1"></li>
+    <li data-target="#carousel-dev-ops" data-slide-to="2"></li>
+    <li data-target="#carousel-dev-ops" data-slide-to="3"></li>
+  </ol>
 
-  <p class="opportunity-info">
-    Search through available projects below to signup (<b>hover</b> over box to <b>view details</b>).
-  </p>
-
-  <div class="row">
-    <div class="row__inner">
-
-      <div class="tile">
-        <div class="tile__media">
-            <%= image_tag('black.png', class:"tile__img") %>
-        </div>
-        <div class="tile__details">
-          BLAH BLAH
-          <div class="tile__title">
-            more info here blah blah blah.
-          </div>
-        </div>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <div class="carousel-caption">
+        <h3><%= @opportunity_1.name %></h3>
+        <p class="carousel-text"><%= @opportunity_1.description %></p>
+        <%= form_for([@opportunity_1, @badge]) do |f| %>
+          <%= f.hidden_field :name, value: @opportunity_1.name %>
+          <%= f.hidden_field :description, value: @opportunity_1.description %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.hidden_field :opportunity_id, value: @opportunity_1.id %>
+          <%= f.hidden_field :red, value: true %>
+          <%= f.submit "SIGN UP", class:"submit" %>
+        <% end %>
       </div>
-
-      <div class="tile">
-        <div class="tile__media">
-          <%= image_tag('black.png', class:"tile__img") %>
-        </div>
-        <div class="tile__details">
-          <div class="tile__title">
-            Top Gear
-          </div>
-        </div>
+    </div>
+    <div class="item">
+      <div class="carousel-caption">
+        <h3><%= @opportunity_2.name %></h3>
+        <p class="carousel-text"><%= @opportunity_2.description %></p>
+        <%= form_for([@opportunity_2, @badge]) do |f| %>
+          <%= f.hidden_field :name, value: @opportunity_2.name %>
+          <%= f.hidden_field :description, value: @opportunity_2.description %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.hidden_field :opportunity_id, value: @opportunity_2.id %>
+          <%= f.hidden_field :blue, value: true %>
+          <%= f.submit "SIGN UP", class:"submit" %>
+        <% end %>
       </div>
-
-      <div class="tile">
-        <div class="tile__media">
-          <%= image_tag('black.png', class:"tile__img") %>
-        </div>
-        <div class="tile__details">
-          <div class="tile__title">
-            Top Gear
-          </div>
-        </div>
+    </div>
+    <div class="item">
+      <div class="carousel-caption">
+        <h3><%= @opportunity_3.name %></h3>
+        <p class="carousel-text"><%= @opportunity_3.description %></p>
+        <%= form_for([@opportunity_3, @badge]) do |f| %>
+          <%= f.hidden_field :name, value: @opportunity_3.name %>
+          <%= f.hidden_field :description, value: @opportunity_3.description %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.hidden_field :opportunity_id, value: @opportunity_3.id %>
+          <%= f.hidden_field :green, value: true %>
+          <%= f.submit "SIGN UP", class:"submit" %>
+        <% end %>
       </div>
-
-      <div class="tile">
-        <div class="tile__media">
-          <%= image_tag('black.png', class:"tile__img") %>
-        </div>
-        <div class="tile__details">
-          <div class="tile__title">
-            Top Gear
-          </div>
-        </div>
+    </div>
+    <div class="item">
+      <div class="carousel-caption">
+        <h3><%= @opportunity_4.name %></h3>
+        <p class="carousel-text"><%= @opportunity_4.description %></p>
+        <%= form_for([@opportunity_4, @badge]) do |f| %>
+          <%= f.hidden_field :name, value: @opportunity_4.name %>
+          <%= f.hidden_field :description, value: @opportunity_4.description %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.hidden_field :opportunity_id, value: @opportunity_4.id %>
+          <%= f.hidden_field :purple, value: true %>
+          <%= f.submit "SIGN UP", class:"submit" %>
+        <% end %>
       </div>
-
-      <div class="tile">
-        <div class="tile__media">
-          <%= image_tag('black.png', class:"tile__img") %>
-        </div>
-        <div class="tile__details">
-          <div class="tile__title">
-            Top Gear
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-dev-ops" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-dev-ops" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
