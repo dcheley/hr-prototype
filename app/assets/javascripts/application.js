@@ -95,8 +95,8 @@ $(document).ready(function() {
       $("#like_<%= @badge.id %>").removeClass('glyphicon-thumbs-up').addClass('glyphicon-thumbs-down');
       $("#like_<%= @badge.id %>").attr("href", '/badges/<%= @badge.id %>/unlike');
       $("#likes_<%= @badge.id %>").html("<%= j (render partial: 'badges/likes', locals: { badge: @badge } ) %>");
-    $("#like_<%= @badge.id %>").append xhr.responseText).on "ajax:error", (e, xhr, status, error) ->
-      $("#like_<%= @badge.id %>").appened"<p>ERROR</p>"
+    $("#like_<%= @badge.id %>").append xhr.responseText).on("ajax:error", (e, xhr, status, error) ->
+      $("#like_<%= @badge.id %>").appened"<p>ERROR</p>")
 
   });
 
