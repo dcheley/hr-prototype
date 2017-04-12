@@ -1,18 +1,8 @@
 //Badges
-.badge-container {
-  background-color: $grey;
-  height: 40%;
-}
-
-.badge-container ul {
-  padding-bottom: 60px;
-  padding-left: 9%;
-}
-
 .badge-title {
   text-align: left;
   padding-left: 10%;
-  padding-top: 5%;
+  padding-top: 15px;
 }
 
 .profile-badges {
@@ -30,7 +20,7 @@
 .badge-red {
   margin: 5px;
   position: relative;
-  float: left;
+  // float: left;
   background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
   background-color: $error-text;
   border: 2px solid white;
@@ -45,7 +35,7 @@
 .badge-blue {
   margin: 5px;
   position: relative;
-  float: left;
+  // float: left;
   background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
   background-color: $dark-blue;
   border: 2px solid white;
@@ -60,7 +50,7 @@
 .badge-yellow {
   margin: 5px;
   position: relative;
-  float: left;
+  // float: left;
   background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
   background-color: $dark-yellow;
   border: 2px solid white;
@@ -75,7 +65,7 @@
 .badge-green {
   margin: 5px;
   position: relative;
-  float: left;
+  // float: left;
   background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
   background-color: $green;
   border: 2px solid white;
@@ -90,7 +80,7 @@
 .badge-purple {
   margin: 5px;
   position: relative;
-  float: left;
+  // float: left;
   background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
   background-color: $purple;
   border: 2px solid white;
@@ -105,7 +95,7 @@
 .badge-pink {
   margin: 5px;
   position: relative;
-  float: left;
+  // float: left;
   background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
   background-color: $pink;
   border: 2px solid white;
@@ -120,7 +110,7 @@
 .badge-grey {
   margin: 5px;
   position: relative;
-  float: left;
+  // float: left;
   background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
   background-color: $light-grey;
   border: 2px solid white;

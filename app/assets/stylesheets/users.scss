@@ -78,8 +78,22 @@
 }
 
 //User show & edit
+.left-side {
+  float: left;
+  width: 50%;
+}
+
+.right-side {
+  float: right;
+  width: 50%;
+  background: $light-grey;
+  height: 100%;
+  padding-right: 3%;
+}
+
 .profile-title {
   text-align: center;
+  margin-left: 2.5%;
   padding-top: 15px;
   margin-top: 0;
 }
@@ -90,17 +104,20 @@
   margin-right: auto;
   margin-bottom: 50px;
   margin-top: 40px;
+  margin-left: 2.5%;
 }
 
 .profile-info {
+  text-align: center;
+  margin-left: 2.5%;
   list-style: none;
   font-size: 26px;
-  text-align: center;
 }
 
 .default-pic {
   text-align: center;
   margin: 20px;
+  margin-left: 2.5%;
 }
 
 .default-pic img {
@@ -120,7 +137,7 @@
 
 .profile-link {
   text-decoration: none;
-  text-align: left;
+  text-align: center;
   font-size: 22px;
   font-weight: bold;
   padding-left: 10%;
@@ -129,4 +146,9 @@
 
 .profile-link a, .profile-badges a {
   color: $white;
+}
+
+.badge-list {
+  padding-bottom: 60px;
+  padding-left: 9%;
 }
