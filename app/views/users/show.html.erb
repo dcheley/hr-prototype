@@ -1,4 +1,4 @@
-<div class="background", style="height: 800px;">
+<div class="background">
   <% if current_user && current_user == @user %>
     <div class="left-side">
       <!-- <h1 class="profile-title"><%= link_to "Edit Settings", "/users/#{@user.id}/edit" %></h1> -->
@@ -30,11 +30,11 @@
     </div>
 
     <div class="right-side">
-    <!-- <div class="badge-container"> -->
       <h1 class="badge-title">Your badges</h1>
-      <h3 class="badge-title"><b>*Click</b> a <b>badge</b> to <b>add</b> a <b>description</b> of your experience</h3>
 
       <p class="profile-link"><%= link_to 'ADD Badge', "/users/#{@user.id}/badges/new", style:"color: #0000CD;" %></p>
+
+      <h3 class="badge-title"><b>*Click</b> a <b>badge</b> to <b>add</b> a <b>description</b> of your experience</h3>
 
       <ul class="badge-list">
         <!-- Display Red Badges -->
@@ -140,11 +140,11 @@
     </div>
 
     <div class="right-side">
-      <!-- <div class="badge-container"> -->
       <h1 class="badge-title"><%= "#{@user.name}" %>'s badges</h1>
-      <h3 class="badge-title"><b>*Click</b> a <b>badge</b> to learn more about their skills and experience.</h3>
 
-      <p class="profile-link"><%= link_to 'GIVE Badge', "/users/#{@user.id}/badges/new", style:"color: $bright-dark-blue;" %></p>
+      <p class="profile-link"><%= link_to 'GIVE Badge', "/users/#{@user.id}/badges/new", style:"color: #0000CD;" %></p>
+
+      <h3 class="badge-title"><b>*Click</b> a <b>badge</b> to learn more about their skills and experience.</h3>
 
       <ul class="badge-list">
         <!-- Display Red Badges -->
