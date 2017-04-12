@@ -15,13 +15,13 @@
 
       <ul style="padding-left: 0;">
         <% if @user.adm_office == true %>
-          <li class="profile-info"><%= link_to "ADM Office", "/users/admo_org_chart", style:"color: white; font-weight: bold;"%></li>
+          <li class="profile-info"><%= link_to "ADM Office", "/users/admo_org_chart", style:"color: #0000CD; font-weight: bold;"%></li>
         <% elsif @user.strategic_human_resources == true %>
-          <li class="profile-info"><%= link_to "Human Resources", "/users/hr_org_chart", style:"color: white; font-weight: bold;"%></li>
+          <li class="profile-info"><%= link_to "Human Resources", "/users/hr_org_chart", style:"color: #0000CD; font-weight: bold;"%></li>
         <% elsif @user.service_management_and_facilities == true %>
-          <li class="profile-info"><%= link_to "Service Management & Facilities", "/users/smf_org_chart", style:"color: white; font-weight: bold;"%></li>
+          <li class="profile-info"><%= link_to "Service Management & Facilities", "/users/smf_org_chart", style:"color: #0000CD; font-weight: bold;"%></li>
         <% elsif @user.business_planning_and_finance == true %>
-          <li class="profile-info"><%= link_to "Business Planning and Finance", "/users/bpf_org_chart", style:"color: white; font-weight: bold;"%></li>
+          <li class="profile-info"><%= link_to "Business Planning and Finance", "/users/bpf_org_chart", style:"color: #0000CD; font-weight: bold;"%></li>
         <% end %>
         <li class="profile-info"><b>Title:</b> <%= @user.title %></li>
         <li class="profile-info"><b>Email:</b> <%= @user.email %></li>
@@ -32,73 +32,80 @@
     <div class="right-side">
     <!-- <div class="badge-container"> -->
       <h1 class="badge-title">Your badges</h1>
-      <h3 class="badge-title"><b>*Click</b> an individual badge <b>name</b> to <b>edit</b> details</h3>
+      <h3 class="badge-title"><b>*Click</b> a <b>badge</b> to <b>edit</b> details</h3>
 
-      <p class="profile-link"><%= link_to 'ADD Badge', "/users/#{@user.id}/badges/new" %></p>
+      <p class="profile-link"><%= link_to 'ADD Badge', "/users/#{@user.id}/badges/new", style:"color: #0000CD;" %></p>
 
       <ul class="badge-list">
         <!-- Display Red Badges -->
         <% @user.badges.where(red: true).each do |b| %>
-        <div class="badge-red">
-          <li class="profile-badges">
-            <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}/edit" %>
-          </li></br>
-          <!-- <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %> -->
-        </div>
+          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
+            <div class="badge-red">
+              <li class="profile-badges">
+                <%= "#{b.name}" %>
+              </li></br>
+            </div>
+          <% end %>
         <% end %>
         <!-- Display Blue Badges -->
         <% @user.badges.where(blue: true).each do |b| %>
-        <div class="badge-blue">
-          <li class="profile-badges">
-            <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}/edit" %>
-          </li></br>
-          <!-- <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %> -->
-        </div>
+          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
+            <div class="badge-blue">
+              <li class="profile-badges">
+                <%= "#{b.name}" %>
+              </li></br>
+            </div>
+          <% end %>
         <% end %>
         <!-- Display Yellow Badges -->
         <% @user.badges.where(yellow: true).each do |b| %>
-        <div class="badge-yellow">
-          <li class="profile-badges">
-            <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}/edit" %>
-          </li></br>
-          <!-- <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %> -->
-        </div>
+          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
+            <div class="badge-yellow">
+              <li class="profile-badges">
+                <%= "#{b.name}" %>
+              </li></br>
+            </div>
+          <% end %>
         <% end %>
         <!-- Display Green Badges -->
         <% @user.badges.where(green: true).each do |b| %>
-        <div class="badge-green">
-          <li class="profile-badges">
-            <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}/edit" %>
-          </li></br>
-          <!-- <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %> -->
-        </div>
+          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
+          <div class="badge-green">
+            <li class="profile-badges">
+              <%= "#{b.name}" %>
+            </li></br>
+          </div>
+          <% end %>
         <% end %>
         <!-- Display Purple Badges -->
         <% @user.badges.where(purple: true).each do |b| %>
-        <div class="badge-purple">
-          <li class="profile-badges">
-            <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}/edit" %>
-          </li></br>
-          <!-- <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %> -->
-        </div>
+          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
+            <div class="badge-purple">
+              <li class="profile-badges">
+                <%=  "#{b.name}" %>
+              </li></br>
+            </div>
+          <% end %>
         <% end %>
         <!-- Display Pink Badges -->
         <% @user.badges.where(pink: true).each do |b| %>
-        <div class="badge-pink">
-          <li class="profile-badges">
-            <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}/edit" %>
-          </li></br>
-          <!-- <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %> -->
-        </div>
+          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
+            <div class="badge-pink">
+              <li class="profile-badges">
+                <%= "#{b.name}" %>
+              </li></br>
+            </div>
+          <% end %>
         <% end %>
         <!-- Display Grey Badges -->
         <% @user.badges.where(grey: true).each do |b| %>
-        <div class="badge-grey">
-          <li class="profile-badges">
-            <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}/edit", style:"color: black;" %>
-          </li></br>
-          <!-- <%= button_to 'DELETE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{b.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"btn-default" %> -->
-        </div>
+          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
+            <div class="badge-grey">
+              <li class="profile-badges", style="color: black;">
+                <%= "#{b.name}" %>
+              </li></br>
+            </div>
+          <% end %>
         <% end %>
       </ul>
     </div>
@@ -118,13 +125,13 @@
 
       <ul style="padding-left: 0;">
         <% if @user.adm_office == true %>
-          <li class="profile-info"><%= link_to "ADM Office", "/users/admo_org_chart", style:"color: white; font-weight: bold;"%></li>
+          <li class="profile-info"><%= link_to "ADM Office", "/users/admo_org_chart", style:"color: #0000CD; font-weight: bold;"%></li>
         <% elsif @user.strategic_human_resources == true %>
-          <li class="profile-info"><%= link_to "Human Resources", "/users/hr_org_chart", style:"color: white; font-weight: bold;"%></li>
+          <li class="profile-info"><%= link_to "Human Resources", "/users/hr_org_chart", style:"color: #0000CD; font-weight: bold;"%></li>
         <% elsif @user.service_management_and_facilities == true %>
-          <li class="profile-info"><%= link_to "Service Management & Facilities", "/users/smf_org_chart", style:"color: white; font-weight: bold;"%></li>
+          <li class="profile-info"><%= link_to "Service Management & Facilities", "/users/smf_org_chart", style:"color: #0000CD; font-weight: bold;"%></li>
         <% elsif @user.business_planning_and_finance == true %>
-          <li class="profile-info"><%= link_to "Business Planning & Finance", "/users/bpf_org_chart", style:"color: white; font-weight: bold;"%></li>
+          <li class="profile-info"><%= link_to "Business Planning & Finance", "/users/bpf_org_chart", style:"color: #0000CD; font-weight: bold;"%></li>
         <% end %>
         <li class="profile-info"><b>Title:</b> <%= @user.title %></li>
         <li class="profile-info"><b>Email:</b> <%= @user.email %></li>
@@ -135,66 +142,80 @@
     <div class="right-side">
       <!-- <div class="badge-container"> -->
       <h1 class="badge-title"><%= "#{@user.name}" %>'s badges</h1>
-      <h3 class="badge-title"><b>*Click</b> a badge <b>name</b> to learn more about their skills and experience.</h3>
+      <h3 class="badge-title"><b>*Click</b> a <b>badge</b> to learn more about their skills and experience.</h3>
 
-      <p class="profile-link"><%= link_to 'GIVE Badge', "/users/#{@user.id}/badges/new" %></p>
+      <p class="profile-link"><%= link_to 'GIVE Badge', "/users/#{@user.id}/badges/new", style:"color: $bright-dark-blue;" %></p>
 
       <ul class="badge-list">
         <!-- Display Red Badges -->
         <% @user.badges.where(red: true).each do |b| %>
-        <div class="badge-red">
-          <li class="profile-badges">
-            <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}" %>
-          </li></br>
-        </div>
+          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
+            <div class="badge-red">
+              <li class="profile-badges">
+                <%= "#{b.name}" %>
+              </li></br>
+            </div>
+          <% end %>
         <% end %>
         <!-- Display Blue Badges -->
         <% @user.badges.where(blue: true).each do |b| %>
-        <div class="badge-blue">
-          <li class="profile-badges">
-            <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}" %>
-          </li></br>
-        </div>
+          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
+            <div class="badge-blue">
+              <li class="profile-badges">
+                <%= "#{b.name}" %>
+              </li></br>
+            </div>
+          <% end %>
         <% end %>
         <!-- Display Yellow Badges -->
         <% @user.badges.where(yellow: true).each do |b| %>
-        <div class="badge-yellow">
-          <li class="profile-badges">
-            <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}" %>
-          </li></br>
-        </div>
+          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
+            <div class="badge-yellow">
+              <li class="profile-badges">
+                <%= "#{b.name}" %>
+              </li></br>
+            </div>
+          <% end %>
         <% end %>
         <!-- Display Green Badges -->
         <% @user.badges.where(green: true).each do |b| %>
-        <div class="badge-green">
-          <li class="profile-badges">
-            <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}" %>
-          </li></br>
-        </div>
+          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
+            <div class="badge-green">
+              <li class="profile-badges">
+                <%= "#{b.name}" %>
+              </li></br>
+            </div>
+          <% end %>
         <% end %>
         <!-- Display Purple Badges -->
         <% @user.badges.where(purple: true).each do |b| %>
-        <div class="badge-purple">
-          <li class="profile-badges">
-            <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}" %>
-          </li></br>
-        </div>
+          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
+            <div class="badge-purple">
+              <li class="profile-badges">
+                <%= "#{b.name}" %>
+              </li></br>
+            </div>
+          <% end %>
         <% end %>
         <!-- Display Pink Badges -->
         <% @user.badges.where(pink: true).each do |b| %>
-        <div class="badge-pink">
-          <li class="profile-badges">
-            <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}" %>
-          </li></br>
-        </div>
+          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
+            <div class="badge-pink">
+              <li class="profile-badges">
+                <%= "#{b.name}" %>
+              </li></br>
+            </div>
+          <% end %>
         <% end %>
         <!-- Display Grey Badges -->
         <% @user.badges.where(grey: true).each do |b| %>
-        <div class="badge-grey">
-          <li class="profile-badges">
-            <%= link_to "#{b.name}", "/users/#{@user.id}/badges/#{b.id}", style:"color: black;" %>
-          </li></br>
-        </div>
+          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
+            <div class="badge-grey">
+              <li class="profile-badges" style="color: black;">
+                <%= "#{b.name}" %>
+              </li></br>
+            </div>
+          <% end %>
         <% end %>
       </ul>
     </div>
