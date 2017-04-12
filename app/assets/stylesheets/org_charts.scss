@@ -8,8 +8,7 @@
 .org-menu-container {
   margin: 2rem auto;
   max-width: 1088px;
-  position: absolute;
-  padding-left: 16%;
+  padding-left: 6%;
 }
 
 .org-container {
@@ -78,7 +77,7 @@
   align-items: stretch;
 }
 
-.element {
+.element, .menu-element {
   position: relative;
   display: inline-block;
   width: 200px;
@@ -88,7 +87,11 @@
   color: black;
 }
 
-.org-box {
+.menu-element {
+  width: 220px;
+}
+
+.org-box, .org-box-menu {
   position: relative;
   display: block;
   height: 100%;
@@ -102,14 +105,18 @@
   position: relative;
 }
 
-.org-box h4 {
+.org-box h4, .org-box-menu h4 {
   margin: 0 0 2px;
   font-size: 16px;
 }
 
-.org-box p {
+.org-box p, .org-box-menu p {
   margin: 10px 0;
   font-size: 15px;
+}
+
+.org-box-menu p:last-child {
+  margin: 10px 0 0 0;
 }
 
 .org-box p:last-child {
@@ -253,7 +260,9 @@
 
 //Hover
 .org-header:hover,
+.org-menu-header:hover,
 .org-header:hover .context,
+.org-menu-header:hover .context,
 .info-btn:hover {
   cursor: pointer;
   background: #444444;
