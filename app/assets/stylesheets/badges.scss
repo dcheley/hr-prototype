@@ -5,6 +5,13 @@
   padding-top: 15px;
 }
 
+.badge-detail-title {
+  text-align: center;
+  margin-top: 0;
+  padding-top: 2%;
+  padding-bottom: 5%;
+}
+
 .profile-badges {
   color: white;
   list-style: none;
@@ -15,6 +22,10 @@
 .badge-description {
   padding-top: 200px;
   font-size: 20px;
+}
+
+.badge-details {
+  margin-left: 25%;
 }
 
 .badge-red {

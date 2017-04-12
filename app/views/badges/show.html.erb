@@ -1,8 +1,8 @@
 <div class="background">
   <% if current_user && @badge.user_id == @user.id %>
-    <h2 class="badge-title" style="padding-top: 2%; margin-top: 0; padding-left: 5%;"><%= "#{@user.name}" %>'s badge details</h2>
+    <h2 class="badge-detail-title"><%= "#{@user.name}" %>'s badge details</h2>
 
-    <ul>
+    <ul class="badge-details">
       <!-- Display Red Badge -->
       <% @user.badges.where(red: true, id: @badge.id).each do |b| %>
       <div class="badge-red", style="height: 300px; width: 300px; border-radius: 150px;">
