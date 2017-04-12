@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       #Badge.create(name: "Sign Up",
       #   user_id: user.id,
       #   blue: true)
-      redirect_to "/users/#{user.id}", notice: "To get started, click ADD Badges to showcase your current skills and experience."
+      redirect_to user_url(user.id), notice: %Q[To get started, click the ADD Badge link below to showcase your current skills and experience.]
     elsif user && user.authenticate(params[:password]) && user.badges.ids != []
       session[:user_id] = user.id
       redirect_to "/users/org_charts", notice: "Logged in!"

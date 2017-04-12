@@ -27,7 +27,7 @@ class BadgesController < ApplicationController
     end
 
     if @badge.save && @badge.opportunity_id == nil
-      redirect_to user_url(@user), notice: "#{@badge.name} created! View details below."
+      redirect_to user_url(@user), notice: "#{@badge.name} badge created! View details below."
     elsif @badge.save && @badge.opportunity_id != nil
       redirect_to user_url(current_user), notice: "Successfully signed up for #{@badge.name}! View details below."
     elsif @badge.save == false && @badge.opportunity_id == nil
@@ -42,7 +42,7 @@ class BadgesController < ApplicationController
 
   def update
     if @badge.update_attributes(badge_params)
-      flash[:notice] = "#{@badge.name} successfully updated!"
+      flash[:notice] = "#{@badge.name} badge successfully updated!"
       redirect_to user_url(@user)
     else
       render :edit
@@ -54,7 +54,7 @@ class BadgesController < ApplicationController
 
   def destroy
     @badge.destroy
-    flash[:notice] = "#{@badge.name} successfully deleted!"
+    flash[:notice] = "#{@badge.name} badge successfully deleted!"
     redirect_to user_url(@user)
   end
 
