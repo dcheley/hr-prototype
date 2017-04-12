@@ -1,6 +1,6 @@
-<div class="badge-container" style="background-color: #2081A1; height: 500px;">
+<div class="background">
   <% if current_user && @badge.user_id == @user.id %>
-    <h2 class="badge-title" style="padding-top: 2%; margin-top: 0;"><%= "#{@user.name}" %>'s badges</h2>
+    <h2 class="badge-title" style="padding-top: 2%; margin-top: 0; padding-left: 5%;"><%= "#{@user.name}" %>'s badge details</h2>
 
     <ul>
       <!-- Display Red Badge -->
@@ -24,7 +24,7 @@
 
       <!-- Display Blue Badges -->
       <% @user.badges.where(blue: true, id: @badge.id).each do |b| %>
-      <div class="badge-blue", style="height: 300px; width: 300px; border-radius: 150px;">
+      <div class="badge-blue", style="height: 300px; width: 300px; border-radius: 150px; float: left;">
         <h2 class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
         </h2>
@@ -43,7 +43,7 @@
 
       <!-- Display Yellow Badges -->
       <% @user.badges.where(yellow: true, id: @badge.id).each do |b| %>
-      <div class="badge-yellow", style="height: 300px; width: 300px; border-radius: 150px;">
+      <div class="badge-yellow", style="height: 300px; width: 300px; border-radius: 150px; float: left;">
         <h2 class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
         </h2>
@@ -62,7 +62,7 @@
 
       <!-- Display Green Badges -->
       <% @user.badges.where(green: true, id: @badge.id).each do |b| %>
-      <div class="badge-green", style="height: 300px; width: 300px; border-radius: 150px;">
+      <div class="badge-green", style="height: 300px; width: 300px; border-radius: 150px; float: left;">
         <h2 class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
         </h2>
@@ -81,7 +81,7 @@
 
       <!-- Display Purple Badges -->
       <% @user.badges.where(purple: true, id: @badge.id).each do |b| %>
-      <div class="badge-purple", style="height: 300px; width: 300px; border-radius: 150px;">
+      <div class="badge-purple", style="height: 300px; width: 300px; border-radius: 150px; float: left;">
         <h2 class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
         </h2>
@@ -100,7 +100,7 @@
 
       <!-- Display Pink Badges -->
       <% @user.badges.where(pink: true, id: @badge.id).each do |b| %>
-      <div class="badge-pink", style="height: 300px; width: 300px; border-radius: 150px;">
+      <div class="badge-pink", style="height: 300px; width: 300px; border-radius: 150px; float: left;">
         <h2 class="profile-badges", style="margin-top: 80px;">
           <%= b.name %>
         </h2>
@@ -119,7 +119,7 @@
 
       <!-- Display Grey Badges -->
       <% @user.badges.where(grey: true, id: @badge.id).each do |b| %>
-      <div class="badge-grey", style="height: 300px; width: 300px; border-radius: 150px;">
+      <div class="badge-grey", style="height: 300px; width: 300px; border-radius: 150px; float: left;">
         <h2 class="profile-badges", style="margin-top: 80px; color: black;">
           <%= b.name %>
         </h2>
