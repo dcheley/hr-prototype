@@ -10,6 +10,8 @@
 .background {
   background-color: $dark-blue;
   height: 1000px;
+  position: absolute;
+  width: 100%;
 }
 
 .container {
@@ -19,6 +21,7 @@
   border-radius: 25px;
   padding-bottom: 3px;
   background-position: center;
+  margin-top: 12.5%;
 }
 
 //Navbar
@@ -90,6 +93,7 @@
 
 .home-link {
   color: $grey;
+  font-weight: bold;
 }
 
 //Intro View
