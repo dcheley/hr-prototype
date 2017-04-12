@@ -4,29 +4,7 @@
       <!-- <h1 class="profile-title"><%= link_to "Edit Settings", "/users/#{@user.id}/edit" %></h1> -->
       </br><h1 class="profile-title">Your Profile</h1>
 
-      <% if @user.avatar.file? == true %>
-        <%= image_tag @user.avatar.url(:medium), class:"profile-pic" %>
-      <% else %>
-        <div class="default-pic">
-          <%= image_tag('smile.svg') %>
-        </div>
-        <!-- <li class="pic-info">Add a profile pic through the settings page (link at top)</li> -->
-      <% end %>
-
-      <ul style="padding-left: 0;">
-        <% if @user.adm_office == true %>
-          <li class="profile-info"><%= link_to "ADM Office", "/users/admo_org_chart", style:"color: #0000CD; font-weight: bold;"%></li>
-        <% elsif @user.strategic_human_resources == true %>
-          <li class="profile-info"><%= link_to "Human Resources", "/users/hr_org_chart", style:"color: #0000CD; font-weight: bold;"%></li>
-        <% elsif @user.service_management_and_facilities == true %>
-          <li class="profile-info"><%= link_to "Service Management & Facilities", "/users/smf_org_chart", style:"color: #0000CD; font-weight: bold;"%></li>
-        <% elsif @user.business_planning_and_finance == true %>
-          <li class="profile-info"><%= link_to "Business Planning and Finance", "/users/bpf_org_chart", style:"color: #0000CD; font-weight: bold;"%></li>
-        <% end %>
-        <li class="profile-info"><b>Title:</b> <%= @user.title %></li>
-        <li class="profile-info"><b>Email:</b> <%= @user.email %></li>
-        <li class="profile-info"><b>Phone:</b> <%= @user.phone %></li>
-      </ul>
+      <%= render 'profile-info' %>
     </div>
 
     <div class="right-side">
@@ -114,29 +92,7 @@
     <div class="left-side">
       </br><h1 class="profile-title"><%= @user.name %>'s Profile</h1>
 
-      <% if @user.avatar.file? == true %>
-        <%= image_tag @user.avatar.url(:medium), class:"profile-pic" %>
-      <% else %>
-        <div class="default-pic">
-          <%= image_tag('smile.svg') %>
-        </div>
-        <!-- <li class="pic-info">Add a profile pic through the settings page (link at top)</li> -->
-      <% end %>
-
-      <ul style="padding-left: 0;">
-        <% if @user.adm_office == true %>
-          <li class="profile-info"><%= link_to "ADM Office", "/users/admo_org_chart", style:"color: #0000CD; font-weight: bold;"%></li>
-        <% elsif @user.strategic_human_resources == true %>
-          <li class="profile-info"><%= link_to "Human Resources", "/users/hr_org_chart", style:"color: #0000CD; font-weight: bold;"%></li>
-        <% elsif @user.service_management_and_facilities == true %>
-          <li class="profile-info"><%= link_to "Service Management & Facilities", "/users/smf_org_chart", style:"color: #0000CD; font-weight: bold;"%></li>
-        <% elsif @user.business_planning_and_finance == true %>
-          <li class="profile-info"><%= link_to "Business Planning & Finance", "/users/bpf_org_chart", style:"color: #0000CD; font-weight: bold;"%></li>
-        <% end %>
-        <li class="profile-info"><b>Title:</b> <%= @user.title %></li>
-        <li class="profile-info"><b>Email:</b> <%= @user.email %></li>
-        <li class="profile-info"><b>Phone:</b> <%= @user.phone %></li>
-      </ul>
+      <%= render 'profile-info' %>
     </div>
 
     <div class="right-side">
