@@ -59,6 +59,7 @@ a:hover {
   margin-top: -2.5%;
   margin-left: 5%;
   margin-bottom: 0;
+  font-size: 12px;
 }
 
 .tile__img {
@@ -71,10 +72,10 @@ a:hover {
   color: $grey;
   position: absolute;
   bottom: 0;
-  left: 20%;
+  left: 0;
   right: 0;
   top: 0;
-  font-size: 10px;
+  font-size: 8px;
   opacity: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
   transition: $duration opacity;
