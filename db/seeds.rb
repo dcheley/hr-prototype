@@ -89,7 +89,14 @@ User.create([{ name: "Rob B.", email: "robb@email.com", phone: "(416) 327-3682",
   { name: "S. B. N.", email: "sbn@email.com", phone: "(416) 325-2987", title: "Corporate Coordinator", business_planning_and_finance: true, staff: true, password: "123456" },
   { name: "Tahm No.", email: "ta.n@email.com", phone: "(416) 212-0727", title: "Jr. Advisor", business_planning_and_finance: true, staff: true, password: "123456" }])
 
-  Opportunity.create([{ name: "Meet & Greet", description: "Visit our new team! Excited to form new connections." },
-    { name: 'Lunch & Learn', description: "You're invited to a 5 course, authentic Italian meal with our guest speaker. He will share his experience as a secret agent with us." },
-    { name: 'Networking Event', description: "Rack up your acquaintences here!" },
-    { name: 'Party!', description: "Title says it all, let's enjoy the night." }])
+  Opportunity.create([{ name: "Diversity Career Champions Program (DCCP)", description: "Program" },
+    { name: 'Emerging Leaders Management Program (ELMP)', description: "Program" },
+    { name: 'Advancing into Management (AIM)', description: "Program" },
+    { name: 'Senior Leadership Potential Assessment (SLPA)', description: "Program" },
+    { name: 'Leadership Development Program (LDP)', description: "Rack up your acquaintences here!" },
+    { name: 'Leadership 2.0', description: "Program" },
+    { name: 'Job Interview Skills Program', description: "Training Session" },
+    { name: 'Résumé Writing Skills Course', description: "Training Session" },
+    { name: 'WEAR Form Re-Fresher', description: "Training Session" },
+    { name: 'Student Orientation & Onboarding', description: "Training Session" },
+    { name: 'Advancing into Management (AIM)', description: "Training Session" }])
