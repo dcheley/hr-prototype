@@ -90,7 +90,7 @@ User.create([{ name: "Rob B.", email: "robb@email.com", phone: "(416) 327-3682",
   { name: "Tahm No.", email: "ta.n@email.com", phone: "(416) 212-0727", title: "Jr. Advisor", business_planning_and_finance: true, staff: true, password: "123456" }])
 
   Opportunity.create([{ name: "Diversity Career Champions Program (DCCP)", description: "Program" },
-    { name: 'Emerging Leaders Management Program (ELMP)', description: "Program" },
+    { name: 'Emerging Leaders Management Program (ELMP)', description: "The ELMP provides a framework for understanding leadership essentials, refining individual leadership style and developing capability in the six areas of the OPS Leader-Manager Model. The program incorporates theory-based learning, practical training, and a strategic thinking workshop to support individual contributors in becoming better prepared to advance into a management role." },
     { name: 'Advancing into Management (AIM)', description: "Program" },
     { name: 'Senior Leadership Potential Assessment (SLPA)', description: "Program" },
     { name: 'Leadership Development Program (LDP)', description: "Rack up your acquaintences here!" },
