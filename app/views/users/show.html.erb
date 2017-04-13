@@ -42,10 +42,15 @@
       <h3 class="badge-title"><b>*Click</b> a <b>badge</b> to learn more about their skills and experience.</h3>
 
       <ul class="badge-list">
-        <h3 class="badge-title" style="margin-right: 2.5%;">Skills & Experience Badges</h3>
-        <%= render 'skill-badge-show-list' %>
-        <h3 class="badge-title" style="margin-right: 2.5%;">Projects & Events Badges</h3>
-        <%= render 'opp-badge-show-list' %>
+        <div class="inner-left">
+          <h4 class="badge-types"><b>Skills & Experience Badges</b></h4>
+          <%= render 'skill-badge-edit-list' %>
+        </div>
+
+        <div class="inner-right">
+          <h4 class="badge-types"><b>Projects & Events Badges</b></h4>
+          <%= render 'opp-badge-edit-list' %>
+        </div>
       </ul>
     </div>
   <% else %>
