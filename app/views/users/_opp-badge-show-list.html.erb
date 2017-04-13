@@ -1,5 +1,5 @@
 <!-- Display Red Badges -->
-<% @user.badges.where(red: true).each do |b| %>
+<% @user.badges.where(red: true).where.not(opportunity_id: nil).each do |b| %>
   <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
     <div class="badge-red">
       <li class="profile-badges">
@@ -9,7 +9,7 @@
   <% end %>
 <% end %>
 <!-- Display Blue Badges -->
-<% @user.badges.where(blue: true).each do |b| %>
+<% @user.badges.where(blue: true).where.not(opportunity_id: nil).each do |b| %>
   <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
     <div class="badge-blue">
       <li class="profile-badges">
@@ -19,7 +19,7 @@
   <% end %>
 <% end %>
 <!-- Display Yellow Badges -->
-<% @user.badges.where(yellow: true).each do |b| %>
+<% @user.badges.where(yellow: true).where.not(opportunity_id: nil).each do |b| %>
   <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
     <div class="badge-yellow">
       <li class="profile-badges">
@@ -29,7 +29,7 @@
   <% end %>
 <% end %>
 <!-- Display Green Badges -->
-<% @user.badges.where(green: true).each do |b| %>
+<% @user.badges.where(green: true).where.not(opportunity_id: nil).each do |b| %>
   <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
     <div class="badge-green">
       <li class="profile-badges">
@@ -39,7 +39,7 @@
   <% end %>
 <% end %>
 <!-- Display Purple Badges -->
-<% @user.badges.where(purple: true).each do |b| %>
+<% @user.badges.where(purple: true).where.not(opportunity_id: nil).each do |b| %>
   <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
     <div class="badge-purple">
       <li class="profile-badges">
@@ -49,7 +49,7 @@
   <% end %>
 <% end %>
 <!-- Display Pink Badges -->
-<% @user.badges.where(pink: true).each do |b| %>
+<% @user.badges.where(pink: true).where.not(opportunity_id: nil).each do |b| %>
   <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
     <div class="badge-pink">
       <li class="profile-badges">
@@ -59,7 +59,7 @@
   <% end %>
 <% end %>
 <!-- Display Grey Badges -->
-<% @user.badges.where(grey: true).each do |b| %>
+<% @user.badges.where(grey: true).where.not(opportunity_id: nil).each do |b| %>
   <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
     <div class="badge-grey">
       <li class="profile-badges" style="color: black;">
