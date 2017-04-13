@@ -72,7 +72,8 @@
   cursor: pointer;
 }
 
-.submit:hover, .delete:hover {
+.submit:hover,
+.delete:hover {
   background-color: $grey;
 }
 

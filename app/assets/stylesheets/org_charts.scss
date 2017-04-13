@@ -77,7 +77,8 @@
   align-items: stretch;
 }
 
-.element, .menu-element {
+.element,
+.menu-element {
   position: relative;
   display: inline-block;
   width: 200px;
@@ -91,13 +92,15 @@
   width: 220px;
 }
 
-.org-box, .org-box-menu {
+.org-box,
+.org-box-menu {
   position: relative;
   display: block;
   height: 100%;
 }
 
-.org-header, .org-menu-header {
+.org-header,
+.org-menu-header {
   display: block;
   background: $medium-grey;
   padding: 5px 35px 5px 10px;
@@ -105,12 +108,14 @@
   position: relative;
 }
 
-.org-box h4, .org-box-menu h4 {
+.org-box h4,
+.org-box-menu h4 {
   margin: 0 0 2px;
   font-size: 16px;
 }
 
-.org-box p, .org-box-menu p {
+.org-box p,
+.org-box-menu p {
   margin: 10px 0;
   font-size: 15px;
 }
@@ -187,7 +192,7 @@
 }
 
 .active .context:after,
-.list .selection .context:after{
+.list .selection .context:after {
   border-right-color: $dark-turquoise;
 }
 
@@ -197,7 +202,7 @@
   pointer-events: none;
 }
 
-.active .element:empty{
+.active .element:empty {
   border-color: $medium-grey;
   min-height: 122px;
   background: repeating-linear-gradient(
@@ -284,7 +289,7 @@
   color: $white;
 }
 
-.list .element:hover .org-header:hover + .context:after{
+.list .element:hover .org-header:hover + .context:after {
   border-right-color: #444444;
 }
 
