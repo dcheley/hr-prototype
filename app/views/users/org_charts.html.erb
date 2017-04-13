@@ -192,17 +192,17 @@
 
           <div class="tile">
             <div class="tile__media">
-                <%= image_tag('black.png', class:"tile__img") %>
+                <%= image_tag('emerging-leaders.jpg', class:"tile__img") %>
             </div>
             <div class="tile__details">
-              <h3 class="tile-header"><%= @opportunity_1.name %></h3>
-              <div class="tile__title">
-                <%= @opportunity_1.description %>
-                <%= form_for([@opportunity_1, @badge]) do |f| %>
-                  <%= f.hidden_field :name, value: @opportunity_1.name %>
-                  <%= f.hidden_field :description, value: @opportunity_1.description %>
+              <h3 class="tile-header" style="padding-left: 15%;"><%= @opportunity_2.name %></h3>
+              <div class="tile__title" style="padding-left: 20%;">
+                <%= @opportunity_2.description %>
+                <%= form_for([@opportunity_2, @badge]) do |f| %>
+                  <%= f.hidden_field :name, value: @opportunity_2.name %>
+                  <%= f.hidden_field :description, value: @opportunity_2.description %>
                   <%= f.hidden_field :user_id, value: current_user.id %>
-                  <%= f.hidden_field :opportunity_id, value: @opportunity_1.id %>
+                  <%= f.hidden_field :opportunity_id, value: @opportunity_2.id %>
                   <%= f.hidden_field :red, value: true %>
                   <%= f.submit "SIGN UP", class:"submit", style:"margin: 20px auto;" %>
                 <% end %>
@@ -215,14 +215,14 @@
                 <%= image_tag('black.png', class:"tile__img") %>
             </div>
             <div class="tile__details">
-              <h3 class="tile-header"><%= @opportunity_2.name %></h3>
+              <h3 class="tile-header"><%= @opportunity_1.name %></h3>
               <div class="tile__title">
-                <%= @opportunity_2.description %>
-                <%= form_for([@opportunity_2, @badge]) do |f| %>
-                  <%= f.hidden_field :name, value: @opportunity_2.name %>
-                  <%= f.hidden_field :description, value: @opportunity_2.description %>
+                <%= @opportunity_1.description %>
+                <%= form_for([@opportunity_1, @badge]) do |f| %>
+                  <%= f.hidden_field :name, value: @opportunity_1.name %>
+                  <%= f.hidden_field :description, value: @opportunity_1.description %>
                   <%= f.hidden_field :user_id, value: current_user.id %>
-                  <%= f.hidden_field :opportunity_id, value: @opportunity_2.id %>
+                  <%= f.hidden_field :opportunity_id, value: @opportunity_1.id %>
                   <%= f.hidden_field :red, value: true %>
                   <%= f.submit "SIGN UP", class:"submit", style:"margin: 20px auto;" %>
                 <% end %>
