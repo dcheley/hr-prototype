@@ -1,9 +1,16 @@
 //User form fields
-.form-title {
+.form-title, .home-title {
   text-align: center;
   padding-top: 15px;
   margin-bottom: 5%;
+}
+
+.form-title {
   margin-top: 0;
+}
+
+.home-title {
+  margin-top: 2%;
 }
 
 .form-instructions {
