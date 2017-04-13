@@ -15,76 +15,7 @@
       <h3 class="badge-title"><b>*Click</b> a <b>badge</b> to <b>add</b> a <b>description</b> of your experience</h3>
 
       <ul class="badge-list">
-        <!-- Display Red Badges -->
-        <% @user.badges.where(red: true).each do |b| %>
-          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
-            <div class="badge-red">
-              <li class="profile-badges">
-                <%= "#{b.name}" %>
-              </li></br>
-            </div>
-          <% end %>
-        <% end %>
-        <!-- Display Blue Badges -->
-        <% @user.badges.where(blue: true).each do |b| %>
-          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
-            <div class="badge-blue">
-              <li class="profile-badges">
-                <%= "#{b.name}" %>
-              </li></br>
-            </div>
-          <% end %>
-        <% end %>
-        <!-- Display Yellow Badges -->
-        <% @user.badges.where(yellow: true).each do |b| %>
-          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
-            <div class="badge-yellow">
-              <li class="profile-badges">
-                <%= "#{b.name}" %>
-              </li></br>
-            </div>
-          <% end %>
-        <% end %>
-        <!-- Display Green Badges -->
-        <% @user.badges.where(green: true).each do |b| %>
-          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
-          <div class="badge-green">
-            <li class="profile-badges">
-              <%= "#{b.name}" %>
-            </li></br>
-          </div>
-          <% end %>
-        <% end %>
-        <!-- Display Purple Badges -->
-        <% @user.badges.where(purple: true).each do |b| %>
-          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
-            <div class="badge-purple">
-              <li class="profile-badges">
-                <%=  "#{b.name}" %>
-              </li></br>
-            </div>
-          <% end %>
-        <% end %>
-        <!-- Display Pink Badges -->
-        <% @user.badges.where(pink: true).each do |b| %>
-          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
-            <div class="badge-pink">
-              <li class="profile-badges">
-                <%= "#{b.name}" %>
-              </li></br>
-            </div>
-          <% end %>
-        <% end %>
-        <!-- Display Grey Badges -->
-        <% @user.badges.where(grey: true).each do |b| %>
-          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
-            <div class="badge-grey">
-              <li class="profile-badges", style="color: black;">
-                <%= "#{b.name}" %>
-              </li></br>
-            </div>
-          <% end %>
-        <% end %>
+        <%= render 'badge-edit-list' %>
       </ul>
     </div>
 
@@ -103,76 +34,7 @@
       <h3 class="badge-title"><b>*Click</b> a <b>badge</b> to learn more about their skills and experience.</h3>
 
       <ul class="badge-list">
-        <!-- Display Red Badges -->
-        <% @user.badges.where(red: true).each do |b| %>
-          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
-            <div class="badge-red">
-              <li class="profile-badges">
-                <%= "#{b.name}" %>
-              </li></br>
-            </div>
-          <% end %>
-        <% end %>
-        <!-- Display Blue Badges -->
-        <% @user.badges.where(blue: true).each do |b| %>
-          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
-            <div class="badge-blue">
-              <li class="profile-badges">
-                <%= "#{b.name}" %>
-              </li></br>
-            </div>
-          <% end %>
-        <% end %>
-        <!-- Display Yellow Badges -->
-        <% @user.badges.where(yellow: true).each do |b| %>
-          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
-            <div class="badge-yellow">
-              <li class="profile-badges">
-                <%= "#{b.name}" %>
-              </li></br>
-            </div>
-          <% end %>
-        <% end %>
-        <!-- Display Green Badges -->
-        <% @user.badges.where(green: true).each do |b| %>
-          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
-            <div class="badge-green">
-              <li class="profile-badges">
-                <%= "#{b.name}" %>
-              </li></br>
-            </div>
-          <% end %>
-        <% end %>
-        <!-- Display Purple Badges -->
-        <% @user.badges.where(purple: true).each do |b| %>
-          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
-            <div class="badge-purple">
-              <li class="profile-badges">
-                <%= "#{b.name}" %>
-              </li></br>
-            </div>
-          <% end %>
-        <% end %>
-        <!-- Display Pink Badges -->
-        <% @user.badges.where(pink: true).each do |b| %>
-          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
-            <div class="badge-pink">
-              <li class="profile-badges">
-                <%= "#{b.name}" %>
-              </li></br>
-            </div>
-          <% end %>
-        <% end %>
-        <!-- Display Grey Badges -->
-        <% @user.badges.where(grey: true).each do |b| %>
-          <%= link_to "/users/#{@user.id}/badges/#{b.id}/edit" do %>
-            <div class="badge-grey">
-              <li class="profile-badges" style="color: black;">
-                <%= "#{b.name}" %>
-              </li></br>
-            </div>
-          <% end %>
-        <% end %>
+        <%= render 'badge-show-list' %>
       </ul>
     </div>
   <% else %>
