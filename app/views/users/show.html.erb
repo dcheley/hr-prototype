@@ -10,7 +10,7 @@
     <div class="right-side">
       <h1 class="badge-title"><b>Your badges</b></h1>
 
-      <p class="profile-link"><%= link_to 'ADD Badge', "/users/#{@user.id}/badges/new", style:"color: #0000CD;" %></p>
+      <p class="badge-new-wrap"><%= link_to 'ADD Badge', "/users/#{@user.id}/badges/new", class:"badge-new-link" %></p>
 
       <h3 class="badge-title"><b>*Click</b> a <b>badge</b> to <b>add</b> a <b>description</b> of your experience</h3>
 
@@ -37,7 +37,7 @@
     <div class="right-side">
       <h1 class="badge-title"><%= "#{@user.name}" %>'s badges</h1>
 
-      <p class="profile-link"><%= link_to 'GIVE Badge', "/users/#{@user.id}/badges/new", style:"color: #0000CD;" %></p>
+      <p class="badge-new-wrap"><%= link_to 'GIVE Badge', "/users/#{@user.id}/badges/new", class:"badge-new-link" %></p>
 
       <h3 class="badge-title"><b>*Click</b> a <b>badge</b> to learn more about their skills and experience.</h3>
 

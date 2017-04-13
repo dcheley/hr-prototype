@@ -48,7 +48,8 @@
   font-size: 16px;
 }
 
-.field:after, .field:before {
+.field:after,
+.field:before {
   content: "";
   position: absolute;
   display: block;
@@ -136,7 +137,8 @@
   color: $grey;
 }
 
-.profile-link {
+.profile-link,
+.badge-new-wrap {
   text-decoration: none;
   text-align: center;
   font-size: 36px;
@@ -145,8 +147,21 @@
   padding-top: 10px;
 }
 
-.profile-link a, .profile-badges a {
+.team-link,
+.badge-new-link {
+  font-weight: bold;
+  color: $bright-dark-blue;
+}
+
+.profile-link a {
   color: $white;
+}
+
+.profile-link a:hover,
+.team-link:hover,
+.badge-new-link:hover {
+  color: $grey;
+  text-decoration: none;
 }
 
 .badge-list {
