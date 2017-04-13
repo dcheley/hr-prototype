@@ -262,8 +262,7 @@
 .org-header:hover,
 .org-menu-header:hover,
 .org-header:hover .context,
-.org-menu-header:hover .context,
-.info-btn:hover {
+.org-menu-header:hover .context, {
   cursor: pointer;
   background: #444444;
   color: $white;
@@ -309,5 +308,15 @@
 }
 
 .boss-name {
+  text-align: right;
+}
+
+.boss-name  {
   color: $dark-turquoise;
+}
+
+.org-profile-link {
+  color: $grey;
+  font-weight: bold;
+  float: right;
 }

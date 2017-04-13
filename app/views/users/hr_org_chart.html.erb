@@ -1,8 +1,6 @@
 <% if current_user %>
   <h1 class="org-title">Strategic Human Resources</h1>
 
-  <h4 class="org-title"><b>*</b>Click a <b>silhouette</b> to view user profiles.</h4>
-
   <section class="org-container">
     <% @users.where(strategic_human_resources: true, director: true).each do |a| %>
     <div id="level-0" class="level expanded">
@@ -22,11 +20,12 @@
 
               <div class="org-details">
                 <p class="boss-name"><%= "#{a.name}" %></p>
+                <p class="link-name"><%= link_to "Profile Link", "/users/#{a.id}", class:"org-profile-link" %></p>
               </div>
 
-              <%= link_to "/users/#{a.id}", class:"info-btn" do %>
-                <span class="glyphicon glyphicon-user"></span>
-              <% end %>
+              <!-- <%= link_to "/users/#{a.id}", class:"info-btn" do %> -->
+                <div class="info-btn"><span class="glyphicon glyphicon-user"></span></div>
+              <!-- <% end %> -->
 
             </div>
           </div>
@@ -62,11 +61,12 @@
 
                 <div class="org-details">
                   <p class="boss-name"><%= "#{b.name}" %></p>
+                  <p class="link-name"><%= link_to "Profile Link", "/users/#{b.id}", class:"org-profile-link" %></p>
                 </div>
 
-                <%= link_to "/users/#{b.id}", class:"info-btn" do %>
-                  <span class="glyphicon glyphicon-user"></span>
-                <% end %>
+                <!-- <%= link_to "/users/#{b.id}", class:"info-btn" do %> -->
+                  <div class="info-btn"><span class="glyphicon glyphicon-user"></span></div>
+                <!-- <% end %> -->
               </div>
             </li>
             <% end %>
@@ -101,11 +101,12 @@
 
                 <div class="org-details">
                   <p class="boss-name"><%= "#{c.name}" %></p>
+                  <p class="link-name"><%= link_to "Profile Link", "/users/#{c.id}", class:"org-profile-link" %></p>
                 </div>
 
-                <%= link_to "/users/#{c.id}", class:"info-btn" do %>
-                  <span class="glyphicon glyphicon-user"></span>
-                <% end %>
+                <!-- <%= link_to "/users/#{c.id}", class:"info-btn" do %> -->
+                  <div class="info-btn"><span class="glyphicon glyphicon-user"></span></div>
+                <!-- <% end %> -->
               </div>
             </li>
             <% end %>
