@@ -1,4 +1,4 @@
-<div class="background">
+<div class="profile-background">
   <% if current_user && current_user == @user %>
     <div class="left-side">
       <!-- <h1 class="profile-title"><%= link_to "Edit Settings", "/users/#{@user.id}/edit" %></h1> -->
@@ -12,16 +12,16 @@
 
       <p class="badge-new-wrap"><%= link_to 'ADD Badge', "/users/#{@user.id}/badges/new", class:"badge-new-link" %></p>
 
-      <h3 class="badge-title"><b>*Click</b> a <b>badge</b> to <b>add</b> a <b>description</b> of your experience</h3>
+      <h5 class="badge-title" style="font-size: 16px;"><b>*Click</b> a <b>badge</b> to <b>add</b> a <b>description</b> of your experience</h5>
 
       <ul class="badge-list">
         <div class="inner-left">
-          <h4 class="badge-types"><b>Skills & Experience Badges</b></h4>
+          <p class="badge-types"><b>Skills & Experience Badges</b></p>
           <%= render 'skill-badge-edit-list' %>
         </div>
 
         <div class="inner-right">
-          <h4 class="badge-types"><b>Projects & Events Badges</b></h4>
+          <p class="badge-types"><b>Projects & Events Badges</b></p>
           <%= render 'opp-badge-edit-list' %>
         </div>
       </ul>
@@ -39,16 +39,16 @@
 
       <p class="badge-new-wrap"><%= link_to 'GIVE Badge', "/users/#{@user.id}/badges/new", class:"badge-new-link" %></p>
 
-      <h3 class="badge-title"><b>*Click</b> a <b>badge</b> to learn more about their skills and experience.</h3>
+      <p class="badge-title" style="font-size: 16px;"><b>*Click</b> a <b>badge</b> to learn more about their skills and experience.</p>
 
       <ul class="badge-list">
         <div class="inner-left">
-          <h4 class="badge-types"><b>Skills & Experience Badges</b></h4>
+          <p class="badge-types"><b>Skills & Experience Badges</b></p>
           <%= render 'skill-badge-show-list' %>
         </div>
 
         <div class="inner-right">
-          <h4 class="badge-types"><b>Projects & Events Badges</b></h4>
+          <p class="badge-types"><b>Projects & Events Badges</b></p>
           <%= render 'opp-badge-show-list' %>
         </div>
       </ul>

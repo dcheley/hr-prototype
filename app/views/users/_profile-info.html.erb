@@ -9,13 +9,13 @@
 
 <ul style="padding-left: 0;">
   <% if @user.adm_office == true %>
-    <li class="profile-info"><%= link_to "ADM Office", "/users/admo_org_chart", class:"team-link" %></li>
+    <li class="team-info"><%= link_to "ADM Office", "/users/admo_org_chart", class:"team-link" %></li>
   <% elsif @user.strategic_human_resources == true %>
-    <li class="profile-info"><%= link_to "Human Resources", "/users/hr_org_chart", class:"team-link" %></li>
+    <li class="team-info"><%= link_to "Human Resources", "/users/hr_org_chart", class:"team-link" %></li>
   <% elsif @user.service_management_and_facilities == true %>
-    <li class="profile-info"><%= link_to "Service Management & Facilities", "/users/smf_org_chart", class:"team-link" %></li>
+    <li class="team-info"><%= link_to "Service Management & Facilities", "/users/smf_org_chart", class:"team-link" %></li>
   <% elsif @user.business_planning_and_finance == true %>
-    <li class="profile-info"><%= link_to "Business Planning and Finance", "/users/bpf_org_chart", class:"team-link" %></li>
+    <li class="team-info"><%= link_to "Business Planning and Finance", "/users/bpf_org_chart", class:"team-link" %></li>
   <% end %>
   <li class="profile-info"><b>Title:</b> <%= @user.title %></li>
   <li class="profile-info"><b>Email:</b> <%= @user.email %></li>

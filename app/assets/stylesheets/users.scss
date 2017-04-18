@@ -87,6 +87,11 @@
 }
 
 //User show & edit
+.profile-background {
+  width: 100%;
+  height: 1000px;
+}
+
 .left-side {
   float: left;
   width: 50%;
@@ -95,7 +100,8 @@
 .right-side {
   float: right;
   width: 50%;
-  background: $light-grey;
+  border-left: dotted;
+  border-left-color: $dark-turquoise;
   height: 100%;
   padding-right: 3%;
 }
@@ -116,11 +122,20 @@
   margin-left: 2.5%;
 }
 
-.profile-info {
+.profile-info,
+.team-info {
   text-align: center;
   margin-left: 2.5%;
+  padding: 5px;
   list-style: none;
+}
+
+.team-info {
   font-size: 26px;
+}
+
+.profile-info {
+  font-size: 16px;
 }
 
 .default-pic {
@@ -148,7 +163,7 @@
 .badge-new-wrap {
   text-decoration: none;
   text-align: center;
-  font-size: 36px;
+  font-size: 26px;
   font-weight: bold;
   padding-left: 10%;
   padding-top: 10px;
@@ -172,6 +187,7 @@
 }
 
 .badge-list {
+  font-size: 16px;
   padding-bottom: 60px;
   padding-left: 9%;
 }
