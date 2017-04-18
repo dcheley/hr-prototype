@@ -128,7 +128,8 @@
   margin: 10px 0 0 80px;
 }
 
-.org-details {
+.org-details,
+.org-menu-details {
   padding: 0 10px;
   margin-bottom: 40px;
 }
@@ -277,6 +278,10 @@
   cursor: pointer;
   background: #444444;
   color: $white;
+}
+
+.menu-element:hover {
+  border-color: $grey;
 }
 
 .element.hover .context:after {
