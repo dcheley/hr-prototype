@@ -19,8 +19,7 @@
               </div>
 
               <div class="org-details">
-                <p class="boss-name"><%= "#{a.name}" %></p>
-                <p class="link-name"><%= link_to "Profile Link", "/users/#{a.id}", class:"org-profile-link" %></p>
+                <p class="boss-name"><%= link_to "#{a.name}", "/users/#{a.id}" %></p>
               </div>
 
               <!-- <%= link_to "/users/#{a.id}", class:"info-btn" do %> -->
@@ -60,8 +59,7 @@
                 </div>
 
                 <div class="org-details">
-                  <p class="boss-name"><%= "#{b.name}" %></p>
-                  <p class="link-name"><%= link_to "Profile Link", "/users/#{b.id}", class:"org-profile-link" %></p>
+                  <p class="boss-name"><%= link_to "#{b.name}", "/users/#{b.id}" %></p>
                 </div>
 
                 <!-- <%= link_to "/users/#{b.id}", class:"info-btn" do %> -->

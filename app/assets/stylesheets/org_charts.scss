@@ -323,16 +323,20 @@
   display: none;
 }
 
-.boss-name {
+.boss-name, .menu-name {
   text-align: right;
 }
 
-.boss-name  {
+.menu-name {
   color: $dark-turquoise;
 }
 
-.org-profile-link {
-  color: $grey;
+.boss-name a {
   font-weight: bold;
-  float: right;
+  color: $bright-dark-blue;
+}
+
+.boss-name:hover a  {
+  text-decoration: none;
+  color: $grey;
 }
