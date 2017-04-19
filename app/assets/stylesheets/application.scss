@@ -45,9 +45,14 @@
   border: 0;
 }
 
-.delete {
+.submit-blue,
+.delete,
+.submit-yellow,
+.submit-green,
+.submit-purple,
+.submit-pink,
+.submit-grey {
   color: white;
-  background-color: $error-text;
   border: none;
   display: block;
   margin: 35px auto;
@@ -57,20 +62,41 @@
   cursor: pointer;
 }
 
-.submit {
-  color: white;
+.submit-blue {
   background-color: $dark-blue;
-  border: none;
-  display: block;
-  margin: 35px auto;
-  padding: 15px 30px;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
 }
 
-.submit:hover,
-.delete:hover {
+.delete {
+  background-color: $error-text;
+}
+
+.submit-yellow {
+  background-color: $dark-yellow;
+}
+
+.submit-green {
+  background-color: $green;
+}
+
+.submit-purple {
+  background-color: $purple;
+}
+
+.submit-pink {
+  background-color: $pink;
+}
+
+.submit-grey {
+  background-color: $grey;
+}
+
+.submit-blue:hover,
+.delete:hover,
+.submit-yellow:hover,
+.submit-green:hover,
+.submit-purple:hover,
+.submit-pink:hover,
+.submit-grey:hover {
   background-color: $light-grey;
 }
 
