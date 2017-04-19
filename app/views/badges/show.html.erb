@@ -1,5 +1,5 @@
 <div class="background">
-  <% if current_user && @badge.user_id == @user.id %>
+  <% if current_user %>
     <h2 class="badge-detail-title"><%= "#{@user.name}" %>'s badge details</h2>
 
     <ul class="badge-details">
