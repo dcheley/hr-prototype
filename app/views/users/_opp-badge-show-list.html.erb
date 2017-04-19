@@ -62,7 +62,7 @@
 <% @user.badges.where(grey: true).where.not(opportunity_id: nil).each do |b| %>
   <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
     <div class="badge-grey">
-      <li class="profile-badges" style="color: black;">
+      <li class="profile-badges">
         <%= "#{b.name}" %>
       </li></br>
     </div>
