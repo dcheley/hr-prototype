@@ -45,108 +45,70 @@
   margin-left: 25%;
 }
 
-.badge-red {
+.badge-red,
+.badge-blue,
+.badge-yellow,
+.badge-green,
+.badge-purple,
+.badge-pink,
+.badge-grey, {
   margin: 5px;
   position: relative;
   // float: left;
   background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
-  background-color: $error-text;
   border: 2px solid white;
   border-radius: 12px; /* one half of ( (border * 2) + height + padding ) */
   box-shadow: 1px 1px 1px black;
   // font: bold 15px/13px;
   padding: 4px 3px 0 3px;
   text-align: center;
+}
+
+.badge-red {
+  background-color: $error-text;
 }
 
 .badge-blue {
-  margin: 5px;
-  position: relative;
-  // float: left;
-  background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
   background-color: $dark-blue;
-  border: 2px solid white;
-  border-radius: 12px; /* one half of ( (border * 2) + height + padding ) */
-  box-shadow: 1px 1px 1px black;
-  // font: bold 15px/13px;
-  padding: 4px 3px 0 3px;
-  text-align: center;
 }
 
 .badge-yellow {
-  margin: 5px;
-  position: relative;
-  // float: left;
-  background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
   background-color: $dark-yellow;
-  border: 2px solid white;
-  border-radius: 12px; /* one half of ( (border * 2) + height + padding ) */
-  box-shadow: 1px 1px 1px black;
-  // font: bold 15px/13px;
-  padding: 4px 3px 0 3px;
-  text-align: center;
 }
 
 .badge-green {
-  margin: 5px;
-  position: relative;
-  // float: left;
-  background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
   background-color: $green;
-  border: 2px solid white;
-  border-radius: 12px; /* one half of ( (border * 2) + height + padding ) */
-  box-shadow: 1px 1px 1px black;
-  // font: bold 15px/13px;
-  padding: 4px 3px 0 3px;
-  text-align: center;
 }
 
 .badge-purple {
-  margin: 5px;
-  position: relative;
-  // float: left;
-  background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
   background-color: $purple;
-  border: 2px solid white;
-  border-radius: 12px; /* one half of ( (border * 2) + height + padding ) */
-  box-shadow: 1px 1px 1px black;
-  // font: bold 15px/13px;
-  padding: 4px 3px 0 3px;
-  text-align: center;
 }
 
 .badge-pink {
-  margin: 5px;
-  position: relative;
-  // float: left;
-  background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
   background-color: $pink;
-  border: 2px solid white;
-  border-radius: 12px; /* one half of ( (border * 2) + height + padding ) */
-  box-shadow: 1px 1px 1px black;
-  // font: bold 15px/13px;
-  padding: 4px 3px 0 3px;
-  text-align: center;
 }
 
 .badge-grey {
-  margin: 5px;
-  position: relative;
-  // float: left;
-  background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
   background-color: $light-grey;
-  border: 2px solid white;
-  border-radius: 12px; /* one half of ( (border * 2) + height + padding ) */
-  box-shadow: 1px 1px 1px black;
-  // font: bold 15px/13px;
-  padding: 4px 3px 0 3px;
-  text-align: center;
+}
+
+.badge-red:hover,
+.badge-blue:hover,
+.badge-yellow:hover,
+.badge-green:hover,
+.badge-purple:hover,
+.badge-pink:hover,
+.badge-grey:hover {
+  li {
+    color: $grey;
+  }
 }
 
 .glyphicon.glyphicon-heart,
 .glyphicon.glyphicon-heart-empty, {
   font-size: 32px;
   color: white;
+  padding-top: 10px;
 }
 
 .likes {
