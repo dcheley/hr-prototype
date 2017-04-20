@@ -89,12 +89,12 @@ User.create([{ name: "Robert B.", email: "robb@email.com", phone: "(416) 327-368
   { name: "Sarah N.", email: "sbn@email.com", phone: "(416) 325-2987", title: "Corporate Coordinator", business_planning_and_finance: true, staff: true, password: "514484" },
   { name: "Tahmina N.", email: "ta.n@email.com", phone: "(416) 212-0727", title: "Jr. Advisor", business_planning_and_finance: true, staff: true, password: "964487" }])
 
-  Opportunity.create([{ name: "Diversity Career Champions Program (DCCP)", description: "Program" },
+  Opportunity.create([{ name: "Diversity Career Champions Program (DCCP)", description: "Personal development program" },
     { name: 'Emerging Leaders Management Program (ELMP)', description: "The ELMP provides a framework for understanding leadership essentials, refining individual leadership style and developing capability in the six areas of the OPS Leader-Manager Model. The program incorporates theory-based learning, practical training, and a strategic thinking workshop to support individual contributors in becoming better prepared to advance into a management role." },
-    { name: 'Advancing into Management (AIM)', description: "Program" },
-    { name: 'Senior Leadership Potential Assessment (SLPA)', description: "Program" },
-    { name: 'Leadership Development Program (LDP)', description: "Rack up your acquaintences here!" },
-    { name: 'Leadership 2.0', description: "Program" },
+    { name: 'Advancing into Management (AIM)', description: "Personal development program" },
+    { name: 'Senior Leadership Potential Assessment (SLPA)', description: "Personal development program" },
+    { name: 'Leadership Development Program (LDP)', description: "Personal development program" },
+    { name: 'Leadership 2.0', description: "Personal development program" },
     { name: 'Job Interview Skills Program', description: "Training Session" },
     { name: 'Résumé Writing Skills Course', description: "Training Session" },
     { name: 'WEAR Form Re-Fresher', description: "Training Session" },
