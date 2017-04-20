@@ -69,6 +69,7 @@ a:hover {
 }
 
 .tile__details {
+  overflow: hidden;
   color: $grey;
   position: absolute;
   bottom: 0;
