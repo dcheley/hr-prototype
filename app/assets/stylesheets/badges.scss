@@ -36,8 +36,8 @@
 .badge-detail-title {
   text-align: center;
   margin-top: 0;
+  margin-bottom: 0;
   padding-top: 2%;
-  padding-bottom: 5%;
 }
 
 .profile-badges {
@@ -50,7 +50,8 @@
 }
 
 .badge-description {
-  padding-top: 200px;
+  float: right;
+  padding-top: 0;
   font-size: 20px;
 }
 

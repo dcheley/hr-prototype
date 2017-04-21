@@ -2,7 +2,14 @@
   <% if current_user %>
     <h2 class="badge-detail-title"><%= "#{@user.name}" %>'s badge details</h2>
 
-    <ul class="badge-details">
+    <ul class="badge-details" style="margin-top: 0;">
+      <% if current_user == @user %>
+        <%= link_to "/users/#{@user.id}/badges/#{@badge.id}/edit", class:"cancel-link" do %>
+          <div class="submit-blue">
+            EDIT
+          </div>
+        <% end %>
+      <% end %>
       <!-- Display Red Badge -->
       <% if @badge.red == true %>
       <div class="badge-red", style="height: 400px; width: 400px; border-radius: 200px;">
@@ -131,7 +138,9 @@
     </ul>
     <p class="badge-description"><%= @badge.description %></p>
 
-  <% else  %>
+
+
+  <% else %>
     <div class="background">
       <h1 class="login-message"><%= link_to "LOGIN", :login %> to view <%= @user.name %>'s badge</h1>
     </div>
