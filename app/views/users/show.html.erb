@@ -14,17 +14,7 @@
 
       <h5 class="badge-title" style="font-size: 16px;"><b>*Click</b> a <b>badge</b> to <b>add</b> a <b>description</b> of your experience</h5>
 
-      <ul class="badge-list">
-        <div class="inner-left">
-          <p class="badge-types"><b>Skills & Experience Badges</b></p>
-          <%= render 'skill-badge-edit-list' %>
-        </div>
-
-        <div class="inner-right">
-          <p class="badge-types"><b>Projects & Events Badges</b></p>
-          <%= render 'opp-badge-edit-list' %>
-        </div>
-      </ul>
+      <%= render 'badge-show-list' %>
     </div>
 
   <% elsif current_user && current_user != @user %>
@@ -41,18 +31,9 @@
 
       <p class="badge-title" style="font-size: 16px;"><b>*Click</b> a <b>badge</b> to learn more about their skills and experience.</p>
 
-      <ul class="badge-list">
-        <div class="inner-left">
-          <p class="badge-types"><b>Skills & Experience Badges</b></p>
-          <%= render 'skill-badge-show-list' %>
-        </div>
-
-        <div class="inner-right">
-          <p class="badge-types"><b>Projects & Events Badges</b></p>
-          <%= render 'opp-badge-show-list' %>
-        </div>
-      </ul>
+      <%= render 'badge-show-list' %>
     </div>
+
   <% else %>
     <h1 class="login-message"><%= link_to "LOGIN", :login %> to view profiles</h1>
   <% end %>
