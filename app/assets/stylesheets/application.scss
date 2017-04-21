@@ -51,7 +51,8 @@
 .submit-green,
 .submit-purple,
 .submit-pink,
-.submit-grey {
+.submit-grey,
+.submit-black {
   color: white;
   border: none;
   display: block;
@@ -90,13 +91,18 @@
   background-color: $grey;
 }
 
+.submit-black {
+  background-color: black;
+}
+
 .submit-blue:hover,
 .delete:hover,
 .submit-yellow:hover,
 .submit-green:hover,
 .submit-purple:hover,
 .submit-pink:hover,
-.submit-grey:hover {
+.submit-grey:hover,
+.submit-black:hover {
   background-color: $light-grey;
 }
 
