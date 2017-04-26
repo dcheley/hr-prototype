@@ -1,10 +1,11 @@
 class Badge < ApplicationRecord
   acts_as_votable
-  
+
   belongs_to :users, optional: true
   belongs_to :opportunities, optional: true
 
   validates :name, presence: true
+  validates :description, length: {maximum: 140}
   validate :at_least_one_colour
 
   def at_least_one_colour
