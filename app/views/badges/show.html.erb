@@ -81,8 +81,6 @@
     <p class="badge-description"><%= @badge.description %></p>
 
   <% else %>
-    <div class="background">
-      <h1 class="login-message"><%= link_to "LOGIN", :login %> to view <%= @user.name %>'s badge</h1>
-    </div>
+    <h1 class="login-message"><%= link_to "LOGIN", :login %> to view <%= User.find(@badge.user_id).name %>'s badge</h1>
   <% end %>
 </div>
