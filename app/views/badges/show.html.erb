@@ -6,7 +6,7 @@
 
       <!-- Display Red Badge -->
       <% if @badge.red == true %>
-      <div class="badge-red", style="height: 400px; width: 400px; border-radius: 200px;">
+      <div class="badge-red", style="height: 400px; width: 400px; border-radius: 200px; float: left;">
         <h2 class="profile-badges", style="margin-top: 40%;">
           <%= @badge.name %>
         </h2>
@@ -68,17 +68,19 @@
       <% end %>
     </ul>
 
-    <% if current_user.liked? @badge %>
-      <%= link_to '', unlike_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-heart" %>
-      <p class="profile-badges"></p>
-      <%= render 'likes' %>
-    <% else %>
-      <%= link_to '', like_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-heart-empty" %>
-      <p class="profile-badges"></p>
-      <%= render 'likes' %>
-    <% end %>
-    <%= render 'edit-badge-button' %>
-    <p class="badge-description"><%= @badge.description %></p>
+    <div class="home-right">
+      <% if current_user.liked? @badge %>
+        <%= link_to '', unlike_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-heart" %>
+        <p class="profile-badges"></p>
+        <%= render 'likes' %>
+      <% else %>
+        <%= link_to '', like_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-heart-empty" %>
+        <p class="profile-badges"></p>
+        <%= render 'likes' %>
+      <% end %>
+      <%= render 'edit-badge-button' %>
+      <p class="badge-description"><%= @badge.description %></p>
+    </div>
 
   <% else %>
     <h1 class="login-message"><%= link_to "LOGIN", :login %> to view <%= User.find(@badge.user_id).name %>'s badge</h1>
