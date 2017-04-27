@@ -7,12 +7,7 @@ class BadgesController < ApplicationController
   end
 
   def create
-    # Same as users#org_charts
     @users = User.all
-    @opportunity_1 = Opportunity.find(1)
-    @opportunity_2 = Opportunity.find(2)
-    @opportunity_3 = Opportunity.find(3)
-    @opportunity_4 = Opportunity.find(4)
     @badge = Badge.new(badge_params)
     if params[:user_id] != nil
       @user = User.find(params[:user_id])
