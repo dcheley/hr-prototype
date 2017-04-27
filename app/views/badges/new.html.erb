@@ -56,7 +56,9 @@
       <div class="left-side">
         <h4 class="form-title"><b>Skills & Experience</b></h4>
         <%= button_to 'Administrative Services', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Administrative Services", :blue => true}}, method: :post, class:"submit-blue" %>
+        <%= button_to 'Amethyst Awards', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Amethyst Awards", :purple => true}}, method: :post, class:"submit-purple" %>
         <%= button_to 'Communications', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Communications", :red => true}}, method: :post, class:"delete" %>
+        <%= button_to 'EDDIE Awards (MEDG/MRIS)', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "EDDIE Awards (MEDG/MRIS)", :grey => true}}, method: :post, class:"submit-grey" %>
         <%= button_to 'Finance', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Finance", :green => true}}, method: :post, class:"submit-green" %>
         <%= button_to 'Human Resources', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Human Resources", :yellow => true}}, method: :post, class:"submit-yellow" %>
         <%= button_to 'Information Management', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Information Management", :purple => true}}, method: :post, class:"submit-purple" %>
