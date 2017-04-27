@@ -95,8 +95,13 @@ User.create([{ name: "Robert B.", email: "robb@email.com", phone: "(416) 327-368
     { name: 'Senior Leadership Potential Assessment (SLPA)', description: "Personal development program" },
     { name: 'Leadership Development Program (LDP)', description: "Personal development program" },
     { name: 'Leadership 2.0', description: "Personal development program" },
-    { name: 'Job Interview Skills Program', description: "Training Session" },
-    { name: 'Résumé Writing Skills Course', description: "Training Session" },
-    { name: 'WEAR Form Re-Fresher', description: "Training Session" },
-    { name: 'Student Orientation & Onboarding', description: "Training Session" },
-    { name: 'Advancing into Management (AIM)', description: "Training Session" }])
+    { name: 'Co-op Student Onboarding Lunch', description: "May 12th, a chance to network with other Co-op students over lunch." },
+    { name: 'CSD Community Outreach', description: "May 31st @ Eva's Place (tentative)" },
+    { name: 'Lunch & Learn: Nuclear Emergency Management', description: "May 9th" },
+    { name: 'Lunch & Learn: Emergency & Personal Preparedness', description: "May 12th" },
+    { name: 'Lunch & Learn: Research, Science & Strategy Division', description: "May 23rd" },
+    { name: 'Lunch & Learn: Commercialization & Scale-Ups Division', description: "May 25th" },
+    { name: 'Lunch & Learn: Behavioral Insights', description: "June 6th" },
+    { name: 'Lunch & Learn: Business Climate & Funding Administration Division', description: "June 8th" },
+    { name: 'Lunch & Learn: Strategic Programs Development & Delivery Office', description: "June 23rd" },
+    { name: 'Lunch & Learn: Ontario Investment Office', description: "June 28th" }])
