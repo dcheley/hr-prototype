@@ -29,6 +29,12 @@ class UsersController < ApplicationController
     @opportunity_8 = Opportunity.find(8)
     @opportunity_9 = Opportunity.find(9)
     @opportunity_10 = Opportunity.find(10)
+    @opportunity_11 = Opportunity.find(11)
+    @opportunity_12 = Opportunity.find(12)
+    @opportunity_13 = Opportunity.find(13)
+    @opportunity_14 = Opportunity.find(14)
+    @opportunity_15 = Opportunity.find(15)
+    @opportunity_16 = Opportunity.find(16)
     @badge = current_user.badges.build
   end
 

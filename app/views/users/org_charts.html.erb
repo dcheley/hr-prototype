@@ -233,7 +233,7 @@
 
           <div class="tile">
             <div class="tile__media">
-                <%= image_tag('black.png', class:"tile__img") %>
+                <%= image_tag('250.jpg', class:"tile__img") %>
             </div>
             <div class="tile__details">
               <h3 class="tile-header" style="padding-left: 15%;"><%= @opportunity_7.name %></h3>
@@ -253,7 +253,7 @@
 
           <div class="tile">
             <div class="tile__media">
-                <%= image_tag('black.png', class:"tile__img") %>
+                <%= image_tag('eva.png', class:"tile__img") %>
             </div>
             <div class="tile__details">
               <h3 class="tile-header"><%= @opportunity_8.name %></h3>
@@ -273,7 +273,7 @@
 
           <div class="tile">
             <div class="tile__media">
-                <%= image_tag('black.png', class:"tile__img") %>
+                <%= image_tag('lunch&learn.png', class:"tile__img") %>
             </div>
             <div class="tile__details">
               <h3 class="tile-header"><%= @opportunity_9.name %></h3>
@@ -304,6 +304,126 @@
                   <%= f.hidden_field :description, value: @opportunity_10.description %>
                   <%= f.hidden_field :user_id, value: current_user.id %>
                   <%= f.hidden_field :opportunity_id, value: @opportunity_10.id %>
+                  <%= f.hidden_field :green, value: true %>
+                  <%= f.submit "SIGN UP", class:"submit-blue", style:"margin: 20px auto;" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__media">
+                <%= image_tag('black.png', class:"tile__img") %>
+            </div>
+            <div class="tile__details">
+              <h3 class="tile-header"><%= @opportunity_11.name %></h3>
+              <div class="tile__title">
+                <%= @opportunity_11.description %>
+                <%= form_for([@opportunity_11, @badge]) do |f| %>
+                  <%= f.hidden_field :name, value: @opportunity_11.name %>
+                  <%= f.hidden_field :description, value: @opportunity_11.description %>
+                  <%= f.hidden_field :user_id, value: current_user.id %>
+                  <%= f.hidden_field :opportunity_id, value: @opportunity_11.id %>
+                  <%= f.hidden_field :green, value: true %>
+                  <%= f.submit "SIGN UP", class:"submit-blue", style:"margin: 20px auto;" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__media">
+                <%= image_tag('black.png', class:"tile__img") %>
+            </div>
+            <div class="tile__details">
+              <h3 class="tile-header"><%= @opportunity_12.name %></h3>
+              <div class="tile__title">
+                <%= @opportunity_12.description %>
+                <%= form_for([@opportunity_12, @badge]) do |f| %>
+                  <%= f.hidden_field :name, value: @opportunity_12.name %>
+                  <%= f.hidden_field :description, value: @opportunity_12.description %>
+                  <%= f.hidden_field :user_id, value: current_user.id %>
+                  <%= f.hidden_field :opportunity_id, value: @opportunity_12.id %>
+                  <%= f.hidden_field :green, value: true %>
+                  <%= f.submit "SIGN UP", class:"submit-blue", style:"margin: 20px auto;" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__media">
+                <%= image_tag('black.png', class:"tile__img") %>
+            </div>
+            <div class="tile__details">
+              <h3 class="tile-header"><%= @opportunity_13.name %></h3>
+              <div class="tile__title">
+                <%= @opportunity_13.description %>
+                <%= form_for([@opportunity_13, @badge]) do |f| %>
+                  <%= f.hidden_field :name, value: @opportunity_13.name %>
+                  <%= f.hidden_field :description, value: @opportunity_13.description %>
+                  <%= f.hidden_field :user_id, value: current_user.id %>
+                  <%= f.hidden_field :opportunity_id, value: @opportunity_13.id %>
+                  <%= f.hidden_field :green, value: true %>
+                  <%= f.submit "SIGN UP", class:"submit-blue", style:"margin: 20px auto;" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__media">
+                <%= image_tag('black.png', class:"tile__img") %>
+            </div>
+            <div class="tile__details">
+              <h3 class="tile-header"><%= @opportunity_14.name %></h3>
+              <div class="tile__title">
+                <%= @opportunity_14.description %>
+                <%= form_for([@opportunity_14, @badge]) do |f| %>
+                  <%= f.hidden_field :name, value: @opportunity_14.name %>
+                  <%= f.hidden_field :description, value: @opportunity_14.description %>
+                  <%= f.hidden_field :user_id, value: current_user.id %>
+                  <%= f.hidden_field :opportunity_id, value: @opportunity_14.id %>
+                  <%= f.hidden_field :green, value: true %>
+                  <%= f.submit "SIGN UP", class:"submit-blue", style:"margin: 20px auto;" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__media">
+                <%= image_tag('black.png', class:"tile__img") %>
+            </div>
+            <div class="tile__details">
+              <h3 class="tile-header"><%= @opportunity_15.name %></h3>
+              <div class="tile__title">
+                <%= @opportunity_15.description %>
+                <%= form_for([@opportunity_15, @badge]) do |f| %>
+                  <%= f.hidden_field :name, value: @opportunity_15.name %>
+                  <%= f.hidden_field :description, value: @opportunity_15.description %>
+                  <%= f.hidden_field :user_id, value: current_user.id %>
+                  <%= f.hidden_field :opportunity_id, value: @opportunity_15.id %>
+                  <%= f.hidden_field :green, value: true %>
+                  <%= f.submit "SIGN UP", class:"submit-blue", style:"margin: 20px auto;" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__media">
+                <%= image_tag('black.png', class:"tile__img") %>
+            </div>
+            <div class="tile__details">
+              <h3 class="tile-header"><%= @opportunity_16.name %></h3>
+              <div class="tile__title">
+                <%= @opportunity_16.description %>
+                <%= form_for([@opportunity_16, @badge]) do |f| %>
+                  <%= f.hidden_field :name, value: @opportunity_16.name %>
+                  <%= f.hidden_field :description, value: @opportunity_16.description %>
+                  <%= f.hidden_field :user_id, value: current_user.id %>
+                  <%= f.hidden_field :opportunity_id, value: @opportunity_16.id %>
                   <%= f.hidden_field :green, value: true %>
                   <%= f.submit "SIGN UP", class:"submit-blue", style:"margin: 20px auto;" %>
                 <% end %>
