@@ -27,9 +27,9 @@ class BadgesController < ApplicationController
     end
 
     if @badge.save && @badge.opportunity_id == nil
-      redirect_to "users/#{current_user.id}/badges/#{@badge.id}", notice: "#{@badge.name} badge created!"
+      redirect_to "/users/#{current_user.id}/badges/#{@badge.id}", notice: "#{@badge.name} badge created!"
     elsif @badge.save && @badge.opportunity_id != nil
-      redirect_to "users/#{current_user.id}/badges/#{@badge.id}", notice: "Successfully signed up for #{@badge.name}!"
+      redirect_to "/users/#{current_user.id}/badges/#{@badge.id}", notice: "Successfully signed up for #{@badge.name}!"
     elsif @badge.save == false && @badge.opportunity_id == nil
       render :new
     else
