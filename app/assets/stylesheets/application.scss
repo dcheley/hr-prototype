@@ -65,6 +65,18 @@
   border: 0;
 }
 
+.submit-login {
+  color: white;
+  border: none;
+  display: block;
+  margin: 35px auto;
+  padding: 10px 40px;
+  border-radius: 10px;
+  font-size: 32px;
+  cursor: pointer;
+  background-color: $bright-dark-blue;
+}
+
 .submit-blue,
 .delete,
 .submit-yellow,
@@ -115,6 +127,7 @@
   background-color: black;
 }
 
+.submit-login:hover,
 .submit-blue:hover,
 .delete:hover,
 .submit-yellow:hover,
