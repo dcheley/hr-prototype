@@ -27,9 +27,9 @@ class BadgesController < ApplicationController
     end
 
     if @badge.save && @badge.opportunity_id == nil
-      redirect_to user_url(@user), notice: "#{@badge.name} badge created! Click on the edit button below to add a description of the badge"
+      redirect_to "users/#{current_user.id}/badges/#{@badge.id}", notice: "#{@badge.name} badge created!"
     elsif @badge.save && @badge.opportunity_id != nil
-      redirect_to user_url(current_user), notice: "Successfully signed up for #{@badge.name}! Click on the edit button below to add a description of the experience"
+      redirect_to "users/#{current_user.id}/badges/#{@badge.id}", notice: "Successfully signed up for #{@badge.name}!"
     elsif @badge.save == false && @badge.opportunity_id == nil
       render :new
     else
@@ -43,7 +43,7 @@ class BadgesController < ApplicationController
   def update
     if @badge.update_attributes(badge_params)
       flash[:notice] = "#{@badge.name} badge successfully updated!"
-      redirect_to user_url(@user)
+      redirect_to badge_url(@badge)
     else
       render :edit
     end
@@ -76,7 +76,11 @@ class BadgesController < ApplicationController
 
 private
   def load_user
-    @user = User.find(params[:user_id])
+    if @user
+      @user = User.find(params[:user_id])
+    else
+      @user = current_user
+    end
   end
 
   def load_badge
