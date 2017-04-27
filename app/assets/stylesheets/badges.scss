@@ -51,7 +51,8 @@
 }
 
 .badge-description {
-  padding-top: 25%;
+  padding-top: 5%;
+  padding-right: 5%;
   font-size: 20px;
 }
 
@@ -121,7 +122,7 @@
 .glyphicon.glyphicon-heart,
 .glyphicon.glyphicon-heart-empty, {
   font-size: 32px;
-  color: white;
+  color: $grey;
   padding-top: 10px;
 }
 

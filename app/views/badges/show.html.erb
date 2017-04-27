@@ -69,6 +69,8 @@
     </ul>
 
     <div class="home-right">
+      <h4 class="badge-detail-title" style="text-align: left;">Endorsements</h4>
+
       <% if current_user.liked? @badge %>
         <%= link_to '', unlike_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-heart" %>
         <p class="profile-badges"></p>
@@ -78,8 +80,10 @@
         <p class="profile-badges"></p>
         <%= render 'likes' %>
       <% end %>
-      <%= render 'edit-badge-button' %>
+
       <p class="badge-description"><%= @badge.description %></p>
+
+      <%= render 'edit-badge-button' %>
     </div>
 
   <% else %>
