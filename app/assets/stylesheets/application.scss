@@ -23,8 +23,7 @@
 
 .home-right {
   float: right;
-  width: 60%;
-  // padding-right: 3%;
+  width: 55%;
 }
 
 .background-image {
@@ -32,10 +31,9 @@
   -webkit-filter: brightness(80%);
   // -webkit-filter: hue-rotate(260deg);
   z-index: -1;
-	height: 100%;
-	width: 40%;
+	height: 65%;
+	width: 45%;
   background-size: cover;
-  position: fixed;
   background-repeat: no-repeat;
   margin: 0;
   border: 0;
@@ -63,18 +61,6 @@
   color: $grey;
   background-color: $medium-grey;
   border: 0;
-}
-
-.submit-login {
-  color: white;
-  border: none;
-  display: block;
-  margin: 35px auto;
-  padding: 10px 40px;
-  border-radius: 10px;
-  font-size: 32px;
-  cursor: pointer;
-  background-color: $bright-dark-blue;
 }
 
 .submit-blue,
@@ -127,7 +113,6 @@
   background-color: black;
 }
 
-.submit-login:hover,
 .submit-blue:hover,
 .delete:hover,
 .submit-yellow:hover,

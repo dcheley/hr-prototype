@@ -4,9 +4,9 @@
   <div class="home-right">
     <div class="container">
 
-      <h1 class="form-title" style="font-size: 60px;">Career Advancement App</h1>
+      <h1 class="form-title">Career Advancement Application</h1>
 
-      <h5 class="form-instructions" style="font-size: 40px;">Enter account info below:</h5>
+      <h5 class="form-instructions">Enter account info below:</h5>
 
       <%= form_tag login_path do %>
         <div class="field">
@@ -19,7 +19,7 @@
           <%= password_field_tag :password, nil, class:"field-input", placeholder:"At least 6 characters" %>
         </div>
 
-        <div class="actions"><%= submit_tag "LOGIN", class:"submit-login" %></div>
+        <div class="actions"><%= submit_tag "LOGIN", class:"submit-blue" %></div>
       <% end %>
     </div>
   </div>
