@@ -4,15 +4,14 @@
 
     <h2 class="form-title">Career Advancement App</h2>
 
-    <p class="form-title"> Use the links in the top right to navigate through content</p>
-
-    <% if !current_user %>
+    <% if current_user %>
+      <p class="form-title"> Use the links in the top right to navigate through content</p>
+    <% else %>
       <h3 class="form-title"><%= link_to 'LOGIN', :login, class:'home-link' %></h3>
 
       <!-- <h4 style="text-align: center;">or</h4>
 
       <h3 class="form-title"><%= link_to 'SIGN UP', '/users/new', class:'home-link' %></h3> -->
-    </div>
     <% end %>
   </div>
 </div>
