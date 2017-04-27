@@ -9,6 +9,18 @@
   width: 50%;
 }
 
+.badge-right {
+  float: right;
+  width: 40%;
+}
+
+.badge-details {
+  margin-top: 0;
+  margin-left: 10%;
+  float: left;
+  width: 40%;
+}
+
 .form-option {
   text-align: center;
   margin-bottom: 0;
@@ -54,10 +66,6 @@
   padding-top: 5%;
   padding-right: 5%;
   font-size: 20px;
-}
-
-.badge-details {
-  margin-top: 0;
 }
 
 .badge-red,

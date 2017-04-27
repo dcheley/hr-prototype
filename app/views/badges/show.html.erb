@@ -3,19 +3,19 @@
     <h2 class="badge-detail-title"><%= "#{@user.name}" %>'s badge details</h2>
 
     <ul class="badge-details">
-
       <!-- Display Red Badge -->
       <% if @badge.red == true %>
-      <div class="badge-red", style="height: 400px; width: 400px; border-radius: 200px; float: left;">
+      <div class="badge-red", style="height: 400px; width: 400px; border-radius: 200px; ">
         <h2 class="profile-badges", style="margin-top: 40%;">
           <%= @badge.name %>
         </h2>
+        <%= render 'edit-badge-button' %>
       </div>
       <% end %>
 
       <!-- Display Blue Badges -->
       <% if @badge.blue == true %>
-      <div class="badge-blue", style="height: 400px; width: 400px; border-radius: 200px; float: left;">
+      <div class="badge-blue", style="height: 400px; width: 400px; border-radius: 200px; ">
         <h2 class="profile-badges", style="margin-top: 40%;">
           <%= @badge.name %>
         </h2>
@@ -24,7 +24,7 @@
 
       <!-- Display Yellow Badges -->
       <% if @badge.yellow == true %>
-      <div class="badge-yellow", style="height: 400px; width: 400px; border-radius: 200px; float: left;">
+      <div class="badge-yellow", style="height: 400px; width: 400px; border-radius: 200px; ">
         <h2 class="profile-badges", style="margin-top: 40%;">
           <%= @badge.name %>
         </h2>
@@ -33,7 +33,7 @@
 
       <!-- Display Green Badges -->
       <% if @badge.green == true %>
-      <div class="badge-green", style="height: 400px; width: 400px; border-radius: 200px; float: left;">
+      <div class="badge-green", style="height: 400px; width: 400px; border-radius: 200px; ">
         <h2 class="profile-badges", style="margin-top: 40%;">
           <%= @badge.name %>
         </h2>
@@ -42,7 +42,7 @@
 
       <!-- Display Purple Badges -->
       <% if @badge.purple == true %>
-      <div class="badge-purple", style="height: 400px; width: 400px; border-radius: 200px; float: left;">
+      <div class="badge-purple", style="height: 400px; width: 400px; border-radius: 200px; ">
         <h2 class="profile-badges", style="margin-top: 40%;">
           <%= @badge.name %>
         </h2>
@@ -51,7 +51,7 @@
 
       <!-- Display Pink Badges -->
       <% if @badge.pink == true %>
-      <div class="badge-pink", style="height: 400px; width: 400px; border-radius: 200px; float: left;">
+      <div class="badge-pink", style="height: 400px; width: 400px; border-radius: 200px; ">
         <h2 class="profile-badges", style="margin-top: 40%;">
           <%= @badge.name %>
         </h2>
@@ -60,16 +60,18 @@
 
       <!-- Display Grey Badges -->
       <% if @badge.grey == true %>
-      <div class="badge-grey", style="height: 400px; width: 400px; border-radius: 200px; float: left;">
+      <div class="badge-grey", style="height: 400px; width: 400px; border-radius: 200px; ">
         <h2 class="profile-badges", style="margin-top: 40%;">
           <%= @badge.name %>
         </h2>
       </div>
       <% end %>
+
+      <p class="badge-description"><%= @badge.description %></p>
     </ul>
 
-    <div class="home-right">
-      <h4 class="badge-detail-title" style="text-align: left;">Endorsements</h4>
+    <div class="badge-right">
+      <h4 class="badge-detail-title" style="text-align: left;">Endorsements:</h4>
 
       <% if current_user.liked? @badge %>
         <%= link_to '', unlike_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-heart" %>
@@ -80,10 +82,6 @@
         <p class="profile-badges"></p>
         <%= render 'likes' %>
       <% end %>
-
-      <p class="badge-description"><%= @badge.description %></p>
-
-      <%= render 'edit-badge-button' %>
     </div>
 
   <% else %>
