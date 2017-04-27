@@ -6,8 +6,8 @@
       <%= render 'badges_form' %>
       <%= button_to 'DELETE BADGE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{@badge.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"delete" %>
     </div>
-    
+
   <% else %>
-    <h1 class="login-message"><%= link_to "LOGIN", :login %> to edit <%= @user.name %>'s badge</h1>
+    <h1 class="login-message"><%= link_to "LOGIN", :login %> to edit <%= User.find(@badge.user_id).name %>'s badge</h1>
   <% end %>
 </div>

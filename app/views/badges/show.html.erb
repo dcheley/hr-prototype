@@ -2,12 +2,12 @@
   <% if current_user %>
     <h2 class="badge-detail-title"><%= "#{@user.name}" %>'s badge details</h2>
 
-    <ul class="badge-details" style="margin-top: 0;">
+    <ul class="badge-details">
 
       <!-- Display Red Badge -->
       <% if @badge.red == true %>
       <div class="badge-red", style="height: 400px; width: 400px; border-radius: 200px;">
-        <h2 class="profile-badges", style="margin-top: 80px;">
+        <h2 class="profile-badges", style="margin-top: 40%;">
           <%= @badge.name %>
         </h2>
       </div>
@@ -16,7 +16,7 @@
       <!-- Display Blue Badges -->
       <% if @badge.blue == true %>
       <div class="badge-blue", style="height: 400px; width: 400px; border-radius: 200px; float: left;">
-        <h2 class="profile-badges", style="margin-top: 80px;">
+        <h2 class="profile-badges", style="margin-top: 40%;">
           <%= @badge.name %>
         </h2>
       </div>
@@ -25,7 +25,7 @@
       <!-- Display Yellow Badges -->
       <% if @badge.yellow == true %>
       <div class="badge-yellow", style="height: 400px; width: 400px; border-radius: 200px; float: left;">
-        <h2 class="profile-badges", style="margin-top: 80px;">
+        <h2 class="profile-badges", style="margin-top: 40%;">
           <%= @badge.name %>
         </h2>
       </div>
@@ -34,7 +34,7 @@
       <!-- Display Green Badges -->
       <% if @badge.green == true %>
       <div class="badge-green", style="height: 400px; width: 400px; border-radius: 200px; float: left;">
-        <h2 class="profile-badges", style="margin-top: 80px;">
+        <h2 class="profile-badges", style="margin-top: 40%;">
           <%= @badge.name %>
         </h2>
         </div>
@@ -43,7 +43,7 @@
       <!-- Display Purple Badges -->
       <% if @badge.purple == true %>
       <div class="badge-purple", style="height: 400px; width: 400px; border-radius: 200px; float: left;">
-        <h2 class="profile-badges", style="margin-top: 80px;">
+        <h2 class="profile-badges", style="margin-top: 40%;">
           <%= @badge.name %>
         </h2>
       </div>
@@ -52,7 +52,7 @@
       <!-- Display Pink Badges -->
       <% if @badge.pink == true %>
       <div class="badge-pink", style="height: 400px; width: 400px; border-radius: 200px; float: left;">
-        <h2 class="profile-badges", style="margin-top: 80px;">
+        <h2 class="profile-badges", style="margin-top: 40%;">
           <%= @badge.name %>
         </h2>
       </div>
@@ -61,7 +61,7 @@
       <!-- Display Grey Badges -->
       <% if @badge.grey == true %>
       <div class="badge-grey", style="height: 400px; width: 400px; border-radius: 200px; float: left;">
-        <h2 class="profile-badges", style="margin-top: 80px;">
+        <h2 class="profile-badges", style="margin-top: 40%;">
           <%= @badge.name %>
         </h2>
       </div>
