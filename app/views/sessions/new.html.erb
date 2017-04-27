@@ -1,23 +1,27 @@
 <div class="background">
-  <div class="container" style="background-color: #bdbdbd;">
+  <%= image_tag("homepage-bg.jpeg", class:"background-image")%>
 
-    <h1 class="form-title">Career Advancement App</h1>
+  <div class="home-right">
+    <div class="container">
 
-    <h5 class="form-instructions">Enter account info below:</h5>
+      <h1 class="form-title" style="font-size: 120px;">Career Advancement App</h1>
 
-    <%= form_tag login_path do %>
-      <div class="field">
-        <div class="field-label"><%= label_tag :email %></div>
-        <%= text_field_tag :email, params[:email], class:"field-input" %>
-      </div>
+      <h5 class="form-instructions" style="font-size: 80px;">Enter account info below:</h5>
 
-      <div class="field">
-        <div class="field-label"><%= label_tag :password %></div>
-        <%= password_field_tag :password, nil, class:"field-input", placeholder:"At least 6 characters" %>
-      </div>
+      <%= form_tag login_path do %>
+        <div class="field">
+          <div class="field-label"><%= label_tag :email %></div>
+          <%= text_field_tag :email, params[:email], class:"field-input" %>
+        </div>
 
-      <div class="actions"><%= submit_tag "LOGIN", class:"submit-blue" %></div>
-    <% end %>
+        <div class="field">
+          <div class="field-label"><%= label_tag :password %></div>
+          <%= password_field_tag :password, nil, class:"field-input", placeholder:"At least 6 characters" %>
+        </div>
 
+        <div class="actions"><%= submit_tag "LOGIN", class:"submit-blue" %></div>
+      <% end %>
+    </div>
   </div>
+
 </div>

@@ -13,12 +13,32 @@
 }
 
 .container {
-  width: 600px;
+  width: 90%;
   margin-bottom: 50px;
   border-radius: 25px;
   padding-bottom: 3px;
   background-position: center;
   margin-top: 12.5%;
+}
+
+.home-right {
+  float: right;
+  width: 60%;
+  // padding-right: 3%;
+}
+
+.background-image {
+  -webkit-filter: grayscale(80%);
+  -webkit-filter: brightness(80%);
+  // -webkit-filter: hue-rotate(260deg);
+  z-index: -1;
+	height: 100%;
+	width: 40%;
+  background-size: cover;
+  position: fixed;
+  background-repeat: no-repeat;
+  margin: 0;
+  border: 0;
 }
 
 //Navbar
