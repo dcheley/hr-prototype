@@ -20,53 +20,18 @@
     <%= f.text_area :description, class:"field-input", placeholder:"Describe your skill or experience in 140 characters or less." %>
   </div>
 
-  <h5 class="field-label" style="margin-bottom: 30px; font-weight: bold;">Choose a colour</h5>
+  <div class="center-float-wrap">
+    <div class="float">
+      <%= f.submit "SUBMIT", class:"submit-blue" %>
+    </div>
 
-  <div class="check-box">
-    <%= f.check_box :red %>
-    <%= f.label :red %>
-  </div>
-
-  <div class="check-box">
-    <%= f.check_box :blue %>
-    <%= f.label :blue %>
-  </div>
-
-  <div class="check-box">
-    <%= f.check_box :yellow %>
-    <%= f.label :yellow %>
-  </div>
-
-  <div class="check-box">
-    <%= f.check_box :green %>
-    <%= f.label :green %>
-  </div>
-
-  <div class="check-box">
-    <%= f.check_box :purple %>
-    <%= f.label :purple %>
-  </div>
-
-  <div class="check-box">
-    <%= f.check_box :pink %>
-    <%= f.label :pink %>
-  </div>
-
-  <div class="check-box">
-    <%= f.check_box :grey %>
-    <%= f.label :grey %>
-  </div>
-
-  <div class="inner-left">
-    <%= f.submit "SUBMIT", class:"submit-blue" %>
-  </div>
-
-  <div class="inner-right">
-    <%= link_to "/users/#{current_user.id}", class:"cancel-link" do %>
-      <div class="submit-grey">
-        CANCEL
-      </div>
-    <% end %>
+    <div class="float">
+      <%= link_to "/users/#{current_user.id}", class:"cancel-link" do %>
+        <div class="submit-grey">
+          CANCEL
+        </div>
+      <% end %>
+    </div>
   </div>
 
 <% end %>

@@ -9,7 +9,6 @@
         <h2 class="profile-badges", style="margin-top: 40%;">
           <%= @badge.name %>
         </h2>
-        <%= render 'edit-badge-button' %>
       </div>
       <% end %>
 
@@ -18,7 +17,6 @@
       <div class="badge-blue", style="height: 300px; width: 300px; border-radius: 150px; ">
         <h2 class="profile-badges", style="margin-top: 40%;">
           <%= @badge.name %>
-          <%= render 'edit-badge-button' %>
         </h2>
       </div>
       <% end %>
@@ -84,6 +82,9 @@
         <%= render 'likes' %>
       <% end %>
     </div>
+
+    <%= button_to 'DELETE BADGE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{@badge.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"delete" %>
+    <%= render 'edit-badge-button' %>
 
   <% else %>
     <h1 class="login-message"><%= link_to "LOGIN", :login %> to view <%= User.find(@badge.user_id).name %>'s badge</h1>
