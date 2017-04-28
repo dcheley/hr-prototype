@@ -12,7 +12,9 @@
       </div>
       <% end %>
 
-      <p class="badge-description"><%= @badge.description %></p>
+      <div class="badge-description-wrap">
+        <p class="badge-description"><%= @badge.description %></p>
+      </div>
       <!-- <h4 class="badge-detail-title">Endorsements:</h4> -->
 
       <% if current_user.liked? @badge %>

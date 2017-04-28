@@ -62,9 +62,13 @@
   min-width: 30px;
 }
 
+.badge-description-wrap {
+  width: 75%;
+  margin: auto;
+}
+
 .badge-description {
-  // padding-top: 5%;
-  // padding-right: 5%;
+  padding-top: 2%;
   font-size: 20px;
 }
 
@@ -95,6 +99,12 @@
   font-size: 32px;
   color: $grey;
   padding-top: 10px;
+}
+
+.glyphicon.glyphicon-heart:hover,
+.glyphicon.glyphicon-heart-empty:hover, {
+  color: $dark-grey;
+  text-decoration: none;
 }
 
 .likes {
