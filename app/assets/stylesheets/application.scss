@@ -89,40 +89,22 @@
   background-color: $error-text;
 }
 
-.submit-yellow {
-  background-color: $dark-yellow;
-}
-
 .submit-green {
-  background-color: #2e7d32;
+  background-color: $green;
 }
 
-.submit-purple {
-  background-color: $purple;
-}
-
-.submit-pink {
-  background-color: $pink;
-}
-
-.submit-grey {
-  background-color: $grey;
-}
 
 .submit-black {
   float: right;
   background-color: black;
 }
 
-.submit-blue:hover,
-.delete:hover,
-.submit-yellow:hover,
-.submit-green:hover,
-.submit-purple:hover,
-.submit-pink:hover,
-.submit-grey:hover,
-.submit-black:hover {
-  background-color: $dark-turquoise;
+.submit-green:hover {
+  background-color: $dark-green;
+}
+
+.submit-blue:hover {
+  background-color: $bright-dark-blue;
 }
 
 //Form Field Errors

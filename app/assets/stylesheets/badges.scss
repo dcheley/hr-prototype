@@ -36,7 +36,6 @@
 
 .float {
   float: left;
-  // width: 50%;
 }
 
 .center-float-wrap {
@@ -77,13 +76,7 @@
   font-size: 20px;
 }
 
-.badge-red,
-.badge-blue,
-.badge-yellow,
-.badge-green,
-.badge-purple,
-.badge-pink,
-.badge-grey, {
+.badge-green, {
   margin: 5px;
   position: relative;
   // float: left;
@@ -96,41 +89,11 @@
   text-align: center;
 }
 
-.badge-red {
-  background-color: $error-text;
-}
-
-.badge-blue {
-  background-color: $bright-dark-blue;
-}
-
-.badge-yellow {
-  background-color: $dark-yellow;
-}
-
 .badge-green {
   background-color: $green;
 }
 
-.badge-purple {
-  background-color: $purple;
-}
-
-.badge-pink {
-  background-color: $pink;
-}
-
-.badge-grey {
-  background-color: $light-grey;
-}
-
-.badge-red:hover,
-.badge-blue:hover,
-.badge-yellow:hover,
-.badge-green:hover,
-.badge-purple:hover,
-.badge-pink:hover,
-.badge-grey:hover {
+.badge-green:hover {
   li {
     color: $grey;
   }
