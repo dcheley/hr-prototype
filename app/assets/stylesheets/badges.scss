@@ -15,12 +15,21 @@
 
 .inner-left {
   float: left;
-  width: 50%
+  width: 30%;
+  margin: 5px;
+}
+
+.inner-middle {
+  float: left;
+  width: 30%;
+  margin: 5px;
+  margin-left: 5%;
 }
 
 .inner-right {
   float: right;
-  width: 50%
+  width: 30%;
+  margin: 5px;
 }
 
 .badge-details {
