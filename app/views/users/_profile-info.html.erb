@@ -23,6 +23,6 @@
   <% if @user.job_description == nil %>
     <%= link_to "ADD JOB DESCRIPTION", edit_user_url(@user), class:"submit-green", style:"margin: 2.5 auto; text-align: center; width: 160px;" %>
   <% else %>
-    <li class="team-info"><%= @user.job_description %></li>
+    <li class="team-info" style="font-size: 16px;"><%= @user.job_description %></li>
   <% end %>
 </ul>
