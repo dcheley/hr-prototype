@@ -1,13 +1,13 @@
 <div class="profile-background">
   <% if current_user && current_user == @user %>
-    <div class="left-side">
+    <div class="left-profile">
       <!-- <h1 class="profile-title"><%= link_to "Edit Settings", "/users/#{@user.id}/edit" %></h1> -->
     </br><h1 class="profile-title"><b>Your Profile</b></h1>
 
       <%= render 'profile-info' %>
     </div>
 
-    <div class="right-side">
+    <div class="right-profile">
       <h1 class="badge-title"><b>Your badges</b></h1>
 
       <p class="badge-new-wrap"><%= link_to 'ADD Badge', "/users/#{@user.id}/badges/new", class:"badge-new-link" %></p>
@@ -18,13 +18,13 @@
     </div>
 
   <% elsif current_user && current_user != @user %>
-    <div class="left-side">
+    <div class="left-profile">
       </br><h1 class="profile-title"><%= @user.name %>'s Profile</h1>
 
       <%= render 'profile-info' %>
     </div>
 
-    <div class="right-side">
+    <div class="right-profile">
       <h1 class="badge-title"><%= "#{@user.name}" %>'s badges</h1>
 
       <p class="badge-new-wrap"><%= link_to 'GIVE Recognition Badge', "/users/#{@user.id}/badges/new", class:"badge-new-link" %></p>

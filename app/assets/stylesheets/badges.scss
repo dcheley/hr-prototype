@@ -1,4 +1,18 @@
 //Badges
+.left-side {
+  float: left;
+  width: 50%;
+}
+
+.right-side {
+  float: right;
+  width: 50%;
+  border-left: dotted;
+  border-left-color: $dark-turquoise;
+  height: 100%;
+  padding-right: 3%;
+}
+
 .inner-left {
   float: left;
   width: 50%

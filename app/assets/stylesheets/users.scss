@@ -94,18 +94,14 @@
   height: 1000px;
 }
 
-.left-side {
+.left-profile {
   float: left;
-  width: 50%;
+  width: 40%;
 }
 
-.right-side {
+.right-profile {
   float: right;
-  width: 50%;
-  border-left: dotted;
-  border-left-color: $dark-turquoise;
-  height: 100%;
-  padding-right: 3%;
+  width: 60%;
 }
 
 .profile-title {
