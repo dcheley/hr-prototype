@@ -65,12 +65,8 @@
 
 .submit-blue,
 .delete,
-.submit-yellow,
 .submit-green,
-.submit-purple,
-.submit-pink,
-.submit-grey,
-.submit-black {
+.submit-grey {
   color: white;
   border: none;
   display: block;
@@ -86,7 +82,7 @@
 }
 
 .delete {
-  background-color: $error-text;
+  background-color: $red;
 }
 
 .submit-green {
@@ -94,9 +90,8 @@
 }
 
 
-.submit-black {
-  float: right;
-  background-color: black;
+.submit-grey {
+  background-color: $grey;
 }
 
 .submit-green:hover {
@@ -105,6 +100,14 @@
 
 .submit-blue:hover {
   background-color: $bright-dark-blue;
+}
+
+.submit-grey:hover {
+  background-color: $dark-grey;
+}
+
+.delete:hover {
+  background-color: $dark-red;
 }
 
 //Form Field Errors
@@ -136,7 +139,7 @@
 }
 
 .login-message a {
-  color: $error-text;
+  color: $dark-red;
 }
 
 .alert {
@@ -148,34 +151,4 @@
   padding-top: 45px;
   padding-bottom: 100px;
   color: $bright-dark-blue;
-}
-
-//User#index
-.tracker-title {
-  text-align: center;
-  padding-top: 15px;
-  margin-bottom: 40px;
-  margin-top: 0;
-}
-
-.tracker-container {
-  text-align: center;
-}
-
-.tracker-info {
-  background-color: #FFC33C; //yellow
-  margin: auto;
-  margin-bottom: 10px;
-  width: 230px;
-  height: 135px;
-}
-
-.tracker-link {
-  text-decoration: none;
-  color: $grey;
-  font-weight: bold;
-}
-
-.tracker-item {
-  list-style: none;
 }
