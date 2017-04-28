@@ -92,6 +92,10 @@
   background-color: $green;
 }
 
+.badge-green li {
+  margin-top: 15px;
+}
+
 .badge-show-green, {
   margin: 5px auto;
   background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
