@@ -1,4 +1,4 @@
-<div class="background">
+<div class="background" style="text-align: center;">
   <% if current_user %>
     <h2 class="badge-detail-title"><%= "#{@user.name}" %>'s badge details</h2>
 
@@ -15,22 +15,27 @@
       <p class="badge-description"><%= @badge.description %></p>
     </ul>
 
-    <div class="badge-right">
-      <h4 class="badge-detail-title" style="text-align: left;">Endorsements:</h4>
+    <h4 class="badge-detail-title">Endorsements:</h4>
 
-      <% if current_user.liked? @badge %>
-        <%= link_to '', unlike_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-heart" %>
-        <p class="profile-badges"></p>
-        <%= render 'likes' %>
-      <% else %>
-        <%= link_to '', like_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-heart-empty" %>
-        <p class="profile-badges"></p>
-        <%= render 'likes' %>
-      <% end %>
+    <% if current_user.liked? @badge %>
+      <%= link_to '', unlike_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-heart" %>
+      <p class="profile-badges"></p>
+      <%= render 'likes' %>
+    <% else %>
+      <%= link_to '', like_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-heart-empty" %>
+      <p class="profile-badges"></p>
+      <%= render 'likes' %>
+    <% end %>
+
+    <div class="center-float-wrap">
+      <div class="float">
+        <%= render 'edit-badge-button' %>
+      </div>
+
+      <div class="float">
+        <%= button_to 'DELETE BADGE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{@badge.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"delete" %>
+      </div>
     </div>
-
-    <%= button_to 'DELETE BADGE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{@badge.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"delete" %>
-    <%= render 'edit-badge-button' %>
 
   <% else %>
     <h1 class="login-message"><%= link_to "LOGIN", :login %> to view <%= User.find(@badge.user_id).name %>'s badge</h1>

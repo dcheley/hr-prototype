@@ -9,16 +9,8 @@
   width: 50%
 }
 
-.badge-right {
-  float: right;
-  width: 50%;
-}
-
 .badge-details {
   margin-top: 0;
-  margin-left: 5%;
-  float: left;
-  width: 45%;
 }
 
 .form-option {
@@ -64,7 +56,7 @@
   margin: auto;
   width: 80%;
   font-style: italic;
-  color: black;
+  color: white;
   list-style: none;
   font-size: 18px;
   min-width: 30px;
@@ -79,7 +71,6 @@
 .badge-green, {
   margin: 5px;
   position: relative;
-  // float: left;
   background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
   border: 3px solid $grey;
   border-radius: 12px; /* one half of ( (border * 2) + height + padding ) */
@@ -95,7 +86,7 @@
 
 .badge-green:hover {
   li {
-    color: $grey;
+    color: $medium-grey;
   }
 }
 
