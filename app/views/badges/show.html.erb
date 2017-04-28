@@ -1,41 +1,41 @@
 <div class="background" style="text-align: center;">
   <% if current_user %>
-    <h2 class="badge-detail-title"><%= "#{@user.name}" %>'s badge details</h2>
-
     <ul class="badge-details">
+
+      <h2 class="badge-detail-title"><%= "#{@user.name}" %>'s badge details</h2>
       <!-- Display Green Badges -->
       <% if @badge.green == true %>
       <div class="badge-green", style="height: 300px; width: 300px; border-radius: 150px; ">
         <h2 class="profile-badges", style="margin-top: 40%;">
           <%= @badge.name %>
         </h2>
-        </div>
+      </div>
       <% end %>
 
       <p class="badge-description"><%= @badge.description %></p>
+      <!-- <h4 class="badge-detail-title">Endorsements:</h4> -->
+
+      <% if current_user.liked? @badge %>
+        <%= link_to '', unlike_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-heart" %>
+        <p class="profile-badges"></p>
+        <%= render 'likes' %>
+      <% else %>
+        <%= link_to '', like_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-heart-empty" %>
+        <p class="profile-badges"></p>
+        <%= render 'likes' %>
+      <% end %>
+
+      <div class="center-float-wrap">
+        <div class="float" style="margin-right: 5px;">
+          <%= render 'edit-badge-button' %>
+        </div>
+
+        <div class="float" style="margin-left: 5px;">
+          <%= button_to 'DELETE BADGE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{@badge.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"delete" %>
+        </div>
+      </div>
+
     </ul>
-
-    <h4 class="badge-detail-title">Endorsements:</h4>
-
-    <% if current_user.liked? @badge %>
-      <%= link_to '', unlike_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-heart" %>
-      <p class="profile-badges"></p>
-      <%= render 'likes' %>
-    <% else %>
-      <%= link_to '', like_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-heart-empty" %>
-      <p class="profile-badges"></p>
-      <%= render 'likes' %>
-    <% end %>
-
-    <div class="center-float-wrap">
-      <div class="float">
-        <%= render 'edit-badge-button' %>
-      </div>
-
-      <div class="float">
-        <%= button_to 'DELETE BADGE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{@badge.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"delete" %>
-      </div>
-    </div>
 
   <% else %>
     <h1 class="login-message"><%= link_to "LOGIN", :login %> to view <%= User.find(@badge.user_id).name %>'s badge</h1>

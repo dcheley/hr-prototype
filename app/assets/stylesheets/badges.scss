@@ -63,20 +63,20 @@
 }
 
 .badge-description {
-  padding-top: 5%;
-  padding-right: 5%;
+  // padding-top: 5%;
+  // padding-right: 5%;
   font-size: 20px;
 }
 
 .badge-green, {
-  margin: 5px;
-  position: relative;
+  margin: 5px auto;
+  // position: relative;
   background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
   border: 3px solid $grey;
   border-radius: 12px; /* one half of ( (border * 2) + height + padding ) */
   box-shadow: 1px 1px 1px black;
   // font: bold 15px/13px;
-  padding: 4px 3px 0 3px;
+  // padding: 4px 3px 0 3px;
   text-align: center;
 }
 
