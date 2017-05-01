@@ -105,7 +105,7 @@
             <div class="tile__details">
               <h3 class="tile-header" style="padding-left: 15%;"><%= @opportunity_2.name %></h3>
               <div class="tile__title" style="padding-left: 20%;">
-                <%= @opportunity_2.description %>
+                <%= link_to "Emerging Leaders signup page link", "http://www.google.com", class:"btn btn-default", target: '_blank' %>
                 <%= form_for([@opportunity_2, @badge]) do |f| %>
                   <%= f.hidden_field :name, value: @opportunity_2.name %>
                   <%= f.hidden_field :description, value: @opportunity_2.description %>
