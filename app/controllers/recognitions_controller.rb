@@ -1,6 +1,6 @@
 class RecognitionsController < ApplicationController
   before_action :load_recognition, only: [:show, :edit, :update, :destroy, :like, :unlike]
-  before_action :load_user, only: [:new, :show, :edit, :update, :destroy]
+  before_action :load_user, only: [:new, :create, :show, :edit, :update, :destroy]
 
   def new
     @recognition = Recognition.new
@@ -10,7 +10,7 @@ class RecognitionsController < ApplicationController
     @recognition = Recognition.new(recognition_params)
 
     if @recognition.save
-      redirect_to user_url(@user), notice: "#{@recognition.name} badge given!"
+      redirect_to "/users/#{@user.id}/recognitions/#{@recognition.id}", notice: "#{@recognition.name} badge given!"
     else
       render :new
     end
