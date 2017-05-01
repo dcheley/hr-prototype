@@ -8,23 +8,23 @@
 
 .org-menu-container {
   margin: 2rem auto;
-  max-width: 1088px;
+  max-width: 90%;
   padding-left: 6%;
 }
 
 .org-container {
   margin: 2rem auto;
-  max-width: 1088px;
+  max-width: 90%;
 }
 
 @media screen and (max-width: 1121px) {
   .org-container {
-  max-width: 878px;
+    max-width: 878px;
   }
 }
 @media screen and (max-width: 911px) {
   .org-container {
-  max-width: 668px;
+    max-width: 668px;
   }
 }
 
