@@ -4,10 +4,14 @@
 
       <h2 class="badge-detail-title"><%= "#{@user.name}" %>'s badge details</h2>
       <!-- Display Green Badges -->
-      <% if @badge.green == true %>
-      <div class="badge-show-green">
-        <h2 class="badge-show-title"><%= @badge.name %></h2>
-      </div>
+      <% if @badge.opportunity_id == nil %>
+        <div class="badge-show-green">
+          <h2 class="badge-show-title"><%= @badge.name %></h2>
+        </div>
+      <% else %>
+        <div class="badge-show-middle-green">
+          <h2 class="badge-show-title"><%= @badge.name %></h2>
+        </div>
       <% end %>
 
       <% if @badge.description != nil %>
