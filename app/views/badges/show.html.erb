@@ -10,11 +10,16 @@
       </div>
       <% end %>
 
+      <% if @badge.description != nil %>
       <div class="badge-description-wrap">
         <p class="badge-description"><%= @badge.description %></p>
       </div>
-      <!-- <h4 class="badge-detail-title">Endorsements:</h4> -->
-
+      <% else %>
+      <div class="badge-description-wrap">
+        <p class="badge-description">Describe your skill or experience in 500 characters or less.</p>
+      </div>
+      <% end %>
+      
       <% if current_user.liked? @badge %>
         <%= link_to '', unlike_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-heart" %>
         <p class="profile-badges"></p>
