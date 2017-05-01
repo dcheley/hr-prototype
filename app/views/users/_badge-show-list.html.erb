@@ -29,5 +29,15 @@
 
   <div class="inner-right">
     <p class="badge-types"><b>Recognition Badges</b></p>
+    <!-- Display Green Badges -->
+    <% @user.received_badges.each do |b| %>
+      <%= link_to "/users/#{@user.id}/recognitions/#{b.id}" do %>
+      <div class="badge-green">
+          <li class="profile-badges-name">
+            <%= "#{b.name}" %>
+          </li></br>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </ul>
