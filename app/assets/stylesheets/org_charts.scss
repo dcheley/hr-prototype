@@ -192,7 +192,7 @@
   bottom: -15px;
 }
 
-//Active Class
+//Active Class --
 .active .element,
 .list .selection {
   border: 2px solid $light-grey;
@@ -218,7 +218,7 @@
   pointer-events: none;
 }
 
-// Grey lines box
+// Grey lines box --
 .active .element:empty {
   border-color: $medium-grey;
   min-height: 122px;
