@@ -19,11 +19,11 @@
       <% end %>
 
       <% if current_user.liked? @recognition %>
-        <%= link_to '', unlike_badge_path(@recognition.id), method: :put, remote: true, id: "like_#{@recognition.id}", class:"glyphicon glyphicon-heart" %>
+        <%= link_to '', unlike_recognition_path(@recognition.id), method: :put, remote: true, id: "like_#{@recognition.id}", class:"glyphicon glyphicon-heart" %>
         <p class="profile-badges"></p>
         <%= render 'likes' %>
       <% else %>
-        <%= link_to '', like_badge_path(@recognition.id), method: :put, remote: true, id: "like_#{@recognition.id}", class:"glyphicon glyphicon-heart-empty" %>
+        <%= link_to '', like_recognition_path(@recognition.id), method: :put, remote: true, id: "like_#{@recognition.id}", class:"glyphicon glyphicon-heart-empty" %>
         <p class="profile-badges"></p>
         <%= render 'likes' %>
       <% end %>
