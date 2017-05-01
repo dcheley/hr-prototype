@@ -103,9 +103,9 @@
 .org-header,
 .org-menu-header {
   display: block;
-  background: $medium-grey;
+  background: $dark-turquoise;
   padding: 5px 35px 5px 10px;
-  color: black;
+  color: white;
   position: relative;
 }
 
@@ -162,7 +162,7 @@
 .element .context {
   position: absolute;
   border-left: 1px solid rgba(0, 0, 0, 0.05);
-  background: $medium-grey;
+  background: $dark-turquoise;
   text-align: center;
   width: 26px;
   height: 100%;
@@ -210,6 +210,7 @@
   pointer-events: none;
 }
 
+// Grey lines box
 .active .element:empty {
   border-color: $medium-grey;
   min-height: 122px;
