@@ -19,7 +19,7 @@
         <p class="badge-description">Describe your skill or experience in 500 characters or less.</p>
       </div>
       <% end %>
-      
+
       <% if current_user.liked? @badge %>
         <%= link_to '', unlike_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-heart" %>
         <p class="profile-badges"></p>
@@ -30,15 +30,19 @@
         <%= render 'likes' %>
       <% end %>
 
-      <div class="center-float-wrap">
-        <div class="float" style="margin-right: 5px;">
-          <%= render 'edit-badge-button' %>
-        </div>
+      <% if current_user == @user %>
+        <div class="center-float-wrap">
+          <div class="float" style="margin-right: 5px;">
+            <%= link_to "/users/#{@user.id}/badges/#{@badge.id}/edit", class:"cancel-link", style:"margin-left: 0;" do %>
+              <div class="submit-green">EDIT</div>
+            <% end %>
+          </div>
 
-        <div class="float" style="margin-left: 5px;">
-          <%= button_to 'DELETE BADGE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{@badge.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"delete" %>
+          <div class="float" style="margin-left: 5px;">
+            <%= button_to 'DELETE BADGE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{@badge.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"delete" %>
+          </div>
         </div>
-      </div>
+      <% end %>
 
     </ul>
 
