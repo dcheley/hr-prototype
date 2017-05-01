@@ -2,9 +2,9 @@
   <%= image_tag @user.avatar.url(:medium), class:"profile-pic" %>
 <% else %>
   <div class="default-pic">
-    <%= image_tag('smile.svg') %>
+    <span class="glyphicon glyphicon-user" style="font-size: 80px;"></span>
+    <%= link_to "ADD PIC", edit_user_url(@user), class:"submit-green", style:"margin: 2.5 auto; width: 120px;" %>
   </div>
-  <!-- <li class="pic-info">Add a profile pic through the settings page (link at top)</li> -->
 <% end %>
 
 <ul style="padding-left: 0;">
@@ -20,4 +20,10 @@
   <li class="profile-info"><b>Title:</b> <%= @user.title %></li>
   <!-- <li class="profile-info"><b>Email:</b> <%= @user.email %></li> -->
   <!-- <li class="profile-info"><b>Phone:</b> <%= @user.phone %></li> -->
+  <% if @user.job_description == nil %>
+    <%= link_to "ADD JOB DESCRIPTION", edit_user_url(@user), class:"submit-green", style:"margin: 2.5 auto; text-align: center; width: 160px;" %>
+  <% else %>
+    <li class="team-info" style="font-size: 16px;"><b>Job Description</b></li>
+    <li class="team-info" style="font-size: 16px;"><%= @user.job_description %></li>
+  <% end %>
 </ul>

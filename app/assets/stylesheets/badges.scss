@@ -1,24 +1,39 @@
 //Badges
-.inner-left {
+.left-side {
   float: left;
   width: 50%;
+}
+
+.right-side {
+  float: right;
+  width: 50%;
+  border-left: dotted;
+  border-left-color: $dark-turquoise;
+  height: 100%;
+  padding-right: 3%;
+}
+
+.inner-left {
+  float: left;
+  width: 30%;
+  margin: 5px;
+}
+
+.inner-middle {
+  float: left;
+  width: 30%;
+  margin: 5px;
+  margin-left: 5%;
 }
 
 .inner-right {
   float: right;
-  width: 50%;
-}
-
-.badge-right {
-  float: right;
-  width: 50%;
+  width: 30%;
+  margin: 5px;
 }
 
 .badge-details {
   margin-top: 0;
-  margin-left: 5%;
-  float: left;
-  width: 45%;
 }
 
 .form-option {
@@ -32,6 +47,14 @@
   color: white;
   display: inline-block;
   margin-left: 30%;
+}
+
+.float {
+  float: left;
+}
+
+.center-float-wrap {
+  display: inline-block;
 }
 
 .badge-title {
@@ -52,78 +75,78 @@
   padding-top: 2%;
 }
 
-.profile-badges {
+.profile-badges,
+.badge-show-title,
+.profile-badges-name {
   margin: auto;
   width: 80%;
   font-style: italic;
   color: black;
   list-style: none;
-  font-size: 18px;
   min-width: 30px;
 }
 
+.profile-badges-name {
+  color: white;
+  margin-top: 40%;
+  font-size: 12px;
+}
+
+.badge-show-title {
+  color: white;
+  margin-top: 40%;
+  font-size: 26px;
+}
+
+.badge-description-wrap {
+  width: 75%;
+  margin: auto;
+}
+
 .badge-description {
-  padding-top: 5%;
-  padding-right: 5%;
+  padding-top: 2%;
   font-size: 20px;
 }
 
-.badge-red,
-.badge-blue,
-.badge-yellow,
-.badge-green,
-.badge-purple,
-.badge-pink,
-.badge-grey, {
-  margin: 5px;
-  position: relative;
-  // float: left;
+.badge-green, {
+  margin: 5px auto;
+  // position: relative;
   background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
   border: 3px solid $grey;
   border-radius: 12px; /* one half of ( (border * 2) + height + padding ) */
   box-shadow: 1px 1px 1px black;
   // font: bold 15px/13px;
-  padding: 4px 3px 0 3px;
+  // padding: 4px 3px 0 3px;
   text-align: center;
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
 }
 
-.badge-red {
-  background-color: $error-text;
-}
-
-.badge-blue {
-  background-color: $bright-dark-blue;
-}
-
-.badge-yellow {
-  background-color: $dark-yellow;
-}
-
-.badge-green {
+.badge-green, .badge-show-green {
   background-color: $green;
 }
 
-.badge-purple {
-  background-color: $purple;
+.badge-green li {
+  margin-top: 15px;
 }
 
-.badge-pink {
-  background-color: $pink;
+.badge-show-green, {
+  margin: 5px auto;
+  background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
+  border: 3px solid $grey;
+  border-radius: 12px; /* one half of ( (border * 2) + height + padding ) */
+  box-shadow: 1px 1px 1px black;
+  text-align: center;
+  height: 300px;
+  width: 300px;
+  border-radius: 150px;
 }
 
-.badge-grey {
-  background-color: $light-grey;
-}
 
-.badge-red:hover,
-.badge-blue:hover,
-.badge-yellow:hover,
-.badge-green:hover,
-.badge-purple:hover,
-.badge-pink:hover,
-.badge-grey:hover {
+.badge-green:hover {
   li {
-    color: $grey;
+    color: $medium-grey;
   }
 }
 
@@ -134,6 +157,12 @@
   padding-top: 10px;
 }
 
+.glyphicon.glyphicon-heart:hover,
+.glyphicon.glyphicon-heart-empty:hover, {
+  color: $dark-grey;
+  text-decoration: none;
+}
+
 .likes {
   color: black;
 }
@@ -141,4 +170,9 @@
 .likes a {
   font-weight: bold;
   color: $grey;
+}
+
+.likes a:hover {
+  font-weight: bold;
+  color: $dark-grey;
 }

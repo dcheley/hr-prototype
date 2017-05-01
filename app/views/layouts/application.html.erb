@@ -33,8 +33,9 @@
           <button type="submit" class="btn btn-default">Search</button>
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "Profile", "/users/#{current_user.id}" %></li>
           <li><a href="/users/org_charts">Home</a></li>
+          <li><%= link_to "Profile", "/users/#{current_user.id}" %></li>
+          <li><%= link_to "Settings", "/users/#{current_user.id}/edit" %></li>
           <li><%= link_to "Logout", :logout %></li>
         </ul>
       </div>

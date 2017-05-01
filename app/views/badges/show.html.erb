@@ -1,78 +1,19 @@
-<div class="background">
+<div class="background" style="text-align: center;">
   <% if current_user %>
-    <h2 class="badge-detail-title"><%= "#{@user.name}" %>'s badge details</h2>
-
     <ul class="badge-details">
-      <!-- Display Red Badge -->
-      <% if @badge.red == true %>
-      <div class="badge-red", style="height: 300px; width: 300px; border-radius: 150px; ">
-        <h2 class="profile-badges", style="margin-top: 40%;">
-          <%= @badge.name %>
-        </h2>
-        <%= render 'edit-badge-button' %>
-      </div>
-      <% end %>
 
-      <!-- Display Blue Badges -->
-      <% if @badge.blue == true %>
-      <div class="badge-blue", style="height: 300px; width: 300px; border-radius: 150px; ">
-        <h2 class="profile-badges", style="margin-top: 40%;">
-          <%= @badge.name %>
-          <%= render 'edit-badge-button' %>
-        </h2>
-      </div>
-      <% end %>
-
-      <!-- Display Yellow Badges -->
-      <% if @badge.yellow == true %>
-      <div class="badge-yellow", style="height: 300px; width: 300px; border-radius: 150px; ">
-        <h2 class="profile-badges", style="margin-top: 40%;">
-          <%= @badge.name %>
-        </h2>
-      </div>
-      <% end %>
-
+      <h2 class="badge-detail-title"><%= "#{@user.name}" %>'s badge details</h2>
       <!-- Display Green Badges -->
       <% if @badge.green == true %>
-      <div class="badge-green", style="height: 300px; width: 300px; border-radius: 150px; ">
-        <h2 class="profile-badges", style="margin-top: 40%;">
-          <%= @badge.name %>
-        </h2>
-        </div>
-      <% end %>
-
-      <!-- Display Purple Badges -->
-      <% if @badge.purple == true %>
-      <div class="badge-purple", style="height: 300px; width: 300px; border-radius: 150px; ">
-        <h2 class="profile-badges", style="margin-top: 40%;">
-          <%= @badge.name %>
-        </h2>
+      <div class="badge-show-green">
+        <h2 class="badge-show-title"><%= @badge.name %></h2>
       </div>
       <% end %>
 
-      <!-- Display Pink Badges -->
-      <% if @badge.pink == true %>
-      <div class="badge-pink", style="height: 300px; width: 300px; border-radius: 150px; ">
-        <h2 class="profile-badges", style="margin-top: 40%;">
-          <%= @badge.name %>
-        </h2>
+      <div class="badge-description-wrap">
+        <p class="badge-description"><%= @badge.description %></p>
       </div>
-      <% end %>
-
-      <!-- Display Grey Badges -->
-      <% if @badge.grey == true %>
-      <div class="badge-grey", style="height: 300px; width: 300px; border-radius: 150px; ">
-        <h2 class="profile-badges", style="margin-top: 40%;">
-          <%= @badge.name %>
-        </h2>
-      </div>
-      <% end %>
-
-      <p class="badge-description"><%= @badge.description %></p>
-    </ul>
-
-    <div class="badge-right">
-      <h4 class="badge-detail-title" style="text-align: left;">Endorsements:</h4>
+      <!-- <h4 class="badge-detail-title">Endorsements:</h4> -->
 
       <% if current_user.liked? @badge %>
         <%= link_to '', unlike_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}", class:"glyphicon glyphicon-heart" %>
@@ -83,7 +24,18 @@
         <p class="profile-badges"></p>
         <%= render 'likes' %>
       <% end %>
-    </div>
+
+      <div class="center-float-wrap">
+        <div class="float" style="margin-right: 5px;">
+          <%= render 'edit-badge-button' %>
+        </div>
+
+        <div class="float" style="margin-left: 5px;">
+          <%= button_to 'DELETE BADGE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{@badge.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"delete" %>
+        </div>
+      </div>
+
+    </ul>
 
   <% else %>
     <h1 class="login-message"><%= link_to "LOGIN", :login %> to view <%= User.find(@badge.user_id).name %>'s badge</h1>

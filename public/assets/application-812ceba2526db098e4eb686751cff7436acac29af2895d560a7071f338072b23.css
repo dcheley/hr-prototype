@@ -9776,7 +9776,7 @@ a:hover {
 .submit-purple,
 .submit-pink,
 .submit-grey,
-.submit-black {
+.submit-grey {
   color: white;
   border: none;
   display: block;
@@ -9823,7 +9823,7 @@ a:hover {
 }
 
 /* line 94, /home/dcheley/Desktop/projX/hr-prototype/app/assets/stylesheets/application.scss */
-.submit-black {
+.submit-grey {
   background-color: black;
 }
 
@@ -9835,7 +9835,7 @@ a:hover {
 .submit-purple:hover,
 .submit-pink:hover,
 .submit-grey:hover,
-.submit-black:hover {
+.submit-grey:hover {
   background-color: #bdbdbd;
 }
 
