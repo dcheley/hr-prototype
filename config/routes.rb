@@ -28,6 +28,13 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :recognitions do
+    member do
+      put 'like'
+      put 'unlike'
+    end
+  end
+
   get 'login' => 'sessions#new', as: :login
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy', as: :logout
