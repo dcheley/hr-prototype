@@ -25,7 +25,7 @@ User.create([{ name: "Robert B.", email: "robb@email.com", phone: "(416) 327-368
   { name: "Jose L.", email: "jol@email.com", phone: "(416) 212-6984", title: "Business Analyst", service_management_and_facilities: true, staff: true, password: "172922" },
   { name: "Gillian C.", email: "gico@email.com", phone: "(416) 327-4818", title: "Emergency Management Assistant", service_management_and_facilities: true, staff: true, password: "191526" },
   { name: "Alma B.", email: "alb@email.com", phone: "(416) 325-8776", title: "Manager, FOI, Privacy and Information Management", service_management_and_facilities: true, manager: true, password: "717259" },
-  { name: "Patricia C.", email: "pc@email.com", phone: "(416) 326-1344", title: "Tougas FOI Coordinator", service_management_and_facilities: true, staff: true, password: "617573" },
+  { name: "Patricia C.", email: "pac@email.com", phone: "(416) 326-1344", title: "Tougas FOI Coordinator", service_management_and_facilities: true, staff: true, password: "617573" },
   { name: "Dalia B.", email: "db@email.com", phone: "(416) 325-8899", title: "FOI Coordinator", service_management_and_facilities: true, staff: true, password: "798640" },
   { name: "Mimi N.", email: "min@email.com", phone: "(416) 325-6156", title: "FOI and Information Management Analyst", service_management_and_facilities: true, staff: true, password: "253630" },
   { name: "Pamela E.", email: "pe@email.com", phone: "(416) 212-0176", title: "Advisor, IM and Access Strategy (A)", service_management_and_facilities: true, staff: true, password: "400399" },

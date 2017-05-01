@@ -14,7 +14,7 @@
         </div>
       <% end %>
 
-      <% if @badge.description != nil %>
+      <% if @badge.description != nil && @badge.description != "" %>
       <div class="badge-description-wrap">
         <p class="badge-description"><%= @badge.description %></p>
       </div>
