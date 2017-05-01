@@ -24,9 +24,9 @@
   <li class="profile-info"><b>Title:</b> <%= @user.title %></li>
   <!-- <li class="profile-info"><b>Email:</b> <%= @user.email %></li> -->
   <!-- <li class="profile-info"><b>Phone:</b> <%= @user.phone %></li> -->
-  <% if @user.job_description == nil || "" && current_user == @user %>
+  <% if @user.job_description == nil || @user.job_description == "" && current_user == @user %>
     <%= link_to "ADD JOB DESCRIPTION", edit_user_url(@user), class:"submit-green", style:"margin: 2.5 auto; text-align: center; width: 160px;" %>
-  <% elsif @user.job_description == nil || "" && current_user != @user %>
+  <% elsif @user.job_description == nil || @user.job_description == "" && current_user != @user %>
     <li class="team-info" style="font-size: 16px;"><b>Job Description</b></li>
     <li class="team-info" style="font-size: 16px;">Describe your responsibilities and experience in 500 characters or less.</li>
   <% else %>
