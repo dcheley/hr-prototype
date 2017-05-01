@@ -103,10 +103,18 @@
 .org-header,
 .org-menu-header {
   display: block;
-  background: $dark-turquoise;
   padding: 5px 35px 5px 10px;
-  color: white;
   position: relative;
+}
+
+.org-menu-header {
+  color: black;
+  background-color: $light-grey;
+}
+
+.org-header {
+  color: white;
+  background: $dark-turquoise;
 }
 
 .org-box h4,
