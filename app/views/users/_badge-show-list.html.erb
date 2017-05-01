@@ -18,7 +18,7 @@
     <!-- Display Green Badges -->
     <% @user.badges.where(green: true).where.not(opportunity_id: nil).each do |b| %>
       <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
-      <div class="badge-middle-green" style="background-color: #00c853;">
+        <div class="badge-middle-green">
           <li class="profile-badges-name">
             <%= "#{b.name}" %>
           </li></br>
@@ -32,7 +32,7 @@
     <!-- Display Green Badges -->
     <% @user.received_badges.each do |b| %>
       <%= link_to "/users/#{@user.id}/recognitions/#{b.id}" do %>
-      <div class="badge-light-green">
+        <div class="badge-light-green">
           <li class="profile-badges-name">
             <%= "#{b.name}" %>
           </li></br>
