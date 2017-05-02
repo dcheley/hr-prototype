@@ -280,17 +280,16 @@
 // }
 
 //Hover
-.org-menu-header:hover,
-.org-menu-header:hover .context, {
-  cursor: pointer;
-  background: #444444;
-  color: $white;
-}
-
 .menu-element:hover {
   border-color: $grey;
+  .org-menu-header,
+  .org-menu-header .context, {
+    cursor: pointer;
+    background: #444444;
+    color: $white;
+  }
 }
-//
+
 // .element.hover .context:after {
 //   border-right-color: #444444;
 // }
