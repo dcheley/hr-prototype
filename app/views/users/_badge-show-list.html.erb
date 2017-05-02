@@ -14,7 +14,7 @@
   </div>
 
   <div class="inner-middle">
-    <p class="badge-types"><b>Career Advancement Application Badges</b></p>
+    <p class="badge-types"><b>Employee Engagement App Badges</b></p>
     <!-- Display Green Badges -->
     <% @user.badges.where(green: true).where.not(opportunity_id: nil).each do |b| %>
       <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
