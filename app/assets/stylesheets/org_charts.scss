@@ -180,74 +180,74 @@
 }
 
 //Might not need
-.element .context:after {
-  content: " ";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-bottom: 15px solid transparent;
-  border-top: 0px solid transparent;
-  border-right: 26px solid $medium-grey;
-  right: 0px;
-  bottom: -15px;
-}
+// .element .context:after {
+//   content: " ";
+//   position: absolute;
+//   width: 0;
+//   height: 0;
+//   border-bottom: 15px solid transparent;
+//   border-top: 0px solid transparent;
+//   border-right: 26px solid $medium-grey;
+//   right: 0px;
+//   bottom: -15px;
+// }
 
 //Active Class --
-.active .element,
-.list .selection {
-  border: 2px solid $light-grey;
-  background: $white-smoke;
-}
-
-.active .org-header,
-.active .context,
-.list .selection .org-header,
-.list .selection .context {
-  background: $dark-turquoise;
-  color: $white;
-}
-
-.active .context:after,
-.list .selection .context:after {
-  border-right-color: $dark-turquoise;
-}
-
-.list .selection {
-  opacity: 0.5;
-  background: $white;
-  pointer-events: none;
-}
+// .active .element,
+// .list .selection {
+//   border: 2px solid $light-grey;
+//   background: $white-smoke;
+// }
+//
+// .active .org-header,
+// .active .context,
+// .list .selection .org-header,
+// .list .selection .context {
+//   background: $dark-turquoise;
+//   color: $white;
+// }
+//
+// .active .context:after,
+// .list .selection .context:after {
+//   border-right-color: $dark-turquoise;
+// }
+//
+// .list .selection {
+//   opacity: 0.5;
+//   background: $white;
+//   pointer-events: none;
+// }
 
 // Grey lines box --
-.active .element:empty {
-  border-color: $medium-grey;
-  min-height: 122px;
-  background: repeating-linear-gradient(
-    45deg,
-    $white-smoke,
-    $white-smoke 10px,
-    $medium-grey 10px,
-    $medium-grey 20px
-  );
-}
-
-.active .element:empty:before {
-  content: "Select an Org Unit";
-  color: grey;
-  text-align: center;
-  display: block;
-  position: absolute;
-  font-size: 12px;
-  width: 100%;
-  top: calc(50% - 14px);
-  background: $medium-grey;
-  padding: 5px 0;
-}
-
-.active .element {
-  opacity: 1;
-}
-
+// .active .element:empty {
+//   border-color: $medium-grey;
+//   min-height: 122px;
+//   background: repeating-linear-gradient(
+//     45deg,
+//     $white-smoke,
+//     $white-smoke 10px,
+//     $medium-grey 10px,
+//     $medium-grey 20px
+//   );
+// }
+//
+// .active .element:empty:before {
+//   content: "Select an Org Unit";
+//   color: grey;
+//   text-align: center;
+//   display: block;
+//   position: absolute;
+//   font-size: 12px;
+//   width: 100%;
+//   top: calc(50% - 14px);
+//   background: $medium-grey;
+//   padding: 5px 0;
+// }
+//
+// .active .element {
+//   opacity: 1;
+// }
+//
 .expanded .active:after {
   content: " ";
   position: absolute;
@@ -257,33 +257,31 @@
   border-left: 2px solid $light-grey;
   z-index: -1;
 }
-
-.expanded:last-of-type .active:after {
-  display: none;
-}
-
-.list .selection:after {
-  content: " ";
-  position: absolute;
-  width: 0px;
-  height: 0px;
-  border-top:6px solid transparent;
-  border-bottom:0px solid transparent;
-  border-left:14px solid $light-grey;
-  left: -12px;
-  bottom: 2px;
-  -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-  transform-origin: 50% 50%;
-}
+//
+// .expanded:last-of-type .active:after {
+//   display: none;
+// }
+//
+// .list .selection:after {
+//   content: " ";
+//   position: absolute;
+//   width: 0px;
+//   height: 0px;
+//   border-top:6px solid transparent;
+//   border-bottom:0px solid transparent;
+//   border-left:14px solid $light-grey;
+//   left: -12px;
+//   bottom: 2px;
+//   -webkit-transform: rotate(-90deg);
+//   -moz-transform: rotate(-90deg);
+//   -o-transform: rotate(-90deg);
+//   -ms-transform: rotate(-90deg);
+//   transform: rotate(-90deg);
+//   transform-origin: 50% 50%;
+// }
 
 //Hover
-.org-header:hover,
 .org-menu-header:hover,
-.org-header:hover .context,
 .org-menu-header:hover .context, {
   cursor: pointer;
   background: #444444;
@@ -293,40 +291,35 @@
 .menu-element:hover {
   border-color: $grey;
 }
+//
+// .element.hover .context:after {
+//   border-right-color: #444444;
+// }
+//
+// .element.hover {
+//   border-color: #444444;
+// }
+//
+// .list .element .org-header:hover,
+// .list .element .org-header:hover .context,
+// .list .element .org-header:hover h4 {
+//   cursor: pointer;
+//   background: #444444;
+//   color: $white;
+// }
+//
+// .list .element:hover .org-header:hover + .context:after {
+//   border-right-color: #444444;
+// }
+//
+// .list .element:hover {
+//   background: #fdfdfd;
+// }
 
-.element.hover .context:after {
-  border-right-color: #444444;
-}
-
-.element.hover {
-  border-color: #444444;
-}
-
-.list .element .org-header:hover,
-.list .element .org-header:hover .context,
-.list .element .org-header:hover h4 {
-  cursor: pointer;
-  background: #444444;
-  color: $white;
-}
-
-.list .element:hover .org-header:hover + .context:after {
-  border-right-color: #444444;
-}
-
-.list .element:hover {
-  background: #fdfdfd;
-}
-
-.hover-expanded .active:after,
-.hover-children .level-wrap:before {
-  border-color: #444444 !important;
-}
-
-// Disable arrow
-.element .context:after {
-  display: none;
-}
+// .hover-expanded .active:after,
+// .hover-children .level-wrap:before {
+//   border-color: #444444 !important;
+// }
 
 // Extra swag
 .hidden {
