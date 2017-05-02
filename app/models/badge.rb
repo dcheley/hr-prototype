@@ -6,7 +6,7 @@ class Badge < ApplicationRecord
 
   validates :name, presence: true
   validates :description, length: {maximum: 500}
-  validate :at_least_one_colour
+  # validate :at_least_one_colour
 
   def at_least_one_colour
     if [self.red, self.blue, self.purple, self.green, self.yellow, self.grey, self.pink].reject(&:blank?).size == 0
