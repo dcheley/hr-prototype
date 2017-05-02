@@ -3,91 +3,89 @@
 
   <h4 class="org-title", style="margin-top: 30px;"><b>*Click</b> on a <b>box</b> below to view a branch's <b>interactive</b> organizational chart and the career profile of the employees in that branch.</h4>
 
-  <div class="container" style="margin-top: 0; margin-bottom: 25px;">
-    <section class="org-menu-container">
-      <div id="level-1" class="level">
-        <div class="level-wrap">
+  <section class="org-menu-container">
+    <div id="level-1" class="level">
+      <div class="level-wrap">
 
-          <div id="level-1-list" class="col-1-3 list">
-            <ul>
-              <%= link_to "/users/admo_org_chart" do %>
-                <li class="menu-element">
-                  <div class="org-box-menu">
-                    <div class="org-menu-header">
-                      <h4 class="branch">ADM's Office<span class=""></span></h4>
+        <div id="level-1-list" class="col-1-3 list">
+          <ul>
+            <%= link_to "/users/admo_org_chart" do %>
+              <li class="menu-element">
+                <div class="org-box-menu">
+                  <div class="org-menu-header">
+                    <h4 class="branch">ADM's Office<span class=""></span></h4>
 
-                      <div class="context">
-                        <span class=""></span>
-                      </div>
-                    </div>
-
-                    <div class="org-details">
-                      <p class="menu-name"><b>Office Size:</b> <%= @users.where(adm_office: true).count %></p>
+                    <div class="context">
+                      <span class=""></span>
                     </div>
                   </div>
-                </li>
-              <% end %>
 
-              <%= link_to "/users/hr_org_chart" do %>
-                <li class="menu-element">
-                  <div class="org-box-menu">
-                    <div class="org-menu-header">
-                      <h4 class="branch">Strategic Human Resources<span class=""></span></i></h4>
+                  <div class="org-details">
+                    <p class="menu-name"><b>Office Size:</b> <%= @users.where(adm_office: true).count %></p>
+                  </div>
+                </div>
+              </li>
+            <% end %>
 
-                      <div class="context">
-                        <span class=""></span>
-                      </div>
-                    </div>
+            <%= link_to "/users/hr_org_chart" do %>
+              <li class="menu-element">
+                <div class="org-box-menu">
+                  <div class="org-menu-header">
+                    <h4 class="branch">Strategic Human Resources<span class=""></span></i></h4>
 
-                    <div class="org-details">
-                      <p class="menu-name"><b>Office Size:</b> <%= @users.where(strategic_human_resources: true).count %></p>
+                    <div class="context">
+                      <span class=""></span>
                     </div>
                   </div>
-                </li>
-              <% end %>
 
-              <%= link_to "/users/smf_org_chart" do %>
-                <li class="menu-element">
-                  <div class="org-box-menu">
-                    <div class="org-menu-header">
-                      <h4 class="branch">Service Management & Facilities<span class=""></span></h4>
+                  <div class="org-details">
+                    <p class="menu-name"><b>Office Size:</b> <%= @users.where(strategic_human_resources: true).count %></p>
+                  </div>
+                </div>
+              </li>
+            <% end %>
 
-                      <div class="context">
-                        <span class=""></span>
-                      </div>
-                    </div>
+            <%= link_to "/users/smf_org_chart" do %>
+              <li class="menu-element">
+                <div class="org-box-menu">
+                  <div class="org-menu-header">
+                    <h4 class="branch">Service Management & Facilities<span class=""></span></h4>
 
-                    <div class="org-details">
-                      <p class="menu-name"><b>Office Size:</b> <%= @users.where(service_management_and_facilities: true).count %></p>
+                    <div class="context">
+                      <span class=""></span>
                     </div>
                   </div>
-                </li>
-              <% end %>
 
-              <%= link_to "/users/bpf_org_chart" do %>
-                <li class="menu-element">
-                  <div class="org-box-menu">
-                    <div class="org-menu-header">
-                      <h4 class="branch">Business Planning & Finance<span class=""></span></h4>
+                  <div class="org-details">
+                    <p class="menu-name"><b>Office Size:</b> <%= @users.where(service_management_and_facilities: true).count %></p>
+                  </div>
+                </div>
+              </li>
+            <% end %>
 
-                      <div class="context">
-                        <span class=""></span>
-                      </div>
-                    </div>
+            <%= link_to "/users/bpf_org_chart" do %>
+              <li class="menu-element">
+                <div class="org-box-menu">
+                  <div class="org-menu-header">
+                    <h4 class="branch">Business Planning & Finance<span class=""></span></h4>
 
-                    <div class="org-details">
-                      <p class="menu-name"><b>Office Size:</b> <%= @users.where(business_planning_and_finance: true).count %></p>
+                    <div class="context">
+                      <span class=""></span>
                     </div>
                   </div>
-                </li>
-              <% end %>
-            </ul>
-          </div>
 
+                  <div class="org-details">
+                    <p class="menu-name"><b>Office Size:</b> <%= @users.where(business_planning_and_finance: true).count %></p>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+          </ul>
         </div>
+
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 
     <div class="carousel-container">
       <h1 class="org-title">Career Development Opportunities</h1>
