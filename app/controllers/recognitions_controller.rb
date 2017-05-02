@@ -10,7 +10,7 @@ class RecognitionsController < ApplicationController
     @recognition = Recognition.new(recognition_params)
 
     if @recognition.save
-      redirect_to "/users/#{@user.id}/recognitions/#{@recognition.id}", notice: "#{@recognition.name} badge given!"
+      redirect_to user_url(@user), notice: "#{@recognition.name} badge given!"
     else
       render :new
     end
