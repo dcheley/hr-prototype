@@ -5,7 +5,7 @@ User.create([{ name: "Robert B.", email: "robb@email.com", phone: "(416) 222-222
   { name: "Colleen Desjardins", email: "cg@email.com", phone: "(416) 111-1111", title: "Office Manager", adm_office: true, staff: true, password: "416600" },
   { name: "Allyne Sareno", email: "aly@email.com", phone: "(416) 111-1111", title: "Sr. Communications Advisor", adm_office: true, staff: true, password: "618349" },
   { name: "Isolina K.", email: "isku@email.com", phone: "(416) 325-9366", title: "Exec. Lead, Transfer Payment Information", adm_office: true, manager: true, password: "808693" },
-  { name: "Kathy T.", email: "ktr@email.com", phone: "(416) 222-2222", title: "Manager", adm_office: true, manager: true, password: "280063" },
+  { name: "Kathy T.", email: "kty@email.com", phone: "(416) 222-2222", title: "Manager", adm_office: true, manager: true, password: "280063" },
   { name: "Martin D.", email: "mde@email.com", phone: "(416) 222-2222", title: "Project Officer", adm_office: true, staff: true, password: "241726" },
   # HR
   { name: "Christina C.", email: "chrc@email.com", phone: "(416) 111-1111", title: "Director", strategic_human_resources: true, director: true, password: "799127" },
@@ -22,7 +22,7 @@ User.create([{ name: "Robert B.", email: "robb@email.com", phone: "(416) 222-222
   { name: "Daniel C.", email: "dchee@email.com", phone: "(416) 222-2222", title: "Systems Officer", strategic_human_resources: true, staff: true, password: "dosomework" },
   # { name: "Andrew H.", email: "anh@email.com", phone: "(416) 111-1111", title: "HR Business Advisor", strategic_human_resources: true, staff: true, password: "059316" },
   { name: "Yvonne C.", email: "yc@email.com", phone: "(416) 111-1111", title: "HR Business Advisor", strategic_human_resources: true, staff: true, password: "680748" },
-  { name: "Dianne B.", email: "db@email.com", phone: "(416) 333-333", title: "Workforce Planner", strategic_human_resources: true, staff: true, password: "300229" },
+  { name: "Dianne B.", email: "dib@email.com", phone: "(416) 333-333", title: "Workforce Planner", strategic_human_resources: true, staff: true, password: "300229" },
   { name: "Sean D.", email: "sd@email.com", phone: "(416) 222-2222", title: "HR Project Advisor", strategic_human_resources: true, staff: true, password: "280225" },
   { name: "Xander N.", email: "xn@email.com", phone: "(416) 111-1111", title: "HR Business Advisor", strategic_human_resources: true, staff: true, password: "143537" },
   #SMF
