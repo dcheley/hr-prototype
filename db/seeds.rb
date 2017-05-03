@@ -17,7 +17,7 @@ User.create([{ name: "Robert B.", email: "robb@email.com", phone: "(416) 222-222
   { name: "Jill D.", email: "jd@email.com", phone: "(416) 222-2222", title: "HR Business Advisor", strategic_human_resources: true, staff: true, password: "499398" },
   { name: "Gabrielle C.", email: "gbc@email.com", phone: "(416) 111-1111", title: "HR Business Advisor", strategic_human_resources: true, staff: true, password: "871970" },
   { name: "Nadeem A.", email: "nad.a@email.com", phone: "(416) 222-2222", title: "Project Coordinator", strategic_human_resources: true, staff: true, password: "178041" },
-  { name: "Daniel C.", email: "dchee@email.com", phone: "(416) 222-2222", title: "Project Coordinator", strategic_human_resources: true, staff: true, password: "dosomework" },
+  { name: "Daniel C.", email: "dchee@email.com", phone: "(416) 222-2222", title: "Systems Officer", strategic_human_resources: true, staff: true, password: "dosomework" },
   # { name: "Andrew H.", email: "anh@email.com", phone: "(416) 111-1111", title: "HR Business Advisor", strategic_human_resources: true, staff: true, password: "059316" },
   { name: "Yvonne C.", email: "yc@email.com", phone: "(416) 111-1111", title: "HR Business Advisor", strategic_human_resources: true, staff: true, password: "680748" },
   { name: "Dianne B.", email: "db@email.com", phone: "(416) 333-333", title: "Workforce Planner", strategic_human_resources: true, staff: true, password: "300229" },
