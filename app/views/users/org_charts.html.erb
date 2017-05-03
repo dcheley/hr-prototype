@@ -105,7 +105,6 @@
             <div class="tile__details">
               <h3 class="tile-header" style="padding-left: 15%;"><%= @opportunity_2.name %></h3>
               <div class="tile__title" style="padding-left: 20%;">
-                <%= link_to "Emerging Leaders signup page link", "http://www.google.com", class:"btn btn-default", target: '_blank' %>
                 <%= form_for([@opportunity_2, @badge]) do |f| %>
                   <%= f.hidden_field :name, value: @opportunity_2.name %>
                   <%= f.hidden_field :description, value: @opportunity_2.description %>
@@ -277,6 +276,7 @@
             <div class="tile__details">
               <h3 class="tile-header"><%= @opportunity_9.name %></h3>
               <div class="tile__title">
+                <%= link_to "Emerging Leaders signup page link", "https://www.surveymonkey.com/survey-closed/?sm=rdfeMF4WmHZAwsLTT7mCDhe32sYJxC23PJfU_2BMPDhUTk3E0JBARuyy4M3UkzgKxBY_2FvMZ0h7pMURY3BWxW0A8g_3D_3D", class:"btn btn-default", target: '_blank' %>
                 <%= @opportunity_9.description %>
                 <%= form_for([@opportunity_9, @badge]) do |f| %>
                   <%= f.hidden_field :name, value: @opportunity_9.name %>
