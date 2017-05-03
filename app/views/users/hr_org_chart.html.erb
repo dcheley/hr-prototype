@@ -18,13 +18,17 @@
                 </div> -->
               </div>
 
-              <div class="org-details">
-                <p class="boss-name"><%= link_to "#{a.name}", "/users/#{a.id}" %></p>
-              </div>
-
-              <!-- <%= link_to "/users/#{a.id}", class:"info-btn" do %> -->
+              <% if a.avatar.file? != true %>
+                <div class="org-details">
+                  <p class="boss-name"><%= link_to "#{a.name}", "/users/#{a.id}" %></p>
+                </div>
                 <div class="info-btn"><span class="glyphicon glyphicon-user"></span></div>
-              <!-- <% end %> -->
+              <% else %>
+                <div class="org-details" style="margin-bottom: 0;">
+                  <p class="boss-name"><%= link_to "#{a.name}", "/users/#{a.id}" %></p>
+                </div>
+                <%= image_tag a.avatar.url(:medium), class:"org-profile-pic" %>
+              <% end %>
 
             </div>
           </div>
@@ -58,13 +62,17 @@
                   </div> -->
                 </div>
 
-                <div class="org-details">
-                  <p class="boss-name"><%= link_to "#{b.name}", "/users/#{b.id}" %></p>
-                </div>
-
-                <!-- <%= link_to "/users/#{b.id}", class:"info-btn" do %> -->
+                <% if b.avatar.file? != true %>
+                  <div class="org-details">
+                    <p class="boss-name"><%= link_to "#{b.name}", "/users/#{b.id}" %></p>
+                  </div>
                   <div class="info-btn"><span class="glyphicon glyphicon-user"></span></div>
-                <!-- <% end %> -->
+                <% else %>
+                  <div class="org-details" style="margin-bottom: 0;">
+                    <p class="boss-name"><%= link_to "#{b.name}", "/users/#{b.id}" %></p>
+                  </div>
+                  <%= image_tag b.avatar.url(:medium), class:"org-profile-pic" %>
+                <% end %>
               </div>
             </li>
             <% end %>
@@ -97,13 +105,17 @@
                   </div> -->
                 </div>
 
-                <div class="org-details">
-                  <p class="boss-name"><%= link_to "#{c.name}", "/users/#{c.id}" %></p>
-                </div>
-
-                <!-- <%= link_to "/users/#{c.id}", class:"info-btn" do %> -->
+                <% if c.avatar.file? != true %>
+                  <div class="org-details">
+                    <p class="boss-name"><%= link_to "#{c.name}", "/users/#{c.id}" %></p>
+                  </div>
                   <div class="info-btn"><span class="glyphicon glyphicon-user"></span></div>
-                <!-- <% end %> -->
+                <% else %>
+                  <div class="org-details" style="margin-bottom: 0;">
+                    <p class="boss-name"><%= link_to "#{c.name}", "/users/#{c.id}" %></p>
+                  </div>
+                  <%= image_tag c.avatar.url(:medium), class:"org-profile-pic" %>
+                <% end %>
               </div>
             </li>
             <% end %>
