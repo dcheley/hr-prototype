@@ -4,7 +4,7 @@ User.create([{ name: "Robert B.", email: "robb@email.com", phone: "(416) 222-222
   { name: "Natasha R.", email: "natr@email.com", phone: "(416) 111-1111", title: "Issues & Communications Coordinator", adm_office: true, staff: true, password: "826484" },
   { name: "Colleen Desjardins", email: "cg@email.com", phone: "(416) 111-1111", title: "Office Manager", adm_office: true, staff: true, password: "416600" },
   { name: "Allyne Sareno", email: "aly@email.com", phone: "(416) 111-1111", title: "Sr. Communications Advisor", adm_office: true, staff: true, password: "618349" },
-  { name: "Isolina K.", email: "isku@email.com", phone: "(416) 325-9366", title: "Exec. Lead, Transfer Payment Information", adm_office: true, manager: true, password: "808693" },
+  { name: "Isolina K.", email: "isku@email.com", phone: "(416) 333-3333", title: "Exec. Lead, Transfer Payment Information", adm_office: true, manager: true, password: "808693" },
   { name: "Kathy T.", email: "kty@email.com", phone: "(416) 222-2222", title: "Manager", adm_office: true, manager: true, password: "280063" },
   { name: "Martin D.", email: "mde@email.com", phone: "(416) 222-2222", title: "Project Officer", adm_office: true, staff: true, password: "241726" },
   # HR
