@@ -39,11 +39,11 @@
           <div class="float" style="margin-left: 5px;">
             <%= button_to 'DELETE BADGE', {:controller => 'badges', :action => 'destroy', :user_id => current_user.id, :id => "#{@badge.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"delete" %>
           </div>
-        </div>
       <% else %>
-          <%= link_to "/users/#{@user.id}", class:"cancel-center-link" do %>
-            <div class="submit-blue">CANCEL</div>
-          <% end %>
+        <%= link_to "/users/#{@user.id}", class:"cancel-center-link" do %>
+          <div class="submit-blue">CANCEL</div>
+        <% end %>
+          </div>
       <% end %>
 
     </ul>

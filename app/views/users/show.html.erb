@@ -9,7 +9,7 @@
     <div class="right-profile">
       <h1 class="badge-title"><b>Your badges</b></h1>
 
-      <p class="badge-new-wrap"><%= link_to "ADD BADGE", new_badge_url, class:"submit-green", style:"margin: auto; width: 160px;" %></p>
+      <p class="badge-new-wrap"><%= link_to "ADD BADGE", "/users/#{current_user.id}/badges/new", class:"submit-green", style:"margin: auto; width: 160px;" %></p>
 
       <h5 class="badge-title" style="font-size: 16px;"><b>*Click</b> on a <b>badge</b> to <b>add</b> a <b>description</b> of your experience</h5>
 
