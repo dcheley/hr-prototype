@@ -20,8 +20,11 @@
             <%= password_field_tag :password, nil, class:"field-input", placeholder:"At least 6 characters" %>
           </div>
 
-          <div class="actions"><%= submit_tag "LOGIN", class:"submit-blue" %></div>
+          <div class="actions">
+            <%= submit_tag "LOGIN", class:"submit-blue" %>
+          </div>
         <% end %>
+        
       <% else %>
           <p class="form-title">Use the <b>links</b> in the <b>top right</b> to navigate through content</p>
       <% end %>
