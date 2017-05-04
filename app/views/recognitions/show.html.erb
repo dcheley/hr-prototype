@@ -34,7 +34,7 @@
           <div class="float" style="margin-right: 5px;">
             <%= link_to "/users/#{@user.id}/recognitions/#{@recognition.id}/edit", class:"cancel-link", style:"margin-left: 0;" do %>
               <div class="submit-green">EDIT</div>
-
+            <% end %>
           <div class="float" style="margin-left: 5px;">
             <%= button_to 'DELETE BADGE', {:controller => 'recognitions', :action => 'destroy', :id => "#{@recognition.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"delete" %>
           </div>
