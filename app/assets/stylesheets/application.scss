@@ -155,11 +155,13 @@
   color: $bright-dark-blue;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 767px) {
   .alert {
     font-size: 16px;
   }
+}
 
+@media screen and (max-width: 900px) {
   .home-right {
     float: none;
     width: 100%;
