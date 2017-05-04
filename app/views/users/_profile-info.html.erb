@@ -29,7 +29,7 @@
       <%= link_to "ADD JOB DESCRIPTION", edit_user_url(@user), class:"submit-green", style:"margin: 2.5 auto; text-align: center; width: 160px;" %>
     <% else %>
       <li class="team-info" style="font-size: 16px;"><b>Job Description</b></li>
-      <li class="team-info" style="font-size: 16px;"><%= @user.job_description %></li>
+      <li class="team-info" style="font-size: 16px;"><%= @user.job_description.html_safe %></li>
     <% end %>
   <% else %>
     <% if @user.job_description == nil || @user.job_description == "" %>
@@ -37,7 +37,7 @@
       <li class="team-info" style="font-size: 16px;">Describe your responsibilities and experience in 500 characters or less.</li>
     <% else %>
       <li class="team-info" style="font-size: 16px;"><b>Job Description</b></li>
-      <li class="team-info" style="font-size: 16px;"><%= @user.job_description %></li>
+      <li class="team-info" style="font-size: 16px;"><%= simple_format(@user.job_description) %></li>
     <% end %>
   <% end %>
 </ul>
