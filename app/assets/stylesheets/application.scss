@@ -154,3 +154,20 @@
   padding-bottom: 60px;
   color: $bright-dark-blue;
 }
+
+@media screen and (max-width: 675px) {
+  .alert {
+    font-size: 16px;
+  }
+
+  .home-right {
+    float: none;
+    width: 100%;
+    margin: auto;
+  }
+
+  .background-image {
+  	height: 418px;
+  	width: 100%;
+  }
+}
