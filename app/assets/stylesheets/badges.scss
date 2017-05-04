@@ -181,3 +181,9 @@
   color: $dark-grey;
   text-decoration: none;
 }
+
+@media screen and (max-width: 675px) {
+  .badge-title {
+    padding-left: 0;
+  }
+}
