@@ -71,11 +71,11 @@ class BadgesController < ApplicationController
 
 private
   def load_user
-    if @user
+    # if @user
       @user = User.find(params[:user_id])
-    else
-      @user = current_user
-    end
+    # else
+      # @user = current_user
+    # end
   end
 
   def load_badge

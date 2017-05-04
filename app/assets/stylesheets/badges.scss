@@ -43,10 +43,19 @@
   clear: both;
 }
 
-.cancel-link {
+.cancel-link,
+.cancel-center-link {
   color: white;
   display: inline-block;
+}
+
+.cancel-link {
   margin-left: 30%;
+}
+
+.cancel-link:hover,
+.cancel-center-link:hover {
+  text-decoration: none;
 }
 
 .float {
@@ -150,29 +159,25 @@
   }
 }
 
-.glyphicon.glyphicon-heart,
-.glyphicon.glyphicon-heart-empty, {
-  font-size: 32px;
-  color: $grey;
+.thumbs-up,
+.thumbs-empty, {
+  width: 38px;
   padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-.glyphicon.glyphicon-heart:hover,
-.glyphicon.glyphicon-heart-empty:hover, {
-  color: $dark-grey;
-  text-decoration: none;
-}
-
-.likes {
-  color: black;
+.thumbs-up:hover,
+.thumbs-empty:hover {
+  width: 48px;
 }
 
 .likes a {
   font-weight: bold;
-  color: $grey;
+  color: $bright-dark-blue;
 }
 
 .likes a:hover {
   font-weight: bold;
   color: $dark-grey;
+  text-decoration: none;
 }
