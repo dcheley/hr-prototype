@@ -6,5 +6,5 @@
 <% end %>
 
 <% if @users.blank? %>
-  <% flash[:alert] = "There are currently no profiles named/containing the #{params[:search]} badge." %>
+  <% flash[:alert] = "No results found for '#{params[:search]}'." %>
 <% end %>
