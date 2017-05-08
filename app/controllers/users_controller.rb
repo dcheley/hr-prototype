@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     if params[:search]
-      @users = User.search(params[:search]).order("name ASC")
+      @users = User.search(params[:search]).order("name ASC").distinct
     end
   end
 
