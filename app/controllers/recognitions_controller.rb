@@ -22,7 +22,7 @@ class RecognitionsController < ApplicationController
   def update
     if @recognition.update_attributes(recognition_params)
       flash[:notice] = "#{@recognition.name} badge successfully updated!"
-      redirect_to recognition_url(@recognition)
+      redirect_to "/users/#{@user.id}/recognitions/#{@recognition.id}"
     else
       render :edit
     end

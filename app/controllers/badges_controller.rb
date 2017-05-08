@@ -38,7 +38,7 @@ class BadgesController < ApplicationController
   def update
     if @badge.update_attributes(badge_params)
       flash[:notice] = "#{@badge.name} badge successfully updated!"
-      redirect_to badge_url(@badge)
+      redirect_to "/users/#{@user.id}/badges/#{@badge.id}"
     else
       render :edit
     end
