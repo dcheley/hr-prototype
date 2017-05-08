@@ -19,8 +19,6 @@ class UsersController < ApplicationController
     @users = User.all
     if params[:search]
       @users = User.search(params[:search]).order("name ASC")
-    else
-      flash[:alert] = "There are currently no profiles containing the #{params[:search]} badge."
     end
   end
 
