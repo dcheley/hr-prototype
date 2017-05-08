@@ -1,7 +1,9 @@
-<% @users.each do |u| %>
-  <%= u.name %>
+<% if params[:search] %>
+  <% @users.each do |u| %>
+    <%= u.name %>
+  <% end %>
 <% end %>
-<!--
-<% if @users.blank? %>
-  <h4>There are currently no profiles containing the <%= params[:search] %> badge.</h4>
-<% end %> -->
+
+<!-- # <% if @users.blank? %>
+#   <%= flash[:alert] = "There are currently no profiles containing the #{params[:search]} badge." %>
+# <% end %> -->
