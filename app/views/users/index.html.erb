@@ -1,4 +1,5 @@
 <% if params[:search] %>
+  <%= @users.count %> Profiles found:
   <% @users.each do |u| %>
     <%= u.name %>
   <% end %>
