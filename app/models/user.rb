@@ -18,6 +18,8 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :badges
 
   def self.search(search)
-    joins(:badges).where("badge.name ILIKE ?", "%#{search}").includes(:badges)
+    joins(:badges)
+    .where("badges.name ILIKE ?", "%#{search}")
+    .references(:badges)
   end
 end

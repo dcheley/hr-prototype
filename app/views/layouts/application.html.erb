@@ -29,7 +29,7 @@
         <form class="navbar-form navbar-left" role="search">
           <%= form_tag(users_url, :method => "get", class: "form-group") do %>
             <%= text_field_tag :search, params[:search], placeholder: "By Skills & Experience", required: true, class:"form-control" %>
-            <%= submit_tag "Search", class:"btn btn-default" %></br>
+            <%= submit_tag "Search", name: nil, class:"btn btn-default" %></br>
           <% end %>
         </form>
         <ul class="nav navbar-nav navbar-right">

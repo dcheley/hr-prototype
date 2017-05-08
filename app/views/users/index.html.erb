@@ -1,3 +1,7 @@
-<% if params[:search] %>
- <%= @user.id %>
+<% @users.each do |u| %>
+  <%= u.name %>
 <% end %>
+<!--
+<% if @users.blank? %>
+  <h4>There are currently no profiles containing the <%= params[:search] %> badge.</h4>
+<% end %> -->

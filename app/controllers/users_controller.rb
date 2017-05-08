@@ -16,11 +16,11 @@ class UsersController < ApplicationController
   end
 
   def index
-    # @user = User.all
+    @users = User.all
     if params[:search]
-      @user = User.search(params[:search]).order("name ASC")
+      @users = User.joins(:badges).search(params[:search]).order("name ASC")
     else
-      flash[:alert] = "No relevant profiles found."
+      flash[:alert] = "No profiles found with a #{params[:search]} badge."
     end
   end
 
