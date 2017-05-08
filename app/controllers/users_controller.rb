@@ -16,6 +16,12 @@ class UsersController < ApplicationController
   end
 
   def index
+    # @user = User.all
+    if params[:search]
+      @user = User.search(params[:search]).order("name ASC")
+    else
+      flash[:alert] = "No relevant profiles found."
+    end
   end
 
   def org_charts

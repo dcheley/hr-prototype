@@ -16,4 +16,8 @@ class User < ApplicationRecord
   validates :job_description, length: {maximum: 500}
 
   accepts_nested_attributes_for :badges
+
+  def self.search(search)
+    joins(:badges).where("badge.name ILIKE ?", "%#{search}").includes(:badges)
+  end
 end

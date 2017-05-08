@@ -27,11 +27,9 @@
           </a> -->
         </div>
         <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="COMING SOON">
-          </div>
-          <%= link_to "/users/52" do %>
-            <button type="submit" class="btn btn-default">Search</button>
+          <%= form_tag(users_url, :method => "get", class: "form-group") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "By Skills & Experience", required: true, class:"form-control" %>
+            <%= submit_tag "Search", class:"btn btn-default" %></br>
           <% end %>
         </form>
         <ul class="nav navbar-nav navbar-right">
