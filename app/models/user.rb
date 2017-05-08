@@ -20,6 +20,5 @@ class User < ApplicationRecord
   def self.search(search)
     joins(:badges)
     .where("badges.name ILIKE ? OR users.name ILIKE ?", "%#{search}", "%#{search}")
-    # .references(:badges)
   end
 end
