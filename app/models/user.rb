@@ -20,5 +20,7 @@ class User < ApplicationRecord
   def self.search(search)
     joins(:badges)
     .where("badges.name ILIKE ? OR users.name ILIKE ?", "%#{search}", "%#{search}")
+    joins(:received_badges)
+    .where("users.received_badges.name ILIKE ?", "%#{search}")
   end
 end
