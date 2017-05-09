@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update]
-  before_action :load_users, only: [:index, :org_charts, :admo_org_chart, :bpf_org_chart, :hr_org_chart, :smf_org_chart]
+  before_action :load_users, only: [:index, :org_charts, :admo_org_chart, :bpf_org_chart, :hr_org_chart, :smf_org_chart, :coop_org_chart]
 
   def new
     @user = User.new
@@ -64,6 +64,9 @@ class UsersController < ApplicationController
   def smf_org_chart
   end
 
+  def coop_org_chart
+  end
+
   def show
   end
 
@@ -89,6 +92,6 @@ private
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone, :title, :avatar, :job_description, :adm, :director, :manager, :staff, :adm_office, :strategic_human_resources, :service_management_and_facilities, :business_planning_and_finance)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone, :title, :avatar, :job_description, :adm, :director, :manager, :staff, :adm_office, :strategic_human_resources, :service_management_and_facilities, :business_planning_and_finance, :co_op)
   end
 end
