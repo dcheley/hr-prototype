@@ -1,6 +1,7 @@
 class RecognitionsController < ApplicationController
   before_action :load_recognition, only: [:show, :edit, :update, :destroy, :like, :unlike]
   before_action :load_user, only: [:new, :create, :show, :edit, :update, :destroy]
+  before_action :load_badge, only: [:show, :edit, :update, :destroy]
 
   def new
     @recognition = Recognition.new
@@ -10,6 +11,13 @@ class RecognitionsController < ApplicationController
     @recognition = Recognition.new(recognition_params)
 
     if @recognition.save
+      @badge = Badge.create(
+        recognition_id: @recognition.id,
+        receiver_id: @user.id,
+        recognizer_id: current_user.id,
+        name: @recognition.name,
+        description: @recognition.description
+        )
       redirect_to user_url(@user), notice: "#{@recognition.name} badge given!"
     else
       render :new
@@ -21,6 +29,7 @@ class RecognitionsController < ApplicationController
 
   def update
     if @recognition.update_attributes(recognition_params)
+      @badge.update_attributes(recognition_params)
       flash[:notice] = "#{@recognition.name} badge successfully updated!"
       redirect_to "/users/#{@user.id}/recognitions/#{@recognition.id}"
     else
@@ -33,6 +42,7 @@ class RecognitionsController < ApplicationController
 
   def destroy
     @recognition.destroy
+    @badge.destroy
     flash[:notice] = "#{@recognition.name} badge successfully deleted!"
     redirect_to user_url(@user)
   end
@@ -60,6 +70,10 @@ private
 
   def load_recognition
     @recognition = Recognition.find(params[:id])
+  end
+
+  def load_badge
+    @badge = Badge.find_by(recognition_id: @recognition.id)
   end
 
   def recognition_params
