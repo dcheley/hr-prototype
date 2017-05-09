@@ -5,8 +5,8 @@ class User < ApplicationRecord
 
   has_many :badges
   has_many :opportunities, through: :badges
-  has_many :received_badges, class_name: :Recognition, foreign_key: :receiver_id
-  has_many :given_badges, class_name: :Recognition, foreign_key: :recognizer_id
+  has_many :received_badges, class_name: :Recognition, foreign_key: :receiver_id, through: :badges
+  has_many :given_badges, class_name: :Recognition, foreign_key: :recognizer_id, through: :badges
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   validates :password, length: { minimum: 6, :on => :create }
@@ -20,7 +20,5 @@ class User < ApplicationRecord
   def self.search(search)
     joins(:badges)
     .where("badges.name ILIKE ? OR users.name ILIKE ?", "%#{search}", "%#{search}")
-    joins(:received_badges)
-    .where("users.received_badges.name ILIKE ?", "%#{search}")
   end
 end

@@ -3,6 +3,10 @@ class Badge < ApplicationRecord
 
   belongs_to :users, optional: true
   belongs_to :opportunities, optional: true
+  belongs_to :receivers, optional: true
+  belongs_to :recognizers, optional: true
+  belongs_to :received_badges, optional: true
+  belongs_to :given_badges, optional: true
 
   validates :name, presence: true
   validates :description, length: {maximum: 500}

@@ -63,6 +63,6 @@ private
   end
 
   def recognition_params
-    params.require(:recognition).permit(:name, :description, :receiver_id, :recognizer_id)
+    params.require(:recognition).permit(:name, :description)
   end
 end
