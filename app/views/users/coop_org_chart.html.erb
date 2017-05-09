@@ -2,7 +2,7 @@
   <h1 class="org-title">Co-op Students</h1>
 
   <section class="org-container">
-    <% @users.find_by(name: "Nadeem A") do |a| %>
+    <% @users.where(name: "Nadeem A").each do |a| %>
     <div id="level-0" class="level expanded">
       <div class="level-wrap">
         <div id="level-0-active" class="col-1-3 active">
