@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170509190632) do
+ActiveRecord::Schema.define(version: 20170509195512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20170509190632) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.boolean  "co_op"
+    t.string   "direct_report"
   end
 
   create_table "votes", force: :cascade do |t|
