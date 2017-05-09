@@ -114,4 +114,15 @@ User.create([{ name: "Robert B.", email: "robb@email.com", phone: "(416) 222-222
     { name: 'Lunch & Learn: Behavioral Insights' },
     { name: 'Lunch & Learn: Business Climate & Funding Administration Division' },
     { name: 'Lunch & Learn: Strategic Programs Development & Delivery Office' },
-    { name: 'Lunch & Learn: Ontario Investment Office' }])
+    { name: 'Lunch & Learn: Ontario Investment Office' },
+    # Co-op Students
+    { name: "Attend a Lunch n' Learn" },
+    { name: 'Join a planning committee' },
+    { name: 'Take a LearnON course' },
+    { name: 'Tour the Legislature' },
+    { name: 'Attend the Corporate Services Division’s Student Orientation & Onboarding Day' },
+    { name: 'Participate in an informational interview' },
+    { name: 'Eat at a restaurant recommended in your Student Orientation & Onboarding Resource Pack' },
+    { name: 'Organize or attend a social event with other co-op students',  description: "BONUS: attend with a fellow co-op student" },
+    { name: 'Organize or attend a networking event with other co-op students',  description: "BONUS: invite other full-time staff" },
+    { name: 'Join an OPS Network or TOPS', description: "BONUS: invite other full-time staff" }])
