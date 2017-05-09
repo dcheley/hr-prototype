@@ -81,6 +81,24 @@
               </li>
             <% end %>
 
+            <%= link_to "/users/coop_org_chart" do %>
+              <li class="menu-element">
+                <div class="org-box-menu">
+                  <div class="org-menu-header">
+                    <h4 class="branch">Co-op Students<span class=""></span></i></h4>
+
+                    <div class="context">
+                      <span class=""></span>
+                    </div>
+                  </div>
+
+                  <div class="org-details">
+                    <p class="menu-name"><b>Office Size:</b> <%= @users.where(co_op: true).count %></p>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+
           </ul>
         </div>
 
