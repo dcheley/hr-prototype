@@ -22,8 +22,8 @@
     <li class="team-info"><%= link_to "Business Planning and Finance", "/users/bpf_org_chart", class:"team-link" %></li>
   <% end %>
   <li class="profile-info"><b>Title:</b> <%= @user.title %></li>
-  <!-- <li class="profile-info"><b>Email:</b> <%= @user.email %></li> -->
-  <!-- <li class="profile-info"><b>Phone:</b> <%= @user.phone %></li> -->
+  <li class="profile-info"><b>Direct Report:</b> <%= @user.direct_report %></li>
+  <li class="profile-info"><b>Career Aspirations:</b> <%= @user.career_aspirations %></li>
   <% if current_user.id == @user.id %>
     <% if @user.job_description == nil || @user.job_description == "" %>
       <%= link_to "ADD JOB DESCRIPTION", edit_user_url(@user), class:"submit-green", style:"margin: 2.5 auto; text-align: center; width: 160px;" %>
