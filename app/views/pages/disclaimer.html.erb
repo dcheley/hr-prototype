@@ -40,7 +40,7 @@
       <div class="center-float-wrap">
         <div class="float" style="margin-left: 5px; margin-right: 5px;">
           <%= form_for(current_user) do |f| %>
-            <%= f.hidden_field :name, value: current_user.name %>
+            <%= f.hidden_field :agreement, value: true %>
             <%= f.submit "AGREE", class:"submit-green" %>
           <% end %>
         </div>
