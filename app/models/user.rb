@@ -22,4 +22,19 @@ class User < ApplicationRecord
     .where("badges.name ILIKE ? OR users.name ILIKE ?", "%#{search}", "%#{search}")
     .references(:badges)
   end
+
+  before_save :destroy_image?
+
+  def image_delete
+    @image_delete ||= "0"
+  end
+
+  def image_delete=(value)
+    @image_delete = value
+  end
+
+private
+  def destroy_image?
+    self.avatar.clear if @image_delete == "1"
+  end
 end
