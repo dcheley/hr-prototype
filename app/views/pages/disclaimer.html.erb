@@ -1,56 +1,60 @@
-<div class="background" style="text-align: center;">
-  <h1 class="org-title">Disclaimer</h1>
+<% if current_user %>
+  <div class="background" style="text-align: center;">
+    <h1 class="org-title">Disclaimer</h1>
 
-  <div class="badge-description-wrap">
-    <p class="disclaimer-text">
-      You must abide by all standard government rules (<%= link_to "PDF LINK", "http://intra.ops.myops.gov.on.ca/cms/tiles.nsf/%28vwReadResourcesByRefId_Content%29/cpd2011.04.01.13.19.10.NBJ_res/$File/acceptableI&IT_Policy.pdf", target:'_blank' %>)
-      for using government computing resources. You are responsible for adhering to
-      all existing rules when posting on Employee Engagement Application.
-    </p>
+    <div class="badge-description-wrap">
+      <p class="disclaimer-text">
+        You must abide by all standard government rules (<%= link_to "PDF LINK", "http://intra.ops.myops.gov.on.ca/cms/tiles.nsf/%28vwReadResourcesByRefId_Content%29/cpd2011.04.01.13.19.10.NBJ_res/$File/acceptableI&IT_Policy.pdf", target:'_blank' %>)
+        for using government computing resources. You are responsible for adhering to
+        all existing rules when posting on Employee Engagement Application.
+      </p>
 
-    <p class="disclaimer-text"><b>In particular</b>, keep in mind that:</p>
+      <p class="disclaimer-text"><b>In particular</b>, keep in mind that:</p>
 
-    <ul class="disclaimer-body">
-      <li class="disclaimer-text">
-        Government-owned collaboration spaces (including this site) constitute
-        <b>official interactions and communications</b>, but they do not necessarily represent
-        views of the home branch, division or ministry. Remember that the content you create
-        here is <b>subject to Freedom of information (FOI)</b> legislation (just like your email).
-      </li>
-      <li class="disclaimer-text">
-        As a condition of using these government-owned capabilities, you consent to the sharing of
-        postings to other OPS employees.
-      </li>
-      <li class="disclaimer-text">
-        You may not post any material that is obscene, defamatory, profane, threatening, harassing,
-        abusive, or hateful to another person, agency, organization, or other entity.
-      </li>
-      <li class="disclaimer-text">
-        Do not post another person's personal information without their specific consent.
-      </li>
-      <li class="disclaimer-text">
-        Site administrators retain the right to delete inappropriate posting and revoke user privileges.
-      </li>
-      <li class="disclaimer-text">
-        Write with accuracy, correcting mistakes when appropriate.
-      </li>
-    </ul>
+      <ul class="disclaimer-body">
+        <li class="disclaimer-text">
+          Government-owned collaboration spaces (including this site) constitute
+          <b>official interactions and communications</b>, but they do not necessarily represent
+          views of the home branch, division or ministry. Remember that the content you create
+          here is <b>subject to Freedom of information (FOI)</b> legislation (just like your email).
+        </li>
+        <li class="disclaimer-text">
+          As a condition of using these government-owned capabilities, you consent to the sharing of
+          postings to other OPS employees.
+        </li>
+        <li class="disclaimer-text">
+          You may not post any material that is obscene, defamatory, profane, threatening, harassing,
+          abusive, or hateful to another person, agency, organization, or other entity.
+        </li>
+        <li class="disclaimer-text">
+          Do not post another person's personal information without their specific consent.
+        </li>
+        <li class="disclaimer-text">
+          Site administrators retain the right to delete inappropriate posting and revoke user privileges.
+        </li>
+        <li class="disclaimer-text">
+          Write with accuracy, correcting mistakes when appropriate.
+        </li>
+      </ul>
 
-    <div class="center-float-wrap">
-      <div class="float" style="margin-left: 5px; margin-right: 5px;">
-        <%= form_for(current_user) do |f| %>
-          <%= f.hidden_field :name, value: current_user.name %>
-          <%= f.submit "AGREE", class:"submit-green" %>
-        <% end %>
+      <div class="center-float-wrap">
+        <div class="float" style="margin-left: 5px; margin-right: 5px;">
+          <%= form_for(current_user) do |f| %>
+            <%= f.hidden_field :name, value: current_user.name %>
+            <%= f.submit "AGREE", class:"submit-green" %>
+          <% end %>
+        </div>
+
+
+        <div class="float" style="margin-left: 5px;">
+          <%= link_to :logout, class:"cancel-center-link" do %>
+            <div class="delete">DISAGREE</div>
+          <% end %>
+        </div>
       </div>
 
-
-      <div class="float" style="margin-left: 5px;">
-        <%= link_to :logout, class:"cancel-center-link" do %>
-          <div class="delete">DISAGREE</div>
-        <% end %>
-      </div>
     </div>
-
   </div>
-</div>
+<% else %>
+  <h1 class="login-message"><%= link_to "LOGIN", :login %> to view disclaimer</h1>
+<% end %>
