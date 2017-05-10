@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   end
 
   resources :opportunities do
-    resources :badges, only: [:new, :create]
+    resources :badges, only: [:new, :create, :show]
   end
 
   resources :badges do
