@@ -1,22 +1,26 @@
-<div class="background" style="text-align: center;">
-  <h2 class="opp-headers"><%= @opportunity.name %></h2>
+<% if current_user %>
+  <div class="background" style="text-align: center;">
+    <h2 class="opp-headers"><%= @opportunity.name %></h2>
 
-  <div class="opp-photo-frame">
-    <%= image_tag('huddle.png', class:"tile__img") %>
+    <div class="opp-photo-frame">
+      <%= image_tag('huddle.png', class:"tile__img") %>
+    </div>
+
+    <p class="opp-details">
+      <%= @opportunity.description %>
+    </p>
+
+    <div>
+      <%= form_for([@opportunity, @badge]) do |f| %>
+        <%= f.hidden_field :name, value: @opportunity.name %>
+        <%= f.hidden_field :description, value: @opportunity.description %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :opportunity_id, value: @opportunity.id %>
+        <%= f.hidden_field :green, value: true %>
+        <%= f.submit "VERIFY SIGN UP", class:"submit-green", style:"margin: 20px auto;" %>
+      <% end %>
+    </div>
   </div>
-
-  <p class="opp-details">
-    <%= @opportunity.description %>
-  </p>
-
-  <div>
-    <%= form_for([@opportunity, @badge]) do |f| %>
-      <%= f.hidden_field :name, value: @opportunity.name %>
-      <%= f.hidden_field :description, value: @opportunity.description %>
-      <%= f.hidden_field :user_id, value: current_user.id %>
-      <%= f.hidden_field :opportunity_id, value: @opportunity.id %>
-      <%= f.hidden_field :green, value: true %>
-      <%= f.submit "VERIFY SIGN UP", class:"submit-green", style:"margin: 20px auto;" %>
-    <% end %>
-  </div>
-</div>
+<% else %>
+  <h1 class="login-message"><%= link_to "LOGIN", :login %> to view <%= @opportunity.name %> details</h1>
+<% end %>
