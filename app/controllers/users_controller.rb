@@ -79,10 +79,10 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(user_params) && @user.agreement != true
+    if @user.update_attributes(user_params)
       flash[:alert] = "Settings successfully updated!"
       redirect_to user_url
-    elsif @user.update_attributes(@user.agreement)
+    elsif @user.update_attributes(agreement: true)
       flash[:alert] = "Please enter your account information below"
       redirect_to edit_user_url(current_user)
     else
