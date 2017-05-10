@@ -1,4 +1,5 @@
 <!--  Use OR where.name for me/nadeem-->
+
 <% if current_user && current_user.co_op == nil %>
   <h1 class="org-title">Interactive Organizational Chart</h1>
 
@@ -91,7 +92,9 @@
   </section>
 
 <% elsif current_user && current_user.co_op != nil %>
-  <section class="org-menu-container">
+  <h1 class="org-title">Co-op Students Group</h1>
+
+  <section class="org-menu-container" style="text-align: center; padding-left: 0;">
     <div id="level-1" class="level">
       <div class="level-wrap">
 
@@ -99,7 +102,7 @@
           <ul>
 
             <%= link_to "/users/coop_org_chart" do %>
-              <li class="menu-element">
+              <li class="menu-element" style="text-align: left;">
                 <div class="org-box-menu">
                   <div class="org-menu-header">
                     <h4 class="branch">Co-op Students<span class=""></span></i></h4>
