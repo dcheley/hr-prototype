@@ -1,4 +1,4 @@
-<% if current_user %>
+<% if current_user && current_user.co_op == nil %>
   <h1 class="org-title">Interactive Organizational Chart</h1>
 
   <h4 class="org-title", style="margin-top: 30px;"><b>*Click</b> on a <b>box</b> below to view a branch's <b>interactive</b> organizational chart and the career profile of the employees in that branch.</h4>
@@ -80,6 +80,21 @@
                 </div>
               </li>
             <% end %>
+
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+<% elsif current_user && current_user.co_op != nil %>
+  <section class="org-menu-container">
+    <div id="level-1" class="level">
+      <div class="level-wrap">
+
+        <div id="level-1-list" class="col-1-3 list">
+          <ul>
 
             <%= link_to "/users/coop_org_chart" do %>
               <li class="menu-element">
