@@ -1,4 +1,4 @@
-<% if current_user %>
+<% if current_user && current_user.co_op != nil %>
   <div class="carousel-container">
     <h1 class="org-title">Career Development Opportunities</h1>
 
@@ -228,6 +228,9 @@
       </div>
     </div>
 
+  </div>
+
+<% elsif current_user && current_user.co_op == nil %>
     <h1 class="org-title" style="margin-top: 4%;">Co-op Student Badges</h1>
 
     <p class="opportunity-info">
@@ -361,6 +364,7 @@
     </div>
 
   </div>
+
 <% else %>
   <h1 class="login-message"><%= link_to "LOGIN", :login %> to view Opportunities</h1>
 <% end %>

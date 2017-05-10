@@ -109,9 +109,3 @@
 <% else %>
   <h1 class="login-message"><%= link_to "LOGIN", :login %> to view Interactive Org Chart</h1>
 <% end %>
-<script type="text/javascript">
-//Popup Alert for new users
-  if (<%= current_user.badges.ids == [] %>) {
-    alert('Click the "Profile" link in the top right to add Badges!');
-  }
-</script>
