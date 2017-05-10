@@ -79,9 +79,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(user_params)
+    if @user.update_attributes(user_params) && @user.agreement != true
       flash[:alert] = "Settings successfully updated!"
       redirect_to user_url
+    elsif @user.update_attributes(@user.agreement)
+      flash[:alert] = "Please enter your account information below"
+      redirect_to edit_user_url(current_user)
     else
       render :edit
     end
@@ -97,6 +100,9 @@ private
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone, :title, :avatar, :job_description, :adm, :director, :manager, :staff, :adm_office, :strategic_human_resources, :service_management_and_facilities, :business_planning_and_finance, :co_op, :image_delete, :career_aspirations, :direct_report)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone,
+    :title, :avatar, :job_description, :adm, :director, :manager, :staff, :adm_office,
+    :strategic_human_resources, :service_management_and_facilities, :business_planning_and_finance,
+    :co_op, :image_delete, :career_aspirations, :direct_report, :agreement)
   end
 end
