@@ -89,6 +89,12 @@
   transform: translateY(0);
 }
 
+.check-box {
+  text-align: left;
+  margin-top: 15px;
+}
+
+
 //User show & edit
 .profile-background {
   width: 100%;
@@ -195,11 +201,6 @@
   font-size: 16px;
   padding-bottom: 60px;
   padding-left: 9%;
-}
-
-.check-box {
-  text-align: left;
-  margin-top: 15px;
 }
 
 @media screen and (max-width: 939px) {
