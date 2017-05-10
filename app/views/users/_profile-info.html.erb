@@ -1,10 +1,5 @@
 <% if @user.avatar.file? == true %>
   <%= image_tag @user.avatar.url(:medium), class:"profile-pic" %>
-<% elsif @user.avatar.file? == false && current_user == @user %>
-  <div class="default-pic">
-    <span class="glyphicon glyphicon-user" style="font-size: 80px;"></span>
-    <%= link_to "ADD PIC", edit_user_url(@user), class:"submit-green", style:"margin: 2.5 auto; width: 120px;" %>
-  </div>
 <% else %>
   <div class="default-pic">
     <span class="glyphicon glyphicon-user" style="font-size: 80px;"></span>
@@ -24,20 +19,11 @@
   <li class="profile-info"><b>Title:</b> <%= @user.title %></li>
   <li class="profile-info"><b>Direct Report:</b> <%= @user.direct_report %></li>
   <li class="profile-info"><b>Career Aspirations:</b> <%= @user.career_aspirations %></li>
-  <% if current_user.id == @user.id %>
-    <% if @user.job_description == nil || @user.job_description == "" %>
-      <%= link_to "ADD JOB DESCRIPTION", edit_user_url(@user), class:"submit-green", style:"margin: 2.5 auto; text-align: center; width: 160px;" %>
-    <% else %>
-      <li class="team-info" style="font-size: 16px;"><b>Job Description</b></li>
-      <li class="team-info" style="font-size: 16px; overflow-x: scroll;"><%= @user.job_description %></li>
-    <% end %>
+  <li class="team-info" style="font-size: 16px;"><b>Job Description</b></li>
+
+  <% if @user.job_description == nil || @user.job_description == "" %>
+    <li class="team-info" style="font-size: 16px;">Describe your responsibilities and experience in 500 characters or less.</li>
   <% else %>
-    <% if @user.job_description == nil || @user.job_description == "" %>
-      <li class="team-info" style="font-size: 16px;"><b>Job Description</b></li>
-      <li class="team-info" style="font-size: 16px;">Describe your responsibilities and experience in 500 characters or less.</li>
-    <% else %>
-      <li class="team-info" style="font-size: 16px;"><b>Job Description</b></li>
-      <li class="team-info" style="font-size: 16px; overflow-x: scroll;"><%= @user.job_description %></li>
-    <% end %>
+    <li class="team-info" style="font-size: 16px; overflow-x: scroll;"><%= @user.job_description %></li>
   <% end %>
 </ul>
