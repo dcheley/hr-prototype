@@ -33,7 +33,8 @@
           <% end %>
         </nav>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/users/org_charts">Home</a></li>
+          <li><a href="/users/org_charts">Organizational Charts</a></li>
+          <li><a href="/users/opps">Opportunities</a></li>
           <li><%= link_to "Profile", "/users/#{current_user.id}" %></li>
           <li><%= link_to "Settings", "/users/#{current_user.id}/edit" %></li>
           <li><%= link_to "Logout", :logout %></li>
