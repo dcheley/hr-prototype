@@ -4,6 +4,13 @@
 
     <div class="container" style="margin-top: 15px; text-align: center;">
       <%= render 'recognitions_form' %>
+
+        <div class="float">
+          <%= link_to "/users/#{@user.id}/recognitions/#{@recognition.id}", class:"cancel-link" do %>
+            <div class="submit-blue">CANCEL</div>
+          <% end %>
+        </div>
+      </div>
     </div>
 
   <% else %>
