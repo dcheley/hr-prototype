@@ -23,6 +23,9 @@ class UsersController < ApplicationController
   end
 
   def org_charts
+  end
+
+  def opps
     @opportunity_1 = Opportunity.find(1)
     @opportunity_2 = Opportunity.find(2)
     @opportunity_3 = Opportunity.find(3)
