@@ -1,7 +1,7 @@
 <div class="profile-background">
   <% if current_user && current_user == @user %>
     <div class="left-profile">
-    </br><h1 class="profile-title"><b>Your Profile</b></h1>
+      </br><h1 class="profile-title"><b>Your Profile</b></h1>
 
       <%= render 'profile-info' %>
     </div>
@@ -9,11 +9,17 @@
     <div class="right-profile">
       <h1 class="badge-title"><b>Your badges</b></h1>
 
+    <% if current_user.co_op != nil %>
       <p class="badge-new-wrap"><%= link_to "ADD BADGE", "/users/#{current_user.id}/badges/new", class:"submit-green", style:"margin: auto; width: 160px;" %></p>
 
       <h5 class="badge-title" style="font-size: 16px;"><b>*Click</b> on a <b>badge</b> to <b>add</b> a <b>description</b> of your experience</h5>
 
       <%= render 'badge-show-list' %>
+    </div>
+
+    <% else %>
+      <%= render 'coop-show-list' %>
+    <% end %>
     </div>
 
   <% elsif current_user && current_user != @user %>
@@ -26,11 +32,17 @@
     <div class="right-profile">
       <h1 class="badge-title"><%= "#{@user.name}" %>'s badges</h1>
 
+    <% if current_user.co_op != nil %>
       <p class="badge-new-wrap"><%= link_to 'GIVE Recognition Badge', "/users/#{@user.id}/recognitions/new", class:"submit-green", style:"margin: auto; width: 260px;" %></p>
 
       <p class="badge-title" style="font-size: 16px;"><b>*Click</b> a <b>badge</b> to learn more about their skills and experience.</p>
 
       <%= render 'badge-show-list' %>
+    </div>
+
+    <% else %>
+      <%= render 'coop-show-list' %>
+    <% end %>
     </div>
 
   <% else %>

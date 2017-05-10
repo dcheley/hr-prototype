@@ -1,5 +1,6 @@
 //User form fields
-.form-title, .home-title {
+.form-title,
+.home-title {
   text-align: center;
   padding-top: 15px;
   // margin-bottom: 5%;
@@ -104,6 +105,18 @@
   float: right;
   margin-right: 5%;
   width: 60%;
+}
+
+.left-coop {
+  margin-top: 15px;
+  float: left;
+  width: 50%;
+}
+
+.right-coop {
+  margin-top: 15px;
+  float: right;
+  width: 50%;
 }
 
 .profile-title {

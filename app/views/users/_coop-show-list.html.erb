@@ -1,0 +1,29 @@
+<ul class="badge-list">
+  <div class="left-coop">
+    <p class="badge-types"><b>Bucket List Badges</b></p>
+    <!-- Display Green Badges -->
+    <% @user.badges.where.not(opportunity_id: nil).each do |b| %>
+      <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
+        <div class="badge-green">
+          <li class="profile-badges-name">
+            <%= "#{b.name}" %>
+          </li></br>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="right-coop">
+    <p class="badge-types"><b>Recognition Badges</b></p>
+    <!-- Display Green Badges -->
+    <% @user.received_badges.each do |b| %>
+      <%= link_to "/users/#{@user.id}/recognitions/#{b.recognition_id}" do %>
+        <div class="badge-green">
+          <li class="profile-badges-name">
+            <%= "#{b.name}" %>
+          </li></br>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</ul>
