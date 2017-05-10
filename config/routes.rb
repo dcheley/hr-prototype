@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/users/coop_org_chart' => 'users#coop_org_chart'
 
   resources :users, only: [:new, :create, :show, :update, :edit, :index]
+  resources :opportunities, only: [:show]
 
   resources :users do
     resources :badges, only: [:new, :create, :show, :update, :edit, :destroy]
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
   end
 
   resources :opportunities do
-    resources :badges, only: [:new, :create, :show]
+    resources :badges, only: [:new, :create]
   end
 
   resources :badges do

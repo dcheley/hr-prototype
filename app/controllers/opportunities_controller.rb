@@ -1,7 +1,8 @@
 class OpportunitiesController < ApplicationController
-  
+
   def show
     @opportunity = Opportunity.find(params[:id])
+    @badge = current_user.badges.build
   end
 
   def index
