@@ -154,6 +154,17 @@
   color: $bright-dark-blue;
 }
 
+.disclaimer-text {
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.disclaimer-body {
+  margin-top: 30px;
+  margin-bottom: 5%;
+  text-align: left;
+}
+
 @media screen and (max-width: 767px) {
   .alert {
     font-size: 16px;
