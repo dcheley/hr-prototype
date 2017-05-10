@@ -52,7 +52,7 @@
 
           <ul>
             <% @users.where(co_op: true).each do |b| %>
-            <li class="element">
+            <li class="element" style="width: 240px;">
               <div class="org-box">
                 <div class="org-header">
                   <h4 class="branch"><%= "#{b.title}" %><span class=""></span></h4>
@@ -65,11 +65,15 @@
                 <% if b.avatar.file? != true %>
                   <div class="org-details">
                     <p class="boss-name"><%= link_to "#{b.name}", "/users/#{b.id}" %></p>
+                    <p class="boss-name" style="font-size: 12px;"><b>Bucket List Badges:</b> <%= b.badges.count %></p>
+                    <p class="boss-name" style="font-size: 12px;"><b>Recognition Badges:</b> <%= b.received_badges.count %></p>
                   </div>
                   <div class="info-btn"><span class="glyphicon glyphicon-user"></span></div>
                 <% else %>
                   <div class="org-details" style="margin-bottom: 0;">
                     <p class="boss-name"><%= link_to "#{b.name}", "/users/#{b.id}" %></p>
+                    <p class="boss-name" style="font-size: 12px;">Bucket List Badges: <%= b.badges.count %></p>
+                    <p class="boss-name" style="font-size: 12px;">Recognition Badges: <%= b.received_badges.count %></p>
                   </div>
                   <%= image_tag b.avatar.url(:medium), class:"org-profile-pic" %>
                 <% end %>
