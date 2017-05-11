@@ -7,33 +7,33 @@
       <div class="level-wrap">
         <div id="level-0-active" class="col-1-3 active">
 
-          <%= %>
-          <div class="element">
-            <div class="org-box">
+          <%= link_to "#{a.name}", "/users/#{a.id}" do %>
+            <div class="element">
+              <div class="org-box">
 
-              <div class="org-header">
-                <h4 class="branch"><%= "#{a.title}" %><span class=""></span></i></h4>
+                <div class="org-header">
+                  <h4 class="branch"><%= "#{a.title}" %><span class=""></span></i></h4>
 
-                <!-- <div class="context">
-                  <span class="glyphicon glyphicon-menu-down"></span>
-                </div> -->
+                  <!-- <div class="context">
+                    <span class="glyphicon glyphicon-menu-down"></span>
+                  </div> -->
+                </div>
+
+                <% if a.avatar.file? != true %>
+                  <div class="org-details">
+                    <p class="boss-name"><%= link_to "#{a.name}", "/users/#{a.id}" %></p>
+                  </div>
+                  <div class="info-btn"><span class="glyphicon glyphicon-user"></span></div>
+                <% else %>
+                  <div class="org-details" style="margin-bottom: 0;">
+                    <p class="boss-name"><%= link_to "#{a.name}", "/users/#{a.id}" %></p>
+                  </div>
+                  <%= image_tag a.avatar.url(:medium), class:"org-profile-pic" %>
+                <% end %>
+
               </div>
-
-              <% if a.avatar.file? != true %>
-                <div class="org-details">
-                  <p class="boss-name"><%= link_to "#{a.name}", "/users/#{a.id}" %></p>
-                </div>
-                <div class="info-btn"><span class="glyphicon glyphicon-user"></span></div>
-              <% else %>
-                <div class="org-details" style="margin-bottom: 0;">
-                  <p class="boss-name"><%= link_to "#{a.name}", "/users/#{a.id}" %></p>
-                </div>
-                <%= image_tag a.avatar.url(:medium), class:"org-profile-pic" %>
-              <% end %>
-
             </div>
-          </div>
-
+          <% end %>
         </div>
       </div>
     </div>
@@ -53,29 +53,31 @@
 
           <ul>
             <% @users.where(adm_office: true, manager: true).each do |b| %>
-            <li class="element">
-              <div class="org-box">
-                <div class="org-header">
-                  <h4 class="branch"><%= "#{b.title}" %><span class=""></span></h4>
+              <%= link_to "#{b.name}", "/users/#{b.id}" do %>
+                <li class="element">
+                  <div class="org-box">
+                    <div class="org-header">
+                      <h4 class="branch"><%= "#{b.title}" %><span class=""></span></h4>
 
-                  <!-- <div class="context">
-                    <span class="glyphicon glyphicon-menu-down"></span>
-                  </div> -->
-                </div>
+                      <!-- <div class="context">
+                        <span class="glyphicon glyphicon-menu-down"></span>
+                      </div> -->
+                    </div>
 
-                <% if b.avatar.file? != true %>
-                  <div class="org-details">
-                    <p class="boss-name"><%= link_to "#{b.name}", "/users/#{b.id}" %></p>
+                    <% if b.avatar.file? != true %>
+                      <div class="org-details">
+                        <p class="boss-name"><%= link_to "#{b.name}", "/users/#{b.id}" %></p>
+                      </div>
+                      <div class="info-btn"><span class="glyphicon glyphicon-user"></span></div>
+                    <% else %>
+                      <div class="org-details" style="margin-bottom: 0;">
+                        <p class="boss-name"><%= link_to "#{b.name}", "/users/#{b.id}" %></p>
+                      </div>
+                      <%= image_tag b.avatar.url(:medium), class:"org-profile-pic" %>
+                    <% end %>
                   </div>
-                  <div class="info-btn"><span class="glyphicon glyphicon-user"></span></div>
-                <% else %>
-                  <div class="org-details" style="margin-bottom: 0;">
-                    <p class="boss-name"><%= link_to "#{b.name}", "/users/#{b.id}" %></p>
-                  </div>
-                  <%= image_tag b.avatar.url(:medium), class:"org-profile-pic" %>
-                <% end %>
-              </div>
-            </li>
+                </li>
+              <% end%>
             <% end %>
           </ul>
         </div>
