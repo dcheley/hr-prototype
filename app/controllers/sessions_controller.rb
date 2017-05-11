@@ -4,16 +4,10 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:email])
-    if user && user.authenticate(params[:password]) && user.badges.ids == [] && user.co_op == nil
-      session[:user_id] = user.id
-      #Badge.create(name: "Sign Up",
-      #   user_id: user.id,
-      #   blue: true)
-      redirect_to user_url(user.id), notice: %Q[To get started, click the ADD Badge link below to showcase your current skills and experience.]
-    elsif user && user.authenticate(params[:password]) && user.badges.ids == [] && user.co_op != nil
+    if user && user.authenticate(params[:password]) && user.agreement != true
       session[:user_id] = user.id
       redirect_to "/pages/disclaimer", notice: "Welcome! Read the disclaimer below before creating your account"
-    elsif user && user.authenticate(params[:password]) && user.badges.ids != []
+    elsif user && user.authenticate(params[:password]) && user.agreement == true
       session[:user_id] = user.id
       redirect_to "/users/org_charts", notice: "Logged in!"
     else
