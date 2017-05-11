@@ -1,7 +1,6 @@
 class RecognitionsController < ApplicationController
   before_action :load_recognition, only: [:show, :edit, :update, :destroy, :like, :unlike]
   before_action :load_user, only: [:new, :create, :show, :edit, :update, :destroy]
-  before_action :load_badge, only: [:show, :edit, :update, :destroy]
 
   def new
     @recognition = Recognition.new
@@ -62,10 +61,6 @@ private
 
   def load_recognition
     @recognition = Recognition.find(params[:id])
-  end
-
-  def load_badge
-    @badge = Badge.find_by(recognition_id: @recognition.id)
   end
 
   def recognition_params
