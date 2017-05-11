@@ -125,16 +125,11 @@
   width: 30%;
 }
 
-#bucket {
-  margin-top: 15px;
-  float: left;
-  width: 50%;
-}
-
+#bucket,
 #recognition {
   margin-top: 15px;
-  float: right;
-  width: 50%;
+  // float: left;
+  width: 100%;
 }
 
 .profile-title {
