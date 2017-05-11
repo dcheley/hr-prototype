@@ -164,8 +164,8 @@ User.create([{ name: "Robert B", email: "robb@email.com", phone: "(416) 222-2222
     { name: 'Lunch & Learn: Business Climate & Funding Administration Division' },
     { name: 'Lunch & Learn: Strategic Programs Development & Delivery Office' },
     { name: 'Lunch & Learn: Ontario Investment Office' },
-    # Co-op Students
-    { name: "Attend a Lunch n' Learn", avatar: File.join(Rails.root, 'app', 'assets', 'images', 'lunch-n-learn.png') },
+    # Co-op Students File.join(Rails.root, 'app', 'assets', 'images', 'lunch-n-learn.png')
+    { name: "Attend a Lunch n' Learn", avatar: File.new("#{Rails.root}/app/assets/images/lunch-n-learn.png") },
     { name: 'Join a planning committee' },
     { name: 'Take a LearnON course' },
     { name: 'Tour the Legislature' },
