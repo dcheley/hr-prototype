@@ -332,20 +332,12 @@
   display: none;
 }
 
-.boss-name, .menu-name {
+.boss-name,
+.menu-name {
+  color: $dark-turquoise;
   text-align: right;
 }
 
-.menu-name {
-  color: $dark-turquoise;
-}
-
-.boss-name a {
+.boss-name  {
   font-weight: bold;
-  color: $bright-dark-blue;
-}
-
-.boss-name:hover a  {
-  text-decoration: none;
-  color: $grey;
 }
