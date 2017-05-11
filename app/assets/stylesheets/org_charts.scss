@@ -106,12 +106,8 @@
   position: relative;
 }
 
+.org-header,
 .org-menu-header {
-  color: black;
-  background-color: $light-grey;
-}
-
-.org-header {
   color: white;
   background: $dark-turquoise;
 }
@@ -291,10 +287,11 @@
 // }
 
 //Hover
-.menu-element:hover {
+.menu-element:hover,
+.element:hover {
   border-color: $grey;
   .org-menu-header,
-  .org-menu-header .context, {
+  .org-header, {
     cursor: pointer;
     background: #444444;
     color: $white;
