@@ -17,14 +17,9 @@
         <%= link_to "CREATE BADGE", "/users/#{current_user.id}/badges/new", class:"submit-green", style:"margin: auto; width: 160px;" %>
       </p>
 
-      <h5 class="badge-title" style="font-size: 16px; clear: both;"><b>*Click</b> on a <b>badge</b> to <b>add</b> a <b>description</b> of your experience</h5>
-
       <%= render 'badge-show-list' %>
-    </div>
 
     <% else %>
-      <h5 class="badge-title" style="font-size: 16px;"><b>*Click</b> on a <b>badge</b> to <b>add</b> a <b>description</b> of your experience</h5>
-
       <%= render 'coop-show-list' %>
     <% end %>
     </div>
@@ -41,8 +36,6 @@
 
 
       <p class="badge-new-wrap"><%= link_to 'GIVE Recognition Badge', "/users/#{@user.id}/recognitions/new", class:"submit-green", style:"margin: auto; width: 260px;" %></p>
-
-      <p class="badge-title" style="font-size: 16px;"><b>*Click</b> a <b>badge</b> to learn more about their skills and experience.</p>
 
     <% if @user.co_op == nil %>
       <%= render 'badge-show-list' %>
