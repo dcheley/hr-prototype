@@ -9,7 +9,7 @@
       <% if !current_user %>
         <h5 class="form-instructions">Enter account info below:</h5>
 
-        <%= form_tag login_path do %>
+        <%= form_tag login_path, html: { autocomplete: "off" } do %>
           <div class="field">
             <div class="field-label"><%= label_tag :username %></div>
             <%= text_field_tag :email, params[:email], class:"field-input" %>
