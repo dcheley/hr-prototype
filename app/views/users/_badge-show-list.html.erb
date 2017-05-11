@@ -18,7 +18,7 @@
         <% end %>
       <% end %>
     </div>
-    <div role="tabpane1" class="tab-pane active" id="edu">
+    <div role="tabpane1" class="tab-pane" id="edu">
       <!-- Display Green Badges -->
       <% @user.badges.where(opportunity_id: nil, education: true).each do |b| %>
         <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
@@ -30,7 +30,7 @@
         <% end %>
       <% end %>
     </div>
-    <div role="tabpane1" class="tab-pane active" id="opportunity">
+    <div role="tabpane1" class="tab-pane" id="opportunity">
       <!-- Display Green Badges -->
       <% @user.badges.where.not(opportunity_id: nil).each do |b| %>
         <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
@@ -42,7 +42,7 @@
         <% end %>
       <% end %>
     </div>
-    <div role="tabpane1" class="tab-pane active" id="recognitionz">
+    <div role="tabpane1" class="tab-pane" id="recognitionz">
       <!-- Display Green Badges -->
       <% @user.received_badges.each do |b| %>
         <%= link_to "/users/#{@user.id}/recognitions/#{b.id}" do %>
