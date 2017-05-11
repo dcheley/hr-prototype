@@ -20,7 +20,7 @@
     </div>
     <div role="tabpane1" class="tab-pane active" id="edu">
       <!-- Display Green Badges -->
-      <% @user.badges.where(opportunity_id: nil, edu: true).each do |b| %>
+      <% @user.badges.where(opportunity_id: nil, education: true).each do |b| %>
         <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
           <div class="badge-green">
             <li class="profile-badges-name">
