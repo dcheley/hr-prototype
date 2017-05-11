@@ -245,7 +245,7 @@
       <%= link_to "/opportunities/#{@opportunity_17.id}" do %>
         <div class="tile">
           <div class="tile__media">
-            <%= image_tag('lunch&learn.png', class:"tile__img") %>
+            <%= @opportunity_17.avatar, class:"tile__img" %>
           </div>
           <div class="tile__details">
             <h3 class="tile-header" style="padding-left: 15%;"><%= @opportunity_17.name %></h3>
