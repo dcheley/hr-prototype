@@ -10,7 +10,12 @@
       <h1 class="badge-title"><b>Your badges</b></h1>
 
     <% if current_user.co_op == nil %>
-      <p class="badge-new-wrap"><%= link_to "ADD BADGE", "/users/#{current_user.id}/badges/new", class:"submit-green", style:"margin: auto; width: 160px;" %></p>
+      <p class="badge-new-wrap">
+        <%= link_to "PICK DEFAULT BADGE", "/badges/defaults", class:"submit-green", style:"margin: auto; width: 160px;" %>
+      </p>
+      <p class="badge-new-wrap">
+        <%= link_to "CREATE BADGE", "/users/#{current_user.id}/badges/new", class:"submit-blue", style:"margin: auto; width: 160px;" %>
+      </p>
 
       <h5 class="badge-title" style="font-size: 16px;"><b>*Click</b> on a <b>badge</b> to <b>add</b> a <b>description</b> of your experience</h5>
 

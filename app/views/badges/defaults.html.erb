@@ -4,38 +4,38 @@
   <div class="container" style="width: 80%; margin-top: 0; margin-bottom: 0;">
     <div class="left-side">
       <h4 class="form-title"><b>Skills & Experience</b></h4>
-      <%= button_to 'Administrative Services', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Administrative Services", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'Amethyst Awards', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Amethyst Awards", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'Communications', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Communications", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'EDDIE Awards (MEDG/MRIS)', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "EDDIE Awards (MEDG/MRIS)", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'Finance', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Finance", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'Human Resources', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Human Resources", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'Information Management', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Information Management", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'I & IT', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "I & IT", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'Program Planning and Evaluation', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Program Planning and Evaluation", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'Policy and Analysis', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Policy and Analysis", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'Social Services', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Social Services", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'Scientific Services', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Scientific Services", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'Legal/Regulatory Services', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Legal/Regulatory Services", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'Technical Services', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Technical Services", :green => true}}, method: :post, class:"submit-green" %>
+      <%= button_to 'Administrative Services', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "Administrative Services", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'Amethyst Awards', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "Amethyst Awards", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'Communications', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "Communications", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'EDDIE Awards (MEDG/MRIS)', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "EDDIE Awards (MEDG/MRIS)", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'Finance', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "Finance", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'Human Resources', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "Human Resources", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'Information Management', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "Information Management", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'I & IT', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "I & IT", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'Program Planning and Evaluation', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "Program Planning and Evaluation", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'Policy and Analysis', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "Policy and Analysis", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'Social Services', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "Social Services", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'Scientific Services', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "Scientific Services", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'Legal/Regulatory Services', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "Legal/Regulatory Services", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'Technical Services', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "Technical Services", :green => true}}, method: :post, class:"badge-green" %>
     </div>
 
     <div class="right-side">
       <h4 class="form-title"><b>Education</b></h4>
-      <%= button_to 'B.A.', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "B.A.", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'B.Sc.', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "B.Sc.", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'B.B.A.', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "B.B.A.", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'M.A.', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "M.A.", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'M.Sc.', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "M.Sc.", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'Ph.D.', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "Ph.D.", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'J.D.', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "J.D.", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'M.B.A.', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "M.B.A", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'M.D.', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "M.D.", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'CPA', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "CPA", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'CFA', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "CFA", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'P.Eng.', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "P.Eng.", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'M.P.A.', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "M.P.A.", :green => true}}, method: :post, class:"submit-green" %>
-      <%= button_to 'PMP', {:controller => 'badges', :action => 'create', badge: {:user_id => @user.id, :name => "PMP", :green => true}}, method: :post, class:"submit-green" %>
+      <%= button_to 'B.A.', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "B.A.", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'B.Sc.', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "B.Sc.", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'B.B.A.', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "B.B.A.", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'M.A.', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "M.A.", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'M.Sc.', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "M.Sc.", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'Ph.D.', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "Ph.D.", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'J.D.', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "J.D.", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'M.B.A.', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "M.B.A", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'M.D.', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "M.D.", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'CPA', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "CPA", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'CFA', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "CFA", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'P.Eng.', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "P.Eng.", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'M.P.A.', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "M.P.A.", :green => true}}, method: :post, class:"badge-green" %>
+      <%= button_to 'PMP', {:controller => 'badges', :action => 'create', badge: {:user_id => current_user.id, :name => "PMP", :green => true}}, method: :post, class:"badge-green" %>
     </div>
   </div>
 </div>

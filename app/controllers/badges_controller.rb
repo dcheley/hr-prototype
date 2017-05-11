@@ -6,6 +6,10 @@ class BadgesController < ApplicationController
     @badge = Badge.new
   end
 
+  def defaults
+    @badge = Badge.new
+  end
+
   def create
     @users = User.all
     @badge = Badge.new(badge_params)
