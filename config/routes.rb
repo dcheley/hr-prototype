@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get '/users/bpf_org_chart' => 'users#bpf_org_chart'
   get '/users/hr_org_chart' => 'users#hr_org_chart'
   get '/users/smf_org_chart' => 'users#smf_org_chart'
-  get '/users/coop_org_chart' => 'users#coop_org_chart'
 
   get '/users/opps' => 'users#opps'
 

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update]
-  before_action :load_users, only: [:index, :org_charts, :admo_org_chart, :bpf_org_chart, :hr_org_chart, :smf_org_chart, :coop_org_chart]
+  before_action :load_users, only: [:index, :org_charts, :admo_org_chart, :bpf_org_chart, :hr_org_chart, :smf_org_chart]
 
   def new
     @user = User.new
@@ -67,9 +67,6 @@ class UsersController < ApplicationController
   end
 
   def smf_org_chart
-  end
-
-  def coop_org_chart
   end
 
   def show
