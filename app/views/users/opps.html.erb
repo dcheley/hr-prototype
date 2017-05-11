@@ -241,127 +241,18 @@
 
     <div class="row">
       <div class="row__inner">
-
-      <%= link_to "/opportunities/#{@opportunity_17.id}" do %>
-        <div class="tile">
-          <div class="tile__media">
-            <%= image_tag(@opportunity_17.avatar, class:"tile__img") %>
-          </div>
-          <div class="tile__details"></div>
-        </div>
-      <% end %>
-
-      <%= link_to "/opportunities/#{@opportunity_18.id}" do %>
-        <div class="tile">
-          <div class="tile__media">
-            <%= image_tag('250.jpg', class:"tile__img") %>
-          </div>
-          <div class="tile__details">
-            <h3 class="tile-header"><%= @opportunity_18.name %></h3>
-            <div class="tile__title"></div>
-          </div>
-        </div>
-      <% end %>
-
-      <%= link_to "/opportunities/#{@opportunity_19.id}" do %>
-        <div class="tile">
-          <div class="tile__media">
-            <%= image_tag('huddle.png', class:"tile__img") %>
-          </div>
-          <div class="tile__details">
-            <h3 class="tile-header"><%= @opportunity_19.name %></h3>
-            <div class="tile__title"></div>
-          </div>
-        </div>
-      <% end %>
-
-      <%= link_to "/opportunities/#{@opportunity_20.id}" do %>
-        <div class="tile">
-          <div class="tile__media">
-            <%= image_tag('thinking.jpg', class:"tile__img") %>
-          </div>
-          <div class="tile__details">
-            <h3 class="tile-header"><%= @opportunity_20.name %></h3>
-            <div class="tile__title"></div>
-          </div>
-        </div>
-      <% end %>
-
-      <%= link_to "/opportunities/#{@opportunity_21.id}" do %>
-        <div class="tile">
-          <div class="tile__media">
-            <%= image_tag('professional.png', class:"tile__img") %>
-          </div>
-          <div class="tile__details">
-            <h3 class="tile-header"><%= @opportunity_21.name %></h3>
-            <div class="tile__title"></div>
-          </div>
-        </div>
-      <% end %>
-
-      <%= link_to "/opportunities/#{@opportunity_22.id}" do %>
-        <div class="tile">
-          <div class="tile__media">
-            <%= image_tag('250.jpg', class:"tile__img") %>
-          </div>
-          <div class="tile__details">
-            <h3 class="tile-header"><%= @opportunity_22.name %></h3>
-            <div class="tile__title"></div>
-          </div>
-        </div>
-      <% end %>
-
-      <%= link_to "/opportunities/#{@opportunity_23.id}" do %>
-        <div class="tile">
-          <div class="tile__media">
-            <%= image_tag('thinking.jpg', class:"tile__img") %>
-          </div>
-          <div class="tile__details">
-            <h3 class="tile-header"><%= @opportunity_23.name %></h3>
-            <div class="tile__title"></div>
-          </div>
-        </div>
-      <% end %>
-
-      <%= link_to "/opportunities/#{@opportunity_24.id}" do %>
-        <div class="tile">
-          <div class="tile__media">
-            <%= image_tag('huddle.png', class:"tile__img") %>
-          </div>
-          <div class="tile__details">
-            <h3 class="tile-header"><%= @opportunity_24.name %></h3>
-            <div class="tile__title"></div>
-          </div>
-        </div>
-      <% end %>
-
-      <%= link_to "/opportunities/#{@opportunity_25.id}" do %>
-        <div class="tile">
-          <div class="tile__media">
-            <%= image_tag('250.jpg', class:"tile__img") %>
-          </div>
-          <div class="tile__details">
-            <h3 class="tile-header"><%= @opportunity_25.name %></h3>
-            <div class="tile__title"></div>
-          </div>
-        </div>
-      <% end %>
-
-      <%= link_to "/opportunities/#{@opportunity_26.id}" do %>
-        <div class="tile">
-          <div class="tile__media">
-            <%= image_tag('professional.png', class:"tile__img") %>
-          </div>
-          <div class="tile__details">
-            <h3 class="tile-header"><%= @opportunity_26.name %></h3>
-            <div class="tile__title"></div>
-          </div>
-        </div>
-      <% end %>
-
+        <% @opportunities.where(id: 17..26).each do |o| %>
+          <%= link_to "/opportunities/#{o.id}" do %>
+            <div class="tile">
+              <div class="tile__media">
+                <%= image_tag(o.avatar, class:"tile__img") %>
+              </div>
+              <div class="tile__details"></div>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
-
   </div>
 
 <% else %>
