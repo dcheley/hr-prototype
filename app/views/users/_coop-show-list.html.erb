@@ -10,7 +10,7 @@
       <!-- Display Green Badges -->
       <% @user.badges.where.not(opportunity_id: nil).each do |b| %>
         <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
-          <div class="badge-green">
+          <div class="badge-green" style="float: left; margin-left: 5px; margin-right: 5px;">
             <li class="profile-badges-name">
               <%= "#{b.name}" %>
             </li></br>
@@ -21,8 +21,8 @@
     <div role="tabpane1" class="tab-pane " id="recognition">
       <!-- Display Green Badges -->
       <% @user.received_badges.each do |b| %>
-        <%= link_to "/users/#{@user.id}/recognitions/#{b.recognition_id}" do %>
-          <div class="badge-green">
+        <%= link_to "/users/#{@user.id}/recognitions/#{b.id}" do %>
+          <div class="badge-green" style="float: left; margin-left: 5px; margin-right: 5px;">
             <li class="profile-badges-name">
               <%= "#{b.name}" %>
             </li></br>
