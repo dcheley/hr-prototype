@@ -11,13 +11,6 @@ class RecognitionsController < ApplicationController
     @recognition = Recognition.new(recognition_params)
 
     if @recognition.save
-      @badge = Badge.create(
-        recognition_id: @recognition.id,
-        receiver_id: @user.id,
-        recognizer_id: current_user.id,
-        name: @recognition.name,
-        description: @recognition.description
-        )
       redirect_to user_url(@user), notice: "#{@recognition.name} badge given!"
     else
       render :new
@@ -29,7 +22,6 @@ class RecognitionsController < ApplicationController
 
   def update
     if @recognition.update_attributes(recognition_params)
-      @badge.update_attributes(recognition_params)
       flash[:notice] = "#{@recognition.name} badge successfully updated!"
       redirect_to "/users/#{@user.id}/recognitions/#{@recognition.id}"
     else
@@ -77,6 +69,7 @@ private
   end
 
   def recognition_params
-    params.require(:recognition).permit(:name, :description)
+    params.require(:recognition).permit(:name, :description, :receiver_id,
+    :recognizer_id)
   end
 end
