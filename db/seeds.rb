@@ -142,9 +142,8 @@ User.create([{ name: "Robert B", email: "robb@email.com", phone: "(416) 222-2222
 { name: "Arqam M", email: "arqam@email.com", phone: "(416) 111-1111", title: "Co-op Student", co_op: true, staff: true, password: "846429" },
 { name: "Deni O", email: "deni@email.com", phone: "(416) 111-1111", title: "Co-op Student", co_op: true, staff: true, password: "790969" },
 { name: "Ian T", email: "ian@email.com", phone: "(416) 111-1111", title: "Co-op Student", co_op: true, staff: true, password: "325788" },
-{ name: "Zara B", email: "zara@email.com", phone: "(416) 111-1111", title: "Co-op Student", co_op: true, staff: true, password: "226000" },
-{ name: "Murad J", email: "murad@email.com", phone: "(416) 111-1111", title: "Co-op Student", co_op: true, staff: true, password: "166111" },
-{ name: "Alexandra C", email: "alexandra@email.com", phone: "(416) 111-1111", title: "Co-op Student", co_op: true, staff: true, password: "692890" }])
+{ name: "Emmanuel R", email: "emmanuel@email.com", phone: "(416) 111-1111", title: "Co-op Student", co_op: true, staff: true, password: "619425" },
+{ name: "Nancy V", email: "nancy@email.com", phone: "(416) 111-1111", title: "Co-op Student", co_op: true, staff: true, password: "692890" }])
 # Energy
   # { name: "Luxman P.", email: "lup@email.com", phone: "(416) 111-1111", title: "Sr. Business Analyst", business_planning_and_finance: true, staff: true, password: "286670" },
   # { name: "Tai A.", email: "tai@email.com", phone: "(416) 111-1111", title: "Manager (A)", business_planning_and_finance: true, manager: true, password: "493678" },
