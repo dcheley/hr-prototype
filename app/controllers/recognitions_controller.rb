@@ -33,7 +33,6 @@ class RecognitionsController < ApplicationController
 
   def destroy
     @recognition.destroy
-    @badge.destroy
     flash[:notice] = "#{@recognition.name} badge successfully deleted!"
     redirect_to user_url(@user)
   end
