@@ -14,7 +14,7 @@
 !/tmp/.keep
 .DS-store
 /db/seeds.rb
-/public/system/*
+/public/*
 # Ignore Byebug command history file.
 .byebug_history
 
