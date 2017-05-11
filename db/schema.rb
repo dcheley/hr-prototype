@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170511185145) do
+ActiveRecord::Schema.define(version: 20170511200320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,9 +29,6 @@ ActiveRecord::Schema.define(version: 20170511185145) do
     t.integer  "user_id"
     t.string   "description"
     t.integer  "opportunity_id"
-    t.integer  "receiver_id"
-    t.integer  "recognizer_id"
-    t.integer  "recognition_id"
     t.boolean  "education"
     t.boolean  "exp"
   end
@@ -50,8 +47,10 @@ ActiveRecord::Schema.define(version: 20170511185145) do
   create_table "recognitions", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "receiver_id"
+    t.integer  "recognizer_id"
   end
 
   create_table "users", force: :cascade do |t|
