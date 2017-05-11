@@ -289,6 +289,7 @@
 //Hover
 .menu-element:hover,
 .element:hover {
+  text-decoration: none;
   border-color: $grey;
   .org-menu-header,
   .org-header, {

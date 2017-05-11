@@ -136,7 +136,7 @@ User.create([{ name: "Robert B", email: "robb@email.com", phone: "(416) 222-2222
 { name: "Aakanksha S", email: "aakanksha@email.com", phone: "(416) 111-1111", title: "Co-op Student", co_op: true, staff: true, password: "456410" },
 { name: "Changqing L", email: "changqing@email.com", phone: "(416) 111-1111", title: "Co-op Student", co_op: true, staff: true, password: "652538" },
 { name: "Angeline H", email: "angeline@email.com", phone: "(416) 111-1111", title: "Co-op Student", co_op: true, staff: true, password: "604881" },
-{ name: "Harmon D", email: "harmon@email.com", phone: "(416) 111-1111", title: "Co-op Student", co_op: true, staff: true, password: "242594" },
+{ name: "Harman D", email: "harman@email.com", phone: "(416) 111-1111", title: "Co-op Student", co_op: true, staff: true, password: "242594" },
 { name: "Marko V", email: "marko@email.com", phone: "(416) 111-1111", title: "Co-op Student", co_op: true, staff: true, password: "804800" },
 { name: "Amanda M", email: "amanda@email.com", phone: "(416) 111-1111", title: "Co-op Student", co_op: true, staff: true, password: "311210" },
 { name: "Arqam M", email: "arqam@email.com", phone: "(416) 111-1111", title: "Co-op Student", co_op: true, staff: true, password: "846429" },
