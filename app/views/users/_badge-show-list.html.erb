@@ -45,7 +45,7 @@
     <div role="tabpane1" class="tab-pane active" id="recognitionz">
       <!-- Display Green Badges -->
       <% @user.received_badges.each do |b| %>
-        <%= link_to "/users/#{@user.id}/recognitions/#{b.recognition_id}" do %>
+        <%= link_to "/users/#{@user.id}/recognitions/#{b.id}" do %>
           <div class="badge-green">
             <li class="profile-badges-name">
               <%= "#{b.name}" %>
