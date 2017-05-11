@@ -2,7 +2,7 @@
   <% if current_user %>
     <ul class="badge-details">
 
-      <h2 class="badge-detail-title"> Given by <%= User.find(@badge.recognizer_id).name %> </h2>
+      <h2 class="badge-detail-title"> Given by <%= User.find(@recognition.recognizer_id).name %> </h2>
 
       <!-- Display Green Badges -->
       <div class="badge-show-green">
@@ -32,7 +32,7 @@
       <% end %>
 
       <div class="center-float-wrap">
-        <% if current_user.id == @badge.receiver_id || current_user.id == @badge.recognizer_id %>
+        <% if current_user.id == @recognition.receiver_id || current_user.id == @recognition.recognizer_id %>
           <div class="float" style="margin-left: 5px; margin-right: 5px;">
             <%= button_to 'DELETE BADGE', {:controller => 'recognitions', :action => 'destroy', :id => "#{@recognition.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"delete" %>
           </div>

@@ -20,8 +20,8 @@
     <%= f.text_area :description, class:"field-input", placeholder:"Describe #{@user.name}'s skill or experience in 500 characters or less." %>
   </div>
 
-  <!-- <%= f.hidden_field :receiver_id, value: @user.id %>
-  <%= f.hidden_field :recognizer_id, value: current_user.id %> -->
+  <%= f.hidden_field :receiver_id, value: @user.id %>
+  <%= f.hidden_field :recognizer_id, value: current_user.id %>
 
   <div class="center-float-wrap">
     <div class="float">
