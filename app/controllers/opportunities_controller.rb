@@ -2,7 +2,9 @@ class OpportunitiesController < ApplicationController
   before_action :load_opportunity, only: [:show, :like, :unlike]
 
   def show
-    @badge = current_user.badges.build
+    if current_user
+      @badge = current_user.badges.build
+    end
   end
 
   def index
