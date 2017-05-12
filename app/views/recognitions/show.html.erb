@@ -14,10 +14,10 @@
         <p class="badge-description"><%= @recognition.description %></p>
       </div>
       <% else %>
-      <div class="badge-description-wrap">
-        <%= link_to "/users/#{@user.id}/recognitions/#{@recognition.id}/edit", class:"cancel-link", style:"margin-left: 0;" do %>
-          <div class="submit-green">Describe your skill or experience in 500 characters or less.</div>
-        <% end %>
+      <div class="team-info" style="font-size: 16px; margin: 30px auto;">
+        <%= link_to "Describe how #{@user.name} went above and beyond in 500 characters or less.",
+            "/users/#{@user.id}/badges/#{@recognition.id}/edit", class:"team-link",
+            style:"margin-left: 0;" %>
       </div>
       <% end %>
 
@@ -34,13 +34,13 @@
       <div class="center-float-wrap">
         <% if current_user.id == @recognition.receiver_id || current_user.id == @recognition.recognizer_id %>
           <div class="float" style="margin-left: 5px; margin-right: 5px;">
-            <%= button_to 'DELETE BADGE', {:controller => 'recognitions', :action => 'destroy', :id => "#{@recognition.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"delete" %>
+            <div class="submit-blue">BACK TO PROFILE</div>
           </div>
         <% end %>
 
         <div class="float" style="margin-left: 5px;">
           <%= link_to "/users/#{@user.id}", class:"cancel-center-link" do %>
-            <div class="submit-blue">BACK TO PROFILE</div>
+            <%= button_to 'DELETE BADGE', {:controller => 'recognitions', :action => 'destroy', :id => "#{@recognition.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"delete" %>
           <% end %>
         </div>
       </div>
