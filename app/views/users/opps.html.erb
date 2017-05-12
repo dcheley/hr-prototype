@@ -232,11 +232,11 @@
   </div>
 
 <% elsif current_user && current_user.co_op != nil %>
-  <div class="carousel-container">
+  <!-- <div class="carousel-container">
     <h1 class="org-title" style="margin-top: 4%;">Bucket List</h1>
 
     <p class="opportunity-info">
-      Know of other opportunities? Email them to use through <b>nadeem.aljaber@ontario.ca<b> OR <b>danielcheley@hotmail.com</b>
+      Know of other opportunities? Email them to use through <b>nadeem.aljaber@ontario.ca</b> OR <b>danielcheley@hotmail.com</b>
     </p>
 
     <div class="row">
@@ -252,6 +252,56 @@
           <% end %>
         <% end %>
       </div>
+    </div>
+  </div>
+
+  <h1 class="org-title" style="margin-top: 4%;">Bucket List</h1>
+
+  <p class="opportunity-info">
+    Know of other opportunities? Email them to use through <b>nadeem.aljaber@ontario.ca</b> OR <b>danielcheley@hotmail.com</b>
+  </p>
+
+  <div class="containery">
+    <div id="carouselz">
+      <figure><%= link_to image_tag(@opportunities.find(17).avatar, class:"threed-image"), "/opportunities/#{@opportunities.find(17).id}" %></figure>
+      <figure><%= link_to image_tag(@opportunities.find(18).avatar, class:"threed-image"), "/opportunities/#{@opportunities.find(18).id}" %></figure>
+      <figure><%= link_to image_tag(@opportunities.find(19).avatar, class:"threed-image"), "/opportunities/#{@opportunities.find(19).id}" %></figure>
+      <figure><%= link_to image_tag(@opportunities.find(20).avatar, class:"threed-image"), "/opportunities/#{@opportunities.find(20).id}" %></figure>
+      <figure><%= link_to image_tag(@opportunities.find(21).avatar, class:"threed-image"), "/opportunities/#{@opportunities.find(21).id}" %></figure>
+      <figure><%= link_to image_tag(@opportunities.find(22).avatar, class:"threed-image"), "/opportunities/#{@opportunities.find(22).id}" %></figure>
+      <figure><%= link_to image_tag(@opportunities.find(23).avatar, class:"threed-image"), "/opportunities/#{@opportunities.find(23).id}" %></figure>
+      <figure><%= link_to image_tag(@opportunities.find(24).avatar, class:"threed-image"), "/opportunities/#{@opportunities.find(24).id}" %></figure>
+      <figure><%= link_to image_tag(@opportunities.find(25).avatar, class:"threed-image"), "/opportunities/#{@opportunities.find(25).id}" %></figure>
+      <figure><%= link_to image_tag(@opportunities.find(26).avatar, class:"threed-image"), "/opportunities/#{@opportunities.find(26).id}" %></figure>
+    </div>
+  </div> -->
+
+  <h1 class="org-title" style="margin-top: 4%;">Bucket List</h1>
+
+  <p class="opportunity-info">
+    Know of other opportunities? Email them to use through <b>nadeem.aljaber@ontario.ca</b> OR <b>danielcheley@hotmail.com</b>
+  </p>
+
+  <div class="image-gallery">
+    <div id="quarter">
+      <%= link_to image_tag(@opportunities.find(17).avatar, class:"g-img"), "/opportunities/#{@opportunities.find(17).id}" %>
+      <%= link_to image_tag(@opportunities.find(18).avatar, class:"g-img"), "/opportunities/#{@opportunities.find(18).id}" %>
+    </div>
+    <div id="quarter">
+      <%= link_to image_tag(@opportunities.find(19).avatar, class:"g-img"), "/opportunities/#{@opportunities.find(19).id}" %>
+      <%= link_to image_tag(@opportunities.find(20).avatar, class:"g-img"), "/opportunities/#{@opportunities.find(20).id}" %>
+    </div>
+    <div id="quarter">
+      <%= link_to image_tag(@opportunities.find(21).avatar, class:"g-img"), "/opportunities/#{@opportunities.find(21).id}" %>
+      <%= link_to image_tag(@opportunities.find(22).avatar, class:"g-img"), "/opportunities/#{@opportunities.find(22).id}" %>
+    </div>
+    <div id="quarter">
+      <%= link_to image_tag(@opportunities.find(23).avatar, class:"g-img"), "/opportunities/#{@opportunities.find(23).id}" %>
+      <%= link_to image_tag(@opportunities.find(24).avatar, class:"g-img"), "/opportunities/#{@opportunities.find(24).id}" %>
+    </div>
+    <div id="quarter">
+      <%= link_to image_tag(@opportunities.find(25).avatar, class:"g-img"), "/opportunities/#{@opportunities.find(25).id}" %>
+      <%= link_to image_tag(@opportunities.find(26).avatar, class:"g-img"), "/opportunities/#{@opportunities.find(26).id}" %>
     </div>
   </div>
 
