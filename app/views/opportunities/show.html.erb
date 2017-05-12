@@ -11,11 +11,11 @@
     </p>
 
     <% if current_user.liked? @opportunity %>
-      <%= link_to image_tag('thumbs-up-empty.svg', class:"thumbs-empty"), unlike_opportunity_path(@opportunity.id), method: :put, remote: true, id: "like_#{@opportunity.id}" %>
+      <%= link_to image_tag('not-interested.svg', class:"thumbs-empty"), unlike_opportunity_path(@opportunity.id), method: :put, remote: true, id: "like_#{@opportunity.id}" %>
       <p class="profile-badges"></p>
       <%= render 'likes' %>
     <% else %>
-      <%= link_to image_tag('interested.png', class:"thumbs-up"), like_opportunity_path(@opportunity.id), method: :put, remote: true, id: "like_#{@opportunity.id}" %>
+      <%= link_to image_tag('interested.svg', class:"thumbs-up"), like_opportunity_path(@opportunity.id), method: :put, remote: true, id: "like_#{@opportunity.id}" %>
       <p class="profile-badges"></p>
       <%= render 'likes' %>
     <% end %>
