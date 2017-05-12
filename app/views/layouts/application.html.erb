@@ -33,8 +33,13 @@
           <% end %>
         </nav>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/users/org_charts">Organizational Charts</a></li>
-          <li><a href="/users/opps">Opportunities</a></li>
+          <% if current_user.co_op == nil %>
+            <li><a href="/users/org_charts">Organizational Charts</a></li>
+            <li><a href="/users/opps">Opportunities</a></li>
+          <% else %>
+            <li><a href="/users/org_charts">Co-op Students</a></li>
+            <li><a href="/users/opps">Bucket list</a></li>
+          <% end %>
           <li><%= link_to "Profile", "/users/#{current_user.id}" %></li>
           <li><%= link_to "Settings", "/users/#{current_user.id}/edit" %></li>
           <li><%= link_to "Logout", :logout %></li>
