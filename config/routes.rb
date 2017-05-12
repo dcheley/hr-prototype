@@ -24,14 +24,7 @@ Rails.application.routes.draw do
     resources :badges, only: [:new, :create]
   end
 
-  resources :badges do
-    member do
-      put 'like'
-      put 'unlike'
-    end
-  end
-
-  resources :recognitions do
+  resources :badges, :recognitions, :opportunities do
     member do
       put 'like'
       put 'unlike'
