@@ -64,15 +64,21 @@ class UsersController < ApplicationController
   end
 
   def edit
+    if @user.badge_ids == []
+      Badge.create(name: "Software Tester",
+        description: "Participated in Employee Engagement prototype testing phase",
+        user_id: @user.id
+      )
+    end
   end
 
   def update
-    if @user.update_attributes(user_params) && @user.agreement_changed? != true
+    if @user.update_attributes(user_params) && @user.badge_ids != []
       flash[:alert] = "Settings successfully updated!"
       redirect_to user_url
-    elsif  @user.update_attributes(user_params) && @user.agreement_changed? == true
-      flash[:alert] = "Please enter your account information below to set up your account"
-      redirect_to edit_user_url(current_user)
+    elsif  @user.update_attributes(user_params) && @user.badge_ids == []
+      flash[:alert] = "Enter your profile information below to set up your account"
+      redirect_to edit_user_url(@user)
     else
       render :edit
     end
