@@ -65,9 +65,11 @@ class UsersController < ApplicationController
 
   def edit
     if @user.badge_ids == []
-      Badge.create(name: "Software Tester",
+      Badge.create(
+        name: "Software Tester",
         description: "Participated in Employee Engagement prototype testing phase",
-        user_id: @user.id
+        user_id: @user.id,
+        exp: true
       )
     end
   end
