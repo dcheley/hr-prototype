@@ -8,12 +8,12 @@
 
 .org-menu-container {
   margin: 2rem auto;
-  padding-left: 12%;
+  width: 95%;
 }
 
 .org-container {
   margin: 2rem auto;
-  max-width: 90%;
+  max-width: 95%;
 }
 
 @media screen and (max-width: 1121px) {
@@ -33,10 +33,12 @@
 
 .level {
   display: block;
+  margin: auto;
+  width: 90%;
 }
 
 .level-wrap {
-  padding: 8px;
+  // padding: 8px;
   margin-bottom: 2rem;
   position: relative;
   display: inline-block;
@@ -55,23 +57,22 @@
 }
 
 .level .col-1-3 {
-  margin-left: 220px;
+  margin: auto;
   border-left: 2px dashed $white-smoke; //Very thin dotted line going vertically
   padding-left: 10px;
-  height:100%;
+  // height: 100%;
 }
 
-//Center this later
 .level .col-1-3:first-of-type {
   float: left;
   border: none;
-  margin: 0;
-  padding: 0;
+  // margin: 0;
+  // padding: 0;
 }
 
 .level ul {
-  margin: 0;
-  padding: 0;
+  // margin: 0;
+  // padding: 0;
   flex-wrap: wrap;
   display: flex;
   align-items: stretch;
