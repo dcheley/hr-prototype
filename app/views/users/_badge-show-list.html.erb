@@ -1,58 +1,54 @@
 <div class="badge-list" style="margin-top: 160px;">
-  <ul class="nav nav-pills nav-justified">
-    <li role="presentation" class="active"><a href="#skill" data-toggle="pill">Skills & Experience</a></li>
-    <li role="presentation"><a href="#edu" data-toggle="pill">Education</a></li>
-    <li role="presentation"><a href="#opportunity" data-toggle="pill">Opportunities</a></li>
-    <li role="presentation"><a href="#recognitionz" data-toggle="pill">Recognition Badges</a></li>
-  </ul>
-  <div class="tab-content">
-    <div role="tabpane1" class="tab-pane active" id="skill">
-      <!-- Display Green Badges -->
-      <% @user.badges.where(opportunity_id: nil, exp: true).each do |b| %>
-        <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
-          <div class="badge-green" style="float: left; margin-left: 5px; margin-right: 5px;">
-            <li class="profile-badges-name">
-              <%= "#{b.name}" %>
-            </li></br>
-          </div>
-        <% end %>
+  <div class="quarter">
+    <p class="badge-list-title">Skills & Experience</p>
+    <!-- Display Green Badges -->
+    <% @user.badges.where(opportunity_id: nil, exp: true).each do |b| %>
+      <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
+        <div class="badge-green">
+          <li class="profile-badges-name">
+            <%= "#{b.name}" %>
+          </li></br>
+        </div>
       <% end %>
-    </div>
-    <div role="tabpane1" class="tab-pane" id="edu">
-      <!-- Display Green Badges -->
-      <% @user.badges.where(opportunity_id: nil, education: true).each do |b| %>
-        <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
-          <div class="badge-green" style="float: left; margin-left: 5px; margin-right: 5px;">
-            <li class="profile-badges-name">
-              <%= "#{b.name}" %>
-            </li></br>
-          </div>
-        <% end %>
+    <% end %>
+  </div>
+  <div class="quarter">
+    <p class="badge-list-title">Education</p>
+    <!-- Display Green Badges -->
+    <% @user.badges.where(opportunity_id: nil, education: true).each do |b| %>
+      <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
+        <div class="badge-green">
+          <li class="profile-badges-name">
+            <%= "#{b.name}" %>
+          </li></br>
+        </div>
       <% end %>
-    </div>
-    <div role="tabpane1" class="tab-pane" id="opportunity">
-      <!-- Display Green Badges -->
-      <% @user.badges.where.not(opportunity_id: nil).each do |b| %>
-        <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
-          <div class="badge-green" style="float: left; margin-left: 5px; margin-right: 5px;">
-            <li class="profile-badges-name">
-              <%= "#{b.name}" %>
-            </li></br>
-          </div>
-        <% end %>
+    <% end %>
+  </div>
+  <div class="quarter">
+    <p class="badge-list-title">Events</p>
+    <!-- Display Green Badges -->
+    <% @user.badges.where.not(opportunity_id: nil).each do |b| %>
+      <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
+        <div class="badge-green">
+          <li class="profile-badges-name">
+            <%= "#{b.name}" %>
+          </li></br>
+        </div>
       <% end %>
-    </div>
-    <div role="tabpane1" class="tab-pane" id="recognitionz">
-      <!-- Display Green Badges -->
-      <% @user.received_badges.each do |b| %>
-        <%= link_to "/users/#{@user.id}/recognitions/#{b.id}" do %>
-          <div class="badge-green" style="float: left; margin-left: 5px; margin-right: 5px;">
-            <li class="profile-badges-name">
-              <%= "#{b.name}" %>
-            </li></br>
-          </div>
-        <% end %>
+    <% end %>
+  </div>
+  <div class="quarter">
+    <p class="badge-list-title">Recognition Badges</p>
+    <!-- Display Green Badges -->
+    <% @user.received_badges.each do |b| %>
+      <%= link_to "/users/#{@user.id}/recognitions/#{b.id}" do %>
+        <div class="badge-green">
+          <li class="profile-badges-name">
+            <%= "#{b.name}" %>
+          </li></br>
+        </div>
       <% end %>
-    </div>
+    <% end %>
   </div>
 </div>

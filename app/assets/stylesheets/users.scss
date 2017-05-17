@@ -122,14 +122,18 @@
   width: 30%;
 }
 
-#bucket,
-#recognition,
-#skill,
-#edu,
-#opportunity,
-#recognitionz {
-  margin-top: 15px;
-  width: 100%;
+.badge-list-title {
+  text-align: center;
+}
+
+.quarter {
+  float: left;
+  width: 25%;
+  margin: auto;
+}
+
+.badge-green {
+  margin: auto;
 }
 
 .profile-title {

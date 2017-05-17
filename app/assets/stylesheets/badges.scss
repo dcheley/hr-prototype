@@ -78,13 +78,12 @@
 
 .profile-badges-name {
   color: white;
-  margin-top: 40%;
   font-size: 12px;
 }
 
 .badge-show-title {
   color: white;
-  margin-top: 40%;
+  margin-top: 80px;
   font-size: 26px;
 }
 
@@ -100,13 +99,10 @@
 
 .badge-green {
   margin: 5px auto;
-  // position: relative;
   background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
   border: 3px solid $grey;
   border-radius: 12px; /* one half of ( (border * 2) + height + padding ) */
   box-shadow: 1px 1px 1px black;
-  // font: bold 15px/13px;
-  // padding: 4px 3px 0 3px;
   text-align: center;
   height: 120px;
   width: 120px;
