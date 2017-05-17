@@ -166,14 +166,47 @@ User.create([{ name: "Robert B", email: "robb@email.com", phone: "(416) 222-2222
     { name: 'Lunch & Learn: Ontario Investment Office' },
     # Co-op Students File.join(Rails.root, 'app', 'assets', 'images', 'lunch-n-learn.png')
     # { name: "Attend a Lunch n' Learn", avatar: File.new("#{Rails.root}/app/assets/images/lunch-n-learn.png") },
-    { name: "Attend a Lunch n' Learn", description: "Lunch and Learn sessions are offered by the Corporate Services Division and will take place multiple times throughout the summer term. These sessions are based on a wide range of topics from Mental Health Awareness to informational session on specific division’s roles within the Ministry.  Lunch is provided for these sessions so make sure to sign up by clicking the link below.
+    { name: "Attend a Lunch n' Learn",
+      description: "Lunch and Learn sessions are offered by the Corporate Services Division and will take place multiple times throughout the summer term. These sessions are based on a wide range of topics from Mental Health Awareness to informational session on specific division’s roles within the Ministry.  Lunch is provided for these sessions so make sure to sign up by clicking the link below.
       Keep in mind the below link will not appear until two weeks before the next lunch and learn is set to take place. We will keep you updated through email when the next Lunch and Learn sign up becomes active." },
-    { name: 'Join a planning committee' },
-    { name: 'Take a LearnON course' },
-    { name: 'Tour the Legislature' },
-    { name: 'Attend the Corporate Services Division’s Student Orientation & Onboarding Day' },
-    { name: 'Participate in an informational interview' },
-    { name: 'Eat at a restaurant recommended in your Student Orientation & Onboarding Resource Pack' },
-    { name: 'Organize or attend a social event with other co-op students',  description: "BONUS: attend with a fellow co-op student" },
-    { name: 'Organize or attend a networking event with other co-op students',  description: "BONUS: invite other full-time staff" },
-    { name: 'Join an OPS Network or TOPS', description: "BONUS: invite other full-time staff" }])
+    { name: 'Join a planning committee',
+      description: "There are a tonne of planning committees within the OPS.  The best way to become a part of one is by reaching out to your manager and asking about upcoming committees and finding out how you can leverage your skill set in order to help out.
+      Once you’ve reached out to the committee members and have been accepted to join, click the verify button below in order to be rewarded the respective badge." },
+    { name: 'Take a LearnON course',
+      description: "LearnON is the learning portal for Ontario’s Public Service. It offers a wide variety of courses that aim to develop employees for their future inside the OPS. The portal is super easy to access, simply click on your internet explorer and then click the LearnON link in the bottom right corner to view some upcoming courses. We also went ahead and provided a link below in case you want to access the portal from this page.
+      Once you are enrolled in a course go ahead and click the button below to give yourself a badge in order to check off another co-op bucket list activity." },
+    { name: 'Tour the Legislature',
+      description: "The Ontario Legislative Building, located in Queens park, houses the Legislative Assembly of Ontario, the Vice regal suite of the Lieutenant  Governor of Ontario and offices of the MPPs.
+      In case you missed the tour on Orientation day you can sign up for a tour below to receive the badge. Once completed feel free to click the verify button and collect another badge!" },
+    { name: 'Attend the Corporate Services Division’s Student Orientation & Onboarding Day',
+      description: "Orientation Day fell on May 12th, We hope you had a great time meeting other co-op students,  If you made it out to the event go ahead and tap on the verify button in order to receive your badge!" },
+    { name: 'Participate in an informational interview',
+      description: "Informational Interviews are a key developmental opportunity for co-op students. If you have a certain interest or career aspiration in a particular field of government you can set up an informational interview with an employee in a related role in order to get a glimpse of what a day in the life is like in that certain field.
+      Once the interview is all set up click the button below." },
+    { name: 'Eat at a restaurant recommended in your Student Orientation & Onboarding Resource Pack', description: "Toronto has a great number of amazing restaurants, so we put together a “must try” list within walking distance.  Once you eat at one of the restaurants posted below click the verify button in order to receive the badge.
+      Nando’s
+      Salad King
+      Sushi Box
+      Thai Fantasy
+      Tosto Quick fire Pizza
+      Bombay Street Food
+      Yummy Zone
+      Crown Princess Fine Dining
+      Fran’s Restaurant and Bar
+      Banh Mi Boys
+      Bangkok Garden
+      The Halal Guys
+      St.Louis Bar and Grill
+      Okonomi House Restaurant
+      Ritz Caribbean Foods
+      Coach House
+      Burrito Bandidos
+      Aura Food Court
+      College Park Food Court
+      Kathmandu Restaurant" },
+    { name: 'Organize or attend a social event with other co-op students',
+      description: "BONUS: attend with a fellow co-op student" },
+    { name: 'Organize or attend a networking event with other co-op students',
+      description: "BONUS: invite other full-time staff" },
+    { name: 'Join an OPS Network or TOPS',
+      description: "BONUS: invite other full-time staff" }])
