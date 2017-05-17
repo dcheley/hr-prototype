@@ -7,7 +7,9 @@
     </div>
 
     <p class="opp-details">
+      <%= @opportunity.bonus %>
       <%= @opportunity.description %>
+      <%= @opportunity.link %>
     </p>
 
     <% if current_user.liked? @opportunity %>
