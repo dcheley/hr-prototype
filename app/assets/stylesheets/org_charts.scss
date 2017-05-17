@@ -129,16 +129,13 @@
 
 .org-box p,
 .org-box-menu p {
-  margin: 10px 0;
+  margin-top: 20px;
+  margin-bottom: 15px;
   font-size: 15px;
 }
 
 .org-box-menu p:last-child {
   margin: 20px 0 0 0;
-}
-
-.org-box p:last-child {
-  margin: 25px 0 15px 80px;
 }
 
 .org-details,
@@ -159,9 +156,9 @@
   margin-left: 5px;
 }
 
-.info-btn {
+.info-btn,
+.info-coop-btn {
   position: absolute;
-  bottom: 5px;
   left: 10px;
   background: $white;
   border-color: $light-grey;
@@ -175,6 +172,14 @@
   width: 55px;
   height: 52px;
   font-size: 14px;
+}
+
+.info-btn {
+  bottom: 5px;
+}
+
+.info-coop-btn {
+  bottom: 20px;
 }
 
 //Image container

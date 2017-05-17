@@ -109,7 +109,7 @@
                         <p class="badge-count" style="font-size: 12px;"><b>Recognition Badges:</b> <%= b.received_badges.count %></p>
                       </div>
                     <% if b.avatar.file? != true %>
-                      <div class="info-btn"><span class="glyphicon glyphicon-user"></span></div>
+                      <div class="info-coop-btn"><span class="glyphicon glyphicon-user"></span></div>
                     <% else %>
                       <%= image_tag b.avatar.url(:medium), class:"org-profile-pic" %>
                     <% end %>
