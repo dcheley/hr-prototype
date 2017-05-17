@@ -168,7 +168,8 @@ User.create([{ name: "Robert B", email: "robb@email.com", phone: "(416) 222-2222
     # { name: "Attend a Lunch n' Learn", avatar: File.new("#{Rails.root}/app/assets/images/lunch-n-learn.png") },
     { name: "Attend a Lunch n' Learn",
       description: "Lunch and Learn sessions are offered by the Corporate Services Division and will take place multiple times throughout the summer term. These sessions are based on a wide range of topics from Mental Health Awareness to informational session on specific division’s roles within the Ministry.  Lunch is provided for these sessions so make sure to sign up by clicking the link below.
-      Keep in mind the below link will not appear until two weeks before the next lunch and learn is set to take place. We will keep you updated through email when the next Lunch and Learn sign up becomes active." },
+      Keep in mind the below link will not appear until two weeks before the next lunch and learn is set to take place. We will keep you updated through email when the next Lunch and Learn sign up becomes active.",
+      link: "https://ops.learnflex.net/include/login.asp?url=/users/index.asp" },
     { name: 'Join a planning committee',
       description: "There are a tonne of planning committees within the OPS.  The best way to become a part of one is by reaching out to your manager and asking about upcoming committees and finding out how you can leverage your skill set in order to help out.
       Once you’ve reached out to the committee members and have been accepted to join, click the verify button below in order to be rewarded the respective badge." },
@@ -177,7 +178,8 @@ User.create([{ name: "Robert B", email: "robb@email.com", phone: "(416) 222-2222
       Once you are enrolled in a course go ahead and click the button below to give yourself a badge in order to check off another co-op bucket list activity." },
     { name: 'Tour the Legislature',
       description: "The Ontario Legislative Building, located in Queens park, houses the Legislative Assembly of Ontario, the Vice regal suite of the Lieutenant  Governor of Ontario and offices of the MPPs.
-      In case you missed the tour on Orientation day you can sign up for a tour below to receive the badge. Once completed feel free to click the verify button and collect another badge!" },
+      In case you missed the tour on Orientation day you can sign up for a tour below to receive the badge. Once completed feel free to click the verify button and collect another badge!",
+      link: "http://discoveryportal.ontla.on.ca/en/visit-us/tours" },
     { name: 'Attend the Corporate Services Division’s Student Orientation & Onboarding Day',
       description: "Orientation Day fell on May 12th, We hope you had a great time meeting other co-op students,  If you made it out to the event go ahead and tap on the verify button in order to receive your badge!" },
     { name: 'Participate in an informational interview',
@@ -185,29 +187,15 @@ User.create([{ name: "Robert B", email: "robb@email.com", phone: "(416) 222-2222
       Once the interview is all set up click the button below." },
     { name: 'Eat at a restaurant recommended in your Student Orientation & Onboarding Resource Pack',
       description: "Toronto has a great number of amazing restaurants, so we put together a “must try” list within walking distance.  Once you eat at one of the restaurants posted below click the verify button in order to receive the badge.
-      Nando’s
-      Salad King
-      Sushi Box
-      Thai Fantasy
-      Tosto Quick fire Pizza
-      Bombay Street Food
-      Yummy Zone
-      Crown Princess Fine Dining
-      Fran’s Restaurant and Bar
-      Banh Mi Boys
-      Bangkok Garden
-      The Halal Guys
-      St.Louis Bar and Grill
-      Okonomi House Restaurant
-      Ritz Caribbean Foods
-      Coach House
-      Burrito Bandidos
-      Aura Food Court
-      College Park Food Court
-      Kathmandu Restaurant" },
+      Nando’s Salad, King Sushi, Box Thai, Fantasy Tosto, Quick fire Pizza, Bombay Street Food, Yummy Zone, Crown Princess Fine Dining, Fran’s Restaurant and Bar, Banh Mi Boys, Bangkok Garden, The Halal Guys, St.Louis Bar and Grill, Okonomi House Restaurant, Ritz Caribbean Foods, Coach House, Burrito Bandidos, Aura Food Court, College Park Food Court, Kathmandu Restaurant" },
     { name: 'Organize or attend a social event with other co-op students',
-      description: "BONUS: attend with a fellow co-op student" },
+      bonus: "BONUS: attend with a fellow co-op student",
+      description: "Organizing a social event can be a great opportunity to meet your colleagues that work outside of your branch and to better get to know those who you work with day to day. Past co-op social events have included trivia nights, board game café gatherings and lunches.
+      We know it’s hard to set one of these up on your own, so if you’re interested in getting involved but don’t necessarily want to lead the initiative click the “I’m interested” button below. This will allow other co-op students to see who they can contact with help planning the event." },
     { name: 'Organize or attend a networking event with other co-op students',
-      description: "BONUS: invite other full-time staff" },
+      bonus: "BONUS: invite other full-time staff",
+      description: "Attending or organizing a networking event allows you to learn more about your colleagues and spread awareness of who you are. This can help you find development opportunities that align with your career aspirations or allow you to learn more about a topic you are interested in.
+      We know setting up a networking event all on your own is quite the task, so if you’re interested in the idea but not yet ready to organize the event on your own, click the “I’m interested” button below to notify other co-op students that your are willing to help organize an event.  You can also contact a Co-op mentor in order to help you get started on finding employees to attend the event." },
     { name: 'Join an OPS Network or TOPS',
-      description: "BONUS: invite other full-time staff" }])
+      bonus: "BONUS: invite other full-time staff",
+      description: "" }])
