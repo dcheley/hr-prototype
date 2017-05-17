@@ -167,7 +167,6 @@
 .default-pic {
   text-align: center;
   margin: 20px;
-  margin-left: 2.5%;
 }
 
 .pic-info {
@@ -206,6 +205,10 @@
 .badge-new-link:hover {
   color: $grey;
   text-decoration: none;
+}
+
+.profile-details {
+  padding-left: 0;
 }
 
 .badge-list {

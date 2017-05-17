@@ -6,7 +6,7 @@
   </div>
 <% end %>
 
-<ul style="padding-left: 0;">
+<ul class="profile-details">
   <% if @user.adm_office == true %>
     <li class="team-info"><%= link_to "ADM Office", "/users/admo_org_chart", class:"team-link" %></li>
   <% elsif @user.strategic_human_resources == true %>
@@ -20,11 +20,11 @@
   <li class="profile-info"><b>Title:</b> <%= @user.title %></li>
   <li class="profile-info"><b>Direct Manager:</b> <%= @user.direct_report %></li>
   <li class="profile-info"><b>Career Aspirations:</b> <%= @user.career_aspirations %></li>
-  <li class="team-info" style="font-size: 16px;"><b>Job Description</b></li>
+  <li class="profile-info"><b>Job Description:</b>
 
   <% if @user.job_description == nil || @user.job_description == "" %>
-    <li class="team-info" style="font-size: 16px;">Describe your responsibilities and experience in 500 characters or less.</li>
+    <li class="profile-info">Describe your responsibilities and experience in 500 characters or less.</li>
   <% else %>
-    <li class="team-info" style="font-size: 16px; overflow-x: scroll;"><%= @user.job_description %></li>
+    <li class="profile-info" style="overflow: hidden;"><%= @user.job_description %></li>
   <% end %>
 </ul>
