@@ -1,280 +1,225 @@
 <% if current_user && current_user.co_op == nil %>
   <div class="carousel-container">
-    <h1 class="org-title">Career Development Opportunities</h1>
-
-    <p class="opportunity-info">
-      <b>Scroll</b> through and apply to development opportunities in order to be considered (<b>hover</b> over box to <b>view details</b>).
-    </p>
-
-    <div class="row">
-      <div class="row__inner">
-
-        <%= link_to "/opportunities/#{@opportunity_2.id}" do %>
-          <div class="tile">
-            <div class="tile__media">
-              <%= image_tag('emerging-leaders.jpg', class:"tile__img") %>
-            </div>
-            <div class="tile__details">
-              <h3 class="tile-header" style="padding-left: 15%;"><%= @opportunity_2.name %></h3>
-              <div class="tile__title" style="padding-left: 20%;"></div>
-            </div>
-          </div>
-        <% end %>
-
-        <%= link_to "/opportunities/#{@opportunity_1.id}" do %>
-          <div class="tile">
-            <div class="tile__media">
-              <%= image_tag('window.jpg', class:"tile__img") %>
-            </div>
-            <div class="tile__details">
-              <h3 class="tile-header"><%= @opportunity_1.name %></h3>
-              <div class="tile__title"></div>
-            </div>
-          </div>
-        <% end %>
-
-        <%= link_to "/opportunities/#{@opportunity_3.id}" do %>
-          <div class="tile">
-            <div class="tile__media">
-              <%= image_tag('professional.png', class:"tile__img") %>
-            </div>
-            <div class="tile__details">
-              <h3 class="tile-header"><%= @opportunity_3.name %></h3>
-              <div class="tile__title"></div>
-            </div>
-          </div>
-        <% end %>
-
-        <%= link_to "/opportunities/#{@opportunity_4.id}" do %>
-          <div class="tile">
-            <div class="tile__media">
-              <%= image_tag('thinking.jpg', class:"tile__img") %>
-            </div>
-            <div class="tile__details">
-              <h3 class="tile-header"><%= @opportunity_4.name %></h3>
-              <div class="tile__title"></div>
-            </div>
-          </div>
-        <% end %>
-
-        <%= link_to "/opportunities/#{@opportunity_5.id}" do %>
-          <div class="tile">
-            <div class="tile__media">
-              <%= image_tag('black.png', class:"tile__img") %>
-            </div>
-            <div class="tile__details">
-              <h3 class="tile-header"><%= @opportunity_5.name %></h3>
-              <div class="tile__title"></div>
-            </div>
-          </div>
-        <% end %>
-
-        <%= link_to "/opportunities/#{@opportunity_6.id}" do %>
-          <div class="tile">
-            <div class="tile__media">
-              <%= image_tag('black.png', class:"tile__img") %>
-            </div>
-            <div class="tile__details">
-              <h3 class="tile-header"><%= @opportunity_6.name %></h3>
-              <div class="tile__title"></div>
-            </div>
-          </div>
-        <% end %>
-
-      </div>
-    </div>
-
-    <h1 class="org-title" style="margin-top: 4%;">Courses & Learning Opportunities</h1>
-
-    <p class="opportunity-info">
-      <b>Scroll</b> through available sessions below to signup (<b>hover</b> over box to <b>view details</b>).
-    </p>
+    <ul class="nav nav-pills nav-justified">
+      <li role="presentation" class="active"><a href="#opp-one" data-toggle="pill">Career Development Opportunities</a></li>
+      <li role="presentation"><a href="#opp-two" data-toggle="pill">Courses & Learning Opportunities</a></li>
+      <li role="presentation"><a href="#opp-three" data-toggle="pill">Personal Development Opportunities</a></li>
+    </ul>
 
     <div class="row">
       <div class="row__inner">
 
-        <%= link_to "/opportunities/#{@opportunity_7.id}" do %>
-          <div class="tile">
-            <div class="tile__media">
-              <%= image_tag('250.jpg', class:"tile__img") %>
-            </div>
-            <div class="tile__details">
-              <h3 class="tile-header" style="padding-left: 15%;"><%= @opportunity_7.name %></h3>
-              <div class="tile__title" style="padding-left: 20%;"></div>
-            </div>
-          </div>
-        <% end %>
+        <div class="tab-content">
+          <div role="tabpane1" class="tab-pane active" id="opp-one">
 
-        <%= link_to "/opportunities/#{@opportunity_8.id}" do %>
-          <div class="tile">
-            <div class="tile__media">
-              <%= image_tag('eva.png', class:"tile__img") %>
-            </div>
-            <div class="tile__details">
-              <h3 class="tile-header"><%= @opportunity_8.name %></h3>
-              <div class="tile__title"></div>
-            </div>
-          </div>
-        <% end %>
+            <%= link_to "/opportunities/#{@opportunity_2.id}" do %>
+              <div class="tile">
+                <div class="tile__media">
+                  <%= image_tag('emerging-leaders.jpg', class:"tile__img") %>
+                </div>
+                <div class="tile__details">
+                  <h3 class="tile-header" style="padding-left: 15%;"><%= @opportunity_2.name %></h3>
+                  <div class="tile__title" style="padding-left: 20%;"></div>
+                </div>
+              </div>
+            <% end %>
 
-        <%= link_to "/opportunities/#{@opportunity_9.id}" do %>
-          <div class="tile">
-            <div class="tile__media">
-              <%= image_tag('lunch&learn.png', class:"tile__img") %>
-            </div>
-            <div class="tile__details">
-              <h3 class="tile-header"><%= @opportunity_9.name %></h3>
-              <div class="tile__title"></div>
-            </div>
-          </div>
-        <% end %>
+            <%= link_to "/opportunities/#{@opportunity_1.id}" do %>
+              <div class="tile">
+                <div class="tile__media">
+                  <%= image_tag('window.jpg', class:"tile__img") %>
+                </div>
+                <div class="tile__details">
+                  <h3 class="tile-header"><%= @opportunity_1.name %></h3>
+                  <div class="tile__title"></div>
+                </div>
+              </div>
+            <% end %>
 
-        <%= link_to "/opportunities/#{@opportunity_10.id}" do %>
-          <div class="tile">
-            <div class="tile__media">
-              <%= image_tag('huddle.png', class:"tile__img") %>
-            </div>
-            <div class="tile__details">
-              <h3 class="tile-header"><%= @opportunity_10.name %></h3>
-              <div class="tile__title"></div>
-            </div>
-          </div>
-        <% end %>
+            <%= link_to "/opportunities/#{@opportunity_3.id}" do %>
+              <div class="tile">
+                <div class="tile__media">
+                  <%= image_tag('professional.png', class:"tile__img") %>
+                </div>
+                <div class="tile__details">
+                  <h3 class="tile-header"><%= @opportunity_3.name %></h3>
+                  <div class="tile__title"></div>
+                </div>
+              </div>
+            <% end %>
 
-        <%= link_to "/opportunities/#{@opportunity_11.id}" do %>
-          <div class="tile">
-            <div class="tile__media">
-              <%= image_tag('black.png', class:"tile__img") %>
-            </div>
-            <div class="tile__details">
-              <h3 class="tile-header"><%= @opportunity_11.name %></h3>
-              <div class="tile__title"></div>
-            </div>
+            <%= link_to "/opportunities/#{@opportunity_4.id}" do %>
+              <div class="tile">
+                <div class="tile__media">
+                  <%= image_tag('thinking.jpg', class:"tile__img") %>
+                </div>
+                <div class="tile__details">
+                  <h3 class="tile-header"><%= @opportunity_4.name %></h3>
+                  <div class="tile__title"></div>
+                </div>
+              </div>
+            <% end %>
+
+            <%= link_to "/opportunities/#{@opportunity_5.id}" do %>
+              <div class="tile">
+                <div class="tile__media">
+                  <%= image_tag('black.png', class:"tile__img") %>
+                </div>
+                <div class="tile__details">
+                  <h3 class="tile-header"><%= @opportunity_5.name %></h3>
+                  <div class="tile__title"></div>
+                </div>
+              </div>
+            <% end %>
+
+            <%= link_to "/opportunities/#{@opportunity_6.id}" do %>
+              <div class="tile">
+                <div class="tile__media">
+                  <%= image_tag('black.png', class:"tile__img") %>
+                </div>
+                <div class="tile__details">
+                  <h3 class="tile-header"><%= @opportunity_6.name %></h3>
+                  <div class="tile__title"></div>
+                </div>
+              </div>
+            <% end %>
+
           </div>
-        <% end %>
+
+          <div role="tabpane1" class="tab-pane" id="opp-two">
+
+           <%= link_to "/opportunities/#{@opportunity_7.id}" do %>
+             <div class="tile">
+               <div class="tile__media">
+                  <%= image_tag('250.jpg', class:"tile__img") %>
+                </div>
+                <div class="tile__details">
+                  <h3 class="tile-header" style="padding-left: 15%;"><%= @opportunity_7.name %></h3>
+                  <div class="tile__title" style="padding-left: 20%;"></div>
+                </div>
+              </div>
+            <% end %>
+
+            <%= link_to "/opportunities/#{@opportunity_8.id}" do %>
+              <div class="tile">
+                <div class="tile__media">
+                  <%= image_tag('eva.png', class:"tile__img") %>
+                </div>
+                <div class="tile__details">
+                  <h3 class="tile-header"><%= @opportunity_8.name %></h3>
+                  <div class="tile__title"></div>
+                </div>
+              </div>
+            <% end %>
+
+            <%= link_to "/opportunities/#{@opportunity_9.id}" do %>
+              <div class="tile">
+                <div class="tile__media">
+                  <%= image_tag('lunch&learn.png', class:"tile__img") %>
+                </div>
+                <div class="tile__details">
+                  <h3 class="tile-header"><%= @opportunity_9.name %></h3>
+                  <div class="tile__title"></div>
+                </div>
+              </div>
+            <% end %>
+
+            <%= link_to "/opportunities/#{@opportunity_10.id}" do %>
+              <div class="tile">
+                <div class="tile__media">
+                  <%= image_tag('huddle.png', class:"tile__img") %>
+                </div>
+                <div class="tile__details">
+                  <h3 class="tile-header"><%= @opportunity_10.name %></h3>
+                  <div class="tile__title"></div>
+                </div>
+              </div>
+            <% end %>
+
+            <%= link_to "/opportunities/#{@opportunity_11.id}" do %>
+              <div class="tile">
+                <div class="tile__media">
+                  <%= image_tag('black.png', class:"tile__img") %>
+                </div>
+                <div class="tile__details">
+                  <h3 class="tile-header"><%= @opportunity_11.name %></h3>
+                  <div class="tile__title"></div>
+                </div>
+              </div>
+            <% end %>
+
+          </div>
+
+          <div role="tabpane1" class="tab-pane" id="opp-three">
+
+            <%= link_to "/opportunities/#{@opportunity_12.id}" do %>
+              <div class="tile">
+                <div class="tile__media">
+                  <%= image_tag('professional.png', class:"tile__img") %>
+                </div>
+                <div class="tile__details">
+                  <h3 class="tile-header"><%= @opportunity_12.name %></h3>
+                  <div class="tile__title"></div>
+                </div>
+              </div>
+            <% end %>
+
+            <%= link_to "/opportunities/#{@opportunity_13.id}" do %>
+              <div class="tile">
+                <div class="tile__media">
+                  <%= image_tag('thinking.jpg', class:"tile__img") %>
+                </div>
+                <div class="tile__details">
+                  <h3 class="tile-header"><%= @opportunity_13.name %></h3>
+                  <div class="tile__title"></div>
+                </div>
+              </div>
+            <% end %>
+
+            <%= link_to "/opportunities/#{@opportunity_14.id}" do %>
+              <div class="tile">
+                <div class="tile__media">
+                  <%= image_tag('250.jpg', class:"tile__img") %>
+                </div>
+                <div class="tile__details">
+                  <h3 class="tile-header"><%= @opportunity_14.name %></h3>
+                  <div class="tile__title"></div>
+                </div>
+              </div>
+            <% end %>
+
+            <%= link_to "/opportunities/#{@opportunity_15.id}" do %>
+              <div class="tile">
+                <div class="tile__media">
+                  <%= image_tag('black.png', class:"tile__img") %>
+                </div>
+                <div class="tile__details">
+                  <h3 class="tile-header"><%= @opportunity_15.name %></h3>
+                  <div class="tile__title"></div>
+                </div>
+              </div>
+            <% end %>
+
+            <%= link_to "/opportunities/#{@opportunity_16.id}" do %>
+              <div class="tile">
+                <div class="tile__media">
+                  <%= image_tag('professional.png', class:"tile__img") %>
+                </div>
+                <div class="tile__details">
+                  <h3 class="tile-header"><%= @opportunity_16.name %></h3>
+                  <div class="tile__title"></div>
+                </div>
+              </div>
+            <% end %>
+
+          </div>
+        </div>
 
       </div>
     </div>
-
-    <h1 class="org-title" style="margin-top: 4%;">Personal Development Opportunities</h1>
-
-    <p class="opportunity-info">
-      <b>Scroll</b> through available sessions below to signup (<b>hover</b> over box to <b>view details</b>).
-    </p>
-
-    <div class="row">
-      <div class="row__inner">
-
-        <%= link_to "/opportunities/#{@opportunity_12.id}" do %>
-          <div class="tile">
-            <div class="tile__media">
-              <%= image_tag('professional.png', class:"tile__img") %>
-            </div>
-            <div class="tile__details">
-              <h3 class="tile-header"><%= @opportunity_12.name %></h3>
-              <div class="tile__title"></div>
-            </div>
-          </div>
-        <% end %>
-
-        <%= link_to "/opportunities/#{@opportunity_13.id}" do %>
-          <div class="tile">
-            <div class="tile__media">
-              <%= image_tag('thinking.jpg', class:"tile__img") %>
-            </div>
-            <div class="tile__details">
-              <h3 class="tile-header"><%= @opportunity_13.name %></h3>
-              <div class="tile__title"></div>
-            </div>
-          </div>
-        <% end %>
-
-        <%= link_to "/opportunities/#{@opportunity_14.id}" do %>
-          <div class="tile">
-            <div class="tile__media">
-              <%= image_tag('250.jpg', class:"tile__img") %>
-            </div>
-            <div class="tile__details">
-              <h3 class="tile-header"><%= @opportunity_14.name %></h3>
-              <div class="tile__title"></div>
-            </div>
-          </div>
-        <% end %>
-
-        <%= link_to "/opportunities/#{@opportunity_15.id}" do %>
-          <div class="tile">
-            <div class="tile__media">
-              <%= image_tag('black.png', class:"tile__img") %>
-            </div>
-            <div class="tile__details">
-              <h3 class="tile-header"><%= @opportunity_15.name %></h3>
-              <div class="tile__title"></div>
-            </div>
-          </div>
-        <% end %>
-
-        <%= link_to "/opportunities/#{@opportunity_16.id}" do %>
-          <div class="tile">
-            <div class="tile__media">
-              <%= image_tag('professional.png', class:"tile__img") %>
-            </div>
-            <div class="tile__details">
-              <h3 class="tile-header"><%= @opportunity_16.name %></h3>
-              <div class="tile__title"></div>
-            </div>
-          </div>
-        <% end %>
-
-      </div>
-    </div>
-
   </div>
 
 <% elsif current_user && current_user.co_op != nil %>
-  <!-- <div class="carousel-container">
-    <h1 class="org-title" style="margin-top: 4%;">Bucket List</h1>
-
-    <p class="opportunity-info">
-      Know of other opportunities? Email them to use through <b>nadeem.aljaber@ontario.ca</b> OR <b>danielcheley@hotmail.com</b>
-    </p>
-
-    <div class="row">
-      <div class="row__inner">
-        <% @opportunities.where(id: 17..26).each do |o| %>
-          <%= link_to "/opportunities/#{o.id}" do %>
-            <div class="tile">
-              <div class="tile__media">
-                <%= image_tag(o.avatar, class:"tile__img") %>
-              </div>
-              <div class="tile__details"></div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-  <h1 class="org-title" style="margin-top: 4%;">Bucket List</h1>
-
-  <p class="opportunity-info">
-    Know of other opportunities? Email them to use through <b>nadeem.aljaber@ontario.ca</b> OR <b>danielcheley@hotmail.com</b>
-  </p>
-
-  <div class="containery">
-    <div id="carouselz">
-      <figure><%= link_to image_tag(@opportunities.find(17).avatar, class:"threed-image"), "/opportunities/#{@opportunities.find(17).id}" %></figure>
-      <figure><%= link_to image_tag(@opportunities.find(18).avatar, class:"threed-image"), "/opportunities/#{@opportunities.find(18).id}" %></figure>
-      <figure><%= link_to image_tag(@opportunities.find(19).avatar, class:"threed-image"), "/opportunities/#{@opportunities.find(19).id}" %></figure>
-      <figure><%= link_to image_tag(@opportunities.find(20).avatar, class:"threed-image"), "/opportunities/#{@opportunities.find(20).id}" %></figure>
-      <figure><%= link_to image_tag(@opportunities.find(21).avatar, class:"threed-image"), "/opportunities/#{@opportunities.find(21).id}" %></figure>
-      <figure><%= link_to image_tag(@opportunities.find(22).avatar, class:"threed-image"), "/opportunities/#{@opportunities.find(22).id}" %></figure>
-      <figure><%= link_to image_tag(@opportunities.find(23).avatar, class:"threed-image"), "/opportunities/#{@opportunities.find(23).id}" %></figure>
-      <figure><%= link_to image_tag(@opportunities.find(24).avatar, class:"threed-image"), "/opportunities/#{@opportunities.find(24).id}" %></figure>
-      <figure><%= link_to image_tag(@opportunities.find(25).avatar, class:"threed-image"), "/opportunities/#{@opportunities.find(25).id}" %></figure>
-      <figure><%= link_to image_tag(@opportunities.find(26).avatar, class:"threed-image"), "/opportunities/#{@opportunities.find(26).id}" %></figure>
-    </div>
-  </div> -->
-
   <h1 class="org-title" style="margin-top: 4%;">Bucket List</h1>
 
   <p class="opportunity-info">
