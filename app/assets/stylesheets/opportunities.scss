@@ -161,25 +161,73 @@ a:hover {
   font-size: 16px;
 }
 
-
 //Image gallery
-.image-gallery {
+.bucket-gallery {
   margin-top: 15px;
-  margin-left: 7%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
-.g-img {
-  max-width: 50%;
+.co-opp-name {
+  width: 100%;
+  display: inline-block;
   margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
 }
 
-#quarter {
+#fifth {
   float: left;
   width: 20%;
+  margin: auto;
 }
 
-.g-img:hover {
-  opacity: 0.6;
+.co-opp-name:hover {
+  text-decoration: none;
+}
+
+#blue {
+  color: $dark-turquoise;
+}
+
+#blue:hover {
+  color: $bright-dark-blue;
+}
+
+#green {
+  color: $green;
+}
+
+#green:hover {
+  color: $bright-green;
+}
+
+#red {
+  color: $red;
+}
+
+#red:hover {
+  color: $dark-red;
+}
+
+#orange {
+  color: $orange;
+}
+
+#orange:hover {
+  color: $dark-orange;
+}
+
+#purple {
+  color: $purple;
+}
+
+#purple:hover {
+  color: $dark-purple;
 }
 
 //3d Carousel

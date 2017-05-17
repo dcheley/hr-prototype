@@ -1,4 +1,4 @@
-<!--  Use OR where.name for me/nadeem-->
+<!--  Use OR where. for me/nadeem-->
 <% if current_user && current_user.co_op == nil %>
   <div class="carousel-container">
     <h1 class="org-title">Career Development Opportunities</h1>
@@ -282,26 +282,26 @@
     Know of other opportunities? Email them to us through <b>nadeem.aljaber@ontario.ca</b> OR <b>danielcheley@hotmail.com</b>
   </p>
 
-  <div class="image-gallery">
-    <div id="quarter">
-      <%= link_to image_tag(@opportunities.find(17).avatar, class:"g-img"), "/opportunities/#{@opportunities.find(17).id}" %>
-      <%= link_to image_tag(@opportunities.find(18).avatar, class:"g-img", style:"margin-top: 60px;"), "/opportunities/#{@opportunities.find(18).id}" %>
+  <div class="bucket-gallery">
+    <div id="fifth">
+      <%= link_to "Lunch N' Learn", "/opportunities/17", class:"co-opp-name", id:"blue" %>
+      <%= link_to "Planning Committee", "/opportunities/18", class:"co-opp-name", id:"purple" %>
     </div>
-    <div id="quarter">
-      <%= link_to image_tag(@opportunities.find(19).avatar, class:"g-img"), "/opportunities/#{@opportunities.find(19).id}" %>
-      <%= link_to image_tag(@opportunities.find(20).avatar, class:"g-img", style:"margin-top: 100px;"), "/opportunities/#{@opportunities.find(20).id}" %>
+    <div id="fifth">
+      <%= link_to "Learn On", "/opportunities/18", class:"co-opp-name", id:"green" %>
+      <%= link_to @opportunities.find(20).name, "/opportunities/20", class:"co-opp-name", id:"red" %>
     </div>
-    <div id="quarter">
-      <%= link_to image_tag(@opportunities.find(21).avatar, class:"g-img"), "/opportunities/#{@opportunities.find(21).id}" %>
-      <%= link_to image_tag(@opportunities.find(22).avatar, class:"g-img", style:"margin-top: 60px;"), "/opportunities/#{@opportunities.find(22).id}" %>
+    <div id="fifth">
+      <%= link_to "Student Orientation", "/opportunities/21", class:"co-opp-name", id:"red" %>
+      <%= link_to "Informational Interview", "/opportunities/22", class:"co-opp-name" , id:"orange"%>
     </div>
-    <div id="quarter">
-      <%= link_to image_tag(@opportunities.find(23).avatar, class:"g-img"), "/opportunities/#{@opportunities.find(23).id}" %>
-      <%= link_to image_tag(@opportunities.find(24).avatar, class:"g-img", style:"margin-top: 95px;"), "/opportunities/#{@opportunities.find(24).id}" %>
+    <div id="fifth">
+      <%= link_to "Restaurant", "/opportunities/23", class:"co-opp-name", id:"orange" %>
+      <%= link_to "Social Event", "/opportunities/24", class:"co-opp-name", id:"green" %>
     </div>
-    <div id="quarter">
-      <%= link_to image_tag(@opportunities.find(25).avatar, class:"g-img"), "/opportunities/#{@opportunities.find(25).id}" %>
-      <%= link_to image_tag(@opportunities.find(26).avatar, class:"g-img", style:"margin-top: 60px;"), "/opportunities/#{@opportunities.find(26).id}" %>
+    <div id="fifth">
+      <%= link_to "Networking Event", "/opportunities/25", class:"co-opp-name", id:"purple" %>
+      <%= link_to "OPS/TOPS Network", "/opportunities/26", class:"co-opp-name", id:"blue" %>
     </div>
   </div>
 
