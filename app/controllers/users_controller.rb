@@ -69,13 +69,14 @@ class UsersController < ApplicationController
         name: "Software Tester",
         description: "Participated in Employee Engagement prototype testing phase",
         user_id: @user.id,
+        opportunity_id: 27,
         exp: true
       )
     end
   end
 
   def update
-    if @user.update_attributes(user_params) && @user.badge_ids != []
+    if @user.update_attributes(user_params) && @user.badge_ids !=  []
       flash[:alert] = "Settings successfully updated!"
       redirect_to user_url
     elsif  @user.update_attributes(user_params) && @user.badge_ids == []
