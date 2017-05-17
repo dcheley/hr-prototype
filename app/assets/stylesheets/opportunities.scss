@@ -128,7 +128,19 @@ a:hover {
 }
 
 .opp-details {
+  text-align: justify;
   font-size: 16px;
+  margin: auto;
+  width: 80%;
+}
+
+.opp-info {
+  // margin: auto;
+  width: 100%;
+}
+
+.opp-info a {
+  text-decoration: none;
 }
 
 //Image gallery

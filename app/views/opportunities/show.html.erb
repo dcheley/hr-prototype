@@ -6,11 +6,11 @@
       <%= image_tag('huddle.png', class:"tile__img") %>
     </div>
 
-    <p class="opp-details">
-      <%= @opportunity.bonus %>
-      <%= @opportunity.description %>
-      <%= @opportunity.link %>
-    </p>
+    <div class="opp-details">
+      <p class="opp-info" style="text-align: center"><%= @opportunity.bonus %></p></br>
+      <p class="opp-info"><%= @opportunity.description %></p></br>
+      <p class="opp-info" style="text-align: center"><%= link_to "#{@opportunity.link}", "#{@opportunity.link}", target: "_blank" %></p>
+    </div>
 
     <% if current_user.liked? @opportunity %>
       <%= link_to image_tag('not-interested.png', class:"thumbs-empty"), unlike_opportunity_path(@opportunity.id), method: :put, remote: true, id: "like_#{@opportunity.id}" %>
