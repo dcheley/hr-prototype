@@ -32,17 +32,17 @@
       <% end %>
 
       <div class="center-float-wrap">
-        <% if current_user.id == @recognition.receiver_id || current_user.id == @recognition.recognizer_id %>
-          <div class="float" style="margin-left: 5px; margin-right: 5px;">
-            <div class="submit-blue">BACK TO PROFILE</div>
-          </div>
-        <% end %>
-
-        <div class="float" style="margin-left: 5px;">
+        <div class="float" style="margin-left: 5px; margin-right: 5px;">
           <%= link_to "/users/#{@user.id}", class:"cancel-center-link" do %>
-            <%= button_to 'DELETE BADGE', {:controller => 'recognitions', :action => 'destroy', :id => "#{@recognition.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"delete" %>
+            <div class="submit-blue">BACK TO PROFILE</div>
           <% end %>
         </div>
+
+        <% if current_user.id == @recognition.receiver_id || current_user.id == @recognition.recognizer_id %>
+          <div class="float" style="margin-left: 5px;">
+            <%= button_to 'DELETE BADGE', {:controller => 'recognitions', :action => 'destroy', :id => "#{@recognition.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"delete" %>
+          </div>
+        <% end %>
       </div>
 
     </ul>
