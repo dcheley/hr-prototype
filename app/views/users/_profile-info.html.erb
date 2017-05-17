@@ -16,8 +16,9 @@
   <% elsif @user.business_planning_and_finance == true %>
     <li class="team-info"><%= link_to "Business Planning and Finance", "/users/bpf_org_chart", class:"team-link" %></li>
   <% end %>
+  <li class="profile-info"><b>Email:</b> <%= @user.email %></li>
   <li class="profile-info"><b>Title:</b> <%= @user.title %></li>
-  <li class="profile-info"><b>Direct Report:</b> <%= @user.direct_report %></li>
+  <li class="profile-info"><b>Direct Manager:</b> <%= @user.direct_report %></li>
   <li class="profile-info"><b>Career Aspirations:</b> <%= @user.career_aspirations %></li>
   <li class="team-info" style="font-size: 16px;"><b>Job Description</b></li>
 
