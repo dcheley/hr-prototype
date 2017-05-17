@@ -116,8 +116,9 @@
 .o-chart-icon {
   float: left;
   height: 32px;
-  margin-top: 10px;
+  margin-top: -5px;
   margin-left: 10px;
+
 }
 
 .org-box h4,
@@ -133,17 +134,17 @@
 }
 
 .org-box-menu p:last-child {
-  margin: 10px 0 0 0;
+  margin: 20px 0 0 0;
 }
 
 .org-box p:last-child {
-  margin: 10px 0 0 80px;
+  margin: 25px 0 15px 80px;
 }
 
 .org-details,
 .org-menu-details {
   padding: 0 10px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .glyphicon.glyphicon-user {
@@ -151,13 +152,16 @@
 }
 
 .org-profile-pic {
-  width: 90px;
+  position: absolute;
+  bottom: 8px;
+  left: 5px;
+  width: 65px;
   margin-left: 5px;
 }
 
 .info-btn {
   position: absolute;
-  bottom: 0;
+  bottom: 5px;
   left: 10px;
   background: $white;
   border-color: $light-grey;
@@ -171,7 +175,6 @@
   width: 55px;
   height: 52px;
   font-size: 14px;
-  margin: -2px 0 10px -2px;
 }
 
 //Image container

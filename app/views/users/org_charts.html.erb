@@ -14,9 +14,7 @@
                 <div class="org-box-menu">
                   <div class="org-menu-header">
                     <h4 class="branch">ADM's Office<span class=""></span></h4>
-
-                    <div class="context">
-                    </div>
+                    <div class="context"></div>
                   </div>
 
                   <div class="org-details">
@@ -32,9 +30,7 @@
                 <div class="org-box-menu">
                   <div class="org-menu-header">
                     <h4 class="branch">Strategic Human Resources<span class=""></span></i></h4>
-
-                    <div class="context">
-                    </div>
+                    <div class="context"></div>
                   </div>
 
                   <div class="org-details">
@@ -50,9 +46,7 @@
                 <div class="org-box-menu">
                   <div class="org-menu-header">
                     <h4 class="branch">Service Management & Facilities<span class=""></span></h4>
-
-                    <div class="context">
-                    </div>
+                    <div class="context"></div>
                   </div>
 
                   <div class="org-details">
@@ -68,10 +62,7 @@
                 <div class="org-box-menu">
                   <div class="org-menu-header">
                     <h4 class="branch">Business Planning & Finance<span class=""></span></h4>
-
-                    <div class="context">
-
-                    </div>
+                    <div class="context"></div>
                   </div>
 
                   <div class="org-details">
@@ -112,19 +103,14 @@
                         <span class="glyphicon glyphicon-menu-down"></span>
                       </div> -->
                     </div>
-                    <% if b.avatar.file? != true %>
                       <div class="org-details">
                         <p class="boss-name"><%= b.name %></p>
                         <p class="badge-count" style="font-size: 12px;"><b>Bucket List Badges:</b> <%= b.badges.where.not(opportunity_id: nil).count %></p>
                         <p class="badge-count" style="font-size: 12px;"><b>Recognition Badges:</b> <%= b.received_badges.count %></p>
                       </div>
+                    <% if b.avatar.file? != true %>
                       <div class="info-btn"><span class="glyphicon glyphicon-user"></span></div>
                     <% else %>
-                      <div class="org-details" style="margin-bottom: 0;">
-                        <p class="boss-name"><%= b.name %></p>
-                        <p class="badge-count" style="font-size: 12px;">Bucket List Badges: <%= b.badges.where.not(opportunity_id: nil).count %></p>
-                        <p class="badge-count" style="font-size: 12px;">Recognition Badges: <%= b.received_badges.count %></p>
-                      </div>
                       <%= image_tag b.avatar.url(:medium), class:"org-profile-pic" %>
                     <% end %>
                   </div>

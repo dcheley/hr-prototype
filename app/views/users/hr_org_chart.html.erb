@@ -22,7 +22,7 @@
                     </div>
                     <div class="info-btn"><span class="glyphicon glyphicon-user"></span></div>
                   <% else %>
-                    <div class="org-details" style="margin-bottom: 0;">
+                    <div class="org-details">
                       <p class="boss-name"><%= a.name %></p>
                     </div>
                     <%= image_tag a.avatar.url(:medium), class:"org-profile-pic" %>
@@ -64,7 +64,7 @@
                       </div>
                       <div class="info-btn"><span class="glyphicon glyphicon-user"></span></div>
                     <% else %>
-                      <div class="org-details" style="margin-bottom: 0;">
+                      <div class="org-details">
                         <p class="boss-name"><%= b.name %></p>
                       </div>
                       <%= image_tag b.avatar.url(:medium), class:"org-profile-pic" %>
@@ -108,7 +108,7 @@
                       </div>
                       <div class="info-btn"><span class="glyphicon glyphicon-user"></span></div>
                     <% else %>
-                      <div class="org-details" style="margin-bottom: 0;">
+                      <div class="org-details">
                         <p class="boss-name"><%= c.name %></p>
                       </div>
                       <%= image_tag c.avatar.url(:medium), class:"org-profile-pic" %>
