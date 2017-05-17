@@ -167,7 +167,7 @@ User.create([{ name: "Robert B", email: "robb@email.com", phone: "(416) 222-2222
     # Co-op Students File.join(Rails.root, 'app', 'assets', 'images', 'lunch-n-learn.png')
     # { name: "Attend a Lunch n' Learn", avatar: File.new("#{Rails.root}/app/assets/images/lunch-n-learn.png") },
     { name: "Attend a Lunch n' Learn",
-      description: "Lunch and Learn sessions are offered by the Corporate Services Division and will take place multiple times throughout the summer term. These sessions are based on a wide range of topics from Mental Health Awareness to informational session on specific division’s roles within the Ministry.  Lunch is provided for these sessions so make sure to sign up by clicking the link below.
+      description: "Lunch and Learn sessions are offered by the CSD and will take place multiple times throughout the summer term. These sessions are based on a wide range of topics from Mental Health Awareness to informational session on specific division’s roles within the Ministry.  Lunch is provided for these sessions so make sure to sign up by clicking the link below.
       Keep in mind the below link will not appear until two weeks before the next lunch and learn is set to take place. We will keep you updated through email when the next Lunch and Learn sign up becomes active.",
       link: "https://ops.learnflex.net/include/login.asp?url=/users/index.asp" },
     { name: 'Join a planning committee',
@@ -180,7 +180,7 @@ User.create([{ name: "Robert B", email: "robb@email.com", phone: "(416) 222-2222
       description: "The Ontario Legislative Building, located in Queens park, houses the Legislative Assembly of Ontario, the Vice regal suite of the Lieutenant  Governor of Ontario and offices of the MPPs.
       In case you missed the tour on Orientation day you can sign up for a tour below to receive the badge. Once completed feel free to click the verify button and collect another badge!",
       link: "http://discoveryportal.ontla.on.ca/en/visit-us/tours" },
-    { name: 'Attend the Corporate Services Division’s Student Orientation & Onboarding Day',
+    { name: 'Attend the CSD’s Student Orientation & Onboarding Day',
       description: "Orientation Day fell on May 12th, We hope you had a great time meeting other co-op students,  If you made it out to the event go ahead and tap on the verify button in order to receive your badge!" },
     { name: 'Participate in an informational interview',
       description: "Informational Interviews are a key developmental opportunity for co-op students. If you have a certain interest or career aspiration in a particular field of government you can set up an informational interview with an employee in a related role in order to get a glimpse of what a day in the life is like in that certain field.
