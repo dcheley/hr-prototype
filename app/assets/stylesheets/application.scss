@@ -6,15 +6,6 @@
 @import "org_charts";
 @import "opportunities";
 
-.container {
-  width: 90%;
-  margin-bottom: 50px;
-  border-radius: 25px;
-  padding-bottom: 3px;
-  background-position: center;
-  margin-top: 12.5%;
-}
-
 .home-right {
   float: right;
   width: 55%;
@@ -55,6 +46,12 @@
   color: $white-smoke;
   background-color: $bright-dark-blue;
   border: 0;
+}
+
+.footer {
+  background-color: $light-grey;
+  height: 40px;
+  line-height: 40px;
 }
 
 .submit-blue,
