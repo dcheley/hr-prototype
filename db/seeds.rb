@@ -183,7 +183,8 @@ User.create([{ name: "Robert B", email: "robb@email.com", phone: "(416) 222-2222
     { name: 'Participate in an informational interview',
       description: "Informational Interviews are a key developmental opportunity for co-op students. If you have a certain interest or career aspiration in a particular field of government you can set up an informational interview with an employee in a related role in order to get a glimpse of what a day in the life is like in that certain field.
       Once the interview is all set up click the button below." },
-    { name: 'Eat at a restaurant recommended in your Student Orientation & Onboarding Resource Pack', description: "Toronto has a great number of amazing restaurants, so we put together a “must try” list within walking distance.  Once you eat at one of the restaurants posted below click the verify button in order to receive the badge.
+    { name: 'Eat at a restaurant recommended in your Student Orientation & Onboarding Resource Pack',
+      description: "Toronto has a great number of amazing restaurants, so we put together a “must try” list within walking distance.  Once you eat at one of the restaurants posted below click the verify button in order to receive the badge.
       Nando’s
       Salad King
       Sushi Box
