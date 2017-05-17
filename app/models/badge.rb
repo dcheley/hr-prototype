@@ -5,7 +5,6 @@ class Badge < ApplicationRecord
   belongs_to :opportunities, optional: true
 
   validates :name, presence: true
-  validates :description, length: {maximum: 500}
   validate :min_one
   # validate :at_least_one_colour
 
