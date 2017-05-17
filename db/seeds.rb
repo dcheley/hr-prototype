@@ -166,13 +166,14 @@ User.create([{ name: "Robert B", email: "robb@email.com", phone: "(416) 222-2222
     { name: 'Lunch & Learn: Ontario Investment Office' },
     # Co-op Students File.join(Rails.root, 'app', 'assets', 'images', 'lunch-n-learn.png')
     # { name: "Attend a Lunch n' Learn", avatar: File.new("#{Rails.root}/app/assets/images/lunch-n-learn.png") },
-    { name: "Attend a Lunch n' Learn" },
+    { name: "Attend a Lunch n' Learn", description: "Lunch and Learn sessions are offered by the Corporate Services Division and will take place multiple times throughout the summer term. These sessions are based on a wide range of topics from Mental Health Awareness to informational session on specific division’s roles within the Ministry.  Lunch is provided for these sessions so make sure to sign up by clicking the link below.
+      Keep in mind the below link will not appear until two weeks before the next lunch and learn is set to take place. We will keep you updated through email when the next Lunch and Learn sign up becomes active." },
     { name: 'Join a planning committee' },
     { name: 'Take a LearnON course' },
     { name: 'Tour the Legislature' },
-    { name: 'Attend the Corporate Services Division’s Student Orientation & Onboarding Day') },
-    { name: 'Participate in an informational interview') },
-    { name: 'Eat at a restaurant recommended in your Student Orientation & Onboarding Resource Pack') },
-    { name: 'Organize or attend a social event with other co-op students',  description: "BONUS: attend with a fellow co-op student") },
-    { name: 'Organize or attend a networking event with other co-op students',  description: "BONUS: invite other full-time staff") },
-    { name: 'Join an OPS Network or TOPS', description: "BONUS: invite other full-time staff") }])
+    { name: 'Attend the Corporate Services Division’s Student Orientation & Onboarding Day' },
+    { name: 'Participate in an informational interview' },
+    { name: 'Eat at a restaurant recommended in your Student Orientation & Onboarding Resource Pack' },
+    { name: 'Organize or attend a social event with other co-op students',  description: "BONUS: attend with a fellow co-op student" },
+    { name: 'Organize or attend a networking event with other co-op students',  description: "BONUS: invite other full-time staff" },
+    { name: 'Join an OPS Network or TOPS', description: "BONUS: invite other full-time staff" }])
