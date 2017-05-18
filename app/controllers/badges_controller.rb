@@ -6,7 +6,7 @@ class BadgesController < ApplicationController
     @badge = Badge.new
   end
 
-  def defaults
+  def exp
     @badge = Badge.new
   end
 

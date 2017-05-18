@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/users/hr_org_chart' => 'users#hr_org_chart'
   get '/users/smf_org_chart' => 'users#smf_org_chart'
   get '/users/opps' => 'users#opps'
-  get '/badges/defaults' => 'badges#defaults'
+  get '/badges/exp' => 'badges#exp'
 
   resources :users, only: [:new, :create, :show, :update, :edit, :index]
   resources :opportunities, only: [:show]
