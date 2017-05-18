@@ -21,15 +21,14 @@
   <div class="right-profile">
     <h1 class="badge-title"><%= "#{@user.name}" %>'s badges</h1>
 
-
     <p class="badge-new-wrap"><%= link_to 'GIVE Recognition Badge', "/users/#{@user.id}/recognitions/new", class:"submit-green", style:"margin: auto; width: 260px;" %></p>
 
-  <% if @user.co_op == nil %>
-    <%= render 'badge-show-list' %>
+    <% if @user.co_op == nil %>
+      <%= render 'badge-show-list' %>
   </div>
-  <% else %>
-    <%= render 'coop-show-list' %>
-  <% end %>
+    <% else %>
+      <%= render 'coop-show-list' %>
+    <% end %>
   </div>
 
 <% else %>
