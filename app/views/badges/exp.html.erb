@@ -18,7 +18,7 @@
     <%= button_to 'Technical Services', {:controller => 'badges', :action => 'create', badge: {:exp => true, :user_id => current_user.id, :name => "Technical Services", :green => true}}, method: :post, class:"badge-green" %>
   </div>
 
-  <h3 class="form-title" style="clear: both; padding-top: 50px;">Don't see your desired badge? Create a custom one below:</h3>
+  <h2 class="form-title" style="clear: both; padding-top: 50px;">Don't see your desired badge? Create a custom one below:</h2>
 
   <%= render 'badges_form' %>
 
