@@ -25,6 +25,6 @@
   <% if @user.job_description == nil || @user.job_description == "" %>
     <li class="profile-info">Describe your responsibilities and experience in 500 characters or less.</li>
   <% else %>
-    <li class="profile-info" style="overflow: hidden;"><%= @user.job_description %></li>
+    <li class="profile-info" style="overflow-x: scroll;"><%= @user.job_description %></li>
   <% end %>
 </ul>
