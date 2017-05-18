@@ -1,18 +1,14 @@
 <% if current_user && current_user == @user %>
-  <div class="left-profile">
-    </br><h1 class="profile-title"><b>Your Profile</b></h1>
-
+  <div class="left-profile"style="margin-top: 30px;">
     <%= render 'profile-info' %>
   </div>
 
-  <div class="right-profile">
-    <h1 class="badge-title"><b>Your badges</b></h1>
-
-  <% if current_user.co_op == nil %>
-    <%= render 'badge-show-list' %>
-  <% else %>
-    <%= render 'coop-show-list' %>
-  <% end %>
+  <div class="right-profile" style="margin-top: 30px;">
+    <% if current_user.co_op == nil %>
+      <%= render 'badge-show-list' %>
+    <% else %>
+      <%= render 'coop-show-list' %>
+    <% end %>
   </div>
 
 <% elsif current_user && current_user != @user %>
