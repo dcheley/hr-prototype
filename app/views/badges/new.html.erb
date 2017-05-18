@@ -1,6 +1,24 @@
 <div class="background">
   <% if current_user %>
     <div class="container" style="margin-top: 0; text-align: center;">
+      <div class="badge-row">
+        <h4 class="form-title"><b>Education</b></h4>
+        <%= button_to 'B.A.', {:controller => 'badges', :action => 'create', badge: {:education => true, :user_id => current_user.id, :name => "B.A.", :green => true}}, method: :post, class:"badge-green" %>
+        <%= button_to 'B.Sc.', {:controller => 'badges', :action => 'create', badge: {:education => true, :user_id => current_user.id, :name => "B.Sc.", :green => true}}, method: :post, class:"badge-green" %>
+        <%= button_to 'B.B.A.', {:controller => 'badges', :action => 'create', badge: {:education => true, :user_id => current_user.id, :name => "B.B.A.", :green => true}}, method: :post, class:"badge-green" %>
+        <%= button_to 'M.A.', {:controller => 'badges', :action => 'create', badge: {:education => true, :user_id => current_user.id, :name => "M.A.", :green => true}}, method: :post, class:"badge-green" %>
+        <%= button_to 'M.Sc.', {:controller => 'badges', :action => 'create', badge: {:education => true, :user_id => current_user.id, :name => "M.Sc.", :green => true}}, method: :post, class:"badge-green" %>
+        <%= button_to 'Ph.D.', {:controller => 'badges', :action => 'create', badge: {:education => true, :user_id => current_user.id, :name => "Ph.D.", :green => true}}, method: :post, class:"badge-green" %>
+        <%= button_to 'J.D.', {:controller => 'badges', :action => 'create', badge: {:education => true, :user_id => current_user.id, :name => "J.D.", :green => true}}, method: :post, class:"badge-green" %>
+        <%= button_to 'M.B.A.', {:controller => 'badges', :action => 'create', badge: {:education => true, :user_id => current_user.id, :name => "M.B.A", :green => true}}, method: :post, class:"badge-green" %>
+        <%= button_to 'M.D.', {:controller => 'badges', :action => 'create', badge: {:education => true, :user_id => current_user.id, :name => "M.D.", :green => true}}, method: :post, class:"badge-green" %>
+        <%= button_to 'CPA', {:controller => 'badges', :action => 'create', badge: {:education => true, :user_id => current_user.id, :name => "CPA", :green => true}}, method: :post, class:"badge-green" %>
+        <%= button_to 'CFA', {:controller => 'badges', :action => 'create', badge: {:education => true, :user_id => current_user.id, :name => "CFA", :green => true}}, method: :post, class:"badge-green" %>
+        <%= button_to 'P.Eng.', {:controller => 'badges', :action => 'create', badge: {:education => true, :user_id => current_user.id, :name => "P.Eng.", :green => true}}, method: :post, class:"badge-green" %>
+        <%= button_to 'M.P.A.', {:controller => 'badges', :action => 'create', badge: {:education => true, :user_id => current_user.id, :name => "M.P.A.", :green => true}}, method: :post, class:"badge-green" %>
+        <%= button_to 'PMP', {:controller => 'badges', :action => 'create', badge: {:education => true, :user_id => current_user.id, :name => "PMP", :green => true}}, method: :post, class:"badge-green" %>
+      </div>
+      
       <h3 class="form-option">Create a custom badge:</h3>
         <%= render 'badges_form' %>
 
