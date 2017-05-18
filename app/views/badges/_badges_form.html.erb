@@ -22,7 +22,7 @@
 
   <p class="field-label"><b>Badge Type<b></p></br>
 
-  <div class="check-box">
+  <!-- <div class="check-box">
     <%= f.check_box :exp %>
     <%= f.label :exp, "Skill OR Experience badge type" %>
   </div>
@@ -30,11 +30,17 @@
   <div class="check-box">
     <%= f.check_box :education %>
     <%= f.label :education, "Education badge type" %>
-  </div>
+  </div> -->
+
+  <% if current_page?(action: "new") %>
+    <%= f.hidden_field :education, value: true %>
+  <% elsif current_page?(action: "exp")%>
+    <%= f.hidden_field :exp, value: true %>
+  <% end %>
 
   <div class="center-float-wrap">
     <div class="float">
       <%= f.submit "SUBMIT", class:"submit-green" %>
     </div>
 
-<% end %>
+  <% end %>
