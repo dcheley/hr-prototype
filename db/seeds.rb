@@ -175,7 +175,7 @@ User.create([{ name: "Robert B", email: "robb@email.com", phone: "(416) 222-2222
       Once you’ve reached out to the committee members and have been accepted to join, click the verify button below in order to be rewarded the respective badge." },
     { name: 'Take a LearnON course',
       description: "LearnON is the learning portal for Ontario’s Public Service. It offers a wide variety of courses that aim to develop employees for their future inside the OPS. The portal is super easy to access, simply click on your internet explorer and then click the LearnON link in the bottom right corner to view some upcoming courses. We also went ahead and provided a link below in case you want to access the portal from this page.
-      Once you are enrolled in a course go ahead and click the button below to give yourself a badge in order to check off another co-op bucket list activity."
+      Once you are enrolled in a course go ahead and click the button below to give yourself a badge in order to check off another co-op bucket list activity.",
       link: "https://ops.learnflex.net/include/login.asp?url=/users/index.asp" },
     { name: 'Tour the Legislature',
       description: "The Ontario Legislative Building, located in Queens park, houses the Legislative Assembly of Ontario, the Vice regal suite of the Lieutenant  Governor of Ontario and offices of the MPPs.
