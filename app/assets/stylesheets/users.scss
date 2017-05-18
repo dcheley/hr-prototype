@@ -121,13 +121,17 @@
   width: 50%;
 }
 
-.nav-pills > li.active > a {
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
   border-radius: 0;
+  background-color: $light-grey;
+  color: black;
 }
 
 .tab-content {
   height: 600px;
-  background-color: #337ab7;
+  background-color: $light-grey;
 }
 
 .badge-list-title {
