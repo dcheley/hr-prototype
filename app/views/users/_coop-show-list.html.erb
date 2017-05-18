@@ -1,28 +1,38 @@
 <div class="badge-list" style="margin-top: 20px;">
-  <div class="left-side">
-    <p class="badge-list-title">Bucket List</p>
-    <!-- Display Green Badges -->
-    <% @user.badges.where.not(opportunity_id: nil).each do |b| %>
-      <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
-        <div class="badge-green">
-          <li class="profile-badges-name">
-            <%= "#{b.name}" %>
-          </li></br>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-  <div class="left-side">
-    <p class="badge-list-title">Recognition Badges</p>
-    <!-- Display Green Badges -->
-    <% @user.received_badges.each do |b| %>
-      <%= link_to "/users/#{@user.id}/recognitions/#{b.id}" do %>
-        <div class="badge-green">
-          <li class="profile-badges-name">
-            <%= "#{b.name}" %>
-          </li></br>
-        </div>
-      <% end %>
-    <% end %>
+  <ul class="nav nav-pills nav-justified">
+    <li role="presentation" class="active"><a href="#bucket" data-toggle="pill">Bucket List</a></li>
+    <li role="presentation"><a href="#edu" data-toggle="recognitions">Recognition badges</a></li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpane1" class="tab-pane active" id="bucket">
+      <div class="badge-row">
+        <p class="badge-list-title"><%= link_to "Sign up for an event", "/users/opps", class:"team-link" %></p>
+        <!-- Display Green Badges -->
+        <% @user.badges.where.not(opportunity_id: nil).each do |b| %>
+          <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
+            <div class="badge-green">
+              <li class="profile-badges-name">
+                <%= "#{b.name}" %>
+              </li></br>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div role="tabpane1" class="tab-pane active" id="recognitions">
+      <div class="badge-row">
+        <p class="badge-list-title"><%= link_to "Recognize others", "/users/org_charts", class:"team-link" %></p>
+        <!-- Display Green Badges -->
+        <% @user.received_badges.each do |b| %>
+          <%= link_to "/users/#{@user.id}/recognitions/#{b.id}" do %>
+            <div class="badge-green">
+              <li class="profile-badges-name">
+                <%= "#{b.name}" %>
+              </li></br>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
