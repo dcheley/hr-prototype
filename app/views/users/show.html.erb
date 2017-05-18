@@ -9,15 +9,7 @@
     <h1 class="badge-title"><b>Your badges</b></h1>
 
   <% if current_user.co_op == nil %>
-    <p class="badge-new-wrap" id="left-side">
-      <%= link_to "PICK DEFAULT BADGE", "/badges/defaults", class:"submit-green", style:"margin: auto; width: 160px;" %>
-    </p>
-    <p class="badge-new-wrap" id="right-side">
-      <%= link_to "CREATE BADGE", "/users/#{current_user.id}/badges/new", class:"submit-green", style:"margin: auto; width: 160px;" %>
-    </p>
-
     <%= render 'badge-show-list' %>
-
   <% else %>
     <%= render 'coop-show-list' %>
   <% end %>

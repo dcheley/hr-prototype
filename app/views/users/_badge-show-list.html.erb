@@ -1,4 +1,17 @@
-<div class="badge-list" style="margin-top: 160px;">
+<div class="badge-list">
+  <div class="quarter">
+    <p class="badge-list-title"><%= link_to "Add another skill or experience", "/badges/defaults", class:"team-link" %></p>
+  </div>
+  <div class="quarter">
+    <p class="badge-list-title"><%= link_to "Add more on your education", "/users/#{current_user.id}/badges/new", class:"team-link" %></p>
+  </div>
+  <div class="quarter">
+    <p class="badge-list-title"><%= link_to "View events", "/users/opps", class:"team-link" %></p>
+  </div>
+  <div class="quarter">
+    <p class="badge-list-title"><%= link_to "Recognize colleagues", "/users/org_charts", class:"team-link" %></p>
+  </div>
+
   <ul class="nav nav-pills nav-justified">
     <li role="presentation" class="active"><a href="#skillz" data-toggle="pill">Education</a></li>
     <li role="presentation"><a href="#edu" data-toggle="pill">Skills & Experience</a></li>
@@ -8,7 +21,6 @@
   <div class="tab-content">
     <div role="tabpane1" class="tab-pane active" id="skillz">
       <div class="badge-row">
-        <p class="badge-list-title"><%= link_to "Add another skill or experience", "", class:"team-link" %></p>
         <!-- Display Green Badges -->
         <% @user.badges.where(opportunity_id: nil, exp: true).each do |b| %>
           <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
@@ -23,7 +35,6 @@
     </div>
     <div role="tabpane1" class="tab-pane" id="edu">
       <div class="badge-row">
-        <p class="badge-list-title"><%= link_to "Add more on your education", "", class:"team-link" %></p>
         <!-- Display Green Badges -->
         <% @user.badges.where(opportunity_id: nil, education: true).each do |b| %>
           <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
@@ -38,7 +49,6 @@
     </div>
     <div role="tabpane1" class="tab-pane" id="eventz">
       <div class="badge-row">
-        <p class="badge-list-title"><%= link_to "View events", "/users/opps", class:"team-link" %></p>
         <!-- Display Green Badges -->
         <% @user.badges.where.not(opportunity_id: nil).each do |b| %>
           <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
@@ -53,7 +63,6 @@
     </div>
     <div role="tabpane1" class="tab-pane" id="recognitionz">
       <div class="badge-row">
-        <p class="badge-list-title"><%= link_to "Recognize colleagues", "/users/org_charts", class:"team-link" %></p>
         <!-- Display Green Badges -->
         <% @user.received_badges.each do |b| %>
           <%= link_to "/users/#{@user.id}/recognitions/#{b.id}" do %>

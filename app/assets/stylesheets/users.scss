@@ -106,8 +106,28 @@
   width: 60%;
 }
 
+.quarter {
+  float: left;
+  width: 25%;
+}
+
+.left-link {
+  float: left;
+  width: 50%;
+}
+
+.right-link {
+  float: right;
+  width: 50%;
+}
+
+.nav-pills > li.active > a {
+  border-radius: 0;
+}
+
 .tab-content {
-  margin-top: 15px;
+  height: 600px;
+  background-color: #337ab7;
 }
 
 .badge-list-title {

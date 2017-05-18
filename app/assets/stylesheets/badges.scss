@@ -98,7 +98,8 @@
 }
 
 .badge-green {
-  margin: 5px 5px;
+  margin: 7px 0;
+  margin-left: 20px;
   background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
   border: 3px solid $grey;
   border-radius: 12px; /* one half of ( (border * 2) + height + padding ) */
