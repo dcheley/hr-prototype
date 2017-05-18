@@ -19,10 +19,10 @@
     <li role="presentation"><a href="#recognitionz" data-toggle="pill">Recognition Badges</a></li>
   </ul>
   <div class="tab-content">
-    <div role="tabpane1" class="tab-pane active" id="skillz">
+    <div role="tabpane1" class="tab-pane" id="edu">
       <div class="badge-row">
         <!-- Display Green Badges -->
-        <% @user.badges.where(opportunity_id: nil, exp: true).each do |b| %>
+        <% @user.badges.where(opportunity_id: nil, education: true).each do |b| %>
           <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
             <div class="badge-green">
               <li class="profile-badges-name">
@@ -33,10 +33,10 @@
         <% end %>
       </div>
     </div>
-    <div role="tabpane1" class="tab-pane" id="edu">
+    <div role="tabpane1" class="tab-pane active" id="skillz">
       <div class="badge-row">
         <!-- Display Green Badges -->
-        <% @user.badges.where(opportunity_id: nil, education: true).each do |b| %>
+        <% @user.badges.where(opportunity_id: nil, exp: true).each do |b| %>
           <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
             <div class="badge-green">
               <li class="profile-badges-name">
