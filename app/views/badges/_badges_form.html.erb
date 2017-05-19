@@ -17,6 +17,9 @@
     <% elsif current_page?(action: "exp") %>
       <%= f.label :name, "Type of Experience", class:"field-label" %>
       <%= f.text_field :name, class:"field-input" %>
+    <% else %>
+      <%= f.label :name, "Badge title", class:"field-label" %>
+      <%= f.text_field :name, class:"field-input" %>
    <% end %>
   </div>
 
@@ -26,6 +29,8 @@
       <%= f.text_area :description, class:"field-input", placeholder:"Describe your credentials in 500 characters or less." %>
     <% elsif current_page?(action: "exp") %>
       <%= f.text_area :description, class:"field-input", placeholder:"Describe how you gained this experience in 500 characters or less." %>
+    <% else %>
+      <%= f.text_area :description, class:"field-input", placeholder:"Describe your #{@badge.name} badge in 500 characters or less."%>
    <% end %>
   </div>
 
