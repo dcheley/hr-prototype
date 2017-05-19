@@ -20,7 +20,7 @@
   <li class="profile-info"><b>Title:</b> <%= @user.title %></li>
   <li class="profile-info"><b>Direct Manager:</b> <%= @user.direct_report %></li>
   <li class="profile-info"><b>Career Aspirations:</b> <%= @user.career_aspirations %></li>
-  <li class="profile-info"><b>Job Description:</b>
+  <li class="profile-info"><b>Job Description:</b></li>
 
   <% if @user.job_description == nil || @user.job_description == "" %>
     <li class="profile-info">Describe your responsibilities and experience in 500 characters or less.</li>
