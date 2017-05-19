@@ -5,9 +5,9 @@
 
   <div class="right-profile" style="margin-top: 30px;">
     <% if current_user.co_op == nil %>
-      <%= render 'badge-show-list' %>
+      <%= render 'private-badge-show-list' %>
     <% else %>
-      <%= render 'coop-show-list' %>
+      <%= render 'private-coop-show-list' %>
     <% end %>
   </div>
 
@@ -24,10 +24,10 @@
     <p class="badge-new-wrap" style="margin-bottom: 30px;"><%= link_to 'GIVE Recognition Badge', "/users/#{@user.id}/recognitions/new", class:"submit-green", style:"margin: auto; width: 260px;" %></p>
 
     <% if @user.co_op == nil %>
-      <%= render 'badge-show-list' %>
+      <%= render 'public-badge-show-list' %>
   </div>
     <% else %>
-      <%= render 'coop-show-list' %>
+      <%= render 'public-coop-show-list' %>
     <% end %>
   </div>
 
