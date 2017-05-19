@@ -40,9 +40,13 @@
 
       <% if current_user.id == @badge.user_id %>
         <div class="center-float-wrap">
-          <% if @badge.opportunity_id == nil %>
+          <% if @badge.opportunity_id == nil && @badge.education != nil %>
             <div class="float" style="margin-left: 5px; margin-right: 5px;">
-              <%= link_to 'ADD ANOTHER BADGE', "/users/#{@user.id}/badges/new", class:"submit-green", style:"width: 260px;" %>
+              <%= link_to 'ADD MORE EDUCATION', "/users/#{@user.id}/badges/new", class:"submit-green", style:"width: 260px;" %>
+            </div>
+          <% elsif @badge.opportunity_id == nil && @badge.exp != nil %>
+            <div class="float" style="margin-left: 5px; margin-right: 5px;">
+              <%= link_to 'ADD MORE EXPERIENCE', "/badges/exp", class:"submit-green", style:"width: 260px;" %>
             </div>
           <% end %>
 
