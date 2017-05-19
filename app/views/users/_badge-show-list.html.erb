@@ -1,117 +1,100 @@
-<!-- <% if current_user == @user %>
-  <div class="badge-list">
-    <div class="quarter">
-    </div>
-    <div class="quarter">
-    </div>
-    <div class="quarter">
-    </div>
-    <div class="quarter">
-      <p class="badge-list-title"></p>
-    </div>
-<% end %> -->
+<ul class="nav nav-pills nav-justified" style="width: 100%; margin: auto;">
+  <li role="presentation" class="dropdown active">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      Education<span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <a class="tab-title" href="#edu" data-toggle="pill">Badges</a>
+      <p class="badge-list-title"><%= link_to "Add more on your education", "/users/#{current_user.id}/badges/new", class:"team-link" %></p>
+    </ul>
+  </li>
 
-  <ul class="nav nav-pills nav-justified" style="width: 100%; margin: auto;">
-    <li role="presentation" class="dropdown active">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-        Education<span class="caret"></span>
-      </a>
-      <ul class="dropdown-menu">
-        <a class="tab-title" href="#edu" data-toggle="pill">Badges</a>
-        <p class="badge-list-title"><%= link_to "Add more on your education", "/users/#{current_user.id}/badges/new", class:"team-link" %></p>
-      </ul>
-    </li>
+  <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      Experience<span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <a class="tab-title" href="#skillz" data-toggle="pill">Badges</a>
+      <p class="badge-list-title"><%= link_to "Add another skill or experience", "/badges/exp", class:"team-link" %></p>
+    </ul>
+  </li>
 
-    <li role="presentation" class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-        Experience<span class="caret"></span>
-      </a>
-      <ul class="dropdown-menu">
-        <a class="tab-title" href="#skillz" data-toggle="pill">Badges</a>
-        <p class="badge-list-title"><%= link_to "Add another skill or experience", "/badges/exp", class:"team-link" %></p>
-      </ul>
-    </li>
+  <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      Events<span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <a class="tab-title" href="#eventz" data-toggle="pill">Badges</a>
+      <p class="badge-list-title"><%= link_to "View events", "/users/opps", class:"team-link" %></p>
+    </ul>
+  </li>
 
-    <li role="presentation" class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-        Events<span class="caret"></span>
-      </a>
-      <ul class="dropdown-menu">
-        <a class="tab-title" href="#eventz" data-toggle="pill">Badges</a>
-        <p class="badge-list-title"><%= link_to "View events", "/users/opps", class:"team-link" %></p>
-      </ul>
-    </li>
+  <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      Recognition<span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <a class="tab-title" href="#recognitionz" data-toggle="pill">Badges</a>
+      <p class="badge-list-title"><%= link_to "Recognize colleagues", "/users/org_charts", class:"team-link" %></p>
+    </ul>
+  </li>
+</ul>
 
-    <li role="presentation" class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-        Recognition<span class="caret"></span>
-      </a>
-      <ul class="dropdown-menu">
-        <a class="tab-title" href="#recognitionz" data-toggle="pill">Badges</a>
-        <p class="badge-list-title"><%= link_to "Recognize colleagues", "/users/org_charts", class:"team-link" %></p>
-      </ul>
-    </li>
-    <!-- <li role="presentation"><a href="#skillz" data-toggle="pill">Skills & Experience</a></li>
-    <li role="presentation"><a href="#eventz" data-toggle="pill">Events</a></li>
-    <li role="presentation"><a href="#recognitionz" data-toggle="pill">Recognition Badges</a></li> -->
-  </ul>
-
-  <div class="tab-content" style="width: 100%; margin: auto;">
-    <div role="tabpane1" class="tab-pane active" id="edu">
-      <div class="badge-row">
-        <!-- Display Green Badges -->
-        <% @user.badges.where(opportunity_id: nil, education: true).each do |b| %>
-          <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
-            <div class="badge-green">
-              <li class="profile-badges-name">
-                <%= "#{b.name}" %>
-              </li></br>
-            </div>
-          <% end %>
+<div class="tab-content" style="width: 100%; margin: auto;">
+  <div role="tabpane1" class="tab-pane active" id="edu">
+    <div class="badge-row">
+      <!-- Display Green Badges -->
+      <% @user.badges.where(opportunity_id: nil, education: true).each do |b| %>
+        <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
+          <div class="badge-green">
+            <li class="profile-badges-name">
+              <%= "#{b.name}" %>
+            </li></br>
+          </div>
         <% end %>
-      </div>
+      <% end %>
     </div>
-    <div role="tabpane1" class="tab-pane" id="skillz">
-      <div class="badge-row">
-        <!-- Display Green Badges -->
-        <% @user.badges.where(opportunity_id: nil, exp: true).each do |b| %>
-          <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
-            <div class="badge-green">
-              <li class="profile-badges-name">
-                <%= "#{b.name}" %>
-              </li></br>
-            </div>
-          <% end %>
+  </div>
+  <div role="tabpane1" class="tab-pane" id="skillz">
+    <div class="badge-row">
+      <!-- Display Green Badges -->
+      <% @user.badges.where(opportunity_id: nil, exp: true).each do |b| %>
+        <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
+          <div class="badge-green">
+            <li class="profile-badges-name">
+              <%= "#{b.name}" %>
+            </li></br>
+          </div>
         <% end %>
-      </div>
+      <% end %>
     </div>
-    <div role="tabpane1" class="tab-pane" id="eventz">
-      <div class="badge-row">
-        <!-- Display Green Badges -->
-        <% @user.badges.where.not(opportunity_id: nil).each do |b| %>
-          <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
-            <div class="badge-green">
-              <li class="profile-badges-name">
-                <%= "#{b.name}" %>
-              </li></br>
-            </div>
-          <% end %>
+  </div>
+  <div role="tabpane1" class="tab-pane" id="eventz">
+    <div class="badge-row">
+      <!-- Display Green Badges -->
+      <% @user.badges.where.not(opportunity_id: nil).each do |b| %>
+        <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
+          <div class="badge-green">
+            <li class="profile-badges-name">
+              <%= "#{b.name}" %>
+            </li></br>
+          </div>
         <% end %>
-      </div>
+      <% end %>
     </div>
-    <div role="tabpane1" class="tab-pane" id="recognitionz">
-      <div class="badge-row">
-        <!-- Display Green Badges -->
-        <% @user.received_badges.each do |b| %>
-          <%= link_to "/users/#{@user.id}/recognitions/#{b.id}" do %>
-            <div class="badge-green">
-              <li class="profile-badges-name">
-                <%= "#{b.name}" %>
-              </li></br>
-            </div>
-          <% end %>
+  </div>
+  <div role="tabpane1" class="tab-pane" id="recognitionz">
+    <div class="badge-row">
+      <!-- Display Green Badges -->
+      <% @user.received_badges.each do |b| %>
+        <%= link_to "/users/#{@user.id}/recognitions/#{b.id}" do %>
+          <div class="badge-green">
+            <li class="profile-badges-name">
+              <%= "#{b.name}" %>
+            </li></br>
+          </div>
         <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
