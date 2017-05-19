@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password]) && user.agreement != true
       session[:user_id] = user.id
-      redirect_to "/pages/disclaimer", notice: "Logged in"
+      redirect_to "/signups/step_one", notice: "Logged in"
     elsif user && user.authenticate(params[:password]) && user.agreement == true
       session[:user_id] = user.id
       redirect_to "/users/org_charts", notice: "Logged in"
