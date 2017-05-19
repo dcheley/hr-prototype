@@ -1,25 +1,61 @@
-<% if current_user == @user %>
+<!-- <% if current_user == @user %>
   <div class="badge-list">
     <div class="quarter">
-      <p class="badge-list-title"><%= link_to "Add more on your education", "/users/#{current_user.id}/badges/new", class:"team-link" %></p>
     </div>
     <div class="quarter">
-      <p class="badge-list-title"><%= link_to "Add another skill or experience", "/badges/exp", class:"team-link" %></p>
     </div>
     <div class="quarter">
-      <p class="badge-list-title"><%= link_to "View events", "/users/opps", class:"team-link" %></p>
     </div>
     <div class="quarter">
-      <p class="badge-list-title"><%= link_to "Recognize colleagues", "/users/org_charts", class:"team-link" %></p>
+      <p class="badge-list-title"></p>
     </div>
-<% end %>
+<% end %> -->
 
   <ul class="nav nav-pills nav-justified">
-    <li role="presentation" class="active"><a href="#edu" data-toggle="pill">Education</a></li>
-    <li role="presentation"><a href="#skillz" data-toggle="pill">Skills & Experience</a></li>
+    <li role="presentation" class="dropdown active">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+        Education<span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <a href="#edu" data-toggle="pill">Badges</a>
+        <p class="badge-list-title"><%= link_to "Add more on your education", "/users/#{current_user.id}/badges/new", class:"team-link" %></p>
+      </ul>
+    </li>
+
+    <li role="presentation" class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+        Experience<span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <a href="#skillz" data-toggle="pill">Badges</a>
+        <p class="badge-list-title"><%= link_to "Add another skill or experience", "/badges/exp", class:"team-link" %></p>
+      </ul>
+    </li>
+
+    <li role="presentation" class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+        Events<span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <a href="#eventz" data-toggle="pill">Badges</a>
+        <p class="badge-list-title"><%= link_to "View events", "/users/opps", class:"team-link" %></p>
+      </ul>
+    </li>
+
+    <li role="presentation" class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+        Recognition Badges<span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <a href="#recognitionz" data-toggle="pill">Badges</a>
+        <p class="badge-list-title"><%= link_to "Recognize colleagues", "/users/org_charts", class:"team-link" %></p>
+      </ul>
+    </li>
+    <!-- <li role="presentation"><a href="#skillz" data-toggle="pill">Skills & Experience</a></li>
     <li role="presentation"><a href="#eventz" data-toggle="pill">Events</a></li>
-    <li role="presentation"><a href="#recognitionz" data-toggle="pill">Recognition Badges</a></li>
+    <li role="presentation"><a href="#recognitionz" data-toggle="pill">Recognition Badges</a></li> -->
   </ul>
+
   <div class="tab-content">
     <div role="tabpane1" class="tab-pane active" id="edu">
       <div class="badge-row">
