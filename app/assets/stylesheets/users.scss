@@ -135,8 +135,17 @@
   background-color: $light-grey;
 }
 
+.dropdown-menu {
+  text-align: center;
+}
+
+.tab-title {
+  font-weight: bold;
+}
+
 .badge-list-title {
   text-align: center;
+  padding-top: 5px;
 }
 
 .badge-row {
