@@ -4,13 +4,20 @@ Rails.application.routes.draw do
 
   get '/pages/*page' => 'pages#show'
 
-  get '/users/org_charts' => 'users#org_charts'
-  get '/users/admo_org_chart' => 'users#admo_org_chart'
-  get '/users/bpf_org_chart' => 'users#bpf_org_chart'
-  get '/users/hr_org_chart' => 'users#hr_org_chart'
-  get '/users/smf_org_chart' => 'users#smf_org_chart'
-  get '/users/opps' => 'users#opps'
-  get '/badges/exp' => 'badges#exp'
+  get '/users/org_charts'
+  get '/users/admo_org_chart'
+  get '/users/bpf_org_chart'
+  get '/users/hr_org_chart'
+  get '/users/smf_org_chart'
+  get '/users/opps'
+  get '/badges/exp'
+
+  get 'signups/step_one'
+  get 'signups/step_two'
+  get 'signups/step_three'
+  get 'signups/step_four'
+  get 'signups/step_five'
+  get 'signups/step_six'
 
   resources :users, only: [:new, :create, :show, :update, :edit, :index]
   resources :opportunities, only: [:show]
