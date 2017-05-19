@@ -112,16 +112,6 @@
   width: 25%;
 }
 
-.left-link {
-  float: left;
-  width: 50%;
-}
-
-.right-link {
-  float: right;
-  width: 50%;
-}
-
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
@@ -228,11 +218,11 @@
   padding-left: 0;
 }
 
-.badge-list {
-  font-size: 16px;
-  padding-bottom: 60px;
-  padding-left: 9%;
-}
+// .badge-list {
+//   font-size: 16px;
+//   padding-bottom: 60px;
+//   padding-left: 9%;
+// }
 
 @media screen and (max-width: 939px) {
   .left-profile,
