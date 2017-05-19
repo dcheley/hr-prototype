@@ -20,7 +20,7 @@ class User < ApplicationRecord
   def self.search(search)
     joins(:badges)
     .where("badges.name ILIKE ? OR users.name ILIKE ?", "%#{search}", "%#{search}")
-    # .references(:badges)
+    .references(:badges)
   end
 
   before_save :destroy_image?
