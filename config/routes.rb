@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'signups/step_five'
   get 'signups/step_six'
 
+  resources :signups, only: [:create, :update]
   resources :users, only: [:new, :create, :show, :update, :edit, :index]
   resources :opportunities, only: [:show]
 
