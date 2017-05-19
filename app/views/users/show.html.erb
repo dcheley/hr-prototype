@@ -19,9 +19,9 @@
   </div>
 
   <div class="right-profile">
-    <h1 class="badge-title"><%= "#{@user.name}" %>'s badges</h1>
+    <h1 class="badge-title" style="margin-bottom: 0;"><%= "#{@user.name}" %>'s badges</h1>
 
-    <p class="badge-new-wrap"><%= link_to 'GIVE Recognition Badge', "/users/#{@user.id}/recognitions/new", class:"submit-green", style:"margin: auto; width: 260px;" %></p>
+    <p class="badge-new-wrap" style="margin-bottom: 30px;"><%= link_to 'GIVE Recognition Badge', "/users/#{@user.id}/recognitions/new", class:"submit-green", style:"margin: auto; width: 260px;" %></p>
 
     <% if @user.co_op == nil %>
       <%= render 'badge-show-list' %>
