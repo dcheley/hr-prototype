@@ -1,5 +1,11 @@
 class SignupsController < ApplicationController
   def step_one
+    @signup = Signup.create(
+      user_id: current_user.id,
+    )
+    if @signup.update_attributes(signup_params)
+      redirect_to "signups/step_two", notice: "Start setting up your account details below"
+    end
   end
 
   def step_two

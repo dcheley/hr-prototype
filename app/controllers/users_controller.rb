@@ -64,24 +64,25 @@ class UsersController < ApplicationController
   end
 
   def edit
-    if @user.badge_ids == []
-      Badge.create(
-        name: "Software Tester",
-        description: "Participated in Employee Engagement prototype testing phase",
-        user_id: @user.id,
-        opportunity_id: 27,
-        exp: true
-      )
-    end
+    # if @user.badge_ids == []
+    #   Badge.create(
+    #     name: "Software Tester",
+    #     description: "Participated in Employee Engagement prototype testing phase",
+    #     user_id: @user.id,
+    #     opportunity_id: 27,
+    #     exp: true
+    #   )
+    # end
   end
 
   def update
-    if @user.update_attributes(user_params) && @user.signup !=  nil
+    if @user.update_attributes(user_params)
       flash[:alert] = "Settings successfully updated!"
       redirect_to user_url
-    elsif  @user.update_attributes(user_params) && @user.signup == nil
-      flash[:alert] = "Enter your profile information below to set up your account"
-      redirect_to edit_user_url(@user)
+      # Remove elsif part and put redirects in signups controller?
+    # elsif  @user.update_attributes(user_params) && @user.signup == nil
+    #   flash[:alert] = "Enter your profile information below to set up your account"
+    #   redirect_to edit_user_url(@user)
     else
       render :edit
     end
