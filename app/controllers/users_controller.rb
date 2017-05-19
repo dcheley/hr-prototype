@@ -76,10 +76,10 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(user_params) && @user.badge_ids !=  []
+    if @user.update_attributes(user_params) && @user.signup !=  nil
       flash[:alert] = "Settings successfully updated!"
       redirect_to user_url
-    elsif  @user.update_attributes(user_params) && @user.badge_ids == []
+    elsif  @user.update_attributes(user_params) && @user.signup == nil
       flash[:alert] = "Enter your profile information below to set up your account"
       redirect_to edit_user_url(@user)
     else
