@@ -49,7 +49,9 @@
           <%= f.label :image_delete, "Delete Image" %>
         </div>
 
-        <%= f.hidden_field :step_two, value: true %>
+        <%= f.fields_for :signup_attributes do |s| %>
+          <%= s.hidden_field :step_two, value: true %>
+        <% end %>
 
         <div class="divider"></div>
 
