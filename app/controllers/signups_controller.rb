@@ -1,11 +1,20 @@
 class SignupsController < ApplicationController
-  def step_one
-    @signup = Signup.create(
-      user_id: current_user.id,
-    )
-    if @signup.update_attributes(signup_params)
-      redirect_to "signups/step_two", notice: "Start setting up your account details below"
+  def create
+    @signup = Signup.new(signup_params)
+
+    if @signup.save && @signup.step_one == true
+      redirect_to "/signups/step_two", notice: "Start setting up your account details below"
+    else
+      render :edit
     end
+  end
+
+  def update
+
+  end
+
+  def new
+    @signup = Signup.new
   end
 
   def step_two

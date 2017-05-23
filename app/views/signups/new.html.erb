@@ -39,7 +39,8 @@
 
       <div class="center-float-wrap">
         <div class="float" style="margin-left: 5px; margin-right: 5px;">
-          <%= form_for(signup) do |f| %>
+          <%= form_for(@signup) do |f| %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
             <%= f.hidden_field :step_one, value: true %>
             <%= f.submit "AGREE", class:"submit-green" %>
           <% end %>
