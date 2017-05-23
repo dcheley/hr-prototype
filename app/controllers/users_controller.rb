@@ -74,6 +74,8 @@ class UsersController < ApplicationController
       redirect_to "/signups/step_two", notice: "Start setting up your account details below"
     elsif @user.update_attributes(user_params) && @user.signup.step_two == true
       redirect_to "/signups/step_three", notice: "Describe your Career Aspirations and Job Responsibilities below"
+    elsif @user.update_attributes(user_params) && @user.signup.step_three == true
+      redirect_to "/signups/step_four", notice: "Choose or Create your Education Badges below"
     else
       render :edit
     end
