@@ -29,8 +29,10 @@ class BadgesController < ApplicationController
       redirect_to "/users/#{current_user.id}/badges/#{@badge.id}", notice: "#{@badge.name} badge created!"
     elsif @badge.save && @badge.opportunity_id != nil
       redirect_to "/users/#{current_user.id}/badges/#{@badge.id}", notice: "Successfully signed up for #{@badge.name}!"
-    elsif @badge.save == false && @badge.opportunity_id == nil
+    elsif @badge.save == false && @badge.opportunity_id == nil && current_user.badge_ids != []
       render :new
+    elsif @badge.save == false && @badge.opportunity_id == nil && current_user.signup.step_four != true
+      render 'signups/step_four'
     else
       render 'users/org_charts'
     end
