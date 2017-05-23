@@ -93,7 +93,7 @@
 
           <ul>
             <% @users.where(adm_office: true, staff: true).each do |c| %>
-              <%= link_to "#/users/#{c.id}" do %>
+              <%= link_to "/users/#{c.id}" do %>
                 <li class="element">
                   <div class="org-box">
                     <div class="org-header">
