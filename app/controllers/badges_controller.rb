@@ -25,16 +25,20 @@ class BadgesController < ApplicationController
       @badge.user_id = current_user.id
     end
 
-    if @badge.save && @badge.opportunity_id == nil && @badge.signup.step_four == nil
+    if @badge.save && @badge.opportunity_id == nil && @badge.signup.step_six != nil
       redirect_to "/users/#{current_user.id}/badges/#{@badge.id}", notice: "#{@badge.name} badge created!"
     elsif @badge.save && @badge.opportunity_id == nil && @badge.signup.step_four == true
         redirect_to "/signups/step_five", notice: "#{@badge.name} badge added to profile! Now add an experience badge"
+    elsif @badge.save && @badge.opportunity_id == nil && @badge.signup.step_five == true
+        redirect_to "/signups/step_six", notice: "#{@badge.name} badge added to profile! Add more badges to your profile or start browsing."
     elsif @badge.save && @badge.opportunity_id != nil
       redirect_to "/users/#{current_user.id}/badges/#{@badge.id}", notice: "Successfully signed up for #{@badge.name}!"
-    elsif @badge.save == false && @badge.opportunity_id == nil && current_user.badge_ids != []
+    elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup.step_six != nil
       render :new
-    elsif @badge.save == false && @badge.opportunity_id == nil && current_user.signup.step_four == nil
+    elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup.step_four == true
       render 'signups/step_four'
+    elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup.step_five == true
+      render 'signups/step_five'
     else
       render 'users/org_charts'
     end
