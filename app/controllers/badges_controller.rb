@@ -25,7 +25,7 @@ class BadgesController < ApplicationController
       @badge.user_id = current_user.id
     end
 
-    if @badge.save && @badge.opportunity_id == nil && @badge.signup.step_six != nil
+    if @badge.save && @badge.opportunity_id == nil && @badge.signup == nil
       redirect_to "/users/#{current_user.id}/badges/#{@badge.id}", notice: "#{@badge.name} badge created!"
     elsif @badge.save && @badge.opportunity_id == nil && @badge.signup.step_four == true
         redirect_to "/signups/step_five", notice: "#{@badge.name} badge added to profile! Now add an experience badge"
