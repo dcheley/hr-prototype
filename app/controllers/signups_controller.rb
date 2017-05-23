@@ -17,6 +17,7 @@ class SignupsController < ApplicationController
   end
 
   def step_four
+    @badge = Badge.new
   end
 
   def step_five
