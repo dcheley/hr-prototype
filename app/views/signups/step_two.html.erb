@@ -51,6 +51,15 @@
         <div class="avatar_container">
           <%= f.file_field :avatar %>
         </div>
+        </br>
+        <div style="text-align: left;">
+          <b>OR</b>
+        </div>
+
+        <div class="check-box">
+          <%= f.check_box :intranet %>
+          <%= f.label :intranet, "Request intranet photo upload (takes up to 24 hours)" %>
+        </div>
 
         <div class="check-box">
           <%= f.check_box :image_delete %>
