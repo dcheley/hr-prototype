@@ -12,8 +12,8 @@
         </div>
 
         <div class="float" style="clear: both;">
-          <%= link_to "/users/#{@user.id}", class:"cancel-link" do %>
-            <div class="submit-blue">BACK TO PROFILE</div>
+          <%= link_to "/users/#{@user.id}", class:"cancel-center-link" do %>
+            <div class="submit-blue">BACK TO <%= "#{@user.name}".upcase %>'s PROFILE</div>
           <% end %>
         </div>
       </div>

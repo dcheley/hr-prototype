@@ -34,7 +34,7 @@
       <div class="center-float-wrap">
         <div class="float" style="margin-left: 5px; margin-right: 5px;">
           <%= link_to "/users/#{@user.id}", class:"cancel-center-link" do %>
-            <div class="submit-blue">BACK TO PROFILE</div>
+            <div class="submit-blue">BACK TO <%= "#{@user.name}".upcase %>'s PROFILE</div>
           <% end %>
         </div>
 
