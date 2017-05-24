@@ -23,3 +23,10 @@
 .track-progress[data-steps="4"] li { width: 25%; }
 .track-progress[data-steps="5"] li { width: 20%; }
 .track-progress[data-steps="6"] li { width: 16%; }
+
+.track-progress li > span {
+  display: block;
+  color: $medium-grey;
+  font-weight: bold;
+  text-transform: uppercase;
+}
