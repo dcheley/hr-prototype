@@ -7,7 +7,13 @@
 
         <div class="float">
           <%= link_to "/users/#{@user.id}/recognitions/#{@recognition.id}", class:"cancel-link" do %>
-            <div class="submit-blue">CANCEL</div>
+            <div class="delete">CANCEL</div>
+          <% end %>
+        </div>
+
+        <div class="float" style="clear: both;">
+          <%= link_to "/users/#{@user.id}", class:"cancel-link" do %>
+            <div class="submit-blue">BACK TO PROFILE</div>
           <% end %>
         </div>
       </div>

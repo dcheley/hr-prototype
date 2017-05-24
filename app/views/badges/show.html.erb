@@ -9,9 +9,9 @@
       </div>
 
       <% if @badge.description != nil && @badge.description != "" %>
-      <div class="badge-description-wrap">
-        <p class="badge-description"><%= @badge.description %></p>
-      </div>
+        <div class="badge-description-wrap">
+          <p class="badge-description"><%= @badge.description %></p>
+        </div>
       <% else %>
         <% if @badge.opportunity_id == nil %>
           <div class="team-info" style="font-size: 16px; margin: 30px auto;">
@@ -20,11 +20,11 @@
                 style:"margin-left: 0;" %>
           </div>
         <% else %>
-        <div class="team-info" style="font-size: 16px; margin: 30px auto;">
-          <%= link_to "Write about your key takeaways from this event.",
-              "/users/#{@user.id}/badges/#{@badge.id}/edit", class:"team-link",
-              style:"margin-left: 0;" %>
-        </div>
+          <div class="team-info" style="font-size: 16px; margin: 30px auto;">
+            <%= link_to "Write about your key takeaways from this event.",
+                "/users/#{@user.id}/badges/#{@badge.id}/edit", class:"team-link",
+                style:"margin-left: 0;" %>
+          </div>
         <% end %>
       <% end %>
 

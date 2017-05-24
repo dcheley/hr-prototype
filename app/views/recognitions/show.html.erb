@@ -16,7 +16,7 @@
       <% else %>
       <div class="team-info" style="font-size: 16px; margin: 30px auto;">
         <%= link_to "Describe how #{@user.name} went above and beyond in 500 characters or less.",
-            "/users/#{@user.id}/badges/#{@recognition.id}/edit", class:"team-link",
+            "/users/#{@user.id}/recognitions/#{@recognition.id}/edit", class:"team-link",
             style:"margin-left: 0;" %>
       </div>
       <% end %>
