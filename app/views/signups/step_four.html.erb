@@ -1,14 +1,15 @@
-<div class="container" style="width: 80%; text-align: center; margin-top: 0; margin-bottom: 0;">
-  <% if current_user %>
-  <ol class="track-progress" data-steps="6">
-    <li class="done"><span>Disclaimer</span></li>
-    <li class="done"><span>Personal Info</span></li>
-    <li class="done"><span>Career Info</span></li>
-    <li><span>Education Badge</span></li>
-    <li><span>Experience Badge</span></li>
-    <li><span>Complete Sign Up</span></li>
-  </ol>
-
+<% if current_user %>
+  <div class="container" style="margin-top: 10px; text-align: center;">
+    <ol class="track-progress" data-steps="6">
+      <li class="done"><span>Disclaimer</span></li>
+      <li class="done"><span>Personal Info</span></li>
+      <li class="done"><span>Career Info</span></li>
+      <li><span>Education Badge</span></li>
+      <li><span>Experience Badge</span></li>
+      <li><span>Complete Sign Up</span></li>
+    </ol>
+  </div>
+  <div class="container" style="width: 80%; text-align: center; margin-top: 0; margin-bottom: 0;">
     <h2 class="form-option" style="padding-bottom: 30px;">Education Badges</h2>
 
     <div class="badge-row">
@@ -65,13 +66,14 @@
 
       <% end %>
 
-      <div class="float">
-        <%= link_to :logout, class:"cancel-link" do %>
-          <div class="delete">CANCEL</div>
-        <% end %>
+        <div class="float">
+          <%= link_to :logout, class:"cancel-link" do %>
+            <div class="delete">CANCEL</div>
+          <% end %>
+        </div>
       </div>
-    </div>
-  <% else %>
-    <h1 class="login-message"><%= link_to "LOGIN", :login %> to create a badge</h1>
-  <% end %>
-</div>
+
+<% else %>
+  <h1 class="login-message"><%= link_to "LOGIN", :login %> to create a badge</h1>
+<% end %>
+  </div>

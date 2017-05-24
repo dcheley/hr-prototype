@@ -18,7 +18,7 @@
   text-align: center;
   line-height: 30px;
   height: 30px;
-  // background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
 
 .track-progress[data-steps="3"] li { width: 33%; }
@@ -36,4 +36,60 @@
 .track-progress li.done > span {
   color: #666;
   background-color: #ccc;
+}
+
+//Arrow Shape
+.track-progress li > span:after,
+.track-progress li > span:before {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: solid transparent;
+  border-left-color: #f0f0f0;
+  border-width: 15px;
+}
+
+.track-progress li > span:after {
+  top: -5px;
+  z-index: 1;
+  border-left-color: white;
+  border-width: 20px;
+}
+
+.track-progress li > span:before {
+  z-index: 2;
+}
+
+.track-progress li.done + li > span:before {
+  border-left-color: #ccc;
+}
+
+.track-progress li:first-child > span:after,
+.track-progress li:first-child > span:before {
+  display: none;
+}
+
+.track-progress li:first-child i,
+.track-progress li:last-child i {
+  display: block;
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: solid transparent;
+  border-left-color: white;
+  border-width: 15px;
+}
+
+.track-progress li:last-child i {
+  left: auto;
+  right: -15px;
+  border-left-color: transparent;
+  border-top-color: white;
+  border-bottom-color: white;
 }

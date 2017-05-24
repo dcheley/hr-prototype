@@ -1,28 +1,35 @@
-<div class="container" style="width: 80%; text-align: center; margin-top: 0; margin-bottom: 0;">
-  <ol class="track-progress" data-steps="6">
-    <li class="done"><span>Disclaimer</span></li>
-    <li class="done"><span>Personal Info</span></li>
-    <li class="done"><span>Career Info</span></li>
-    <li class="done"><span>Education Badge</span></li>
-    <li class="done"><span>Experience Badge</span></li>
-    <li><span>Complete Sign Up</span></li>
-  </ol>
+<% if current_user %>
+  <div class="container" style="margin-top: 10px; text-align: center;">
+    <ol class="track-progress" data-steps="6">
+      <li class="done"><span>Disclaimer</span></li>
+      <li class="done"><span>Personal Info</span></li>
+      <li class="done"><span>Career Info</span></li>
+      <li class="done"><span>Education Badge</span></li>
+      <li class="done"><span>Experience Badge</span></li>
+      <li><span>Complete Sign Up</span></li>
+    </ol>
+  </div>
 
-  <div class="center-float-wrap">
-    <div class="float">
-      <%= form_for(current_user) do |f| %>
-        <%= f.hidden_field :agreement, value: true %>
-        <%= f.fields_for :signup_attributes do |s| %>
-          <%= s.hidden_field :step_six, value: true %>
+  <div class="container" style="width: 80%; text-align: center; margin-top: 0; margin-bottom: 0;">
+    <div class="center-float-wrap">
+      <div class="float">
+        <%= form_for(current_user) do |f| %>
+          <%= f.hidden_field :agreement, value: true %>
+          <%= f.fields_for :signup_attributes do |s| %>
+            <%= s.hidden_field :step_six, value: true %>
+          <% end %>
+          <%= f.submit "AGREE", class:"submit-green" %>
         <% end %>
-        <%= f.submit "AGREE", class:"submit-green" %>
-      <% end %>
-    </div>
+      </div>
 
-    <div class="float">
-      <%= link_to :logout, class:"cancel-link" do %>
-        <div class="delete">CANCEL</div>
-      <% end %>
+      <div class="float">
+        <%= link_to :logout, class:"cancel-link" do %>
+          <div class="delete">CANCEL</div>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+  
+<% else %>
+  <h1 class="login-message"><%= link_to "LOGIN", :login %> to create a badge</h1>
+<% end %>
