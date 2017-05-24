@@ -1,5 +1,11 @@
 <% if current_user %>
   <div class="background" style="text-align: center;">
+    <div style="text-align: center;">
+      <%= link_to "/users/opps", class:"cancel-center-link" do %>
+        <div class="submit-blue">BACK TO OPPORTUNITIES</div>
+      <% end %>
+    </div>
+
     <h2 class="opp-headers"><%= @opportunity.name %></h2>
 
     <div class="opp-photo-frame">
