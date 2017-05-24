@@ -33,7 +33,7 @@ class BadgesController < ApplicationController
         redirect_to "/signups/step_six", notice: "#{@badge.name} badge added to profile! Verify your Sign Up below to start using the App"
     elsif @badge.save && @badge.opportunity_id != nil
       redirect_to "/users/#{current_user.id}/badges/#{@badge.id}", notice: "Successfully signed up for #{@badge.name}!"
-    elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup.step_six != nil
+    elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup == nil
       render :new
     elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup.step_four == true
       render 'signups/step_four'
