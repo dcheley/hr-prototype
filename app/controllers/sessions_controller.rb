@@ -4,10 +4,10 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:email])
-    if user && user.authenticate(params[:password]) && user.signup == nil
+    if user && user.authenticate(params[:password]) && user.agreement != true
       session[:user_id] = user.id
       redirect_to "/signups/new", notice: "Agree to terms to begin sign up"
-    elsif user && user.authenticate(params[:password]) && user.signup != nil
+    elsif user && user.authenticate(params[:password]) && user.agreement == true
       session[:user_id] = user.id
       redirect_to "/users/org_charts", notice: "Logged in"
     else

@@ -5,12 +5,11 @@ class SignupsController < ApplicationController
 
   def create
     @signup = Signup.new(signup_params)
-
-    if @signup.save && @signup.step_four == true
-      redirect_to "/signups/step_five", notice: "Now create an Experience Badge"
-    else
-      render "signups/step_four"
-    end
+    # if @signup.save && @signup.step_four == true
+    #   redirect_to "/signups/step_five", notice: "Now create an Experience Badge"
+    # else
+    #   render "signups/step_four"
+    # end
   end
 
   def update
