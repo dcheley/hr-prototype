@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .track-progress {
   margin: 0;
+  margin-top: 15px;
   padding: 0;
   overflow: hidden;
 }
@@ -29,4 +30,9 @@
   color: $medium-grey;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.track-progress li.done > span {
+  color: #666;
+  background-color: #ccc;
 }
