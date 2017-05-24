@@ -1,6 +1,6 @@
 <%= image_tag("meeting.jpeg", class:"background-image")%>
 
-<div class="home-right">
+<div class="home-right" style="text-align: center;">
   <div class="login-wrap">
     <h1 class="form-title">Employee Engagement App</h1>
 
@@ -25,6 +25,9 @@
 
     <% else %>
         <p class="form-title">Use the <b>links</b> in the <b>top right</b> to navigate through content</p>
+        <% if current_user.agreement != true %>
+          <b><%= link_to "Woops, Logout to restart Account Sign Up", :logout %></b>
+        <% end %>
     <% end %>
   </div>
 </div>

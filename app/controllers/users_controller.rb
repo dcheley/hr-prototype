@@ -68,7 +68,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(user_params) && @user.signup.step_six == true
-      flash[:alert] = "Account successfully updated"
+      flash[:alert] = "Account Sign Up complete!"
       redirect_to user_url
     elsif @user.update_attributes(user_params) && @user.signup.step_one == true
       redirect_to "/signups/step_two", notice: "Start setting up your account details below"

@@ -30,7 +30,7 @@ class BadgesController < ApplicationController
     elsif @badge.save && @badge.opportunity_id == nil && @badge.signup.step_four == true
         redirect_to "/signups/step_five", notice: "#{@badge.name} badge added to profile! Now add an experience badge"
     elsif @badge.save && @badge.opportunity_id == nil && @badge.signup.step_five == true
-        redirect_to "/signups/step_six", notice: "#{@badge.name} badge added to profile! Add more badges to your profile or start browsing."
+        redirect_to "/signups/step_six", notice: "#{@badge.name} badge added to profile! Verify your Sign Up below to start using the App"
     elsif @badge.save && @badge.opportunity_id != nil
       redirect_to "/users/#{current_user.id}/badges/#{@badge.id}", notice: "Successfully signed up for #{@badge.name}!"
     elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup.step_six != nil
