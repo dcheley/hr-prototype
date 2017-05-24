@@ -7,7 +7,7 @@
 
 <div class="tab-content">
   <div role="tabpane1" class="tab-pane active" id="edu">
-    <p class="badge-list-title" style="left: 10px;"><%= link_to "Add more on your education", "/users/#{current_user.id}/badges/new", class:"team-link" %></p>
+    <p class="badge-list-title" style="left: 10px;"><%= link_to "Add education badges to your profile", "/users/#{current_user.id}/badges/new", class:"team-link" %></p>
     <div class="badge-row" style="padding-top: 30px;">
       <!-- Display Green Badges -->
       <% @user.badges.where(opportunity_id: nil, education: true).each do |b| %>
@@ -22,7 +22,7 @@
     </div>
   </div>
   <div role="tabpane1" class="tab-pane" id="skillz">
-    <p class="badge-list-title" style="left: 25%;"><%= link_to "Add another skill or experience", "/badges/exp", class:"team-link" %></p>
+    <p class="badge-list-title" style="left: 25%;"><%= link_to "Add experience badges to your profile", "/badges/exp", class:"team-link" %></p>
     <div class="badge-row" style="padding-top: 30px;">
       <!-- Display Green Badges -->
       <% @user.badges.where(opportunity_id: nil, exp: true).each do |b| %>
@@ -37,7 +37,7 @@
     </div>
   </div>
   <div role="tabpane1" class="tab-pane" id="eventz">
-    <p class="badge-list-title" style="right: 30%;"><%= link_to "View events", "/users/opps", class:"team-link" %></p>
+    <p class="badge-list-title" style="right: 30%;"><%= link_to "Sign up to upcoming events", "/users/opps", class:"team-link" %></p>
     <div class="badge-row" style="padding-top: 30px;">
       <!-- Display Green Badges -->
       <% @user.badges.where.not(opportunity_id: nil).each do |b| %>
