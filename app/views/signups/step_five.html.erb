@@ -26,13 +26,13 @@
       <% end %>
 
       <div class="field">
-        <%= f.label :name, "Type of Experience", class:"field-label" %>
+        <%= f.label :name, "Type of Experience", class:"field-label", placeholder:"(e.g) 15 years in finance" %>
         <%= f.text_field :name, class:"field-input" %>
       </div>
 
       <div class="field">
         <%= f.label :description, class:"field-label" %>
-        <%= f.text_area :description, class:"field-input", placeholder:"Describe how you gained this experience in 500 characters or less." %>
+        <%= f.text_area :description, class:"field-input", placeholder:"(e.g) Headed finance department at Rona" %>
       </div>
 
       <%= f.hidden_field :exp, value: true %>

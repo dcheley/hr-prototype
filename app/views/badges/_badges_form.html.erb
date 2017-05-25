@@ -28,7 +28,7 @@
     <% if current_page?(action: "new") %>
       <%= f.text_area :description, class:"field-input", placeholder:"Describe your credentials in 500 characters or less." %>
     <% elsif current_page?(action: "exp") %>
-      <%= f.text_area :description, class:"field-input", placeholder:"(e.g) Headed finance department at Rena" %>
+      <%= f.text_area :description, class:"field-input", placeholder:"(e.g) Headed finance department at Rona" %>
     <% else %>
       <%= f.text_area :description, class:"field-input", placeholder:"Describe your #{@badge.name} badge in 500 characters or less."%>
    <% end %>
