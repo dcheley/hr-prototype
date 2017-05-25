@@ -72,13 +72,13 @@ class UsersController < ApplicationController
       redirect_to user_url
     # elsif @user.update_attributes(user_params) && @user.signup.step_one == true
     #   redirect_to "/signups/step_two", notice: "Start setting up your account details below"
-    elsif @user.update_attributes(user_params) && @user.signup.step_two == true
+    elsif @user.update_attributes(user_params) && @user.signup.step_two == true && @user.signup.step_three != true
       redirect_to "/signups/step_three", notice: "Describe your Career Aspirations and Job Responsibilities below"
-    elsif @user.update_attributes(user_params) && @user.signup.step_three == true
+    elsif @user.update_attributes(user_params) && @user.signup.step_three == true && @user.signup.step_four != true
       redirect_to "/signups/step_four", notice: "Choose or Create your Education Badges below"
-    elsif @user.update_attributes(user_params) && @user.signup.step_four == true
+    elsif @user.update_attributes(user_params) && @user.signup.step_four == true && @user.signup.step_five != true
       redirect_to "/signups/step_five", notice: "Choose or Create your Experience Badges below"
-    elsif @user.update_attributes(user_params) && @user.signup.step_five == true
+    elsif @user.update_attributes(user_params) && @user.signup.step_five == true && @user.signup.step_six != true
       redirect_to "/signups/step_six", notice: "Verify your Sign Up below to start using the App"
     else
       render :edit
