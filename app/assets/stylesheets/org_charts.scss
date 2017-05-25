@@ -9,12 +9,25 @@
 .org-menu-container {
   margin: 2rem auto;
   width: 100%;
-  padding-left: 10%;
+  padding-left: 12%;
 }
 
 .org-container {
   margin: 2rem auto;
   max-width: 100%;
+}
+
+.feed-wrap {
+  width: 100%;
+  margin: auto;
+}
+
+.feed-title {
+  text-align: center;
+}
+
+.feed-list {
+  list-style: none;
 }
 
 @media screen and (max-width: 1121px) {
