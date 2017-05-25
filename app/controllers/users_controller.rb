@@ -99,6 +99,6 @@ private
     :title, :avatar, :job_description, :adm, :director, :manager, :staff, :adm_office,
     :strategic_human_resources, :service_management_and_facilities, :business_planning_and_finance,
     :co_op, :image_delete, :career_aspirations, :direct_report, :agreement, :intranet,
-    signup_attributes: [:id, :user_id, :step_one, :step_two, :step_three, :step_six])
+    signup_attributes: [:id, :user_id, :step_one, :step_two, :step_three, :step_four, :step_five, :step_six])
   end
 end
