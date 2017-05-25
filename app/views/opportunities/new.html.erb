@@ -26,6 +26,15 @@
       <%= f.text_field :link, class:"field-input" %>
     </div>
 
+    <div class="avatar_container">
+      <%= f.file_field :avatar %>
+    </div>
+
+    <div class="check-box">
+      <%= f.check_box :image_delete %>
+      <%= f.label :image_delete, "Delete Image" %>
+    </div>
+
     <div class="center-float-wrap">
       <div class="float">
         <%= f.submit "SUBMIT", class:"submit-green" %>
