@@ -33,7 +33,7 @@
     <% end %>
 
     <div class="center-float-wrap">
-
+      <% if @opportunity.creator_id == current_user.id %>
         <div class="float" style="margin-right: 7.5px;">
           <%= link_to 'EDIT', "/opportunities/#{@opportunity.id}/edit", class:"submit-blue" %>
         </div>
@@ -43,7 +43,8 @@
              'destroy', :user_id => current_user.id, :id => "#{@opportunity.id}"},
               method: :delete, data: { confirm: "You sure? Opportunity will be permanenetly removed!" }, class:"delete" %>
         </div>
-
+      <% end %>
+      
         <div class="float" style="clear: both; width: 100%;">
           <%= form_for([@opportunity, @badge]) do |f| %>
             <%= f.hidden_field :name, value: @opportunity.name %>

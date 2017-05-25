@@ -1,5 +1,5 @@
 class OpportunitiesController < ApplicationController
-  before_action :load_opportunity, only: [:show, :edit, :update, :like, :unlike]
+  before_action :load_opportunity, only: [:show, :edit, :update, :destroy, :like, :unlike]
 
   def new
     @opportunity = Opportunity.new
