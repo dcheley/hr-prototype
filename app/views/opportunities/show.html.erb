@@ -44,8 +44,8 @@
               method: :delete, data: { confirm: "You sure? Opportunity will be permanenetly removed!" }, class:"delete" %>
         </div>
       <% end %>
-      
-        <div class="float" style="clear: both; width: 100%;">
+
+        <div class="float" style="clear: both; width: 100%; margin-top: 10px;">
           <%= form_for([@opportunity, @badge]) do |f| %>
             <%= f.hidden_field :name, value: @opportunity.name %>
             <%= f.hidden_field :description, value: @opportunity.description %>
