@@ -24,6 +24,7 @@ User.create([{ name: "Robert B", email: "robb@email.com", phone: "(416) 222-2222
   { name: "Yvonne C", email: "yc@email.com", phone: "(416) 111-1111", title: "HR Business Advisor", strategic_human_resources: true, staff: true, password: "680748" },
   { name: "Dianne B", email: "dib@email.com", phone: "(416) 333-333", title: "Workforce Planner", strategic_human_resources: true, staff: true, password: "300229" },
   { name: "Sean D", email: "sd@email.com", phone: "(416) 222-2222", title: "HR Project Advisor", strategic_human_resources: true, staff: true, password: "280225" },
+  { name: "Gurjinder K", email: "gur@email.com", phone: "(416) 222-2222", title: "Jr Workforce Planner", strategic_human_resources: true, staff: true, password: "654752" },
   { name: "Xander N", email: "xn@email.com", phone: "(416) 111-1111", title: "HR Business Advisor", strategic_human_resources: true, staff: true, password: "143537" },
   #SMF
   { name: "Nelson J", email: "nj@email.com", phone: "(416) 111-1111", title: "Director", service_management_and_facilities: true, director: true, password: "545357" },
