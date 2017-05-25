@@ -11,7 +11,7 @@
 
       <% if @recognition.description != nil && @recognition.description != "" %>
       <div class="badge-description-wrap">
-        <p class="badge-description"><%= @recognition.description %></p>
+        <p class="badge-description"><%= link_to @recognition.description, "/users/#{@user.id}/recognitions/#{@recognition.id}/edit", class:"team-link" %></p>
       </div>
       <% else %>
       <div class="team-info" style="font-size: 16px; margin: 30px auto;">

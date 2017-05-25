@@ -10,7 +10,7 @@
 
       <% if @badge.description != nil && @badge.description != "" %>
         <div class="badge-description-wrap">
-          <p class="badge-description"><%= @badge.description %></p>
+          <p class="badge-description"><%= link_to @badge.description, "/users/#{@user.id}/badges/#{@badge.id}/edit", class:"team-link" %></p>
         </div>
       <% else %>
         <% if @badge.opportunity_id == nil %>
