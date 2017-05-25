@@ -9,7 +9,11 @@
     <h2 class="opp-headers"><%= @opportunity.name %></h2>
 
     <div class="opp-photo-frame">
-      <%= image_tag('huddle.png', class:"tile__img") %>
+      <% if @opportunity.avatar.file? != true %>
+        <%= image_tag('huddle.png', class:"tile__img") %>
+      <% else %>
+        <%= image_tag @opportunity.avatar.url(:large), class:"tile__img" %>
+      <% end %>
     </div>
 
     <div class="opp-details">
