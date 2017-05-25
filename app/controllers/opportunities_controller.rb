@@ -7,6 +7,7 @@ class OpportunitiesController < ApplicationController
 
   def create
     @opportunity = Opportunity.new(opportunity_params)
+    @opportunity.creator_id = current_user.id
     if @opportunity.save
       redirect_to "/users/opps", notice: "#{@opportunity.name} successfully created"
     else
@@ -62,6 +63,6 @@ private
   end
 
   def opportunity_params
-    params.require(:opportunity).permit(:name, :description, :avatar, :link)
+    params.require(:opportunity).permit(:name, :description, :avatar, :link, :creator_id)
   end
 end
