@@ -1,10 +1,12 @@
-<% if params[:search] %>
-  <b><%= @users.count %> Profiles found:</b>
-  <% @users.each do |u| %>
-    <%= link_to "#{u.name}", "/users/#{u.id}" %>
+<div class="container" style="text-align: center;">
+  <% if params[:search] %>
+    <p class="search-counter"><b><%= @users.count %></b> Profiles found:</p>
+    <% @users.each do |u| %>
+      <p class="search-result"><%= link_to "#{u.name}", "/users/#{u.id}", class:"team-link" %></p>
+    <% end %>
   <% end %>
-<% end %>
 
-<% if @users.blank? %>
-  <% flash[:alert] = "No results found for '#{params[:search]}'." %>
-<% end %>
+  <% if @users.blank? %>
+    <% flash[:alert] = "No results found for '#{params[:search]}'." %>
+  <% end %>
+</div>

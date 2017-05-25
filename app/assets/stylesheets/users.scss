@@ -232,11 +232,15 @@
   padding-left: 0;
 }
 
-// .badge-list {
-//   font-size: 16px;
-//   padding-bottom: 60px;
-//   padding-left: 9%;
-// }
+.search-counter {
+  font-size: 32px;
+  margin-top: 15px;
+}
+
+.search-result {
+  margin-top: 30px;
+  font-size: 16px;
+}
 
 @media screen and (max-width: 939px) {
   .left-profile,
