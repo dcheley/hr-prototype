@@ -20,6 +20,11 @@ class OpportunitiesController < ApplicationController
     end
   end
 
+  def destroy
+    @opportunity.destroy
+    redirect_to "/users/opps", notice: "#{@opportunity.name} successfully deleted!"
+  end
+
   def index
     @opportunities = Opportunity.all
   end

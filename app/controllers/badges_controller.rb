@@ -61,8 +61,7 @@ class BadgesController < ApplicationController
 
   def destroy
     @badge.destroy
-    flash[:notice] = "#{@badge.name} badge successfully deleted!"
-    redirect_to user_url(@user)
+    redirect_to user_url(@user), notice: "#{@badge.name} badge successfully deleted!"
   end
 
   def like
