@@ -32,17 +32,31 @@
       <%= render 'likes' %>
     <% end %>
 
-    <div>
-      <%= form_for([@opportunity, @badge]) do |f| %>
-        <%= f.hidden_field :name, value: @opportunity.name %>
-        <%= f.hidden_field :description, value: @opportunity.description %>
-        <%= f.hidden_field :user_id, value: current_user.id %>
-        <%= f.hidden_field :opportunity_id, value: @opportunity.id %>
-        <%= f.hidden_field :green, value: true %>
-        <%= f.hidden_field :exp, value: true %>
-        <%= f.submit "VERIFY SIGN UP", class:"submit-green", style:"margin: 20px auto;" %>
-      <% end %>
+    <div class="center-float-wrap">
+
+        <div class="float" style="margin-right: 7.5px;">
+          <%= link_to 'EDIT', "/opportunities/#{@opportunity.id}", class:"submit-blue" %>
+        </div>
+
+        <div class="float" style="margin-left: 7.5px;">
+          <%= button_to 'DELETE', {:controller => 'opportunities', :action =>
+             'destroy', :user_id => current_user.id, :id => "#{@opportunity.id}"},
+              method: :delete, data: { confirm: "You sure? Opportunity will be permanenetly removed!" }, class:"delete" %>
+        </div>
+
+        <div class="float" style="clear: both; width: 100%;">
+          <%= form_for([@opportunity, @badge]) do |f| %>
+            <%= f.hidden_field :name, value: @opportunity.name %>
+            <%= f.hidden_field :description, value: @opportunity.description %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            <%= f.hidden_field :opportunity_id, value: @opportunity.id %>
+            <%= f.hidden_field :green, value: true %>
+            <%= f.hidden_field :exp, value: true %>
+            <%= f.submit "VERIFY SIGN UP", class:"submit-green", style:"margin: 20px auto;" %>
+          <% end %>
+        </div>
     </div>
+
   </div>
 <% else %>
   <h1 class="login-message"><%= link_to "LOGIN", :login %> to view <%= @opportunity.name %> details</h1>
