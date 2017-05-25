@@ -1,4 +1,6 @@
 <div class="container" style="text-align: center;">
+  <h1 class="form-title" style="padding-top: 3%;">Create Opportunity</h1>
+
   <%= form_for(@opportunity) do |f| %>
     <% if @opportunity.errors.any? %>
       <h2 class="error-header"><%= pluralize(@opportunity.errors.count, "error") %> occurred!</h2>
