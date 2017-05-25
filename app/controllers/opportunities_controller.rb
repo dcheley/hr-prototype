@@ -1,5 +1,5 @@
 class OpportunitiesController < ApplicationController
-  before_action :load_opportunity, only: [:show, :like, :unlike]
+  before_action :load_opportunity, only: [:show, :edit, :update, :like, :unlike]
 
   def new
     @opportunity = Opportunity.new
@@ -17,6 +17,17 @@ class OpportunitiesController < ApplicationController
   def show
     if current_user
       @badge = current_user.badges.build
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @opportunity.update_attributes(opportunity_params)
+      redirect_to opportunity_url, notice: "#{@opportunity.name} successfully updated"
+    else
+      render :edit
     end
   end
 

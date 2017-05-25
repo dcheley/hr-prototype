@@ -17,9 +17,9 @@
     </div>
 
     <div class="opp-details">
-      <p class="opp-info" style="text-align: center"><%= @opportunity.bonus %></p></br>
+      <p class="opp-info"><%= @opportunity.bonus %></p></br>
       <p class="opp-info"><%= @opportunity.description %></p></br>
-      <p class="opp-info" style="text-align: center"><%= link_to "#{@opportunity.link}", "#{@opportunity.link}", target: "_blank" %></p>
+      <p class="opp-info"><%= link_to "#{@opportunity.link}", "#{@opportunity.link}", target: "_blank" %></p>
     </div>
 
     <% if current_user.liked? @opportunity %>
@@ -35,7 +35,7 @@
     <div class="center-float-wrap">
 
         <div class="float" style="margin-right: 7.5px;">
-          <%= link_to 'EDIT', "/opportunities/#{@opportunity.id}", class:"submit-blue" %>
+          <%= link_to 'EDIT', "/opportunities/#{@opportunity.id}/edit", class:"submit-blue" %>
         </div>
 
         <div class="float" style="margin-left: 7.5px;">
