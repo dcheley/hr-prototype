@@ -12,7 +12,7 @@
       <% if @opportunity.avatar.file? != true %>
         <%= image_tag('huddle.png', class:"tile__img") %>
       <% else %>
-        <%= image_tag @opportunity.avatar.url(:large), class:"tile__img" %>
+        <%= image_tag @opportunity.avatar.url(:medium), class:"tile__img" %>
       <% end %>
     </div>
 
