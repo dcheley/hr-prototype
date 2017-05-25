@@ -1,8 +1,10 @@
 <div class="container" style="text-align: center;">
   <% if params[:search] %>
     <p class="search-counter"><b><%= @users.count %></b> Profiles found:</p>
+      <div class="divider"></div>
     <% @users.each do |u| %>
       <p class="search-result"><%= link_to "#{u.name}", "/users/#{u.id}", class:"team-link" %></p>
+      <div class="divider"></div>
     <% end %>
   <% end %>
 
