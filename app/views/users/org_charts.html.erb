@@ -80,55 +80,6 @@
     </div>
   </section>
 
-  <h1 class="org-title">Activity Feed</h1>
-
-  <div class="feed-wrap">
-    <div class="quarter">
-      <h4 class="feed-title", style="margin-top: 15px;">Recognition</h4>
-      <% @received_badges.each do |r| %>
-        <ul class="feed-list">
-          <li class="feed-item"><b>Recognized for:</b><%= link_to  "#{r.name}", "/users/#{r.receiver_id}/recognitions/#{r.id}" %></li>
-          <li class="feed-item"><b>Given to:</b> <%= User.where(id: :receiver_id).name %></li>
-          <li class="feed-item"><b>Given by:</b> <%= User.where(id: :recognizer_id).name %></li>
-          <li class="feed-item"><b>At:</b> <%= r.created_at %></b></li>
-        </ul>
-      <% end %>
-    </div>
-
-    <div class="quarter">
-      <h4 class="feed-title", style="margin-top: 15px;">Opportunities</h4>
-      <% @opportunity_badges.each do |o| %>
-        <ul class="feed-list">
-          <li class="feed-item"><b>Opportunity:</b><%= link_to "#{o.name}", "/users/#{o.user_id}/badges/#{o.id}" %></li>
-          <li class="feed-item"><b>Participant:</b> <%= User.where(id: :user_id).name %></li>
-          <li class="feed-item"><b>At:</b> <%= o.created_at %></b></li>
-        </ul>
-      <% end %>
-    </div>
-
-    <div class="quarter">
-      <h4 class="feed-title", style="margin-top: 15px;">Education Badges</h4>
-      <% @edu_badges.each do |b| %>
-        <ul class="feed-list">
-          <li class="feed-item"><b>Credential:</b><%= link_to  "#{b.name}", "/users/#{b.user_id}/badges/#{b.id}" %></li>
-          <li class="feed-item"><b>Created by:</b> <%= User.where(id: :user_id).name %></li>
-          <li class="feed-item"><b>At:</b> <%= b.created_at %></b></li>
-        </ul>
-      <% end %>
-    </div>
-
-    <div class="quarter">
-      <h4 class="feed-title", style="margin-top: 15px;">Experience Badges</h4>
-      <% @exp_badges.each do |e| %>
-        <ul class="feed-list">
-          <li class="feed-item"><b>Experience:</b><%= link_to  "#{e.name}", "/users/#{e.user_id}/badges/#{e.id}" %></li>
-          <li class="feed-item"><b>Created by:</b> <%= User.where(id: :user_id).name %></li>
-          <li class="feed-item"><b>At:</b> <%= e.created_at %></b></li>
-        </ul>
-      <% end %>
-    </div>
-  </div>
-
 <% elsif current_user && current_user.co_op != nil %>
   <h1 class="org-title">Co-op Students</h1>
 

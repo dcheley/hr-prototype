@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get '/pages/*page' => 'pages#show'
 
+  get '/users/home'
   get '/users/org_charts'
   get '/users/admo_org_chart'
   get '/users/bpf_org_chart'
