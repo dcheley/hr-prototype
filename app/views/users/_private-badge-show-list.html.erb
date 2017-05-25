@@ -1,7 +1,7 @@
 <ul class="nav nav-pills nav-justified">
   <li role="presentation" class="active"><a href="#edu" data-toggle="pill">Education</a></li>
   <li role="presentation"><a href="#skillz" data-toggle="pill">Experience</a></li>
-  <li role="presentation"><a href="#eventz" data-toggle="pill">Events</a></li>
+  <li role="presentation"><a href="#eventz" data-toggle="pill">Opportunities</a></li>
   <li role="presentation"><a href="#recognitionz" data-toggle="pill">Recognition</a></li>
 </ul>
 
@@ -37,7 +37,7 @@
     </div>
   </div>
   <div role="tabpane1" class="tab-pane" id="eventz">
-    <p class="badge-list-title" style="right: 30%;"><%= link_to "Sign up to upcoming events", "/users/opps", class:"team-link" %></p>
+    <p class="badge-list-title" style="right: 30%;"><%= link_to "Sign up to upcoming opportunities", "/users/opps", class:"team-link" %></p>
     <div class="badge-row" style="padding-top: 30px;">
       <!-- Display Green Badges -->
       <% @user.badges.where.not(opportunity_id: nil).each do |b| %>

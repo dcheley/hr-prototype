@@ -48,7 +48,6 @@ class BadgesController < ApplicationController
   end
 
   def update
-    # add step 6 here
     if @badge.update_attributes(badge_params)
       flash[:notice] = "#{@badge.name} badge successfully updated!"
       redirect_to "/users/#{@user.id}/badges/#{@badge.id}"
