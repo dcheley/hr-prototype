@@ -82,9 +82,9 @@
 
   <h1 class="org-title">Activity Feed</h1>
 
-  <h4 class="org-title", style="margin-top: 15px;">Recognition</h4>
+  <h4 class="feed-title", style="margin-top: 15px;">Recognition</h4>
   <% @received_badges.each do |r| %>
-    <ul>
+    <ul style="list-style: none;">
       <li><%= link_to  "#{r.name}", "/users/#{r.receiver_id}/recognitions/#{r.id}" %></li>
       <li><b>Given to:</b> <%= User.where(id: :receiver_id).name %></li>
       <li><b>Given by:</b> <%= User.where(id: :recognizer_id).name %></li>
@@ -92,9 +92,23 @@
     </ul>
   <% end %>
 
-  <h4 class="org-title", style="margin-top: 15px;">Opportunities</h4>
+  <h4 class="feed-title", style="margin-top: 15px;">Opportunities</h4>
+  <% @opportunity_badges.each do |o| %>
+    <ul style="list-style: none;">
+      <li><%= link_to  "#{o.name}", "/users/#{o.user_id}/badges/#{o.id}" %></li>
+      <li><b>Participant:</b> <%= User.where(id: :user_id).name %></li>
+      <li><b>At:</b> <%= o.created_at %></b></li>
+    </ul>
+  <% end %>
 
-  <h4 class="org-title", style="margin-top: 15px;">Badges</h4>
+  <h4 class="feed-title", style="margin-top: 15px;">Badges</h4>
+  <% @badges.each do |b| %>
+    <ul style="list-style: none;">
+      <li><%= link_to  "#{b.name}", "/users/#{b.user_id}/badges/#{b.id}" %></li>
+      <li><b>Created by:</b> <%= User.where(id: :user_id).name %></li>
+      <li><b>At:</b> <%= b.created_at %></b></li>
+    </ul>
+  <% end %>
 
 
 <% elsif current_user && current_user.co_op != nil %>

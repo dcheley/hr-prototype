@@ -23,7 +23,9 @@ class UsersController < ApplicationController
   end
 
   def org_charts
-    @received_badges = Recognition.where.not(receiver_id: nil)
+    @received_badges = Recognition.where.not(receiver_id: nil).order("created_at ASC")
+    @opportunity_badges = Badge.where.not(opportunity_id: nil).order("created_at ASC")
+    @badges = Badge.where(opportunity_id: nil).order("created_at ASC")
   end
 
   def opps
