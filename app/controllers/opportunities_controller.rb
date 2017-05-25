@@ -1,6 +1,19 @@
 class OpportunitiesController < ApplicationController
   before_action :load_opportunity, only: [:show, :like, :unlike]
 
+  def new
+    @opportunity = Opportunity.new
+  end
+
+  def create
+    @opportunity = Opportunity.new(opportunity_params)
+    if @opportunity.save
+      redirect_to "/users/opps", notice: "#{@opportunity.name} successfully created"
+    else
+      render :new
+    end
+  end
+
   def show
     if current_user
       @badge = current_user.badges.build
@@ -33,6 +46,6 @@ private
   end
 
   def opportunity_params
-    params.require(:opportunity).permit(:name, :description, :avatar)
+    params.require(:opportunity).permit(:name, :description, :avatar, :link)
   end
 end

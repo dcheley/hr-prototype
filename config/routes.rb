@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   resources :signups, only: [:new, :create, :update]
   resources :users, only: [:new, :create, :show, :update, :edit, :index]
-  resources :opportunities, only: [:show]
+  resources :opportunities, only: [:new, :create, :show]
 
   resources :users do
     resources :badges, only: [:new, :create, :show, :update, :edit, :destroy]

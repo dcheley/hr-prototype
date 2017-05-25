@@ -8,4 +8,5 @@ class Opportunity < ApplicationRecord
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   validates :name, uniqueness: true
+  validates :name, presence: true
 end

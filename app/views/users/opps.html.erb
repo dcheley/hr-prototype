@@ -1,6 +1,12 @@
 <% if current_user && current_user.co_op == nil %>
   <h1 class="org-title">Upcoming Development Opportunities</h1>
 
+  <div style="text-align: center;">
+    <%= link_to "/opportunities/new", class:"cancel-center-link" do %>
+      <div class="submit-blue">ADD OPPORTUNITY</div>
+    <% end %>
+  </div>
+
   <div class="carousel-container">
     <ul class="nav nav-pills nav-justified">
       <li role="presentation" class="active"><a href="#opp-one" data-toggle="pill">Working Groups, Special Projects & Networking Events</a></li>
