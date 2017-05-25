@@ -23,6 +23,7 @@ class UsersController < ApplicationController
   end
 
   def org_charts
+    @received_badges = Recognition.where.not(receiver_id: nil)
   end
 
   def opps
