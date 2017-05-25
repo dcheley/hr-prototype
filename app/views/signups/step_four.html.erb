@@ -71,6 +71,15 @@
             <div class="delete">CANCEL</div>
           <% end %>
         </div>
+
+        <div class="float" style="clear: both;">
+          <%= form_for(current_user) do |f2| %>
+            <%= f2.fields_for :signup_attributes do |s| %>
+              <%= s.hidden_field :step_four, value: true %>
+            <% end %>
+            <%= f2.submit "SKIP", class:"submit-blue" %>
+          <% end %>
+        </div>
       </div>
 
 <% else %>

@@ -70,12 +70,16 @@ class UsersController < ApplicationController
     if @user.update_attributes(user_params) && @user.signup.step_six == true
       flash[:alert] = "Account Sign Up complete!"
       redirect_to user_url
-    elsif @user.update_attributes(user_params) && @user.signup.step_one == true
-      redirect_to "/signups/step_two", notice: "Start setting up your account details below"
+    # elsif @user.update_attributes(user_params) && @user.signup.step_one == true
+    #   redirect_to "/signups/step_two", notice: "Start setting up your account details below"
     elsif @user.update_attributes(user_params) && @user.signup.step_two == true
       redirect_to "/signups/step_three", notice: "Describe your Career Aspirations and Job Responsibilities below"
     elsif @user.update_attributes(user_params) && @user.signup.step_three == true
       redirect_to "/signups/step_four", notice: "Choose or Create your Education Badges below"
+    elsif @user.update_attributes(user_params) && @user.signup.step_four == true
+      redirect_to "/signups/step_five", notice: "Choose or Create your Experience Badges below"
+    elsif @user.update_attributes(user_params) && @user.signup.step_five == true
+      redirect_to "/signups/step_six", notice: "Verify your Sign Up below to start using the App"
     else
       render :edit
     end
@@ -95,6 +99,6 @@ private
     :title, :avatar, :job_description, :adm, :director, :manager, :staff, :adm_office,
     :strategic_human_resources, :service_management_and_facilities, :business_planning_and_finance,
     :co_op, :image_delete, :career_aspirations, :direct_report, :agreement, :intranet,
-    signup_attributes: [:user_id, :step_one, :step_two, :step_three, :step_six])
+    signup_attributes: [:id, :user_id, :step_one, :step_two, :step_three, :step_six])
   end
 end

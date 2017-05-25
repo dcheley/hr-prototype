@@ -5,6 +5,11 @@ class SignupsController < ApplicationController
 
   def create
     @signup = Signup.new(signup_params)
+    if @signup.save
+      redirect_to "/signups/step_two", notice: "Start setting up your account details below"
+    else
+      render :new
+    end
   end
 
   def update
@@ -31,6 +36,7 @@ class SignupsController < ApplicationController
 private
 
   def signup_params
-    params.require(:signup).permit(:user_id, :badge_id, :step_one, :step_two, :step_three, :step_four, :step_five, :step_six)
+    params.require(:signup).permit(:user_id, :badge_id, :step_one, :step_two,
+    :step_three, :step_four, :step_five, :step_six)
   end
 end

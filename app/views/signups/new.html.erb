@@ -50,11 +50,9 @@
 
       <div class="center-float-wrap">
         <div class="float">
-          <%= form_for(current_user) do |f| %>
-            <%= f.fields_for :signup_attributes do |s| %>
-              <%= s.hidden_field :user_id, value: current_user.id %>
-              <%= s.hidden_field :step_one, value: true %>
-            <% end %>
+          <%= form_for(@signup) do |f| %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            <%= f.hidden_field :step_one, value: true %>
             <%= f.submit "AGREE", class:"submit-green" %>
           <% end %>
         </div>

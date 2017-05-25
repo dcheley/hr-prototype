@@ -66,7 +66,7 @@
           <%= f.label :image_delete, "Delete Image" %>
         </div>
 
-        <%= f.fields_for :signup_attributes do |s| %>
+        <%= f.fields_for :signup do |s| %>
           <%= s.hidden_field :step_two, value: true %>
         <% end %>
 
