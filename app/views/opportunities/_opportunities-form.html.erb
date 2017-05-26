@@ -26,6 +26,31 @@
       <%= f.text_field :link, class:"field-input" %>
     </div>
 
+    <div class="field-label" style="padding-top: 15px;">
+      <b>Type</b>
+    </div>
+
+    <div class="check-box" style="padding-top: 15px;">
+      <%= f.check_box :career %>
+      <%= f.label :career, "Working Group, Special Projects & Networking Events" %>
+    </div>
+
+    <div class="check-box">
+      <%= f.check_box :learning %>
+      <%= f.label :learning, "Courses & Learning Opportunities" %>
+    </div>
+
+    <div class="check-box">
+      <%= f.check_box :hobby %>
+      <%= f.label :hobby, "Hobbies, Interests & Extra Curriculars" %>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="field-label" style="padding-top: 15px;">
+      <b>Image (Optional)</b>
+    </div>
+
     <div class="avatar_container">
       <%= f.file_field :avatar %>
     </div>
