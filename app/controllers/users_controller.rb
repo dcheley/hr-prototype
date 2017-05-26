@@ -34,22 +34,6 @@ class UsersController < ApplicationController
 
   def opps
     @opportunities = Opportunity.all
-    @opportunity_1 = Opportunity.find(1)
-    @opportunity_2 = Opportunity.find(2)
-    @opportunity_3 = Opportunity.find(3)
-    @opportunity_4 = Opportunity.find(4)
-    @opportunity_5 = Opportunity.find(5)
-    @opportunity_6 = Opportunity.find(6)
-    @opportunity_7 = Opportunity.find(7)
-    @opportunity_8 = Opportunity.find(8)
-    @opportunity_9 = Opportunity.find(9)
-    @opportunity_10 = Opportunity.find(10)
-    @opportunity_11 = Opportunity.find(11)
-    @opportunity_12 = Opportunity.find(12)
-    @opportunity_13 = Opportunity.find(13)
-    @opportunity_14 = Opportunity.find(14)
-    @opportunity_15 = Opportunity.find(15)
-    @opportunity_16 = Opportunity.find(16)
     if current_user
       @badge = current_user.badges.build
     end
