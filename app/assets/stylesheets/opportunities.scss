@@ -157,7 +157,14 @@ a:hover {
   width: 100%;
 }
 
-.co-opp-name {
+.third {
+  float: left;
+  width: 33.3%;
+  margin: auto;
+}
+
+.co-opp-name,
+.csd-opp-name {
   width: 100%;
   display: inline-block;
   margin-top: 30px;
@@ -165,7 +172,15 @@ a:hover {
   margin-left: auto;
   text-align: center;
   font-weight: bold;
+}
+
+.co-opp-name {
   font-size: 16px;
+}
+
+.csd-opp-name {
+  font-size: 24px;
+  overflow: hidden;
 }
 
 #fifth {
@@ -184,6 +199,7 @@ a:hover {
 
 #blue:hover {
   color: $bright-dark-blue;
+  text-decoration: none;
 }
 
 #green {
@@ -192,6 +208,7 @@ a:hover {
 
 #green:hover {
   color: $bright-green;
+  text-decoration: none;
 }
 
 #red {
@@ -200,6 +217,7 @@ a:hover {
 
 #red:hover {
   color: $dark-red;
+  text-decoration: none;
 }
 
 #orange {
@@ -208,6 +226,7 @@ a:hover {
 
 #orange:hover {
   color: $dark-orange;
+  text-decoration: none;
 }
 
 #purple {
@@ -216,6 +235,7 @@ a:hover {
 
 #purple:hover {
   color: $dark-purple;
+  text-decoration: none;
 }
 
 //3d Carousel
