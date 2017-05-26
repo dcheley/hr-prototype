@@ -160,6 +160,22 @@
   right: 15%;
 }
 
+#edu-link {
+  left: 10px;
+}
+
+#skillz-link {
+  left: 25%;
+}
+
+#eventz-link {
+  right: 30%;
+}
+
+#recognitionz-link {
+  right: 10px;
+}
+
 .badge-row {
   width: 100%;
   margin: auto;
@@ -264,7 +280,11 @@
   }
 
   #bucket-link,
-  #recognition-link {
+  #recognition-link,
+  #edu-link,
+  #skillz-link,
+  #eventz-link,
+  #recognitionz-link {
     position: relative;
     text-align: center;
     left: 0;
