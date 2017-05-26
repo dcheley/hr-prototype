@@ -7,7 +7,7 @@ $(document).ready(function() {
   //Add turbolinks event listener for jQuery
   $(document).on('turbolinks:load', function() {
     //Check boxes
-    var $checkBox = $('input[type=checkbox]');
+    var $checkBox = $('.uncheck');
 
     //Only one check at a time
     $checkBox.click(function() {
