@@ -3,46 +3,42 @@
 
   <div class="feed-wrap">
     <div class="quarter">
-      <h4 class="feed-title", style="margin-top: 15px;">Recognition</h4>
+      <h4 class="feed-title", style="margin-top: 15px;">Who's been recognized?</h4>
       <% @received_badges.each do |r| %>
         <ul class="feed-list">
-          <li class="feed-item"><b>Recognized for:</b> <%= link_to  "#{r.name}", "/users/#{r.receiver_id}/recognitions/#{r.id}" %></li>
-          <li class="feed-item"><b>Given to:</b> <%= User.where(id: :receiver_id).name %></li>
-          <li class="feed-item"><b>Given by:</b> <%= User.where(id: :recognizer_id).name %></li>
-          <li class="feed-item"><b>At:</b> <%= r.created_at %></b></li>
+          <li class="feed-item"><%= User.find(r.receiver_id).name + " by " +
+            User.find(r.recognizer_id).name + " for " %>
+            <%= link_to  "#{r.name}", "/users/#{r.receiver_id}/recognitions/#{r.id}" %></li>
         </ul>
       <% end %>
     </div>
 
     <div class="quarter">
-      <h4 class="feed-title", style="margin-top: 15px;">Opportunities</h4>
+      <h4 class="feed-title", style="margin-top: 15px;">Who's getting involved?</h4>
       <% @opportunity_badges.each do |o| %>
         <ul class="feed-list">
-          <li class="feed-item"><b>Opportunity:</b> <%= link_to "#{o.name}", "/users/#{o.user_id}/badges/#{o.id}" %></li>
-          <li class="feed-item"><b>Participant:</b> <%= User.where(id: :user_id).name %></li>
-          <li class="feed-item"><b>At:</b> <%= o.created_at %></b></li>
+          <li class="feed-item"><%= User.find(o.user_id).name + " is going to " %>
+          <%= link_to "#{o.name}", "/users/#{o.user_id}/badges/#{o.id}" %></li>
         </ul>
       <% end %>
     </div>
 
     <div class="quarter">
-      <h4 class="feed-title", style="margin-top: 15px;">Education Badges</h4>
+      <h4 class="feed-title", style="margin-top: 15px;">Education of your colleagues</h4>
       <% @edu_badges.each do |b| %>
         <ul class="feed-list">
-          <li class="feed-item"><b>Credential:</b> <%= link_to  "#{b.name}", "/users/#{b.user_id}/badges/#{b.id}" %></li>
-          <li class="feed-item"><b>Created by:</b> <%= User.where(id: :user_id).name %></li>
-          <li class="feed-item"><b>At:</b> <%= b.created_at %></b></li>
+          <li class="feed-item"><%= User.find(b.user_id).name + " added " %>
+          <%= link_to  "#{b.name}", "/users/#{b.user_id}/badges/#{b.id}" %> badge</li>
         </ul>
       <% end %>
     </div>
 
     <div class="quarter">
-      <h4 class="feed-title", style="margin-top: 15px;">Experience Badges</h4>
+      <h4 class="feed-title", style="margin-top: 15px;">Experience of your colleagues</h4>
       <% @exp_badges.each do |e| %>
         <ul class="feed-list">
-          <li class="feed-item"><b>Experience:</b> <%= link_to  "#{e.name}", "/users/#{e.user_id}/badges/#{e.id}" %></li>
-          <li class="feed-item"><b>Created by:</b> <%= User.where(id: :user_id).name %></li>
-          <li class="feed-item"><b>At:</b> <%= e.created_at %></b></li>
+          <li class="feed-item"><%= User.find(e.user_id).name + " added "%>
+          <%= link_to  "#{e.name}", "/users/#{e.user_id}/badges/#{e.id}" %> badge</li>
         </ul>
       <% end %>
     </div>
