@@ -65,11 +65,19 @@
         <%= f.submit "SUBMIT", class:"submit-green" %>
       </div>
 
-      <div class="float" style="margin-left: 15px;">
-        <%= link_to "/users/opps", class:"cancel-center-link" do %>
-          <div class="submit-blue">BACK TO OPPORTUNITIES</div>
-        <% end %>
-      </div>
+      <% if current_page?(action: "new")%>
+        <div class="float" style="margin-left: 15px;">
+          <%= link_to "/users/opps", class:"cancel-center-link" do %>
+            <div class="submit-blue">BACK TO OPPORTUNITIES</div>
+          <% end %>
+        </div>
+      <% elsif current_page?(action: "edit") %>
+        <div class="float" style="margin-left: 15px;">
+          <%= link_to "/opportunities/#{@opportunity.id}", class:"cancel-center-link" do %>
+            <div class="delete">CANCEL</div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
 
   <% end %>
