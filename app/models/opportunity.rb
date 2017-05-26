@@ -9,6 +9,7 @@ class Opportunity < ApplicationRecord
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   validates :name, uniqueness: true
   validates :name, presence: true
+  validate :req_type
 
   before_save :destroy_image?
 
@@ -18,6 +19,12 @@ class Opportunity < ApplicationRecord
 
   def image_delete=(value)
     @image_delete = value
+  end
+
+  def req_type
+    if [self.career, self.learning, self.hobby].reject(&:blank?).size == 0
+      errors[:base] << ("Opportunity type required.")
+    end
   end
 
 private
