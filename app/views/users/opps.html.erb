@@ -18,7 +18,7 @@
       <div role="tabpane1" class="tab-pane active" id="opp-one">
         <% @opportunities.where(career: true).each do |o| %>
           <div class="third">
-            <%= link_to o.name, "/users/#{o.id}", class:"csd-opp-name", id:"blue" %>
+            <%= link_to o.name, "/opportunities/#{o.id}", class:"csd-opp-name", id:"blue" %>
           </div>
         <% end %>
       </div>
@@ -26,7 +26,7 @@
       <div role="tabpane1" class="tab-pane" id="opp-two">
         <% @opportunities.where(learning: true).each do |l| %>
           <div class="third">
-            <%= link_to l.name, "/users/#{l.id}", class:"csd-opp-name", id:"blue" %>
+            <%= link_to l.name, "/opportunities/#{l.id}", class:"csd-opp-name", id:"blue" %>
           </div>
         <% end %>
       </div>
@@ -34,7 +34,7 @@
       <div role="tabpane1" class="tab-pane" id="opp-three">
         <% @opportunities.where(hobby: true).each do |h| %>
           <div class="third">
-            <%= link_to h.name, "/users/#{h.id}", class:"csd-opp-name", id:"blue" %>
+            <%= link_to h.name, "/opportunities/#{h.id}", class:"csd-opp-name", id:"blue" %>
           </div>
         <% end %>
       </div>
