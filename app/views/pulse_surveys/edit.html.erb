@@ -1,5 +1,5 @@
 <div class="container">
-  <p class="survey-question">How effective was this App? <%= rating_for @signup, 'satisfaction', enable_half: true %></p>
+  <p class="survey-question">How effective was this App? <%= rating_for_user @pulse_survey, current_user, 'satisfaction', enable_half: true %></p>
 
   <%= form_for(@pulse_survey) do |f| %>
 

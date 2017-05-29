@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   resources :signups, only: [:new, :create, :update]
   resources :users, only: [:new, :create, :show, :update, :edit, :index]
   resources :opportunities, only: [:new, :create, :show, :edit, :update, :destroy]
-  resources :pulse_surveys, only: [:new, :create]
+  resources :pulse_surveys, only: [:edit, :update]
 
   resources :users do
     resources :badges, only: [:new, :create, :show, :update, :edit, :destroy]
