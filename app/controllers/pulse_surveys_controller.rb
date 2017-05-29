@@ -1,6 +1,10 @@
 class PulseSurveysController < ApplicationController
   def new
     @pulse_survey = PulseSurvey.new
+    @signup = Signup.where(
+      user_id: current_user.id,
+      step_six: true
+    )
   end
 
   def create
