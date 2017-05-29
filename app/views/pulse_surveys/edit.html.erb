@@ -25,17 +25,19 @@
       <%= f.text_field :feedback, class:"field-input", placeholder:"If yes, what did you find? If no, what were you looking for?" %>
     </div>
 
-    <div class="center-float-wrap">
-      <div class="float">
-        <%= f.submit "SUBMIT", class:"submit-green" %>
-      </div>
+    <div style="text-align: center;">
+      <div class="center-float-wrap">
+        <div class="float">
+          <%= f.submit "SUBMIT", class:"submit-green" %>
+        </div>
 
     <% end %>
 
-    <div class="float">
-      <%= link_to :back, class:"cancel-link" do %>
-        <div class="delete">CANCEL</div>
-      <% end %>
+      <div class="float">
+        <%= link_to :back, class:"cancel-link" do %>
+          <div class="delete">CANCEL</div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
