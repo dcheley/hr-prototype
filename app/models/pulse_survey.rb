@@ -1,0 +1,2 @@
+class PulseSurvey < ApplicationRecord
+end

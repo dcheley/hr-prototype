@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170526131129) do
+ActiveRecord::Schema.define(version: 20170529152057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,12 @@ ActiveRecord::Schema.define(version: 20170526131129) do
     t.boolean  "learning"
     t.boolean  "career"
     t.boolean  "hobby"
+  end
+
+  create_table "pulse_surveys", force: :cascade do |t|
+    t.string   "feedback"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "recognitions", force: :cascade do |t|
