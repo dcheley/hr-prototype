@@ -43,7 +43,7 @@
             <% end %>
             <li><%= link_to "Profile", "/users/#{current_user.id}" %></li>
             <li><%= link_to "Settings", "/users/#{current_user.id}/edit" %></li>
-            <li><%= link_to "Logout", :logout %></li>
+            <li><%= link_to "Logout", "/pulse_surveys/new" %></li>
           </ul>
         </div>
       </nav>
