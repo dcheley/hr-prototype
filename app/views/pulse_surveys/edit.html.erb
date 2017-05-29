@@ -1,5 +1,11 @@
 <div class="container">
-  <p class="survey-question">How effective was this App? <%= rating_for_user @pulse_survey, current_user, 'satisfaction', enable_half: true %></p>
+  <h1 class="form-title">Pulse Survey</h1>
+
+  <!-- User.find(id).ratings_given -->
+  <p class="field-label" style="font-weight: bold; margin-bottom: 30px;">
+    How effective was this App?
+    <%= rating_for_user @pulse_survey, current_user, 'satisfaction', enable_half: true %>
+  </p>
 
   <%= form_for(@pulse_survey) do |f| %>
 
