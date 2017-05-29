@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_secure_password
   acts_as_voter
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  ratyrate_rater
 
   has_one :signup
   has_many :badges
