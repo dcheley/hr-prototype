@@ -1,10 +1,10 @@
 class PulseSurveysController < ApplicationController
   def new
-    @pulse_survey = Pulse_survey.new
+    @pulse_survey = PulseSurvey.new
   end
 
   def create
-    @pulse_survey = Pulse_survey.new(pulse_survey_params)
+    @pulse_survey = PulseSurvey.new(pulse_survey_params)
     if @pulse_survey.save
       session[:user_id] = nil
       redirect_to root_url, notice: "Survey Complete, Logged out"
