@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  post '/rate' => 'rater#create', :as => 'rate'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'sessions#new'
+
+  post '/rate' => 'rater#create', :as => 'rate'
 
   get '/pages/*page' => 'pages#show'
 
@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :update, :edit, :index]
   resources :opportunities, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :pulse_surveys, only: [:new, :create]
-  
+
   resources :users do
     resources :badges, only: [:new, :create, :show, :update, :edit, :destroy]
     resources :recognitions, only: [:new, :create, :show, :update, :edit, :destroy]
