@@ -3,6 +3,8 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+//= require jquery.raty
+//= require ratyrate
 $(document).ready(function() {
   //Add turbolinks event listener for jQuery
   $(document).on('turbolinks:load', function() {
