@@ -1,3 +1,33 @@
 <div class="container">
   <p class="survey-question">How effective was this App? <%= rating_for @pulse_survey, 'satisfaction' %></p>
+
+  <%= form_for(@pulse_survey) do |f| %>
+
+  <% if @pulse_survey.errors.any? %>
+    <h2 class="error-header"><%= pluralize(@pulse_survey.errors.count, "error") %> occurred!</h2>
+
+    <ul class="error-list">
+      <% @pulse_survey.errors.full_messages.each do |msg| %>
+        <li class="error-msg"><%= msg %></li>
+      <% end %>
+    </ul>
+
+  <% end %>
+
+  <div class="field">
+    <%= f.label :feedback, "Did you find what you were looking for?", class:"field-label" %>
+    <%= f.text_field :name, class:"field-input", placeholder:"If yes, what did you find? If no, what were you looking for?" %>
+  </div>
+
+  <div class="center-float-wrap">
+    <div class="float">
+      <%= f.submit "SUBMIT", class:"submit-green" %>
+    </div>
+
+    <div class="float">
+      <%= link_to :back, class:"cancel-link" do %>
+        <div class="delete">CANCEL</div>
+      <% end %>
+    </div>
+  </div>
 </div>
