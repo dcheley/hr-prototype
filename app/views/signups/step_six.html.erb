@@ -1,4 +1,4 @@
-<% if current_user %>
+<% if current_user && current_user.signup.step_six != true %>
   <div class="container" style="margin-top: 10px; text-align: center;">
     <ol class="track-progress" data-steps="6">
       <li class="done"><span>Disclaimer</span></li><!--
@@ -29,7 +29,8 @@
       </div>
     </div>
   </div>
-
+<% elsif current_user && current_user.signup.step_six == true %>
+  <h1 class="signup-login-message"><%= "#{current_user.name}'s account already signed up. Use the nav located top right to view app content."%></h1>
 <% else %>
   <h1 class="login-message"><%= link_to "LOGIN", :login %> to create verify sign up</h1>
 <% end %>

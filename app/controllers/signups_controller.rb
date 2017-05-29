@@ -5,6 +5,7 @@ class SignupsController < ApplicationController
 
   def create
     @signup = Signup.new(signup_params)
+    @signup.user_id = current_user.id
     if @signup.save
       redirect_to "/signups/step_two", notice: "Start setting up your account details below"
     else
