@@ -14,7 +14,7 @@ class SignupsController < ApplicationController
   end
 
   def update
-    @signup = Signup.find_by(user_id: current_user.id)
+    @signup = Signup.find(current_user.id)
   end
 
   def step_two

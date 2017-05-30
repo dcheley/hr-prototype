@@ -1,16 +1,14 @@
 <% if current_user %>
-  <% if current_user.co_op == nil %>
-    <div class="container" style="margin-top: 10px; text-align: center;">
-      <ol class="track-progress" data-steps="6">
-        <li class="done"><span>Disclaimer</span></li><!--
-        --><li><span>Personal Info</span></li><!--
-        --><li><span>Career Info</span></li><!--
-        --><li><span>Education Badge</span></li><!--
-        --><li><span>Experience Badge</span></li><!--
-        --><li><span>Complete Sign Up</span></li>
-      </ol>
-    </div>
-  <% end %>
+  <div class="container" style="margin-top: 10px; text-align: center;">
+    <ol class="track-progress" data-steps="6">
+      <li class="done"><span>Disclaimer</span></li><!--
+      --><li><span>Personal Info</span></li><!--
+      --><li><span>Career Info</span></li><!--
+      --><li><span>Education Badge</span></li><!--
+      --><li><span>Experience Badge</span></li><!--
+      --><li><span>Complete Sign Up</span></li>
+    </ol>
+  </div>
 
   <div class="background" style="text-align: center;">
     <h1 class="org-title">Disclaimer</h1>
@@ -51,25 +49,13 @@
       </ul>
 
       <div class="center-float-wrap">
-        <% if current_user.co_op == nil %>
-          <div class="float">
-            <%= form_for(@signup) do |f| %>
-              <%= f.hidden_field :user_id, value: current_user.id %>
-              <%= f.hidden_field :step_one, value: true %>
-              <%= f.submit "AGREE", class:"submit-green" %>
-            <% end %>
-          </div>
-      <% else %>
         <div class="float">
-          <%= form_for(current_user) do |f| %>
-            <%= f.hidden_field :agreement, value: true %>
-            <%= f.fields_for :signup_attributes do |s| %>
-              <%= s.hidden_field :step_six, value: true %>
-            <% end %>
+          <%= form_for(@signup) do |f| %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            <%= f.hidden_field :step_one, value: true %>
             <%= f.submit "AGREE", class:"submit-green" %>
           <% end %>
         </div>
-      <% end %>
 
         <div class="float">
           <%= link_to :logout, class:"cancel-link" do %>
