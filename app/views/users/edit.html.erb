@@ -25,6 +25,16 @@
         </div>
 
         <div class="field">
+          <%= f.label :password, class:"field-label" %>
+          <%= f.password_field :password, class:"field-input", placeholder: "Enter your password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation, class:"field-label" %>
+          <%= f.password_field :password_confirmation, class:"field-input", placeholder: "Confirm password" %>
+        </div>
+
+        <div class="field">
           <%= f.label :title, class:"field-label" %>
           <%= f.text_field :title, class:"field-input" %>
         </div>

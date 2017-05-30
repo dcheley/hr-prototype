@@ -58,10 +58,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(user_params) && @user.signup.step_six == true
-      flash[:alert] = "Account Sign Up complete!"
+    if @user.update_attributes(user_params) && @user.signup.step_six == true && @user.ratings_given == nil
+      flash[:alert] = "Account Sign Up complete"
       PulseSurvey.create(id: current_user.id)
       redirect_to user_url
+    elsif @user.update_attributes(user_params) && @user.agreement == true && @user.ratings_given != nil
+      redirect_to user_url, notice: "Account Settings Updated"
     elsif @user.update_attributes(user_params) && @user.signup.step_two == true && @user.signup.step_three != true
       redirect_to "/signups/step_three", notice: "Describe your Career Aspirations and Job Responsibilities below"
     elsif @user.update_attributes(user_params) && @user.signup.step_three == true && @user.signup.step_four != true
