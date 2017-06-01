@@ -1,6 +1,4 @@
-# README
-
-Employee Engagement Software
+# Employee Engagement Software
 
 Configuration:
 
@@ -23,4 +21,4 @@ Features:
 * 5 Star Rating System through PulseSurveys (ratyrate)
 * Activity feed displaying Badge, Recognition & Opportunity CRUD actions with links
 * 6 Step User Sign Up process
-* Onboarding version currently tested on Co-Op Students 
+* Onboarding version currently tested on Co-Op Students
