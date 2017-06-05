@@ -4,7 +4,7 @@
   <div class="feed-wrap">
     <div class="quarter">
       <p class="feed-title", style="margin-top: 15px;">Who's been recognized?</p>
-      <% @received_badges.each do |r| %>
+      <% @received_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |r| %>
         <ul class="feed-list">
           <li class="feed-item">
             <%= link_to "#{User.find(r.receiver_id).name}", "/users/#{r.receiver_id}" %>
@@ -17,7 +17,7 @@
 
     <div class="quarter">
       <p class="feed-title", style="margin-top: 15px;">Who's getting involved?</p>
-      <% @opportunity_badges.each do |o| %>
+      <% @opportunity_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |o| %>
         <ul class="feed-list">
           <li class="feed-item">
             <%= link_to "#{User.find(o.user_id).name}", "/users/#{o.user_id}" %>
@@ -30,7 +30,7 @@
 
     <div class="quarter">
       <p class="feed-title", style="margin-top: 15px;">Education of your colleagues</p>
-      <% @edu_badges.each do |b| %>
+      <% @edu_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |b| %>
         <ul class="feed-list">
           <li class="feed-item">
             <%= link_to "#{User.find(b.user_id).name}", "/users/#{b.user_id}" %>
@@ -44,7 +44,7 @@
 
     <div class="quarter">
       <p class="feed-title", style="margin-top: 15px;">Experience of your colleagues</p>
-      <% @exp_badges.each do |e| %>
+      <% @exp_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |e| %>
         <ul class="feed-list">
           <li class="feed-item">
             <%= link_to "#{User.find(e.user_id).name}" %>

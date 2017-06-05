@@ -93,4 +93,8 @@ private
     :co_op, :image_delete, :career_aspirations, :direct_report, :agreement, :intranet,
     signup_attributes: [:id, :user_id, :step_one, :step_two, :step_three, :step_four, :step_five, :step_six])
   end
+
+  def reset_time
+    @reset_time = Date.new(2017, 6, 5)
+  end
 end
