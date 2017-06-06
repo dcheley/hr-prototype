@@ -58,7 +58,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(user_params) && @user.signup.step_six == true && PulseSurvey.exists?(@user.id) == false
+    if @user.update_attributes(user_params) && @user.agreement == true && PulseSurvey.exists?(@user.id) == false
       flash[:alert] = "Account Sign Up complete"
       PulseSurvey.create(id: current_user.id)
       redirect_to user_url
