@@ -26,7 +26,7 @@
     <% end %>
 
     <div class="center-float-wrap">
-      <div class="float">
+      <div class="float" style="width: 50%;">
         <%= form_for(current_user) do |f| %>
           <%= f.hidden_field :agreement, value: true %>
           <%= f.fields_for :signup_attributes do |s| %>
@@ -36,7 +36,7 @@
         <% end %>
       </div>
 
-      <div class="float">
+      <div class="float" style="width: 50%;">
         <%= link_to :logout, class:"cancel-link" do %>
           <div class="delete">RESTART</div>
         <% end %>
