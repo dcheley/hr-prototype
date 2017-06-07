@@ -58,6 +58,7 @@
             <%= f2.fields_for :signup do |s| %>
               <%= s.hidden_field :step_four, value: true %>
               <%= s.hidden_field :step_five, value: true %>
+              <%= s.hidden_field :step_six, value: nil %>
             <% end %>
             <%= f2.submit "SKIP", class:"submit-blue", style:"margin-left: 35%;" %>
           <% end %>
