@@ -103,6 +103,10 @@
   border-bottom-color: white;
 }
 
+#badge-count {
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 1060px) {
   .track-progress {
     font-size: 12px;

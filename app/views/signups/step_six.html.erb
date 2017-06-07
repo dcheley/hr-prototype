@@ -20,7 +20,7 @@
     <li class="profile-info"><b>Job Description:</b> <%= current_user.job_description %></li>
     <li class="profile-info"><b>Badges created:</b></li>
     <% current_user.badges.each_with_index do |b, index| %>
-      <li class="profile-info">Badge <%= (index + 1) %>:</li>
+      <li class="profile-info" id="badge-count">Badge <%= (index + 1) %>:</li>
       <li class="profile-info"><%= b.name %></li>
       <li class="profile-info"><%= b.description %></li>
     <% end %>
