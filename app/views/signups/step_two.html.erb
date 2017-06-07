@@ -12,12 +12,12 @@
 
     <h1 class="form-title">Edit Account Settings</h1>
 
-      <%= form_for(current_user) do |f| %>
-        <% if current_user.errors.any? %>
-          <h2 class="error-header"><%= pluralize(current_user.errors.count, "error") %> occurred!</h2>
+      <%= form_for(@user) do |f| %>
+        <% if @user.errors.any? %>
+          <h2 class="error-header"><%= pluralize(@user.errors.count, "error") %> occurred!</h2>
 
           <ul class="error-list">
-            <% current_user.errors.full_messages.each do |msg| %>
+            <% @user.errors.full_messages.each do |msg| %>
               <li class="error-msg"><%= msg %></li>
             <% end %>
           </ul>

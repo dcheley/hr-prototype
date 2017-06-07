@@ -77,6 +77,8 @@ class UsersController < ApplicationController
       render 'signups/step_two'
     elsif @user.update_attributes(user_params) == false && @user.signup.step_three == true && @user.signup.step_four != true
       render 'signups/step_three'
+    elsif @user.update_attributes(user_params) == false && @user.signup.step_three == true && @user.signup.step_four == true
+      render 'signups/step_three'
     else
       render :edit
     end

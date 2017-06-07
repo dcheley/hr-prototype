@@ -18,9 +18,11 @@ class SignupsController < ApplicationController
   end
 
   def step_two
+    @user = current_user
   end
 
   def step_three
+    @user = current_user
   end
 
   def step_four
