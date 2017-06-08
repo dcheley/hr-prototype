@@ -236,6 +236,10 @@
   background: $dark-purple;
 }
 
+#team-5 {
+  background: $orange;
+}
+
 .expanded .active:after {
   content: " ";
   position: absolute;
@@ -255,7 +259,8 @@
   .org-header,
   #team-2,
   #team-3,
-  #team-4 {
+  #team-4,
+  #team-5 {
     cursor: pointer;
     background: #444444;
     color: $white;
