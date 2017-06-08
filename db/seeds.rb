@@ -82,7 +82,7 @@ User.create([{ name: "Robert B", email: "robb@email.com", phone: "(416) 222-2222
   { name: "Gina G", email: "gg@email.com", phone: "(416) 333-333", title: "Divisional Coordinator", business_planning_and_finance: true, staff: true, password: "307951" },
   { name: "Jeevithan J", email: "jj@email.com", phone: "(416) 333-333", title: "Corporate Coordinator", business_planning_and_finance: true, staff: true, password: "484325" },
   { name: "Sherma L", email: "slo@email.com", phone: "(416) 333-333", title: "Corporate Coordinator", business_planning_and_finance: true, staff: true, password: "637613" },
-  { name: "Sarah B", email: "sbn@email.com", phone: "(416) 333-333", title: "Divisional Coordinator", business_planning_and_finance: true, staff: true, password: "514484" },
+  { name: "Tim M", email: "timMc@email.com", phone: "(416) 333-333", title: "Financial & Branch Coordinator", business_planning_and_finance: true, manager: true, password: "514484" },
   { name: "Rosanna M", email: "rosm@email.com", phone: "(416) 111-1111", title: "Bus Planning Consult", business_planning_and_finance: true, staff: true, password: "546274" },
   { name: "Nisarg B", email: "nib@email.com", phone: "(416) 111-1111", title: "Bus Planning Consult", business_planning_and_finance: true, staff: true, password: "964487" },
   { name: "Ryan L", email: "ryanl@email.com", phone: "(416) 111-1111", title: "Jr. Bus Planning Analyst", business_planning_and_finance: true, staff: true, password: "624417" },
