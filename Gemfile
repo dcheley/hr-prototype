@@ -35,6 +35,8 @@ gem 'bcrypt', '~> 3.1.10'
 # gem 'capistrano-rails', group: :development
 gem 'paperclip', '~> 5.0.0'
 
+gem 'aws-sdk', '~> 2.3'
+
 gem 'acts_as_votable', '~> 0.10.0'
 
 gem 'ratyrate', :github => 'wazery/ratyrate'
