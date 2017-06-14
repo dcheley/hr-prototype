@@ -47,7 +47,7 @@
       <% @exp_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |e| %>
         <ul class="feed-list">
           <li class="feed-item">
-            <%= link_to "#{User.find(e.user_id).name}" %>
+            <%= link_to "#{User.find(e.user_id).name}", "/users/#{e.user_id}" %>
             added
             <%= link_to  "#{e.name}", "/users/#{e.user_id}/badges/#{e.id}" %>
             badge
