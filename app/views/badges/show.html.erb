@@ -8,9 +8,11 @@
         <h2 class="badge-show-title"><%= @badge.name %></h2>
       </div>
 
-      <!-- if cu.id != b.id  -->
-        <!--  show descript-->
-      <!--  else: -->
+      <% if current_user.id != @badge.user_id %>
+        <div class="badge-description-wrap">
+          <p class="badge-description"><%= @badge.description %></p>
+        </div>
+      <% else %>
         <% if @badge.description != nil && @badge.description != "" %>
           <div class="badge-description-wrap">
             <p class="badge-description"><%= link_to @badge.description, "/users/#{@user.id}/badges/#{@badge.id}/edit", class:"team-link" %></p>
@@ -30,6 +32,7 @@
             </div>
           <% end %>
         <% end %>
+      <% end %>
 
       <% if current_user.liked? @badge %>
         <%= link_to image_tag('thumbs-up-empty.svg', class:"thumbs-empty"), unlike_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}" %>
