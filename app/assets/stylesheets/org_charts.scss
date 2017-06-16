@@ -32,6 +32,52 @@
   box-sizing: border-box; //Padding & border included in total width & height
 }
 
+.legend-title {
+  text-align: right;
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 125px;
+}
+
+.legend {
+  list-style: none;
+  text-align: center;
+  margin-right: 30px;
+}
+
+.legend span {
+  border: 1px solid #ccc;
+  float: left;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.legend-item {
+  float: right;
+  margin-left: 15px;
+}
+
+.team-one {
+  background-color: $dark-turquoise;
+}
+
+.team-two {
+  background-color: $red;
+}
+
+.team-three {
+  background-color: $green;
+}
+
+.team-four {
+  background-color: $dark-purple;
+}
+
+.team-five {
+  background-color: $orange;
+}
+
 .level {
   display: block;
   margin: auto;

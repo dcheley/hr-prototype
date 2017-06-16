@@ -7,6 +7,14 @@
 
   <h1 class="org-title">ADM's Office</h1>
 
+  <p class="legend-title">Unit by colour</p>
+
+  <ul class="legend">
+    <li class="legend-item"><span class="team-three"></span>Isolina K</li>
+    <li class="legend-item"><span class="team-two"></span>Kathy T</li>
+    <li class="legend-item"><span class="team-one"></span>Robert B</li>
+  </ul>
+
   <section class="org-container">
     <% @users.where(adm_office: true, adm: true).each do |a| %>
       <div id="level-0" class="level expanded">
