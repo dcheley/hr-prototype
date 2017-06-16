@@ -8,33 +8,34 @@
         <h2 class="badge-show-title"><%= @badge.name %></h2>
       </div>
 
-      <% if @badge.description != nil && @badge.description != "" %>
-        <div class="badge-description-wrap">
-          <p class="badge-description"><%= link_to @badge.description, "/users/#{@user.id}/badges/#{@badge.id}/edit", class:"team-link" %></p>
-        </div>
-      <% else %>
-        <% if @badge.opportunity_id == nil %>
-          <div class="team-info" style="font-size: 16px; margin: 30px auto;">
-            <%= link_to "Describe your skill or experience in 500 characters or less.",
-                "/users/#{@user.id}/badges/#{@badge.id}/edit", class:"team-link",
-                style:"margin-left: 0;" %>
+      <!-- if cu.id != b.id  -->
+        <!--  show descript-->
+      <!--  else: -->
+        <% if @badge.description != nil && @badge.description != "" %>
+          <div class="badge-description-wrap">
+            <p class="badge-description"><%= link_to @badge.description, "/users/#{@user.id}/badges/#{@badge.id}/edit", class:"team-link" %></p>
           </div>
         <% else %>
-          <div class="team-info" style="font-size: 16px; margin: 30px auto;">
-            <%= link_to "Write about your key takeaways from this event.",
-                "/users/#{@user.id}/badges/#{@badge.id}/edit", class:"team-link",
-                style:"margin-left: 0;" %>
-          </div>
+          <% if @badge.opportunity_id == nil %>
+            <div class="team-info" style="font-size: 16px; margin: 30px auto;">
+              <%= link_to "Describe your skill or experience in 500 characters or less.",
+                  "/users/#{@user.id}/badges/#{@badge.id}/edit", class:"team-link",
+                  style:"margin-left: 0;" %>
+            </div>
+          <% else %>
+            <div class="team-info" style="font-size: 16px; margin: 30px auto;">
+              <%= link_to "Write about your key takeaways from this event.",
+                  "/users/#{@user.id}/badges/#{@badge.id}/edit", class:"team-link",
+                  style:"margin-left: 0;" %>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
 
       <% if current_user.liked? @badge %>
         <%= link_to image_tag('thumbs-up-empty.svg', class:"thumbs-empty"), unlike_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}" %>
-        <p class="profile-badges"></p>
         <%= render 'likes' %>
       <% else %>
         <%= link_to image_tag('thumbs-up.svg', class:"thumbs-up"), like_badge_path(@badge.id), method: :put, remote: true, id: "like_#{@badge.id}" %>
-        <p class="profile-badges"></p>
         <%= render 'likes' %>
       <% end %>
 
