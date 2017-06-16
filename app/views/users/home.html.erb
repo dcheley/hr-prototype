@@ -3,7 +3,32 @@
 
   <div class="feed-wrap">
     <div class="fifth">
-      <p class="feed-title", style="margin-top: 15px;">Who's been recognized?</p>
+      <p class="feed-title">New Opportunities</p>
+      <% @opportunities.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |b| %>
+        <ul class="feed-list">
+          <li class="feed-item">
+            <%= link_to "#{b.name}", "/opportunities/#{b.id}" %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+
+    <div class="fifth">
+      <p class="feed-title">Experience of your colleagues</p>
+      <% @exp_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |e| %>
+        <ul class="feed-list">
+          <li class="feed-item">
+            <%= link_to "#{User.find(e.user_id).name}", "/users/#{e.user_id}" %>
+            added
+            <%= link_to  "#{e.name}", "/users/#{e.user_id}/badges/#{e.id}" %>
+            badge
+          </li>
+        </ul>
+      <% end %>
+    </div>
+
+    <div class="fifth">
+      <p class="feed-title">Who's been recognized?</p>
       <% @received_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |r| %>
         <ul class="feed-list">
           <li class="feed-item">
@@ -16,20 +41,7 @@
     </div>
 
     <div class="fifth">
-      <p class="feed-title", style="margin-top: 15px;">Who's getting involved?</p>
-      <% @opportunity_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |o| %>
-        <ul class="feed-list">
-          <li class="feed-item">
-            <%= link_to "#{User.find(o.user_id).name}", "/users/#{o.user_id}" %>
-            is going to
-            <%= link_to "#{o.name}", "/users/#{o.user_id}/badges/#{o.id}" %>
-          </li>
-        </ul>
-      <% end %>
-    </div>
-
-    <div class="fifth">
-      <p class="feed-title", style="margin-top: 15px;">Education of your colleagues</p>
+      <p class="feed-title">Education of your colleagues</p>
       <% @edu_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |b| %>
         <ul class="feed-list">
           <li class="feed-item">
@@ -43,14 +55,13 @@
     </div>
 
     <div class="fifth">
-      <p class="feed-title", style="margin-top: 15px;">Experience of your colleagues</p>
-      <% @exp_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |e| %>
+      <p class="feed-title">Who's getting involved?</p>
+      <% @opportunity_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |o| %>
         <ul class="feed-list">
           <li class="feed-item">
-            <%= link_to "#{User.find(e.user_id).name}", "/users/#{e.user_id}" %>
-            added
-            <%= link_to  "#{e.name}", "/users/#{e.user_id}/badges/#{e.id}" %>
-            badge
+            <%= link_to "#{User.find(o.user_id).name}", "/users/#{o.user_id}" %>
+            is going to
+            <%= link_to "#{o.name}", "/users/#{o.user_id}/badges/#{o.id}" %>
           </li>
         </ul>
       <% end %>

@@ -23,6 +23,7 @@ class UsersController < ApplicationController
   end
 
   def home
+    @opportunities = Opportunity.all.order("created_at DESC")
     @received_badges = Recognition.where.not(receiver_id: nil).order("created_at DESC")
     @opportunity_badges = Badge.where.not(opportunity_id: nil).order("created_at DESC")
     @edu_badges = Badge.where(opportunity_id: nil, education: true).order("created_at DESC")
