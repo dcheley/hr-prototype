@@ -9,16 +9,22 @@
         <h2 class="badge-show-title"><%= @recognition.name %></h2>
       </div>
 
-      <% if @recognition.description != nil && @recognition.description != "" %>
-      <div class="badge-description-wrap">
-        <p class="badge-description"><%= link_to @recognition.description, "/users/#{@user.id}/recognitions/#{@recognition.id}/edit", class:"team-link" %></p>
-      </div>
+      <% if current_user.id != @recognition.receiver_id %>
+        <div class="badge-description-wrap">
+          <p class="badge-description"><%= @recognition.description %></p>
+        </div>
       <% else %>
-      <div class="team-info" style="font-size: 16px; margin: 30px auto;">
-        <%= link_to "Describe how #{@user.name} went above and beyond in 500 characters or less.",
-            "/users/#{@user.id}/recognitions/#{@recognition.id}/edit", class:"team-link",
-            style:"margin-left: 0;" %>
-      </div>
+        <% if @recognition.description != nil && @recognition.description != "" %>
+        <div class="badge-description-wrap">
+          <p class="badge-description"><%= link_to @recognition.description, "/users/#{@user.id}/recognitions/#{@recognition.id}/edit", class:"team-link" %></p>
+        </div>
+        <% else %>
+        <div class="team-info" style="font-size: 16px; margin: 30px auto;">
+          <%= link_to "Describe how #{@user.name} went above and beyond in 500 characters or less.",
+              "/users/#{@user.id}/recognitions/#{@recognition.id}/edit", class:"team-link",
+              style:"margin-left: 0;" %>
+        </div>
+        <% end %>
       <% end %>
 
       <% if current_user.liked? @recognition %>
