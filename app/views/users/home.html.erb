@@ -2,7 +2,7 @@
   <p class="org-title" style="font-size: 38px;">Activity Feed</p>
 
   <div class="feed-wrap">
-    <div class="quarter">
+    <div class="fifth">
       <p class="feed-title", style="margin-top: 15px;">Who's been recognized?</p>
       <% @received_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |r| %>
         <ul class="feed-list">
@@ -15,7 +15,7 @@
       <% end %>
     </div>
 
-    <div class="quarter">
+    <div class="fifth">
       <p class="feed-title", style="margin-top: 15px;">Who's getting involved?</p>
       <% @opportunity_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |o| %>
         <ul class="feed-list">
@@ -28,7 +28,7 @@
       <% end %>
     </div>
 
-    <div class="quarter">
+    <div class="fifth">
       <p class="feed-title", style="margin-top: 15px;">Education of your colleagues</p>
       <% @edu_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |b| %>
         <ul class="feed-list">
@@ -42,7 +42,7 @@
       <% end %>
     </div>
 
-    <div class="quarter">
+    <div class="fifth">
       <p class="feed-title", style="margin-top: 15px;">Experience of your colleagues</p>
       <% @exp_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |e| %>
         <ul class="feed-list">
