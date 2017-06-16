@@ -91,7 +91,7 @@ private
   end
 
   def load_users
-    @users = User.all
+    @users = User.all.order("team ASC")
   end
 
   def user_params
