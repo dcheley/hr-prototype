@@ -17,32 +17,22 @@
   max-width: 100%;
 }
 
-@media screen and (max-width: 1121px) {
-  .org-container {
-    max-width: 878px;
-  }
-}
-@media screen and (max-width: 911px) {
-  .org-container {
-    max-width: 668px;
-  }
-}
-
 .org-container * {
   box-sizing: border-box; //Padding & border included in total width & height
 }
 
 .legend-title {
-  text-align: right;
+  text-align: center;
   font-weight: bold;
   font-size: 16px;
-  margin-right: 125px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .legend {
   list-style: none;
-  text-align: center;
-  margin-right: 30px;
+  margin-right: 30%;
+  margin-bottom: 50px;
 }
 
 .legend span {
@@ -311,4 +301,27 @@
 
 .badge-count {
   text-align: right;
+}
+
+@media screen and (max-width: 717px) {
+  .legend {
+    margin-right: 0;
+    padding-left: 0;
+  }
+
+  .legend-item {
+    margin-left: 5px;
+  }
+}
+
+@media screen and (max-width: 911px) {
+  .org-container {
+    max-width: 668px;
+  }
+}
+
+@media screen and (max-width: 1121px) {
+  .org-container {
+    max-width: 878px;
+  }
 }
