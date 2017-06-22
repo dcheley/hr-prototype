@@ -64,6 +64,6 @@ private
 
   def opportunity_params
     params.require(:opportunity).permit(:name, :description, :avatar, :link,
-    :creator_id, :learning, :career, :hobby)
+    :creator_id, :learning, :career, :hobby, :skills)
   end
 end
