@@ -8,6 +8,10 @@
 @import "signups";
 @import "pulse_surveys";
 
+a:hover {
+  text-decoration: none;
+}
+
 .home-right {
   float: right;
   width: 55%;
