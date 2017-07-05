@@ -1,17 +1,28 @@
 <% if current_user && current_user.co_op == nil %>
-  <h1 class="org-title">Upcoming Development Opportunities</h1>
-
+  <% if current_user.staff != nil %>
+    <h1 class="org-title">Advance Your Career</h1>
+  <% else %>
+    <h1 class="org-title">Find Employees for a Project</h1>
+  <% end %>
   <% if current_user.staff == nil %>
     <div style="text-align: center;">
       <%= link_to "/opportunities/new", class:"cancel-center-link" do %>
-        <div class="submit-blue">POST PROJECT</div>
+        <div class="submit-blue", style="margin: 20px auto;">POST PROJECT TO WEBSITE</div>
+      <% end %>
+    </div>
+
+    <div style="text-align: center;">
+      <%= link_to "/users/org_charts", class:"cancel-center-link" do %>
+        <div class="submit-blue", style="margin: 20px auto;">FIND EMPLOYEE VIA ORGCHART</div>
       <% end %>
     </div>
   <% end %>
 
   <div class="carousel-container">
     <ul class="nav nav-pills nav-stacked" style="text-align: center;">
-      <li role="presentation" class="active"><a href="#opp-one" data-toggle="pill">Working Groups, Special Projects & Networking Events</a></li>
+      <% if current_user.staff != nil %>
+        <li role="presentation" class="active"><a href="#opp-one" data-toggle="pill">Choose a career to develop towards</a></li>
+      <% end %>
       <!-- <li role="presentation"><a href="#opp-two" data-toggle="pill">Courses & Learning Opportunities</a></li>
       <li role="presentation"><a href="#opp-three" data-toggle="pill">Hobbies, Interests & Extra Curriculars</a></li> -->
     </ul>

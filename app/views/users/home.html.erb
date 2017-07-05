@@ -1,9 +1,9 @@
 <% if current_user %>
-  <p class="org-title" style="font-size: 38px;">Activity Feed</p>
+  <p class="org-title" style="font-size: 38px;">Home</p>
 
   <div class="feed-wrap">
     <div class="half">
-      <p class="feed-title">New Career Opportunities</p>
+      <p class="feed-title">New Career Advancement Opportunities</p>
       <% @opportunities.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |b| %>
         <ul class="feed-list">
           <li class="feed-item">

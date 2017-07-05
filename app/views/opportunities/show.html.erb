@@ -9,7 +9,7 @@
     <% if current_user.co_op != nil %>
       <h2 class="opp-headers"><%= @opportunity.name %></h2>
     <% else %>
-      <h2 class="opp-headers"><b>Careers that candidate will develop into:</b> <%= @opportunity.name %></h2>
+      <h2 class="opp-headers"><b>Career(s) that candidate will develop into:</b> <%= @opportunity.name %></h2>
     <% end %>
 
     <div class="opp-photo-frame">
@@ -26,7 +26,7 @@
       <% if current_user.co_op == nil %>
         <p class="opp-info"><b>Skills candidate will gain:</b> <%= @opportunity.skills %></p></br>
       <% end %>
-      <p class="opp-info"><%= link_to "#{@opportunity.link}", "#{@opportunity.link}", target: "_blank" %></p>
+      <p class="opp-info"><b>If interested, please contact through this email:</b><%= link_to " #{@opportunity.link}", "" %></p>
     </div>
 
     <% if current_user.liked? @opportunity %>
