@@ -2,7 +2,7 @@
   <p class="org-title" style="font-size: 38px;">Activity Feed</p>
 
   <div class="feed-wrap">
-    <div class="fifth">
+    <div class="half">
       <p class="feed-title">New Opportunities</p>
       <% @opportunities.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |b| %>
         <ul class="feed-list">
@@ -13,7 +13,7 @@
       <% end %>
     </div>
 
-    <div class="fifth">
+    <!-- <div class="fifth">
       <p class="feed-title">Experience of your colleagues</p>
       <% @exp_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |e| %>
         <ul class="feed-list">
@@ -25,9 +25,9 @@
           </li>
         </ul>
       <% end %>
-    </div>
+    </div> -->
 
-    <div class="fifth">
+    <div class="half">
       <p class="feed-title">Who's been recognized?</p>
       <% @received_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |r| %>
         <ul class="feed-list">
@@ -40,7 +40,7 @@
       <% end %>
     </div>
 
-    <div class="fifth">
+    <!-- <div class="fifth">
       <p class="feed-title">Education of your colleagues</p>
       <% @edu_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |b| %>
         <ul class="feed-list">
@@ -65,7 +65,7 @@
           </li>
         </ul>
       <% end %>
-    </div>
+    </div> -->
   </div>
 
   <% else %>
