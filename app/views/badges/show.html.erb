@@ -63,7 +63,7 @@
           <div class="float" style="margin-left: 5px;">
             <%= button_to 'DELETE BADGE', {:controller => 'badges', :action =>
                'destroy', :user_id => current_user.id, :id => "#{@badge.id}"},
-                method: :delete, data: { confirm: "You sure? Badge will be permanenetly removed!" }, class:"delete" %>
+                method: :delete, data: { confirm: "You sure? Badge will be permanently removed!" }, class:"delete" %>
           </div>
 
       <% else %>

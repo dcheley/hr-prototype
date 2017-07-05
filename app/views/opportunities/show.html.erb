@@ -42,7 +42,7 @@
         <div class="float" style="margin-left: 7.5px;">
           <%= button_to 'DELETE', {:controller => 'opportunities', :action =>
              'destroy', :user_id => current_user.id, :id => "#{@opportunity.id}"},
-              method: :delete, data: { confirm: "You sure? Opportunity will be permanenetly removed!" }, class:"delete" %>
+              method: :delete, data: { confirm: "You sure? Opportunity will be permanently removed!" }, class:"delete" %>
         </div>
       <% end %>
 
