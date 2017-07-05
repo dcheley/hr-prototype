@@ -102,14 +102,19 @@
 
 .submit-blue:hover {
   background-color: $bright-dark-blue;
+  text-decoration: none;
+  color: white;
 }
 
 .submit-grey:hover {
   background-color: $dark-grey;
+  text-decoration: none;
 }
 
 .delete:hover {
   background-color: $dark-red;
+  text-decoration: none;
+  color: white;
 }
 
 //Form Field Errors
