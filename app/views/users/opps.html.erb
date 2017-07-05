@@ -1,11 +1,13 @@
 <% if current_user && current_user.co_op == nil %>
   <h1 class="org-title">Upcoming Development Opportunities</h1>
 
-  <div style="text-align: center;">
-    <%= link_to "/opportunities/new", class:"cancel-center-link" do %>
-      <div class="submit-blue">POST PROJECT</div>
-    <% end %>
-  </div>
+  <% if current_user.staff == nil %>
+    <div style="text-align: center;">
+      <%= link_to "/opportunities/new", class:"cancel-center-link" do %>
+        <div class="submit-blue">POST PROJECT</div>
+      <% end %>
+    </div>
+  <% end %>
 
   <div class="carousel-container">
     <ul class="nav nav-pills nav-stacked" style="text-align: center;">
