@@ -3,7 +3,7 @@
 
   <div class="feed-wrap">
     <div class="half">
-      <p class="feed-title">New Opportunities</p>
+      <p class="feed-title">New Career Opportunities</p>
       <% @opportunities.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |b| %>
         <ul class="feed-list">
           <li class="feed-item">
