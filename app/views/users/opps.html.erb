@@ -3,15 +3,15 @@
 
   <div style="text-align: center;">
     <%= link_to "/opportunities/new", class:"cancel-center-link" do %>
-      <div class="submit-blue">ADD OPPORTUNITY</div>
+      <div class="submit-blue">POST PROJECT</div>
     <% end %>
   </div>
 
   <div class="carousel-container">
     <ul class="nav nav-pills nav-stacked" style="text-align: center;">
       <li role="presentation" class="active"><a href="#opp-one" data-toggle="pill">Working Groups, Special Projects & Networking Events</a></li>
-      <li role="presentation"><a href="#opp-two" data-toggle="pill">Courses & Learning Opportunities</a></li>
-      <li role="presentation"><a href="#opp-three" data-toggle="pill">Hobbies, Interests & Extra Curriculars</a></li>
+      <!-- <li role="presentation"><a href="#opp-two" data-toggle="pill">Courses & Learning Opportunities</a></li>
+      <li role="presentation"><a href="#opp-three" data-toggle="pill">Hobbies, Interests & Extra Curriculars</a></li> -->
     </ul>
 
     <div class="tab-content">
@@ -23,7 +23,7 @@
         <% end %>
       </div>
 
-      <div role="tabpane1" class="tab-pane" id="opp-two">
+      <!-- <div role="tabpane1" class="tab-pane" id="opp-two">
         <% @opportunities.where(learning: true).each do |l| %>
           <div class="third">
             <%= link_to l.name, "/opportunities/#{l.id}", class:"csd-opp-name", id:"blue" %>
@@ -37,7 +37,7 @@
             <%= link_to h.name, "/opportunities/#{h.id}", class:"csd-opp-name", id:"blue" %>
           </div>
         <% end %>
-      </div>
+      </div> -->
     </div>
   </div>
 
