@@ -31,7 +31,9 @@
       <%= f.text_field :link, class:"field-input" %>
     </div>
 
-    <div class="field-label" style="padding-top: 15px;">
+    <%= f.hidden_field :career, value: true %>
+
+    <!-- <div class="field-label" style="padding-top: 15px;">
       <b>Type</b>
     </div>
 
@@ -48,7 +50,7 @@
     <div class="check-box">
       <%= f.check_box :hobby, class:"uncheck" %>
       <%= f.label :hobby, "Hobbies, Interests & Extra Curriculars" %>
-    </div>
+    </div> -->
 
     <div class="divider"></div>
 
