@@ -36,7 +36,11 @@
             <% if current_user.co_op == nil %>
               <li><a href="/users/home">Home</a></li>
               <li><a href="/users/org_charts">Organizational Charts</a></li>
-              <li><a href="/users/opps">Opportunities</a></li>
+              <% if current_user.staff != nil %>
+                <li><a href="/users/opps">Advance Your Career</a></li>
+              <% else %>
+                <li><a href="/users/opps">Find Employees for a Project</a></li>
+              <% end %>
             <% else %>
               <li><a href="/users/org_charts">Co-op Students</a></li>
               <li><a href="/users/opps">Bucket list</a></li>
