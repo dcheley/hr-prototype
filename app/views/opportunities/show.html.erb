@@ -6,7 +6,11 @@
       <% end %>
     </div>
 
-    <h2 class="opp-headers"><%= @opportunity.name %></h2>
+    <% if current_user.co_op != nil %>
+      <h2 class="opp-headers"><%= @opportunity.name %></h2>
+    <% else %>
+      <h2 class="opp-headers"><b>Careers that candidate will develop into:</b> <%= @opportunity.name %></h2>
+    <% end %>
 
     <div class="opp-photo-frame">
       <% if @opportunity.avatar.file? != true %>
@@ -19,7 +23,9 @@
     <div class="opp-details">
       <p class="opp-info"><%= @opportunity.bonus %></p></br>
       <p class="opp-info"><%= @opportunity.description %></p></br>
-      <p class="opp-info">Skills Volunteer Will Gain: <%= @opportunity.skills %></p></br>
+      <% if current_user.co_op == nil %>
+        <p class="opp-info"><b>Skills candidate will gain:</b> <%= @opportunity.skills %></p></br>
+      <% end %>
       <p class="opp-info"><%= link_to "#{@opportunity.link}", "#{@opportunity.link}", target: "_blank" %></p>
     </div>
 
