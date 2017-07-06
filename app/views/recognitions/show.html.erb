@@ -1,31 +1,15 @@
 <div class="background" style="text-align: center;">
   <% if current_user %>
     <ul class="badge-details">
-
       <h2 class="badge-detail-title"> Given by <%= User.find(@recognition.recognizer_id).name %> </h2>
 
-      <!-- Display Green Badges -->
       <div class="badge-show-green">
         <h2 class="badge-show-title"><%= @recognition.name %></h2>
       </div>
 
-      <% if current_user.id != @recognition.receiver_id %>
-        <div class="badge-description-wrap">
-          <p class="badge-description"><%= @recognition.description %></p>
-        </div>
-      <% else %>
-        <% if @recognition.description != nil && @recognition.description != "" %>
-        <div class="badge-description-wrap">
-          <p class="badge-description"><%= link_to @recognition.description, "/users/#{@user.id}/recognitions/#{@recognition.id}/edit", class:"team-link" %></p>
-        </div>
-        <% else %>
-        <div class="team-info" style="font-size: 16px; margin: 30px auto;">
-          <%= link_to "Describe how #{@user.name} went above and beyond in 500 characters or less.",
-              "/users/#{@user.id}/recognitions/#{@recognition.id}/edit", class:"team-link",
-              style:"margin-left: 0;" %>
-        </div>
-        <% end %>
-      <% end %>
+      <div class="badge-description-wrap">
+        <p class="badge-description"><%= @recognition.description %></p>
+      </div>
 
       <% if current_user.liked? @recognition %>
         <%= link_to image_tag('thumbs-up-empty.svg', class:"thumbs-empty"), unlike_recognition_path(@recognition.id), method: :put, remote: true, id: "like_#{@recognition.id}" %>
@@ -38,19 +22,30 @@
       <% end %>
 
       <div class="center-float-wrap">
-        <div class="float" style="margin-left: 5px; margin-right: 5px;">
-          <%= link_to "/users/#{@user.id}", class:"cancel-center-link" do %>
-            <div class="submit-blue">BACK TO <%= "#{@user.name}".upcase %>'s PROFILE</div>
-          <% end %>
-        </div>
+        <% if current_user.id == @recognition.recognizer_id %>
+          <div class="float" id="badge-button">
+            <%= link_to "BACK TO #{@user.name.upcase}'S PROFILE", "/users/#{@user.id}",
+                class:"submit-blue", style:"width: 300px;" %>
+          </div>
+
+          <div class="float" id="badge-button">
+            <%= link_to "EDIT", "/users/#{@user.id}/recognitions/#{@recognition.id}/edit", class:"submit-green" %>
+          </div>
+        <% else %>
+          <div class="float" style="width: 100%;">
+            <%= link_to "BACK TO #{@user.name.upcase}'S PROFILE", "/users/#{@user.id}",
+                class:"submit-blue", style:"margin: 15px auto;" %>
+          </div>
+        <% end %>
 
         <% if current_user.id == @recognition.receiver_id || current_user.id == @recognition.recognizer_id %>
-          <div class="float" style="margin-left: 5px;">
-            <%= button_to 'DELETE BADGE', {:controller => 'recognitions', :action => 'destroy', :id => "#{@recognition.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanently removed!" }, class:"delete" %>
+          <div class="float" style="width: 100%;">
+            <%= button_to 'DELETE BADGE', {:controller => 'recognitions', :action => 'destroy',
+                :id => "#{@recognition.id}"}, method: :delete, data: { confirm: "You sure? Badge will be permanently removed!" },
+                class:"delete", style:"margin: 15px auto;" %>
           </div>
         <% end %>
       </div>
-
     </ul>
 
   <% else %>

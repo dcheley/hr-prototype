@@ -25,23 +25,23 @@
           <% if @badge.opportunity_id == nil && @badge.education != nil %>
             <div class="float" id="badge-button">
               <%= link_to 'ADD MORE EDUCATION', "/users/#{@user.id}/badges/new",
-              class:"submit-green", style:"width: 240px; margin: 15px auto;" %>
+                  class:"submit-green", style:"margin: 15px auto;" %>
             </div>
           <% elsif @badge.opportunity_id == nil && @badge.exp != nil %>
             <div class="float" id="badge-button">
               <%= link_to 'ADD MORE EXPERIENCE', "/badges/exp",
-              class:"submit-green", style:"width: 240px; margin: 15px auto;" %>
+                  class:"submit-green", style:"margin: 15px auto;" %>
             </div>
           <% end %>
 
           <div class="float" id="badge-button">
             <%= link_to "BACK TO PROFILE", "/users/#{@user.id}",
-            class:"submit-blue", style:"width: 200px; margin: 15px auto;" %>
+                class:"submit-blue", style:"margin: 15px auto;" %>
           </div>
 
           <div class="float" id="badge-button">
             <%= link_to "EDIT", "/users/#{@user.id}/badges/#{@badge.id}/edit",
-            class:"submit-green", style:"width: 90px; margin: 15px auto;" %>
+                class:"submit-green", style:"margin: 15px auto;" %>
           </div>
 
           <% if @badge.opportunity_id == nil %>
@@ -61,7 +61,7 @@
           <% end %>
 
       <% else %>
-        <%= link_to "BACK TO PROFILE", "/users/#{@user.id}", class:"submit-blue" %>
+        <%= link_to "BACK TO #{@user.name.upcase}'S PROFILE", "/users/#{@user.id}", class:"submit-blue", style:"display: inline-block;" %>
       <% end %>
 
     </ul>

@@ -4,9 +4,8 @@
     <%= render 'recognitions_form' %>
 
       <div class="float">
-        <%= link_to "/users/#{@user.id}", class:"cancel-link" do %>
-          <div class="submit-blue">CANCEL</div>
-        <% end %>
+        <%= link_to "BACK TO #{@user.name.upcase}'S PROFILE", "/users/#{@user.id}",
+            class:"submit-blue", style:"margin-left: 15px;" %>
       </div>
     </div>
 <% else %>
