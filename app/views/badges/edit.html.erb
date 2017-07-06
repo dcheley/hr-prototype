@@ -6,15 +6,11 @@
       <%= render 'badges_form' %>
 
         <div class="float">
-          <%= link_to "/users/#{@user.id}/badges/#{@badge.id}", class:"cancel-link" do %>
-            <div class="delete">CANCEL</div>
-          <% end %>
+          <%= link_to "CANCEL", "/users/#{@user.id}/badges/#{@badge.id}", class:"delete", style:"margin-left: 15px;" %>
         </div>
 
         <div class="float" style="clear: both;">
-          <%= link_to "/users/#{@user.id}", class:"cancel-link" do %>
-            <div class="submit-blue">BACK TO PROFILE</div>
-          <% end %>
+          <%= link_to "BACK TO PROFILE", "/users/#{@user.id}", class:"submit-blue", style:"margin-top: 0; margin-left: 30px;" %>
         </div>
       </div>
     </div>
