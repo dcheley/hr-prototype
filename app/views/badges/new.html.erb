@@ -24,9 +24,7 @@
     <%= render 'badges_form' %>
 
       <div class="float">
-        <%= link_to "/users/#{current_user.id}", class:"cancel-link" do %>
-          <div class="submit-blue">BACK TO PROFILE</div>
-        <% end %>
+        <%= link_to "BACK TO PROFILE", "/users/#{current_user.id}", class:"submit-blue", style:"margin-left: 15px;" %>
       </div>
     </div>
   <% else %>
