@@ -6,15 +6,11 @@
       <%= render 'recognitions_form' %>
 
         <div class="float">
-          <%= link_to "/users/#{@user.id}/recognitions/#{@recognition.id}", class:"cancel-link" do %>
-            <div class="delete">CANCEL</div>
-          <% end %>
+          <%= link_to "CANCEL", "/users/#{@user.id}/recognitions/#{@recognition.id}", class:"delete" %>
         </div>
 
         <div class="float" style="clear: both;">
-          <%= link_to "/users/#{@user.id}", class:"cancel-center-link" do %>
-            <div class="submit-blue">BACK TO <%= "#{@user.name}".upcase %>'s PROFILE</div>
-          <% end %>
+          <%= link_to "BACK TO #{@user.name.upcase}'s PROFILE", "/users/#{@user.id}", class:"submit-blue" %>
         </div>
       </div>
     </div>
