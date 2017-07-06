@@ -1,9 +1,7 @@
 <% if current_user %>
   <div class="background" style="text-align: center;">
     <div style="text-align: center;">
-      <%= link_to "/users/opps", class:"cancel-center-link" do %>
-        <div class="submit-blue">BACK TO OPPORTUNITIES</div>
-      <% end %>
+      <%= link_to "BACK TO OPPORTUNITIES", "/users/opps", class:"submit-blue", style:"width: 260px;" %>
     </div>
 
     <% if current_user.co_op != nil %>

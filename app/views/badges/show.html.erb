@@ -44,12 +44,21 @@
             class:"submit-green", style:"width: 90px; margin: 15px auto;" %>
           </div>
 
-          <div class="float" id="badge-button">
-            <%= button_to 'DELETE BADGE', {:controller => 'badges', :action =>
-               'destroy', :user_id => current_user.id, :id => "#{@badge.id}"},
-                method: :delete, data: { confirm: "You sure? Badge will be permanently removed!" },
-                class:"delete", style: "margin: 15px auto;" %>
-          </div>
+          <% if @badge.opportunity_id == nil %>
+            <div class="float" id="badge-button">
+              <%= button_to 'DELETE BADGE', {:controller => 'badges', :action =>
+                 'destroy', :user_id => current_user.id, :id => "#{@badge.id}"},
+                  method: :delete, data: { confirm: "You sure? Badge will be permanently removed!" },
+                  class:"delete", style: "margin: 15px auto;" %>
+            </div>
+          <% else %>
+            <div class="float" style="width: 100%;">
+              <%= button_to 'DELETE BADGE', {:controller => 'badges', :action =>
+                 'destroy', :user_id => current_user.id, :id => "#{@badge.id}"},
+                  method: :delete, data: { confirm: "You sure? Badge will be permanently removed!" },
+                  class:"delete", style: "margin: 15px auto;" %>
+            </div>
+          <% end %>
 
       <% else %>
         <%= link_to "BACK TO PROFILE", "/users/#{@user.id}", class:"submit-blue" %>
