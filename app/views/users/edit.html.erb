@@ -130,9 +130,7 @@
           </div>
 
           <div class="float">
-            <%= link_to "/users/#{current_user.id}", class:"cancel-link" do %>
-              <div class="submit-blue">CANCEL</div>
-            <% end %>
+            <%= link_to "CANCEL", "/users/#{current_user.id}", class:"delete" %>
           </div>
         </div>
 
