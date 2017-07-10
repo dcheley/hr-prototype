@@ -158,7 +158,7 @@ a:hover {
 
 .alert {
   text-align: center;
-  font-size: 32px;
+  font-size: 16px;
   // background-color: $medium-grey;
   margin: auto;
   height: 100px;
@@ -175,12 +175,6 @@ a:hover {
 .disclaimer-body {
   margin-top: 15px;
   text-align: left;
-}
-
-@media screen and (max-width: 767px) {
-  .alert {
-    font-size: 16px;
-  }
 }
 
 @media screen and (max-width: 900px) {

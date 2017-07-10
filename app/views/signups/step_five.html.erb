@@ -37,7 +37,12 @@
       <%= f.hidden_field :exp, value: true %>
 
       <%= f.fields_for :signup_attributes do |s| %>
+        <%= s.hidden_field :step_one, value: nil %>
+        <%= s.hidden_field :step_two, value: nil %>
+        <%= s.hidden_field :step_three, value: nil %>
+        <%= s.hidden_field :step_four, value: nil %>
         <%= s.hidden_field :step_five, value: true %>
+        <%= s.hidden_field :step_six, value: nil %>
       <% end %>
 
       <div class="center-float-wrap">
@@ -54,7 +59,10 @@
         <div class="float" style="clear: both; width: 100%;">
           <%= form_for(current_user) do |f2| %>
             <%= f2.fields_for :signup do |s| %>
-              <%= s.hidden_field :step_four, value: true %>
+              <%= s.hidden_field :step_one, value: nil %>
+              <%= s.hidden_field :step_two, value: nil %>
+              <%= s.hidden_field :step_three, value: nil %>
+              <%= s.hidden_field :step_four, value: nil %>
               <%= s.hidden_field :step_five, value: true %>
               <%= s.hidden_field :step_six, value: nil %>
             <% end %>
