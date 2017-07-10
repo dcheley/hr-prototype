@@ -1,43 +1,34 @@
 <% if current_user && current_user == @user %>
-  <div class="left-profile"style="margin-top: 30px;">
-    <%= render 'profile-info' %>
-  </div>
+  <%= render 'profile-info' %>
 
-  <div class="right-profile" style="margin-top: 30px;">
-    <% if current_user.co_op == nil %>
-      <% if current_user.staff == true %>
-        <%= render 'private-staff-badge-list' %>
-      <% else %>
-        <%= render 'private-manager-badge-list' %>
-      <% end %>
+  <% if current_user.co_op == nil %>
+    <% if current_user.staff == true %>
+      <%= render 'private-staff-badge-list' %>
     <% else %>
-      <%= render 'private-coop-show-list' %>
+      <%= render 'private-manager-badge-list' %>
     <% end %>
-  </div>
+  <% else %>
+    <%= render 'private-coop-show-list' %>
+  <% end %>
 
 <% elsif current_user && current_user != @user %>
-  <div class="left-profile">
-    </br><h1 class="profile-title"><%= @user.name %>'s Profile</h1>
+  </br><h1 class="profile-title"><%= @user.name %>'s Profile</h1>
 
-    <%= render 'profile-info' %>
-  </div>
+  <%= render 'profile-info' %>
 
-  <div class="right-profile">
-    <h1 class="badge-title" style="margin-bottom: 0;"><%= "#{@user.name}" %>'s badges</h1>
+  <h1 class="profile-title" style="margin-bottom: 0;"><%= "#{@user.name}" %>'s badges</h1>
 
-    <p class="badge-new-wrap" style="margin-bottom: 30px;"><%= link_to 'GIVE Recognition Badge', "/users/#{@user.id}/recognitions/new", class:"submit-green", style:"margin: auto; width: 260px;" %></p>
+  <p class="badge-new-wrap" style="margin-bottom: 30px;"><%= link_to 'GIVE Recognition Badge', "/users/#{@user.id}/recognitions/new", class:"submit-green", style:"margin: auto; width: 260px;" %></p>
 
-    <% if @user.co_op == nil %>
-      <% if @user.staff == true %>
-        <%= render 'public-staff-badge-list' %>
-      <% else %>
-        <%= render 'public-manager-badge-list' %>
-      <% end %>
-  </div>
+  <% if @user.co_op == nil %>
+    <% if @user.staff == true %>
+      <%= render 'public-staff-badge-list' %>
     <% else %>
-      <%= render 'public-coop-show-list' %>
+      <%= render 'public-manager-badge-list' %>
     <% end %>
-  </div>
+  <% else %>
+    <%= render 'public-coop-show-list' %>
+  <% end %>
 
 <% else %>
   <h1 class="login-message"><%= link_to "LOGIN", :login %> to view profiles</h1>
