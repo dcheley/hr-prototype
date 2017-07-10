@@ -94,19 +94,6 @@
 }
 
 //User show & edit
-.left-profile {
-  float: left;
-  margin-left: 5%;
-  margin-right: 5%;
-  width: 30%;
-}
-
-.right-profile {
-  float: right;
-  margin-right: 5%;
-  width: 50%;
-}
-
 .half {
   float: left;
   width: 50%;
@@ -224,6 +211,7 @@
 .profile-pic {
   display: block;
   margin: auto;
+  margin-top: 15px;
 }
 
 .profile-info,
@@ -298,13 +286,6 @@
 }
 
 @media screen and (max-width: 939px) {
-  .left-profile,
-  .right-profile {
-    float: none;
-    width: 100%;
-    margin: auto;
-  }
-
   .badge-new-wrap,
   .badge-list {
     padding-left: 0;
