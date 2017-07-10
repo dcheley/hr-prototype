@@ -5,7 +5,11 @@
 
   <div class="right-profile" style="margin-top: 30px;">
     <% if current_user.co_op == nil %>
-      <%= render 'private-badge-show-list' %>
+      <% if current_user.staff == true %>
+        <%= render 'private-staff-badge-list' %>
+      <% else %>
+        <%= render 'private-manager-badge-list' %>
+      <% end %>
     <% else %>
       <%= render 'private-coop-show-list' %>
     <% end %>
@@ -24,7 +28,11 @@
     <p class="badge-new-wrap" style="margin-bottom: 30px;"><%= link_to 'GIVE Recognition Badge', "/users/#{@user.id}/recognitions/new", class:"submit-green", style:"margin: auto; width: 260px;" %></p>
 
     <% if @user.co_op == nil %>
-      <%= render 'public-badge-show-list' %>
+      <% if @user.staff == true %>
+        <%= render 'public-staff-badge-list' %>
+      <% else %>
+        <%= render 'public-manager-badge-list' %>
+      <% end %>
   </div>
     <% else %>
       <%= render 'public-coop-show-list' %>
