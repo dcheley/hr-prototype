@@ -1,9 +1,13 @@
 //Org Charts
-.org-title {
+.org-title,
+.left-title {
   position: relative;
-  text-align: left;
   padding-top: 10px;
   padding-bottom: 5px;
+}
+
+.org-title {
+  text-align: center;
 }
 
 .org-menu-container {
