@@ -93,7 +93,11 @@
   margin-top: 15px;
 }
 
-//User show & edit
+//User hom, show & edit
+.home-image {
+  width: 100%;
+}
+
 .half {
   float: left;
   width: 50%;
@@ -102,11 +106,6 @@
 .fifth {
   float: left;
   width: 20%;
-}
-
-.feed-wrap {
-  width: 100%;
-  margin: auto;
 }
 
 .feed-title {

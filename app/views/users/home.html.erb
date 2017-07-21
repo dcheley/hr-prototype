@@ -1,71 +1,29 @@
 <% if current_user %>
-  <p class="org-title" style="font-size: 38px;">Home</p>
+  <%= image_tag('diverse.jpg', class:'home-image') %>
+  <h1 class="org-title">Welcome</h1>
 
-  <div class="feed-wrap">
-    <div class="half">
-      <p class="feed-title">New Career Advancement Opportunities</p>
-      <% @opportunities.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |b| %>
-        <ul class="feed-list">
-          <li class="feed-item">
-            <%= link_to "#{b.name}", "/opportunities/#{b.id}" %>
-          </li>
-        </ul>
-      <% end %>
-    </div>
+  <div class="half">
+    <p class="feed-title">New Career Advancement Opportunities</p>
+    <% @opportunities.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |b| %>
+      <ul class="feed-list">
+        <li class="feed-item">
+          <%= link_to "#{b.name}", "/opportunities/#{b.id}" %>
+        </li>
+      </ul>
+    <% end %>
+  </div>
 
-    <!-- <div class="fifth">
-      <p class="feed-title">Experience of your colleagues</p>
-      <% @exp_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |e| %>
-        <ul class="feed-list">
-          <li class="feed-item">
-            <%= link_to "#{User.find(e.user_id).name}", "/users/#{e.user_id}" %>
-            added
-            <%= link_to  "#{e.name}", "/users/#{e.user_id}/badges/#{e.id}" %>
-            badge
-          </li>
-        </ul>
-      <% end %>
-    </div> -->
-
-    <div class="half">
-      <p class="feed-title">Who's been recognized?</p>
-      <% @received_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |r| %>
-        <ul class="feed-list">
-          <li class="feed-item">
-            <%= link_to "#{User.find(r.receiver_id).name}", "/users/#{r.receiver_id}" %>
-            <%= " by " + User.find(r.recognizer_id).name + " for " %>
-            <%= link_to "#{r.name}", "/users/#{r.receiver_id}/recognitions/#{r.id}" %>
-          </li>
-        </ul>
-      <% end %>
-    </div>
-
-    <!-- <div class="fifth">
-      <p class="feed-title">Education of your colleagues</p>
-      <% @edu_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |b| %>
-        <ul class="feed-list">
-          <li class="feed-item">
-            <%= link_to "#{User.find(b.user_id).name}", "/users/#{b.user_id}" %>
-            added
-            <%= link_to  "#{b.name}", "/users/#{b.user_id}/badges/#{b.id}" %>
-            badge
-          </li>
-        </ul>
-      <% end %>
-    </div>
-
-    <div class="fifth">
-      <p class="feed-title">Who's getting involved?</p>
-      <% @opportunity_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |o| %>
-        <ul class="feed-list">
-          <li class="feed-item">
-            <%= link_to "#{User.find(o.user_id).name}", "/users/#{o.user_id}" %>
-            is going to
-            <%= link_to "#{o.name}", "/users/#{o.user_id}/badges/#{o.id}" %>
-          </li>
-        </ul>
-      <% end %>
-    </div> -->
+  <div class="half">
+    <p class="feed-title">Who's been recognized?</p>
+    <% @received_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |r| %>
+      <ul class="feed-list">
+        <li class="feed-item">
+          <%= link_to "#{User.find(r.receiver_id).name}", "/users/#{r.receiver_id}" %>
+          <%= " by " + User.find(r.recognizer_id).name + " for " %>
+          <%= link_to "#{r.name}", "/users/#{r.receiver_id}/recognitions/#{r.id}" %>
+        </li>
+      </ul>
+    <% end %>
   </div>
 
   <% else %>
