@@ -39,40 +39,40 @@
           </nav>
           <ul class="nav navbar-nav navbar-right">
             <% if current_user.co_op == nil %>
-              <li>
+              <li class="<%= current_page?('/users/home') ? 'active-nav' : 'nav-link' %>">
                 <a href="/users/home">Home</a>
                 <span class="divider"></span>
               </li>
-              <li>
+              <li class="<%= current_page?('/users/org_charts') ? 'active-nav' : 'nav-link' %>">
                 <a href="/users/org_charts">Organizational Charts</a>
                 <span class="divider"></span>
               </li>
               <% if current_user.staff != nil %>
-                <li>
+                <li class="<%= current_page?('/users/opps') ? 'active-nav' : 'nav-link' %>">
                   <a href="/users/opps">Enhance Your Skills</a>
                   <span class="divider"></span>
                 </li>
               <% else %>
-                <li>
+                <li class="<%= current_page?('/users/opps') ? 'active-nav' : 'nav-link' %>">
                   <a href="/users/opps">Find Talent for a Project</a>
                   <span class="divider"></span>
                 </li>
               <% end %>
             <% else %>
-              <li>
+              <li class="<%= current_page?('/users/org_charts') ? 'active-nav' : 'nav-link' %>">
                 <a href="/users/org_charts">Co-op Students</a>
                 <span class="divider"></span>
               </li>
-              <li>
+              <li class="<%= current_page?('/users/opps') ? 'active-nav' : 'nav-link' %>">
                 <a href="/users/opps">Bucket list</a>
                 <span class="divider"></span>
               </li>
             <% end %>
-            <li>
+            <li class="<%= current_page?("/users/#{current_user.id}") ? 'active-nav' : 'nav-link' %>">
               <%= link_to "Profile", "/users/#{current_user.id}" %>
               <span class="divider"></span>
             </li>
-            <li>
+            <li class="<%= current_page?("/users/#{current_user.id}/edit") ? 'active-nav' : 'nav-link' %>">
               <%= link_to "Settings", "/users/#{current_user.id}/edit" %>
               <span class="divider"></span>
             </li>
