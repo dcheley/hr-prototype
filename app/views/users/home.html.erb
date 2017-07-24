@@ -2,24 +2,24 @@
   <div class="quarter">
     <%= image_tag('csd-logo-white.png', class:"csd-logo") %>
     <p class="feed-title">New Career Advancement Opportunities</p>
-    <% @opportunities.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |b| %>
       <ul class="feed-list">
-        <li class="feed-item">
-          <%= link_to "#{b.name}", "/opportunities/#{b.id}" %>
-        </li>
+        <% @opportunities.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |b| %>
+          <li class="feed-item">
+            <%= link_to "#{b.name}", "/opportunities/#{b.id}" %>
+          </li>
+        <% end %>
       </ul>
-    <% end %>
 
     <p class="feed-title">Who's been recognized?</p>
-    <% @received_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |r| %>
       <ul class="feed-list">
-        <li class="feed-item">
-          <%= link_to "#{User.find(r.receiver_id).name}", "/users/#{r.receiver_id}" %>
-          <%= " by " + User.find(r.recognizer_id).name + " for " %>
-          <%= link_to "#{r.name}", "/users/#{r.receiver_id}/recognitions/#{r.id}" %>
-        </li>
+        <% @received_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |r| %>
+          <li class="feed-item">
+            <%= link_to "#{User.find(r.receiver_id).name}", "/users/#{r.receiver_id}" %>
+            <%= " by " + User.find(r.recognizer_id).name + " for " %>
+            <%= link_to "#{r.name}", "/users/#{r.receiver_id}/recognitions/#{r.id}" %>
+          </li>
+        <% end %>
       </ul>
-    <% end %>
   </div>
 
   <div class="three-quarters">
