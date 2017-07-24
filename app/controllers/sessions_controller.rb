@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       redirect_to "/signups/new", notice: "Agree to terms to begin sign up"
     elsif user && user.authenticate(params[:password]) && user.agreement == true
       session[:user_id] = user.id
-      redirect_to "/users/org_charts", notice: "Logged in"
+      redirect_to "/users/home", notice: "Logged in"
     else
       flash[:alert] = "Invalid email or password"
       render :new
