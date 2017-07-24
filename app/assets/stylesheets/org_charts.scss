@@ -10,12 +10,6 @@
   text-align: center;
 }
 
-.org-menu-container {
-  margin: 2rem auto;
-  width: 100%;
-  padding-left: 12%;
-}
-
 .org-container {
   margin: 2rem auto;
   max-width: 100%;
@@ -123,8 +117,7 @@
   align-items: stretch;
 }
 
-.element,
-.menu-element {
+.element {
   position: relative;
   display: inline-block;
   width: 200px;
@@ -134,26 +127,19 @@
   color: black;
 }
 
-.menu-element {
-  width: 220px;
-}
-
-.org-box,
-.org-box-menu {
+.org-box {
   position: relative;
   display: block;
   height: 100%;
 }
 
-.org-header,
-.org-menu-header {
+.org-header {
   display: block;
   padding: 5px 35px 5px 10px;
   position: relative;
 }
 
-.org-header,
-.org-menu-header {
+.org-header {
   color: white;
   background: $dark-turquoise;
 }
@@ -166,14 +152,12 @@
 
 }
 
-.org-box h4,
-.org-box-menu h4 {
+.org-box h4 {
   margin: 0 0 2px;
   font-size: 16px;
 }
 
-.org-box p,
-.org-box-menu p {
+.org-box p {
   margin-top: 20px;
   margin-bottom: 15px;
   font-size: 15px;
@@ -183,12 +167,7 @@
   margin-left: 45%;
 }
 
-.org-box-menu p:last-child {
-  margin: 20px 0 0 0;
-}
-
-.org-details,
-.org-menu-details {
+.org-details {
   padding: 0 10px;
   margin-bottom: 20px;
 }
@@ -272,7 +251,6 @@
 }
 
 //Hover
-.menu-element:hover,
 .element:hover {
   text-decoration: none;
   border-color: $grey;
@@ -293,8 +271,7 @@
   display: none;
 }
 
-.boss-name,
-.menu-name {
+.boss-name {
   color: $dark-turquoise;
   text-align: right;
 }
