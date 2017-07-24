@@ -39,20 +39,46 @@
           </nav>
           <ul class="nav navbar-nav navbar-right">
             <% if current_user.co_op == nil %>
-              <li><a href="/users/home">Home</a></li>
-              <li><a href="/users/org_charts">Organizational Charts</a></li>
+              <li>
+                <a href="/users/home">Home</a>
+                <span class="divider"></span>
+              </li>
+              <li>
+                <a href="/users/org_charts">Organizational Charts</a>
+                <span class="divider"></span>
+              </li>
               <% if current_user.staff != nil %>
-                <li><a href="/users/opps">Enhance Your Skills</a></li>
+                <li>
+                  <a href="/users/opps">Enhance Your Skills</a>
+                  <span class="divider"></span>
+                </li>
               <% else %>
-                <li><a href="/users/opps">Find Talent for a Project</a></li>
+                <li>
+                  <a href="/users/opps">Find Talent for a Project</a>
+                  <span class="divider"></span>
+                </li>
               <% end %>
             <% else %>
-              <li><a href="/users/org_charts">Co-op Students</a></li>
-              <li><a href="/users/opps">Bucket list</a></li>
+              <li>
+                <a href="/users/org_charts">Co-op Students</a>
+                <span class="divider"></span>
+              </li>
+              <li>
+                <a href="/users/opps">Bucket list</a>
+                <span class="divider"></span>
+              </li>
             <% end %>
-            <li><%= link_to "Profile", "/users/#{current_user.id}" %></li>
-            <li><%= link_to "Settings", "/users/#{current_user.id}/edit" %></li>
-            <li><%= link_to "Logout", "/pulse_surveys/#{current_user.id}/edit" %></li>
+            <li>
+              <%= link_to "Profile", "/users/#{current_user.id}" %>
+              <span class="divider"></span>
+            </li>
+            <li>
+              <%= link_to "Settings", "/users/#{current_user.id}/edit" %>
+              <span class="divider"></span>
+            </li>
+            <li>
+              <%= link_to "Logout", "/pulse_surveys/#{current_user.id}/edit" %>
+            </li>
           </ul>
         </div>
       </nav>

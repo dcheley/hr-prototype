@@ -216,6 +216,21 @@ a:hover {
   .form-control {
     width: 250px !important;
   }
+
+  .navbar-default .navbar-nav > li {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .divider {
+    margin-top: 0;
+    border-right: 2px solid $white-smoke;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 1px;
+    height: 32px;
+  }
 }
 
 @media screen and (max-width: 900px) {
