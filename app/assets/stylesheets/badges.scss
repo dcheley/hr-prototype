@@ -79,7 +79,7 @@
 .badge-green,
 .badge-show-green {
   color: white;
-  background-color: $green;
+  background-color: $dark-blue;
 }
 
 .badge-green li {
@@ -99,7 +99,7 @@
 }
 
 .badge-green:hover {
-  background-color: $dark-green;
+  background-color: $darker-blue;
   li {
     color: $medium-grey;
   }
