@@ -60,6 +60,27 @@ a:hover {
   color: $blue;
 }
 
+.form-control {
+  // width: 250px !important;
+}
+
+.search-button {
+  background-color: $dark-blue;
+  border: none;
+  span {
+    color: $white-smoke;
+    font-size: 24px;
+    vertical-align: middle;
+    margin-bottom: 5px;
+  }
+}
+
+.search-button:hover {
+  span {
+    color: $blue;
+  }
+}
+
 .btn-default {
   color: $white-smoke;
   background-color: $dark-turquoise;
@@ -190,6 +211,11 @@ a:hover {
 .disclaimer-body {
   margin-top: 15px;
   text-align: left;
+}
+@media screen and (min-width: 768px) {
+  .form-control {
+    width: 250px !important;
+  }
 }
 
 @media screen and (max-width: 900px) {
