@@ -1,60 +1,63 @@
+<div class="row">
+  <h4 class="profile-title">Education</h4>
+  <p class=""><%= link_to "Add education badges to your profile", "/users/#{current_user.id}/badges/new", class:"team-link" %></p>
 
-    <div class="row">
-      <p class=""><%= link_to "Add education badges to your profile", "/users/#{current_user.id}/badges/new", class:"team-link" %></p>
+  <!-- Display Education Badges -->
+  <% @user.badges.where(opportunity_id: nil, education: true).each do |b| %>
+    <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
+      <div class="badge-green">
+        <li class="profile-badges-name">
+          <%= "#{b.name}" %>
+        </li></br>
+      </div>
+    <% end %>
+  <% end %>
+</div>
 
-      <!-- Display Education Badges -->
-      <% @user.badges.where(opportunity_id: nil, education: true).each do |b| %>
-        <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
-          <div class="badge-green">
-            <li class="profile-badges-name">
-              <%= "#{b.name}" %>
-            </li></br>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
+<div class="row">
+  <h4 class="profile-title">Experience</h4>
+  <p class=""><%= link_to "Add experience badges to your profile", "/badges/exp", class:"team-link" %></p>
 
-    <div class="">
-      <p class=""><%= link_to "Add experience badges to your profile", "/badges/exp", class:"team-link" %></p>
+  <!-- Display Exp/skills Badges -->
+  <% @user.badges.where(opportunity_id: nil, exp: true).each do |b| %>
+    <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
+      <div class="badge-green">
+        <li class="profile-badges-name">
+          <%= "#{b.name}" %>
+        </li></br>
+      </div>
+    <% end %>
+  <% end %>
+</div>
 
-      <!-- Display Exp/skills Badges -->
-      <% @user.badges.where(opportunity_id: nil, exp: true).each do |b| %>
-        <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
-          <div class="badge-green">
-            <li class="profile-badges-name">
-              <%= "#{b.name}" %>
-            </li></br>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
+<div class="row">
+  <h4 class="profile-title">Enhance Your Skills</h4>
+  <p class=""><%= link_to "Sign up to upcoming opportunities", "/users/opps", class:"team-link" %></p>
 
-    <div class="">
-      <p class=""><%= link_to "Sign up to upcoming opportunities", "/users/opps", class:"team-link" %></p>
+  <!-- Display Opportunity Badges -->
+  <% @user.badges.where.not(opportunity_id: nil).each do |b| %>
+    <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
+      <div class="badge-green">
+        <li class="profile-badges-name">
+          <%= "#{b.name}" %>
+        </li></br>
+      </div>
+    <% end %>
+  <% end %>
+</div>
 
-      <!-- Display Opportunity Badges -->
-      <% @user.badges.where.not(opportunity_id: nil).each do |b| %>
-        <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
-          <div class="badge-green">
-            <li class="profile-badges-name">
-              <%= "#{b.name}" %>
-            </li></br>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
+<div class="row">
+  <h4 class="profile-title">Recognition</h4>
+  <p class=""><%= link_to "Recognize a certain colleague", "/users/org_charts", class:"team-link" %></p>
 
-    <div class="">
-      <p class=""><%= link_to "Recognize a certain colleague", "/users/org_charts", class:"team-link" %></p>
-
-      <!-- Display Recognition Badges -->
-      <% @user.received_badges.each do |b| %>
-        <%= link_to "/users/#{@user.id}/recognitions/#{b.id}" do %>
-          <div class="badge-green">
-            <li class="profile-badges-name">
-              <%= "#{b.name}" %>
-            </li></br>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
+  <!-- Display Recognition Badges -->
+  <% @user.received_badges.each do |b| %>
+    <%= link_to "/users/#{@user.id}/recognitions/#{b.id}" do %>
+      <div class="badge-green">
+        <li class="profile-badges-name">
+          <%= "#{b.name}" %>
+        </li></br>
+      </div>
+    <% end %>
+  <% end %>
+</div>

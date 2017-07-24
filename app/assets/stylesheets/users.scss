@@ -145,21 +145,28 @@
   font-weight: bold;
 }
 
-.badge-list-title {
-  position: absolute;
-  padding-top: 5px;
-}
-
-.badge-row {
+.badge-row,
+.row {
   width: 100%;
   margin: auto;
 }
 
+.row {
+  clear: both;
+}
+
+.row p {
+  margin-left: 10px;
+}
+
 .profile-title {
-  text-align: center;
+  text-align: left;
   padding-top: 15px;
   padding-bottom: 15px;
-  margin-top: 0;
+  padding-left: 10px;
+  background-color: $teal;
+  color: $dark-blue;
+  font-weight: bold;
 }
 
 .profile-pic {
