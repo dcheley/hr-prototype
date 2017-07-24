@@ -61,7 +61,7 @@ a:hover {
 }
 
 .active-nav a {
-  color: $blue;
+  color: $blue !important;
 }
 
 .search-button {
@@ -97,6 +97,32 @@ a:hover {
   background-color: $light-grey;
   height: 40px;
   line-height: 40px;
+}
+
+.quarter {
+  float: left;
+  width: 25%;
+  background-color: $blue;
+  height: 800px;
+}
+
+.quarter a {
+  color: $white-smoke;
+  font-weight: bold;
+}
+
+.quarter a:hover {
+  color: $dark-blue;
+}
+
+.three-quarters {
+  float: right;
+  width: 72.5%;
+  margin-left: 2.5%;
+}
+
+.csd-logo {
+  width: 100%;
 }
 
 .submit-blue,
