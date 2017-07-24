@@ -189,27 +189,24 @@
 .profile-pic {
   display: block;
   margin: auto;
-  margin-top: 15px;
-}
-
-.profile-info,
-.team-info {
-  text-align: center;
-  padding: 5px;
-  list-style: none;
-}
-
-.team-info {
-  font-size: 16px;
-}
-
-.profile-info {
-  font-size: 16px;
+  border-radius: 180px;
 }
 
 .default-pic {
   text-align: center;
   margin: 20px;
+}
+
+.default-pic .glyphicon,
+.profile-pic {
+  line-height: 2;
+}
+
+.profile-info {
+  text-align: left;
+  padding: 5px;
+  list-style: none;
+  font-size: 16px;
 }
 
 .pic-info {
@@ -250,7 +247,9 @@
 }
 
 .profile-details {
+  margin-top: 20px;
   padding-left: 0;
+  text-align: left;
 }
 
 .search-counter {

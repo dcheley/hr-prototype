@@ -1,30 +1,24 @@
-<% if @user.avatar.file? == true %>
-  <%= image_tag @user.avatar.url(:medium), class:"profile-pic" %>
-<% else %>
-  <div class="default-pic">
-    <span class="glyphicon glyphicon-user" style="font-size: 80px;"></span>
-  </div>
-<% end %>
-
-<ul class="profile-details">
-  <% if @user.adm_office == true %>
-    <li class="team-info"><%= link_to "Back to ADM Office org chart", "/users/admo_org_chart", class:"team-link" %></li>
-  <% elsif @user.strategic_human_resources == true %>
-    <li class="team-info"><%= link_to "Back to Human Resources org chart", "/users/hr_org_chart", class:"team-link" %></li>
-  <% elsif @user.service_management_and_facilities == true %>
-    <li class="team-info"><%= link_to "Back to Service Management & Facilities org chart", "/users/smf_org_chart", class:"team-link" %></li>
-  <% elsif @user.business_planning_and_finance == true %>
-    <li class="team-info"><%= link_to "Back to Business Planning and Finance org chart", "/users/bpf_org_chart", class:"team-link" %></li>
-  <% end %>
-  <li class="profile-info"><b>Email:</b> <%= @user.email %></li>
-  <li class="profile-info"><b>Title:</b> <%= @user.title %></li>
-  <li class="profile-info"><b>Direct Manager:</b> <%= @user.direct_report %></li>
-  <li class="profile-info"><b>Skills I'm currently developing:</b> <%= @user.career_aspirations %></li>
-  <li class="profile-info"><b>Job Description:</b></li>
-
-  <% if @user.job_description == nil || @user.job_description == "" %>
-    <li class="profile-info">Describe your responsibilities and experience in 500 characters or less.</li>
+<div class="blank-quarter">
+  <% if @user.avatar.file? == true %>
+    <%= image_tag @user.avatar.url(:medium), class:"profile-pic" %>
   <% else %>
-    <li class="profile-info"><%= @user.job_description %></li>
+    <div class="default-pic">
+      <span class="glyphicon glyphicon-user" style="font-size: 80px;"></span>
+    </div>
   <% end %>
-</ul>
+</div>
+
+<div class="three-quarters">
+  <ul class="profile-details">
+    <li class="profile-info"><b><h3><%= @user.name %></h3></b></li>
+    <li class="profile-info"><b><%= @user.title %></b></li>
+    <% if @user.job_description == nil || @user.job_description == "" %>
+      <li class="profile-info" style="font-style: italic;">Describe your responsibilities and experience in 500 characters or less.</li>
+    <% else %>
+      <li class="profile-info" style="font-style: italic;"><%= @user.job_description %></li>
+    <% end %>
+    <li class="profile-info"><b><%= @user.email %></b></li>
+    <li class="profile-info"><b>Manager:<%= @user.direct_report %></b></li>
+    <li class="profile-info"><b>Skills I'm currently developing:</b> <%= @user.career_aspirations %></li>
+  </ul>
+</div>

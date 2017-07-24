@@ -99,9 +99,13 @@ a:hover {
   line-height: 40px;
 }
 
-.quarter {
+.quarter,
+.blank-quarter {
   float: left;
   width: 25%;
+}
+
+.quarter {
   background-color: $blue;
   height: 800px;
 }
