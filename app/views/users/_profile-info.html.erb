@@ -6,6 +6,10 @@
       <span class="glyphicon glyphicon-user" style="font-size: 80px;"></span>
     </div>
   <% end %>
+
+  <% if current_user != @user %>
+    <p class="badge-new-wrap"><%= link_to 'RECOGNIZE', "/users/#{@user.id}/recognitions/new", class:"submit-green", style:"margin: auto;" %></p>
+  <% end %>
 </div>
 
 <div class="three-quarters">

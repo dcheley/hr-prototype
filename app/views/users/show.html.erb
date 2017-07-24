@@ -19,11 +19,7 @@
   <%= render 'office-sidebar' %>
 
   <div class="three-quarters">
-    </br><h1 class="profile-title"><%= @user.name %>'s Profile</h1>
-
     <%= render 'profile-info' %>
-
-    <p class="badge-new-wrap" style="margin-bottom: 30px;"><%= link_to 'RECOGNIZE', "/users/#{@user.id}/recognitions/new", class:"submit-green", style:"margin: auto;" %></p>
 
     <% if @user.co_op == nil %>
       <% if @user.staff == true %>
