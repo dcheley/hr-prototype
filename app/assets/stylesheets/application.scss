@@ -8,6 +8,11 @@
 @import "signups";
 @import "pulse_surveys";
 
+.banner-image {
+  width: 100%;
+  height: 150px;
+}
+
 a:hover {
   text-decoration: none;
 }
@@ -38,15 +43,21 @@ a:hover {
 
 //Navbar
 .navbar {
-  background-color: $grey;
+  background-color: $dark-blue;
   margin-bottom: 0;
   border: none;
+  border-radius: 0;
 }
 
 .navbar-default .navbar-nav > li > a {
   font-weight: bold;
+  font-size: 16px;
   color: $white-smoke;
   text-align: center;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: $blue;
 }
 
 .btn-default {

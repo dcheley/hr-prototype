@@ -18,6 +18,8 @@
   </head>
 
   <body>
+    <%= image_tag('banner.png', class:'banner-image') %>
+
     <% if current_user && current_user.agreement == true %>
       <nav class="navbar navbar-default">
         <div class="container-fluid">
