@@ -1,34 +1,29 @@
-<ul class="nav nav-pills nav-justified">
-  <li role="presentation" class="active"><a href="#bucket" data-toggle="pill">Bucket List</a></li>
-  <li role="presentation"><a href="#recognitions" data-toggle="pill">Recognition badges</a></li>
-</ul>
+<div class="row">
+  <h4 class="profile-title">Bucket List</h4>
 
-<div class="tab-content">
-  <div role="tabpane1" class="tab-pane active" id="bucket">
-    <div class="badge-row">        <!-- Display Green Badges -->
-      <% @user.badges.where.not(opportunity_id: nil).each do |b| %>
-        <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
-          <div class="badge-green">
-            <li class="profile-badges-name">
-              <%= "#{b.name}" %>
-            </li></br>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-  <div role="tabpane1" class="tab-pane" id="recognitions">
-    <div class="badge-row">
-      <!-- Display Green Badges -->
-      <% @user.received_badges.each do |b| %>
-        <%= link_to "/users/#{@user.id}/recognitions/#{b.id}" do %>
-          <div class="badge-green">
-            <li class="profile-badges-name">
-              <%= "#{b.name}" %>
-            </li></br>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
+  <!-- Display Exp/skills Badges -->
+  <% @user.badges.where.not(opportunity_id: nil).each do |b| %>
+    <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
+      <div class="badge-green">
+        <li class="profile-badges-name">
+          <%= "#{b.name}" %>
+        </li></br>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="row">
+  <h4 class="profile-title">Recognition</h4>
+
+  <!-- Display Recognition Badges -->
+  <% @user.received_badges.each do |b| %>
+    <%= link_to "/users/#{@user.id}/recognitions/#{b.id}" do %>
+      <div class="badge-green">
+        <li class="profile-badges-name">
+          <%= "#{b.name}" %>
+        </li></br>
+      </div>
+    <% end %>
+  <% end %>
 </div>

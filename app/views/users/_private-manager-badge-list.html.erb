@@ -1,53 +1,47 @@
-<ul class="nav nav-pills nav-justified">
-  <li role="presentation" class="active"><a href="#edu" data-toggle="pill">Education</a></li>
-  <li role="presentation"><a href="#skillz" data-toggle="pill">Experience</a></li>
-  <li role="presentation"><a href="#recognitionz" data-toggle="pill">Recognition</a></li>
-</ul>
+<div class="row">
+  <h4 class="profile-title">Education</h4>
+  <p class=""><%= link_to "Add education badges to your profile", "/users/#{current_user.id}/badges/new", class:"team-link" %></p>
 
-<div class="tab-content">
-  <div role="tabpane1" class="tab-pane active" id="edu">
-    <p class="badge-list-title" id="edu-link"><%= link_to "Add education badges to your profile", "/users/#{current_user.id}/badges/new", class:"team-link" %></p>
-    <div class="badge-row" style="padding-top: 30px;">
-      <!-- Display Education Badges -->
-      <% @user.badges.where(opportunity_id: nil, education: true).each do |b| %>
-        <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
-          <div class="badge-green">
-            <li class="profile-badges-name">
-              <%= "#{b.name}" %>
-            </li></br>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-  <div role="tabpane1" class="tab-pane" id="skillz">
-    <p class="badge-list-title" id="skillz-link"><%= link_to "Add experience badges to your profile", "/badges/exp", class:"team-link" %></p>
-    <div class="badge-row" style="padding-top: 30px;">
-      <!-- Display Exp/skills Badges -->
-      <% @user.badges.where(opportunity_id: nil, exp: true).each do |b| %>
-        <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
-          <div class="badge-green">
-            <li class="profile-badges-name">
-              <%= "#{b.name}" %>
-            </li></br>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-  <div role="tabpane1" class="tab-pane" id="recognitionz">
-    <p class="badge-list-title" id="recognitionz-link"><%= link_to "Recognize a certain colleague", "/users/org_charts", class:"team-link" %></p>
-    <div class="badge-row" style="padding-top: 30px;">
-      <!-- Display Recognition Badges -->
-      <% @user.received_badges.each do |b| %>
-        <%= link_to "/users/#{@user.id}/recognitions/#{b.id}" do %>
-          <div class="badge-green">
-            <li class="profile-badges-name">
-              <%= "#{b.name}" %>
-            </li></br>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
+  <!-- Display Education Badges -->
+  <% @user.badges.where(opportunity_id: nil, education: true).each do |b| %>
+    <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
+      <div class="badge-green">
+        <li class="profile-badges-name">
+          <%= "#{b.name}" %>
+        </li></br>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="row">
+  <h4 class="profile-title">Experience</h4>
+  <p class=""><%= link_to "Add experience badges to your profile", "/badges/exp", class:"team-link" %></p>
+
+  <!-- Display Exp/skills Badges -->
+  <% @user.badges.where(opportunity_id: nil, exp: true).each do |b| %>
+    <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
+      <div class="badge-green">
+        <li class="profile-badges-name">
+          <%= "#{b.name}" %>
+        </li></br>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="row">
+  <h4 class="profile-title">Recognition</h4>
+  <p class=""><%= link_to "Recognize colleagues", "/users/org_charts", class:"team-link" %></p>
+
+  <!-- Display Recognition Badges -->
+  <% @user.received_badges.each do |b| %>
+    <%= link_to "/users/#{@user.id}/recognitions/#{b.id}" do %>
+      <div class="badge-green">
+        <li class="profile-badges-name">
+          <%= "#{b.name}" %>
+        </li></br>
+      </div>
+    <% end %>
+  <% end %>
 </div>

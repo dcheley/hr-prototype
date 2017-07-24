@@ -1,65 +1,59 @@
-<ul class="nav nav-pills nav-justified">
-  <li role="presentation" class="active"><a href="#edu" data-toggle="pill">Education</a></li>
-  <li role="presentation"><a href="#skillz" data-toggle="pill">Experience</a></li>
-  <li role="presentation"><a href="#eventz" data-toggle="pill">Careers I'm Developing Towards</a></li>
-  <li role="presentation"><a href="#recognitionz" data-toggle="pill">Recognition</a></li>
-</ul>
+<div class="row">
+  <h4 class="profile-title">Education</h4>
 
-<div class="tab-content">
-  <div role="tabpane1" class="tab-pane active" id="edu">
-    <div class="badge-row">
-      <!-- Display Education Badges -->
-      <% @user.badges.where(opportunity_id: nil, education: true).each do |b| %>
-        <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
-          <div class="badge-green">
-            <li class="profile-badges-name">
-              <%= "#{b.name}" %>
-            </li></br>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-  <div role="tabpane1" class="tab-pane" id="skillz">
-    <div class="badge-row">
-      <!-- Display Experience Badges -->
-      <% @user.badges.where(opportunity_id: nil, exp: true).each do |b| %>
-        <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
-          <div class="badge-green">
-            <li class="profile-badges-name">
-              <%= "#{b.name}" %>
-            </li></br>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-  <div role="tabpane1" class="tab-pane" id="eventz">
-    <div class="badge-row">
-      <!-- Display Opportunity Badges -->
-      <% @user.badges.where.not(opportunity_id: nil).each do |b| %>
-        <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
-          <div class="badge-green">
-            <li class="profile-badges-name">
-              <%= "#{b.name}" %>
-            </li></br>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-  <div role="tabpane1" class="tab-pane" id="recognitionz">
-    <div class="badge-row">
-      <!-- Display Received Recognition Badges -->
-      <% @user.received_badges.each do |b| %>
-        <%= link_to "/users/#{@user.id}/recognitions/#{b.id}" do %>
-          <div class="badge-green">
-            <li class="profile-badges-name">
-              <%= "#{b.name}" %>
-            </li></br>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
+  <!-- Display Education Badges -->
+  <% @user.badges.where(opportunity_id: nil, education: true).each do |b| %>
+    <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
+      <div class="badge-green">
+        <li class="profile-badges-name">
+          <%= "#{b.name}" %>
+        </li></br>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="row">
+  <h4 class="profile-title">Experience</h4>
+
+  <!-- Display Exp/skills Badges -->
+  <% @user.badges.where(opportunity_id: nil, exp: true).each do |b| %>
+    <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
+      <div class="badge-green">
+        <li class="profile-badges-name">
+          <%= "#{b.name}" %>
+        </li></br>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="row">
+  <h4 class="profile-title">Enhance Your Skills</h4>
+
+  <!-- Display Opportunity Badges -->
+  <% @user.badges.where.not(opportunity_id: nil).each do |b| %>
+    <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
+      <div class="badge-green">
+        <li class="profile-badges-name">
+          <%= "#{b.name}" %>
+        </li></br>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="row">
+  <h4 class="profile-title">Recognition</h4>
+
+  <!-- Display Recognition Badges -->
+  <% @user.received_badges.each do |b| %>
+    <%= link_to "/users/#{@user.id}/recognitions/#{b.id}" do %>
+      <div class="badge-green">
+        <li class="profile-badges-name">
+          <%= "#{b.name}" %>
+        </li></br>
+      </div>
+    <% end %>
+  <% end %>
 </div>
