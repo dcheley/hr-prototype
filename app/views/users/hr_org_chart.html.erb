@@ -1,22 +1,18 @@
 <% if current_user %>
-  <div style="text-align: center;">
-    <%= link_to "/users/org_charts", class:"cancel-center-link" do %>
-      <div class="submit-blue">BACK TO CSD ORG CHART</div>
-    <% end %>
-  </div>
-
-  <h1 class="org-title">Strategic Human Resources</h1>
-
-  <p class="legend-title">Unit by colour</p>
-
-  <ul class="legend">
-    <li class="legend-item"><span class="team-four"></span>Jamie L</li>
-    <li class="legend-item"><span class="team-three"></span>Nav N</li>
-    <li class="legend-item"><span class="team-two"></span>Annette A</li>
-    <li class="legend-item"><span class="team-one"></span>Christina C</li>
-  </ul>
-
+  <%= render 'office-sidebar' %>
+  
   <section class="org-container">
+    <h1 class="org-title">Strategic Human Resources</h1>
+
+    <p class="legend-title">Unit by colour</p>
+
+    <ul class="legend">
+      <li class="legend-item"><span class="team-four"></span>Jamie L</li>
+      <li class="legend-item"><span class="team-three"></span>Nav N</li>
+      <li class="legend-item"><span class="team-two"></span>Annette A</li>
+      <li class="legend-item"><span class="team-one"></span>Christina C</li>
+    </ul>
+
     <% @users.where(strategic_human_resources: true, director: true).each do |a| %>
       <div id="level-0" class="level expanded">
         <div class="level-wrap">

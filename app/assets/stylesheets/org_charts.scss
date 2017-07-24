@@ -12,7 +12,8 @@
 
 .org-container {
   margin: 2rem auto;
-  max-width: 100%;
+  width: 75%;
+  float: right;
 }
 
 .org-container * {
@@ -183,6 +184,7 @@
   width: 55px;
   height: 52px;
   margin-left: 5px;
+  border-radius: 180px;
 }
 
 .info-btn,
