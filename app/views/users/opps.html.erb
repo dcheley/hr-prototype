@@ -1,56 +1,46 @@
 <% if current_user && current_user.co_op == nil %>
-  <% if current_user.staff != nil %>
-    <h1 class="home-title">Enhance Your Skills</h1>
-  <% else %>
-    <h1 class="home-title">Find Employees for a Project</h1>
-  <% end %>
-  <% if current_user.staff == nil %>
-    <div style="text-align: center;">
-      <%= link_to "/opportunities/new", class:"cancel-center-link" do %>
-        <div class="submit-blue", style="margin: 20px auto;">POST PROJECT TO WEBSITE</div>
-      <% end %>
-    </div>
-
-    <div style="text-align: center;">
-      <%= link_to "/users/org_charts", class:"cancel-center-link" do %>
-        <div class="submit-blue", style="margin: 20px auto;">FIND EMPLOYEE VIA ORGCHART</div>
-      <% end %>
-    </div>
-  <% end %>
-
-  <div class="carousel-container">
-    <ul class="nav nav-pills nav-stacked" style="text-align: center;">
-      <% if current_user.staff != nil %>
-        <li role="presentation" class="active"><a href="#opp-one" data-toggle="pill">Choose a career to develop towards</a></li>
-      <% end %>
-      <!-- <li role="presentation"><a href="#opp-two" data-toggle="pill">Courses & Learning Opportunities</a></li>
-      <li role="presentation"><a href="#opp-three" data-toggle="pill">Hobbies, Interests & Extra Curriculars</a></li> -->
+  <div class="quarter">
+    <%= image_tag('CSD-logo.jpg', class:"csd-logo") %>
+    <ul class="feed-list">
+      <li class="feed-item"><%= link_to "Post Project to Website", "/opportunities/new" %></li>
     </ul>
+  </div>
 
-    <div class="tab-content" style="background-color: white;">
-      <div role="tabpane1" class="tab-pane active" id="opp-one">
-        <% @opportunities.where(career: true).each do |o| %>
-          <div class="third">
-            <%= link_to o.name, "/opportunities/#{o.id}", class:"csd-opp-name", id:"blue" %>
-          </div>
-        <% end %>
+  <div class="three-quarters">
+    <h1 class="org-title" style="margin-left: 0;">Enhance Your Skills</h1>
+
+    <div class="carousel-container">
+      <ul class="nav nav-pills nav-stacked" style="text-align: center;">
+        <li role="presentation" class="active"><a href="#opp-one" data-toggle="pill">Choose skills to develop</a></li>
+        <!-- <li role="presentation"><a href="#opp-two" data-toggle="pill">Courses & Learning Opportunities</a></li>
+        <li role="presentation"><a href="#opp-three" data-toggle="pill">Hobbies, Interests & Extra Curriculars</a></li> -->
+      </ul>
+
+      <div class="tab-content" style="background-color: white;">
+        <div role="tabpane1" class="tab-pane active" id="opp-one">
+          <% @opportunities.where(career: true).each do |o| %>
+            <div class="third">
+              <%= link_to o.name, "/opportunities/#{o.id}", class:"csd-opp-name", id:"blue" %>
+            </div>
+          <% end %>
+        </div>
+
+        <!-- <div role="tabpane1" class="tab-pane" id="opp-two">
+          <% @opportunities.where(learning: true).each do |l| %>
+            <div class="third">
+              <%= link_to l.name, "/opportunities/#{l.id}", class:"csd-opp-name", id:"blue" %>
+            </div>
+          <% end %>
+        </div>
+
+        <div role="tabpane1" class="tab-pane" id="opp-three">
+          <% @opportunities.where(hobby: true).each do |h| %>
+            <div class="third">
+              <%= link_to h.name, "/opportunities/#{h.id}", class:"csd-opp-name", id:"blue" %>
+            </div>
+          <% end %>
+        </div> -->
       </div>
-
-      <!-- <div role="tabpane1" class="tab-pane" id="opp-two">
-        <% @opportunities.where(learning: true).each do |l| %>
-          <div class="third">
-            <%= link_to l.name, "/opportunities/#{l.id}", class:"csd-opp-name", id:"blue" %>
-          </div>
-        <% end %>
-      </div>
-
-      <div role="tabpane1" class="tab-pane" id="opp-three">
-        <% @opportunities.where(hobby: true).each do |h| %>
-          <div class="third">
-            <%= link_to h.name, "/opportunities/#{h.id}", class:"csd-opp-name", id:"blue" %>
-          </div>
-        <% end %>
-      </div> -->
     </div>
   </div>
 
