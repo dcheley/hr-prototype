@@ -1,4 +1,4 @@
-<% if current_user %>
+<% if current_user && current_user.co_op == nil %>
   <div class="quarter">
     <%= image_tag('csd-logo-white.png', class:"csd-logo") %>
     <p class="feed-title">New Career Advancement Opportunities</p>
@@ -38,6 +38,46 @@
     </p>
   </div>
 
-  <% else %>
-    <h1 class="login-message"><%= link_to "LOGIN", :login %> to view Activity Feed</h1>
-  <% end %>
+  <% elsif current_user && current_user.co_op != nil %>
+    <h1 class="org-title">Co-op Students</h1>
+
+    <section class="org-container">
+      <div id="level-1" class="level">
+        <div class="level-wrap">
+          <div id="level-1-active" class="col-1-3 active">
+            <!-- <div class="element"></div> -->
+          </div>
+          <div id="level-1-list" class="col-1-3 list">
+            <ul>
+              <% @users.where(co_op: true).each do |b| %>
+                <%= link_to "/users/#{b.id}" do %>
+                  <li class="element" style="width: 240px;">
+                    <div class="org-box">
+                      <div class="org-header">
+                        <h4 class="branch"><%= "#{b.title}" %><span class=""></span></h4>
+                        <!-- <div class="context">
+                          <span class="glyphicon glyphicon-menu-down"></span>
+                        </div> -->
+                      </div>
+                        <div class="org-details">
+                          <p class="boss-name" style="margin-left: 38%;"><%= b.name %></p>
+                          <p class="badge-count" style="font-size: 12px; margin-left: 38%;"><b>Bucket List Badges:</b> <%= b.badges.where.not(opportunity_id: nil).count %></p>
+                          <p class="badge-count" style="font-size: 12px; margin-left: 38%;"><b>Recognition Badges:</b> <%= b.received_badges.count %></p>
+                        </div>
+                      <% if b.avatar.file? != true %>
+                        <div class="info-coop-btn"><span class="glyphicon glyphicon-user"></span></div>
+                      <% else %>
+                        <%= image_tag b.avatar.url(:medium), class:"org-profile-pic" %>
+                      <% end %>
+                    </div>
+                  </li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+<% else %>
+  <h1 class="login-message"><%= link_to "LOGIN", :login %> to view home page</h1>
+<% end %>
