@@ -18,8 +18,10 @@
         <ul class="profile-details">
           <li class="profile-info"><b><h3><%= link_to "#{u.name}", "/users/#{u.id}", class:"team-link" %></h3></b></li>
           <li class="profile-info"><b><%= u.title %></b></li>
-          <% if u.job_description != nil || u.job_description != "" %>
+          <% if u.job_description == nil || u.job_description == "" %>
             <li class="profile-info" style="font-style: italic;">Describe your responsibilities and experience in 500 characters or less.</li>
+          <% else %>
+            <li class="profile-info" style="font-style: italic;"><%= u.job_description %></li>
           <% end %>
           <li class="profile-info"><b><%= u.email %></b></li>
           <li class="profile-info"><b>Manager: <%= u.direct_report %></b></li>
