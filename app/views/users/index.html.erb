@@ -1,10 +1,31 @@
-<div class="container" style="text-align: center;">
+<%= render 'office-sidebar' %>
+
+<div class="three-quarters">
   <% if params[:search] %>
-    <p class="search-counter"><b><%= @users.count %></b> Profiles found:</p>
-      <div class="divider"></div>
+    <h1 class="search-counter"><b><%= @users.count %></b> Profiles found:</h1>
     <% @users.each do |u| %>
-      <p class="search-result"><%= link_to "#{u.name}", "/users/#{u.id}", class:"team-link" %></p>
-      <div class="divider"></div>
+      <div class="blank-quarter">
+        <% if u.avatar.file? == true %>
+          <%= image_tag u.avatar.url(:medium), class:"profile-pic" %>
+        <% else %>
+          <div class="default-pic">
+            <span class="glyphicon glyphicon-user" style="font-size: 80px;"></span>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="three-quarters">
+        <ul class="profile-details">
+          <li class="profile-info"><b><h3><%= link_to "#{u.name}", "/users/#{u.id}", class:"team-link" %></h3></b></li>
+          <li class="profile-info"><b><%= u.title %></b></li>
+          <% if u.job_description != nil || u.job_description != "" %>
+            <li class="profile-info" style="font-style: italic;">Describe your responsibilities and experience in 500 characters or less.</li>
+          <% end %>
+          <li class="profile-info"><b><%= u.email %></b></li>
+          <li class="profile-info"><b>Manager:<%= u.direct_report %></b></li>
+        </ul>
+      </div>
+      <div class="divider" style="clear: both;"></div>
     <% end %>
   <% end %>
 

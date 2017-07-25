@@ -41,40 +41,40 @@
             <% if current_user.co_op == nil %>
               <li class="<%= current_page?('/users/home') ? 'active-nav' : 'nav-link' %>">
                 <a href="/users/home">Home</a>
-                <span class="divider"></span>
+                <span class="nav-divider"></span>
               </li>
               <li class="<%= params[:controller] == 'users' && %w(admo_org_chart hr_org_chart bpf_org_chart smf_org_chart).include?(params[:action]) ? 'active-nav' : 'nav-link' %>">
                 <a href="/users/admo_org_chart">Organizational Charts</a>
-                <span class="divider"></span>
+                <span class="nav-divider"></span>
               </li>
               <% if current_user.staff != nil %>
                 <li class="<%= current_page?('/users/opps') ? 'active-nav' : 'nav-link' %>">
                   <a href="/users/opps">Enhance Your Skills</a>
-                  <span class="divider"></span>
+                  <span class="nav-divider"></span>
                 </li>
               <% else %>
                 <li class="<%= current_page?('/users/opps') ? 'active-nav' : 'nav-link' %>">
                   <a href="/users/opps">Find Talent for a Project</a>
-                  <span class="divider"></span>
+                  <span class="nav-divider"></span>
                 </li>
               <% end %>
             <% else %>
               <li class="<%= current_page?('/users/home') ? 'active-nav' : 'nav-link' %>">
                 <a href="/users/home">Co-op Students</a>
-                <span class="divider"></span>
+                <span class="nav-divider"></span>
               </li>
               <li class="<%= current_page?('/users/opps') ? 'active-nav' : 'nav-link' %>">
                 <a href="/users/opps">Bucket list</a>
-                <span class="divider"></span>
+                <span class="nav-divider"></span>
               </li>
             <% end %>
             <li class="<%= current_page?("/users/#{current_user.id}") ? 'active-nav' : 'nav-link' %>">
               <%= link_to "Profile", "/users/#{current_user.id}" %>
-              <span class="divider"></span>
+              <span class="nav-divider"></span>
             </li>
             <li class="<%= current_page?("/users/#{current_user.id}/edit") ? 'active-nav' : 'nav-link' %>">
               <%= link_to "Settings", "/users/#{current_user.id}/edit" %>
-              <span class="divider"></span>
+              <span class="nav-divider"></span>
             </li>
             <li>
               <%= link_to "Logout", "/pulse_surveys/#{current_user.id}/edit" %>

@@ -278,14 +278,14 @@ a:hover {
     padding-left: 15px;
   }
 
-  .divider {
-    margin-top: 0;
+  .nav-divider {
+    margin-top: 0 !important;
     border-right: 2px solid $white-smoke;
     position: absolute;
     right: 0;
     top: 10px;
     width: 1px;
-    height: 32px;
+    height: 32px !important;
   }
 }
 
