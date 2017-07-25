@@ -109,13 +109,13 @@
                         </div>
                     <% else %>
                       <% if c.team == 1 %>
-                        <%= image_tag b.avatar.url(:medium), class:"org-profile-pic", id:"team-one" %>
+                        <%= image_tag c.avatar.url(:medium), class:"org-profile-pic", id:"team-one" %>
                       <% elsif c.team == 2 %>
-                        <%= image_tag b.avatar.url(:medium), class:"org-profile-pic", id:"team-two" %>
+                        <%= image_tag c.avatar.url(:medium), class:"org-profile-pic", id:"team-two" %>
                       <% elsif c.team == 3 %>
-                        <%= image_tag b.avatar.url(:medium), class:"org-profile-pic", id:"team-three" %>
+                        <%= image_tag c.avatar.url(:medium), class:"org-profile-pic", id:"team-three" %>
                       <% elsif c.team == 4 %>
-                        <%= image_tag b.avatar.url(:medium), class:"org-profile-pic", id:"team-four" %>
+                        <%= image_tag c.avatar.url(:medium), class:"org-profile-pic", id:"team-four" %>
                       <% end %>
                     <% end %>
                   </div>
