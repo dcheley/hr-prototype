@@ -49,7 +49,7 @@
           </div>
           <div id="level-1-list" class="col-1-3 list">
             <ul>
-              <% @users.where(co_op: true).each do |b| %>
+              <% @users.each do |b| %>
                 <%= link_to "/users/#{b.id}" do %>
                   <li class="element" style="width: 240px;">
                     <div class="org-box">
