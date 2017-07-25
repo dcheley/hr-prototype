@@ -4,11 +4,7 @@
       <%= link_to "BACK TO OPPORTUNITIES", "/users/opps", class:"submit-blue", style:"width: 260px;" %>
     </div>
 
-    <% if current_user.co_op != nil %>
-      <h2 class="opp-headers"><%= @opportunity.name %></h2>
-    <% else %>
-      <h2 class="opp-headers"><b>Career(s) that candidate will develop into:</b> <%= @opportunity.name %></h2>
-    <% end %>
+    <h2 class="opp-headers"><%= @opportunity.name %></h2>
 
     <div class="opp-photo-frame">
       <% if @opportunity.avatar.file? != true %>
@@ -24,7 +20,7 @@
       <% if current_user.co_op == nil %>
         <p class="opp-info"><b>Skills candidate will gain:</b> <%= @opportunity.skills %></p></br>
       <% end %>
-      <p class="opp-info"><b>If interested, please contact through this email:</b><%= link_to " #{@opportunity.link}", "" %></p>
+      <p class="opp-info"><b>If interested, please visit the link</b> <%= link_to " #{@opportunity.link}", "" %></p>
     </div>
 
     <% if current_user.liked? @opportunity %>
@@ -58,7 +54,7 @@
             <%= f.hidden_field :opportunity_id, value: @opportunity.id %>
             <%= f.hidden_field :green, value: true %>
             <%= f.hidden_field :exp, value: true %>
-            <%= f.submit "VERIFY SIGN UP", class:"submit-green", style:"margin: auto;" %>
+            <%= f.submit "VERIFY COMMITTEE MEMBERSHIP BADGE", class:"submit-green", style:"margin: auto;" %>
           <% end %>
         </div>
     </div>
