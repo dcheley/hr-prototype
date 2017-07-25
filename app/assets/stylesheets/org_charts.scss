@@ -71,6 +71,26 @@
   border-color: $orange;
 }
 
+.team-1 {
+  background: $dark-turquoise;
+}
+
+.team-2 {
+  background: $red;
+}
+
+.team-3 {
+  background: $green;
+}
+
+.team-4 {
+  background: $dark-purple;
+}
+
+.team-5 {
+  background: $orange;
+}
+
 .level {
   display: block;
   margin: auto;
@@ -164,7 +184,6 @@
   height: 52px;
   // margin-left: 5px;
   border-radius: 180px;
-  border-color: $dark-turquoise;
 }
 
 .info-btn,
@@ -173,7 +192,6 @@
   left: 10px;
   top: 15%;
   background: $white;
-  border-color: $dark-turquoise;
   border-style: solid;
   color: $light-grey;
   border-radius: 100px;
