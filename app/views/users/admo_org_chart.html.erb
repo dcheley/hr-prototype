@@ -101,12 +101,12 @@
                           <span class="glyphicon glyphicon-user"></span>
                         </div>
                     <% else %>
-                      <% if b.team == 1 %>
-                        <%= image_tag b.avatar.url(:medium), class:"org-profile-pic", id:"team-one" %>
-                      <% elsif b.team == 2 %>
-                        <%= image_tag b.avatar.url(:medium), class:"org-profile-pic", id:"team-two" %>
-                      <% elsif b.team == 3 %>
-                        <%= image_tag b.avatar.url(:medium), class:"org-profile-pic", id:"team-three" %>
+                      <% if c.team == 1 %>
+                        <%= image_tag c.avatar.url(:medium), class:"org-profile-pic", id:"team-one" %>
+                      <% elsif c.team == 2 %>
+                        <%= image_tag c.avatar.url(:medium), class:"org-profile-pic", id:"team-two" %>
+                      <% elsif c.team == 3 %>
+                        <%= image_tag c.avatar.url(:medium), class:"org-profile-pic", id:"team-three" %>
                       <% end %>
                     <% end %>
                   </div>
