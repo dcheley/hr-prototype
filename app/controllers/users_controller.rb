@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     @opportunity_badges = Badge.where.not(opportunity_id: nil).order("created_at DESC")
     @edu_badges = Badge.where(opportunity_id: nil, education: true).order("created_at DESC")
     @exp_badges = Badge.where(opportunity_id: nil, exp: true).order("created_at DESC")
-    @users = Users.where.not(co_op: nil).order("name DESC")
+    @users = User.where.not(co_op: nil).order("name DESC")
     reset_time
   end
 
