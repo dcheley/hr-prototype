@@ -1,6 +1,7 @@
 //Org Charts
 .org-title,
-.left-title {
+.left-title,
+.center-title {
   position: relative;
   padding-top: 10px;
   padding-bottom: 5px;
@@ -9,6 +10,10 @@
 .org-title,
 .legend {
   text-align: left;
+}
+
+.center-title {
+  text-align: center;
 }
 
 .org-title,
