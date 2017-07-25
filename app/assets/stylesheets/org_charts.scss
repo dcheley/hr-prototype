@@ -47,6 +47,7 @@
 }
 
 .legend-item {
+  font-size: 12px;
   float: left;
   margin-left: 14px;
 }
@@ -246,19 +247,6 @@
 
 .badge-count {
   text-align: left;
-}
-
-@media screen and (max-width: 717px) {
-  .legend {
-    margin-right: 0;
-    padding-left: 0;
-  }
-}
-
-@media screen and (max-width: 787px) {
-  .legend-item {
-    margin-left: 5px;
-  }
 }
 
 @media screen and (max-width: 911px) {
