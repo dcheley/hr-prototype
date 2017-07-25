@@ -137,6 +137,10 @@
   align-items: stretch;
 }
 
+.org-container a {
+  margin-bottom: 5px;
+}
+
 .element {
   position: relative;
   display: inline-block;
@@ -153,7 +157,6 @@
 }
 
 .org-box p {
-  margin: 0;
   font-size: 15px;
   margin-left: 35%;
 }
@@ -172,7 +175,6 @@
   top: 0;
   width: 70px;
   height: 70px;
-  // margin-left: 5px;
   border-radius: 180px;
   border-style: solid;
   border-width: 3px;
