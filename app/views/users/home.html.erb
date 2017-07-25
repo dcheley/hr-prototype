@@ -1,6 +1,6 @@
 <% if current_user && current_user.co_op == nil %>
   <div class="quarter">
-    <%= image_tag('csd-logo-white.png', class:"csd-logo") %>
+    <%= image_tag('CSD-logo.jpg', class:"csd-logo") %>
     <p class="feed-title">New Career Advancement Opportunities</p>
       <ul class="feed-list">
         <% @opportunities.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |b| %>
