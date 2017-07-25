@@ -53,21 +53,17 @@
                 <%= link_to "/users/#{b.id}" do %>
                   <li class="element" style="width: 240px;">
                     <div class="org-box">
-                      <div class="org-header">
-                        <h4 class="branch"><%= "#{b.title}" %><span class=""></span></h4>
-                        <!-- <div class="context">
-                          <span class="glyphicon glyphicon-menu-down"></span>
-                        </div> -->
-                      </div>
                         <div class="org-details">
                           <p class="boss-name" style="margin-left: 38%;"><%= b.name %></p>
                           <p class="badge-count" style="font-size: 12px; margin-left: 38%;"><b>Bucket List Badges:</b> <%= b.badges.where.not(opportunity_id: nil).count %></p>
                           <p class="badge-count" style="font-size: 12px; margin-left: 38%;"><b>Recognition Badges:</b> <%= b.received_badges.count %></p>
                         </div>
                       <% if b.avatar.file? != true %>
-                        <div class="info-coop-btn"><span class="glyphicon glyphicon-user"></span></div>
+                        <div class="info-coop-btn" id="team-one">
+                          <span class="glyphicon glyphicon-user"></span>
+                        </div>
                       <% else %>
-                        <%= image_tag b.avatar.url(:medium), class:"org-profile-pic" %>
+                        <%= image_tag b.avatar.url(:medium), class:"org-profile-pic", id:"team-one" %>
                       <% end %>
                     </div>
                   </li>
