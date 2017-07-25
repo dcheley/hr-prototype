@@ -52,23 +52,23 @@
 }
 
 .team-one {
-  background-color: $dark-turquoise;
+  border-color: $dark-turquoise;
 }
 
 .team-two {
-  background-color: $red;
+  border-color: $red;
 }
 
 .team-three {
-  background-color: $green;
+  border-color: $green;
 }
 
 .team-four {
-  background-color: $dark-purple;
+  border-color: $dark-purple;
 }
 
 .team-five {
-  background-color: $orange;
+  border-color: $orange;
 }
 
 .level {
@@ -78,7 +78,6 @@
 }
 
 .level-wrap {
-  // padding: 8px;
   margin-bottom: 2rem;
   position: relative;
   display: inline-block;
@@ -124,10 +123,9 @@
 .element {
   position: relative;
   display: inline-block;
-  width: 200px;
+  width: 260px;
   margin: 10px;
   background: #ffffff;
-  border: 2px solid $medium-grey;
   color: black;
 }
 
@@ -137,43 +135,21 @@
   height: 100%;
 }
 
-.org-header {
-  display: block;
-  padding: 5px 35px 5px 10px;
-  position: relative;
-}
-
-.org-header {
-  color: white;
-  background: $dark-turquoise;
-}
-
 .o-chart-icon {
   float: left;
   height: 32px;
   margin-top: -5px;
   margin-left: 10px;
-
-}
-
-.org-box h4 {
-  margin: 0 0 2px;
-  font-size: 16px;
 }
 
 .org-box p {
-  margin-top: 20px;
-  margin-bottom: 15px;
+  margin: 0;
   font-size: 15px;
-}
-
-.org-box p {
-  margin-left: 45%;
+  margin-left: 35%;
 }
 
 .org-details {
-  padding: 0 10px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .glyphicon.glyphicon-user {
@@ -183,19 +159,21 @@
 .org-profile-pic {
   position: absolute;
   bottom: 5px;
-  left: 5px;
+  left: 10px;
   width: 55px;
   height: 52px;
-  margin-left: 5px;
+  // margin-left: 5px;
   border-radius: 180px;
+  border-color: $dark-turquoise;
 }
 
 .info-btn,
 .info-coop-btn {
   position: absolute;
   left: 10px;
+  top: 15%;
   background: $white;
-  border-color: $light-grey;
+  border-color: $dark-turquoise;
   border-style: solid;
   color: $light-grey;
   border-radius: 100px;
@@ -208,43 +186,11 @@
   font-size: 14px;
 }
 
-.info-btn {
-  bottom: 5px;
-}
-
 .info-coop-btn {
   bottom: 20px;
 }
 
 //Image container
-.element .context {
-  position: absolute;
-  border-left: 1px solid rgba(0, 0, 0, 0.05);
-  background: $dark-turquoise;
-  text-align: center;
-  width: 26px;
-  height: 100%;
-  padding: 4px 2px 4px 4px;
-  right: 0;
-  top: 0;
-}
-
-#team-2 {
-  background: $red;
-}
-
-#team-3 {
-  background: $green;
-}
-
-#team-4 {
-  background: $dark-purple;
-}
-
-#team-5 {
-  background: $orange;
-}
-
 .expanded .active:after {
   content: " ";
   position: absolute;
@@ -258,16 +204,11 @@
 //Hover
 .element:hover {
   text-decoration: none;
-  border-color: $grey;
-  .org-menu-header,
-  .org-header,
-  #team-2,
-  #team-3,
-  #team-4,
-  #team-5 {
-    cursor: pointer;
-    background: #444444;
-    color: $white;
+  p {
+    color: $grey;
+  }
+  .info-btn {
+    border-color: $grey;
   }
 }
 
@@ -278,7 +219,7 @@
 
 .boss-name {
   color: $dark-turquoise;
-  text-align: right;
+  text-align: left;
 }
 
 .boss-name  {
@@ -286,7 +227,7 @@
 }
 
 .badge-count {
-  text-align: right;
+  text-align: left;
 }
 
 @media screen and (max-width: 717px) {
