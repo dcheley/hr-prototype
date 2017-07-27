@@ -1,7 +1,9 @@
-<h1 class="form-title" style="padding-top: 3%;">Edit Opportunity</h1>
+<div class="container" style="text-align: center;">
+  <div style="text-align: center;">
+    <%= link_to "BACK TO OPPORTUNITIES", "/users/opps", class:"submit-blue", style:"width: 260px; margin-bottom: 0;"%>
+  </div>
 
-<div style="text-align: center;">
-  <%= link_to "BACK TO OPPORTUNITIES", "/users/opps", class:"submit-blue", style:"width: 260px; margin-bottom: 0;"%>
+  <h1 class="form-title" style="padding-top: 3%;">Edit Opportunity</h1>
+
+  <%= render 'opportunities-form' %>
 </div>
-
-<%= render 'opportunities-form' %>

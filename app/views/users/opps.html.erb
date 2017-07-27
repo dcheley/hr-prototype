@@ -7,40 +7,14 @@
   </div>
 
   <div class="three-quarters">
-    <h1 class="org-title">Enhance Your Skills</h1>
+    <div style="margin-left: 15px;">
+      <h1 class="form-title" style="margin-top: 15px;">Enhance Your Skills</h1>
 
-    <div class="carousel-container">
-      <ul class="nav nav-pills nav-stacked" style="text-align: center;">
-        <li role="presentation" class="active"><a href="#opp-one" data-toggle="pill">Choose skills to develop</a></li>
-        <!-- <li role="presentation"><a href="#opp-two" data-toggle="pill">Courses & Learning Opportunities</a></li>
-        <li role="presentation"><a href="#opp-three" data-toggle="pill">Hobbies, Interests & Extra Curriculars</a></li> -->
-      </ul>
-
-      <div class="tab-content" style="background-color: white;">
-        <div role="tabpane1" class="tab-pane active" id="opp-one">
-          <% @opportunities.where(career: true).each do |o| %>
-            <div class="third">
-              <%= link_to o.name, "/opportunities/#{o.id}", class:"csd-opp-name", id:"blue" %>
-            </div>
-          <% end %>
+      <% @opportunities.where(career: true).each do |o| %>
+        <div class="third">
+          <%= link_to o.name, "/opportunities/#{o.id}", class:"csd-opp-name", id:"blue" %>
         </div>
-
-        <!-- <div role="tabpane1" class="tab-pane" id="opp-two">
-          <% @opportunities.where(learning: true).each do |l| %>
-            <div class="third">
-              <%= link_to l.name, "/opportunities/#{l.id}", class:"csd-opp-name", id:"blue" %>
-            </div>
-          <% end %>
-        </div>
-
-        <div role="tabpane1" class="tab-pane" id="opp-three">
-          <% @opportunities.where(hobby: true).each do |h| %>
-            <div class="third">
-              <%= link_to h.name, "/opportunities/#{h.id}", class:"csd-opp-name", id:"blue" %>
-            </div>
-          <% end %>
-        </div> -->
-      </div>
+      <% end %>
     </div>
   </div>
 

@@ -111,38 +111,6 @@
   width: 20%;
 }
 
-.nav-pills > li {
-  background-color: $medium-grey;
-}
-
-.nav-pills > li > a {
-  color: $bright-dark-blue;
-}
-
-.nav-pills > li > a:hover {
-  background-color: $medium-grey;
-}
-
-.nav-pills > li.active,
-.nav-pills > li.active > a,
-.nav-pills > li.active > a:hover,
-.nav-pills > li.active > a:focus {
-  border-radius: 0;
-  background-color: $light-grey;
-  color: black;
-}
-
-.tab-content {
-  position: relative;
-  height: 600px;
-  margin-left: 30px;
-  margin-right: 30px;
-}
-
-.tab-title {
-  font-weight: bold;
-}
-
 .badge-row,
 .row {
   width: 100%;

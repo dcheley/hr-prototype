@@ -2,7 +2,7 @@
 
 <div class="three-quarters">
   <% if params[:search] %>
-    <h1 class="search-counter"><b><%= @users.count %></b> Profiles found:</h1>
+    <h1 class="search-counter"><b style="color: #337ab7;"><%= @users.count %></b> Profiles found:</h1>
     <% @users.each do |u| %>
       <div class="blank-quarter">
         <% if u.avatar.file? == true %>

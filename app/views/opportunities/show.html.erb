@@ -20,7 +20,7 @@
       <% if current_user.co_op == nil %>
         <p class="opp-info"><b>Skills candidate will gain:</b> <%= @opportunity.skills %></p></br>
       <% end %>
-      <p class="opp-info"><b>If interested, please visit the link</b> <%= link_to " #{@opportunity.link}", "" %></p>
+      <p class="opp-info"><b>If interested, please visit the link</b> <%= link_to "#{@opportunity.link}", "#{@opportunity.link}", target: '_blank' %></p>
     </div>
 
     <% if current_user.liked? @opportunity %>
@@ -46,7 +46,7 @@
         </div>
       <% end %>
 
-        <div class="float" style="clear: both; width: 100%; margin-top: 10px;">
+        <div class="float" style="margin-left: 7.5px;">
           <%= form_for([@opportunity, @badge]) do |f| %>
             <%= f.hidden_field :name, value: @opportunity.name %>
             <%= f.hidden_field :description, value: @opportunity.description %>
@@ -54,7 +54,7 @@
             <%= f.hidden_field :opportunity_id, value: @opportunity.id %>
             <%= f.hidden_field :green, value: true %>
             <%= f.hidden_field :exp, value: true %>
-            <%= f.submit "VERIFY COMMITTEE MEMBERSHIP BADGE", class:"submit-green", style:"margin: auto;" %>
+            <%= f.submit "VERIFY COMMITTEE MEMBERSHIP BADGE", class:"submit-green", style:"margin: 35px auto;" %>
           <% end %>
         </div>
     </div>
