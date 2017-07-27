@@ -51,7 +51,7 @@
                   <span class="nav-divider"></span>
                 </li>
                 <% if current_user.staff != nil %>
-                  <li class="<%= current_page?('/users/opps') ? 'active-nav' : 'nav-link' %>">
+                  <li class="<%= params[:controller] == 'users' || 'opportunities' && %w(opps new edit show) ? 'active-nav' : 'nav-link' %>">
                     <a href="/users/opps">Enhance Your Skills</a>
                     <span class="nav-divider"></span>
                   </li>
