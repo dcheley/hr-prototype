@@ -56,70 +56,8 @@ a:hover {
 }
 
 .tile__img {
-  width: $tileWidth;
-  height: 200px;
-  object-fit: cover;
-}
-
-.tile__details {
-  overflow: hidden;
-  color: $grey;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  font-size: 8px;
-  opacity: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
-  transition: $duration opacity;
-
-  &:after
-  &:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: black
-  }
-
-  &:after {
-    margin-top: (-($iconSize / 2));
-    margin-left: (-($iconSize / 2));
-    width: $iconSize;
-    height: $iconSize;
-    border: 3px solid #ecf0f1;
-    line-height: $iconSize;
-    text-align: center;
-    border-radius: 100%;
-    background: rgba(0,0,0,0.5);
-    z-index: 1;
-  }
-
-  &:before {
-    // content: '▶';
-    content: '';
-    left: 0;
-    width: 100%;
-    font-size: 30px;
-    text-align: center;
-    z-index: 2;
-  }
-
-  .tile:hover & {
-    opacity: 1;
-  }
-}
-
-.tile__title {
-  color: white;
-  max-width: 200px;
-}
-
-// * Hover effects
-.tile:hover {
-  // Fade out every tile
-  opacity: .6;
+  width: 480px;
+  height: 220px;
 }
 
 .opp-photo-frame {
