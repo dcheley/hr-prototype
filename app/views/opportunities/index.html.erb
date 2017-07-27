@@ -19,32 +19,34 @@
   </div>
 
 <% elsif current_user && current_user.co_op != nil %>
-  <h1 class="center-title">Bucket List</h1>
+  <div class="container">
+    <h1 class="form-title">Bucket List</h1>
 
-  <p class="opportunity-info">
-    Know of other opportunities? Email them to us through <b>nadeem.aljaber@ontario.ca</b> OR <b>danielcheley@hotmail.com</b>
-  </p>
+    <p class="opportunity-info">
+      Know of other opportunities? Email them to us through <b>nadeem.aljaber@ontario.ca</b> OR <b>danielcheley@hotmail.com</b>
+    </p>
 
-  <div class="bucket-gallery">
-    <div id="fifth">
-      <%= link_to "Lunch N' Learn", "/opportunities/17", class:"co-opp-name", id:"blue" %>
-      <%= link_to "Planning Committee", "/opportunities/18", class:"co-opp-name", id:"purple" %>
-    </div>
-    <div id="fifth">
-      <%= link_to "Learn On", "/opportunities/19", class:"co-opp-name", id:"green" %>
-      <%= link_to @opportunities.find(20).name, "/opportunities/20", class:"co-opp-name", id:"red" %>
-    </div>
-    <div id="fifth">
-      <%= link_to "Student Orientation", "/opportunities/21", class:"co-opp-name", id:"red" %>
-      <%= link_to "Informational Interview", "/opportunities/22", class:"co-opp-name" , id:"orange"%>
-    </div>
-    <div id="fifth">
-      <%= link_to "Restaurant", "/opportunities/23", class:"co-opp-name", id:"orange" %>
-      <%= link_to "Social Event", "/opportunities/24", class:"co-opp-name", id:"green" %>
-    </div>
-    <div id="fifth">
-      <%= link_to "Networking Event", "/opportunities/25", class:"co-opp-name", id:"purple" %>
-      <%= link_to "OPS/TOPS Network", "/opportunities/26", class:"co-opp-name", id:"blue" %>
+    <div class="bucket-gallery">
+      <div id="fifth">
+        <%= link_to "Lunch N' Learn", "/opportunities/17", class:"co-opp-name", id:"blue" %>
+        <%= link_to "Planning Committee", "/opportunities/18", class:"co-opp-name", id:"purple" %>
+      </div>
+      <div id="fifth">
+        <%= link_to "Learn On", "/opportunities/19", class:"co-opp-name", id:"green" %>
+        <%= link_to @opportunities.find(20).name, "/opportunities/20", class:"co-opp-name", id:"red" %>
+      </div>
+      <div id="fifth">
+        <%= link_to "Student Orientation", "/opportunities/21", class:"co-opp-name", id:"red" %>
+        <%= link_to "Informational Interview", "/opportunities/22", class:"co-opp-name" , id:"orange"%>
+      </div>
+      <div id="fifth">
+        <%= link_to "Restaurant", "/opportunities/23", class:"co-opp-name", id:"orange" %>
+        <%= link_to "Social Event", "/opportunities/24", class:"co-opp-name", id:"green" %>
+      </div>
+      <div id="fifth">
+        <%= link_to "Networking Event", "/opportunities/25", class:"co-opp-name", id:"purple" %>
+        <%= link_to "OPS/TOPS Network", "/opportunities/26", class:"co-opp-name", id:"blue" %>
+      </div>
     </div>
   </div>
 
