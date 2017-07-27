@@ -1,6 +1,6 @@
 <div class="row">
   <h4 class="profile-title">Bucket List</h4>
-  <p class=""><%= link_to "View Bucket List", "/users/opps", class:"team-link" %></p>
+  <p class=""><%= link_to "View Bucket List", opportunities_url, class:"team-link" %></p>
 
   <!-- Display Exp/skills Badges -->
   <% @user.badges.where.not(opportunity_id: nil).each do |b| %>

@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   get '/users/bpf_org_chart'
   get '/users/hr_org_chart'
   get '/users/smf_org_chart'
-  get '/users/opps'
   get '/badges/exp'
 
   get 'signups/step_one'
@@ -23,7 +22,7 @@ Rails.application.routes.draw do
 
   resources :signups, only: [:new, :create, :update]
   resources :users, only: [:new, :create, :show, :update, :edit, :index]
-  resources :opportunities, only: [:new, :create, :show, :edit, :update, :destroy]
+  resources :opportunities
   resources :pulse_surveys, only: [:edit, :update]
 
   resources :users do

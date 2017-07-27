@@ -157,9 +157,14 @@ a:hover {
   padding-left: 0;
 }
 
-.feed-item {
+.feed-item,
+.feed-link {
   font-size: 14px;
-  margin: auto;
+}
+
+.feed-link {
+  margin-top: 15px;
+
 }
 
 .paragraph {

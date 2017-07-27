@@ -73,7 +73,7 @@
 
     <% if current_page?(action: "new")%>
       <div class="float" style="margin-left: 15px;">
-        <%= link_to "BACK TO OPPORTUNITIES", "/users/opps", class:"submit-blue" %>
+        <%= link_to "BACK TO OPPORTUNITIES", opportunities_url, class:"submit-blue" %>
       </div>
     <% elsif current_page?(action: "edit") %>
       <div class="float" style="margin-left: 15px;">

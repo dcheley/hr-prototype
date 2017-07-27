@@ -1,6 +1,13 @@
 class OpportunitiesController < ApplicationController
   before_action :load_opportunity, only: [:show, :edit, :update, :destroy, :like, :unlike]
 
+  def index
+    @opportunities = Opportunity.all
+    if current_user
+      @badge = current_user.badges.build
+    end
+  end
+
   def new
     @opportunity = Opportunity.new
   end
@@ -9,7 +16,7 @@ class OpportunitiesController < ApplicationController
     @opportunity = Opportunity.new(opportunity_params)
     @opportunity.creator_id = current_user.id
     if @opportunity.save
-      redirect_to "/users/opps", notice: "#{@opportunity.name} successfully created"
+      redirect_to opportunities_url, notice: "#{@opportunity.name} successfully created"
     else
       render :new
     end
@@ -34,7 +41,7 @@ class OpportunitiesController < ApplicationController
 
   def destroy
     @opportunity.destroy
-    redirect_to "/users/opps", notice: "#{@opportunity.name} successfully deleted!"
+    redirect_to opportunities_url, notice: "#{@opportunity.name} successfully deleted!"
   end
 
   def index

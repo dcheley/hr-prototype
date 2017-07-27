@@ -32,7 +32,7 @@
 
 <div class="row">
   <h4 class="profile-title">Committee/Volunteering</h4>
-  <p class=""><%= link_to "Sign up to upcoming opportunities", "/users/opps", class:"team-link" %></p>
+  <p class=""><%= link_to "Sign up to upcoming opportunities", opportunities_url, class:"team-link" %></p>
 
   <!-- Display Opportunity Badges -->
   <% @user.badges.where.not(opportunity_id: nil).each do |b| %>

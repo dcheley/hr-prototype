@@ -35,13 +35,6 @@ class UsersController < ApplicationController
   def org_charts
   end
 
-  def opps
-    @opportunities = Opportunity.all
-    if current_user
-      @badge = current_user.badges.build
-    end
-  end
-
   def admo_org_chart
   end
 

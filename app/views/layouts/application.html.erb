@@ -51,13 +51,13 @@
                   <span class="nav-divider"></span>
                 </li>
                 <% if current_user.staff != nil %>
-                  <li class="<%= params[:controller] == 'users' || 'opportunities' && %w(opps new edit show) ? 'active-nav' : 'nav-link' %>">
-                    <a href="/users/opps">Enhance Your Skills</a>
+                  <li class="<%= params[:controller] == 'opportunities' && %w(index new edit show) ? 'active-nav' : 'nav-link' %>">
+                    <a href="/opportunities">Enhance Your Skills</a>
                     <span class="nav-divider"></span>
                   </li>
                 <% else %>
-                  <li class="<%= current_page?('/users/opps') ? 'active-nav' : 'nav-link' %>">
-                    <a href="/users/opps">Find Talent for a Project</a>
+                  <li class="<%= params[:controller] == 'opportunities' && %w(index new edit show) ? 'active-nav' : 'nav-link' %>">
+                    <a href="/opportunities">Find Talent for a Project</a>
                     <span class="nav-divider"></span>
                   </li>
                 <% end %>
@@ -66,8 +66,8 @@
                   <a href="/users/home">Co-op Students</a>
                   <span class="nav-divider"></span>
                 </li>
-                <li class="<%= current_page?('/users/opps') ? 'active-nav' : 'nav-link' %>">
-                  <a href="/users/opps">Bucket list</a>
+                <li class="<%= current_page?('/opportunities') ? 'active-nav' : 'nav-link' %>">
+                  <a href="/opportunities">Bucket list</a>
                   <span class="nav-divider"></span>
                 </li>
               <% end %>
