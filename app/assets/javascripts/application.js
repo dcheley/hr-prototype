@@ -17,11 +17,6 @@ $(document).ready(function() {
       $(this).prop('checked', true);
     });
 
-    //Carousel
-    $('.carousel').carousel({
-      interval: 3000
-    })
-
     //User form input animations
     $(".field-input").focus(function() {
       $(this).parent().addClass("active complete");
@@ -34,5 +29,4 @@ $(document).ready(function() {
     });
 
   });
-
 });
