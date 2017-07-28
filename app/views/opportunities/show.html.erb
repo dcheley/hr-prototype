@@ -17,12 +17,12 @@
     <div class="opp-details">
       <p class="opp-info"><%= @opportunity.bonus %></p></br>
       <p class="opp-info"><%= @opportunity.description %></p></br>
-      <% if current_user.co_op == nil && @opportunity.skills.nil? != true || @opportunity.skills.empty? != true  %>
+      <% if current_user.co_op == nil && @opportunity.skills.blank? != true %>
         <p class="opp-info"><b>Skills candidate will gain:</b> <%= @opportunity.skills %></p></br>
       <% end %>
       <p class="opp-info"><b>If interested, please visit the link</b> <%= link_to "#{@opportunity.link}", "#{@opportunity.link}", target: '_blank' %></p>
 
-      <% if @opportunity.second_link.nil? != true || @opportunity.second_link.empty? != true %>
+      <% if @opportunity.second_link.blank? != true %>
         <p class="opp-info"><b>Additional information</b> <%= link_to "#{@opportunity.second_link}", "#{@opportunity.second_link}", target: '_blank' %></p>
       <% end %>
     </div>
