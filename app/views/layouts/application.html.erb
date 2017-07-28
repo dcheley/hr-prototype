@@ -50,17 +50,10 @@
                   <a href="/users/admo_org_chart">Organizational Charts</a>
                   <span class="nav-divider"></span>
                 </li>
-                <% if current_user.staff != nil %>
-                  <li class="<%= params[:controller] == 'opportunities' && %w(index new edit show) ? 'active-nav' : 'nav-link' %>">
-                    <a href="/opportunities">Enhance Your Skills</a>
-                    <span class="nav-divider"></span>
-                  </li>
-                <% else %>
-                  <li class="<%= params[:controller] == 'opportunities' && %w(index new edit show) ? 'active-nav' : 'nav-link' %>">
-                    <a href="/opportunities">Find Talent for a Project</a>
-                    <span class="nav-divider"></span>
-                  </li>
-                <% end %>
+                <li class="<%= params[:controller] == 'opportunities' && %w(index new edit show) ? 'active-nav' : 'nav-link' %>">
+                  <a href="/opportunities">Enhance Your Skills</a>
+                  <span class="nav-divider"></span>
+                </li>
               <% else %>
                 <li class="<%= current_page?('/users/home') ? 'active-nav' : 'nav-link' %>">
                   <a href="/users/home">Co-op Students</a>
