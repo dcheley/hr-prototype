@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170622140905) do
+ActiveRecord::Schema.define(version: 20170728175519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20170622140905) do
     t.boolean  "career"
     t.boolean  "hobby"
     t.string   "skills"
+    t.string   "second_link"
   end
 
   create_table "overall_averages", force: :cascade do |t|
