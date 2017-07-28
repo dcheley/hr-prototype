@@ -10,55 +10,57 @@
       --><li><span>Complete Sign Up</span></li>
     </ol>
 
-    <h1 class="form-title">Edit Account Settings</h1>
+    <div class="container" style="width: 80%; text-align: center; margin-top: 0; margin-bottom: 0;">
+      <h1 class="form-title">Edit Account Settings</h1>
 
-      <%= form_for(@user) do |f| %>
-        <% if @user.errors.any? %>
-          <h2 class="error-header"><%= pluralize(@user.errors.count, "error") %> occurred!</h2>
+        <%= form_for(@user) do |f| %>
+          <% if @user.errors.any? %>
+            <h2 class="error-header"><%= pluralize(@user.errors.count, "error") %> occurred!</h2>
 
-          <ul class="error-list">
-            <% @user.errors.full_messages.each do |msg| %>
-              <li class="error-msg"><%= msg %></li>
+            <ul class="error-list">
+              <% @user.errors.full_messages.each do |msg| %>
+                <li class="error-msg"><%= msg %></li>
+              <% end %>
+            </ul>
+          <% end %>
+
+          <div class="field">
+            <%= f.label :career_aspirations, "What skills do you hope to develop throughout the year?", class:"field-label" %>
+            <%= f.text_field :career_aspirations, class:"field-input" %>
+          </div>
+
+          <div class="check-box">
+            <%= f.label :job_description, "Job Description", class:"field-label" %>
+            <%= f.text_area :job_description, placeholder:"Describe your job experience in 500 characters or less.", class:"field-input" %>
+          </div>
+
+          <% if current_user.co_op == nil %>
+            <%= f.fields_for :signup do |s| %>
+              <%= s.hidden_field :step_three, value: true %>
+              <%= s.hidden_field :step_four, value: nil %>
             <% end %>
-          </ul>
-        <% end %>
-
-        <div class="field">
-          <%= f.label :career_aspirations, "What skills do you hope to develop throughout the year?", class:"field-label" %>
-          <%= f.text_field :career_aspirations, class:"field-input" %>
-        </div>
-
-        <div class="check-box">
-          <%= f.label :job_description, "Job Description", class:"field-label" %>
-          <%= f.text_area :job_description, placeholder:"Describe your job experience in 500 characters or less.", class:"field-input" %>
-        </div>
-
-        <% if current_user.co_op == nil %>
-          <%= f.fields_for :signup do |s| %>
-            <%= s.hidden_field :step_three, value: true %>
-            <%= s.hidden_field :step_four, value: nil %>
+          <% else %>
+            <%= f.fields_for :signup do |s| %>
+              <%= s.hidden_field :step_three, value: true %>
+              <%= s.hidden_field :step_four, value: true %>
+              <%= s.hidden_field :step_five, value: true %>
+            <% end %>
           <% end %>
-        <% else %>
-          <%= f.fields_for :signup do |s| %>
-            <%= s.hidden_field :step_three, value: true %>
-            <%= s.hidden_field :step_four, value: true %>
-            <%= s.hidden_field :step_five, value: true %>
-          <% end %>
-        <% end %>
 
-        <div class="divider" style="border-color: rgb(102,102,102);"></div>
+          <div class="divider" style="border-color: rgb(102,102,102);"></div>
 
-        <div class="center-float-wrap">
-          <div class="float">
-            <%= f.submit "SUBMIT", class:"submit-green" %>
+          <div class="center-float-wrap">
+            <div class="float">
+              <%= f.submit "SUBMIT", class:"submit-green" %>
+            </div>
+
+            <div class="float">
+              <%= link_to "CANCEL", :logout, class:"delete", style:"margin-left: 15px;" %>
+            </div>
           </div>
 
-          <div class="float">
-            <%= link_to "CANCEL", :logout, class:"delete", style:"margin-left: 15px;" %>
-          </div>
-        </div>
-
-      <% end %>
+        <% end %>
+      </div>
     </div>
   <% else %>
     <h1 class="login-message"><%= link_to "LOGIN", :login %> to set up profile</h1>
