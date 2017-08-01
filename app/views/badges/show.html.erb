@@ -1,7 +1,6 @@
 <div class="background" style="text-align: center;">
   <% if current_user %>
     <ul class="badge-details">
-
       <h2 class="badge-detail-title"><%= "#{@user.name}" %>'s badge details</h2>
 
       <div class="badge-show-green">
@@ -59,11 +58,11 @@
                   class:"delete", style: "margin: 15px auto;" %>
             </div>
           <% end %>
-
+        </div>
+        
       <% else %>
         <%= link_to "BACK TO #{@user.name.upcase}'S PROFILE", "/users/#{@user.id}", class:"submit-blue", style:"display: inline-block;" %>
       <% end %>
-
     </ul>
 
   <% else %>

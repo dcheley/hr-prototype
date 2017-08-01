@@ -28,6 +28,10 @@ a:hover {
   text-decoration: none;
 }
 
+.white-box {
+  background-color: white;
+}
+
 .home-right {
   float: right;
   width: 55%;
@@ -138,6 +142,8 @@ a:hover {
 
 .csd-logo {
   width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .feed-title {

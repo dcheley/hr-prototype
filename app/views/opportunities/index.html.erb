@@ -1,6 +1,9 @@
 <% if current_user && current_user.co_op == nil %>
   <div class="quarter">
-    <%= image_tag('CSD-logo.jpg', class:"csd-logo") %>
+    <div class="white-box">
+      <%= image_tag('CSD-logo.jpg', class:"csd-logo") %>
+    </div>
+    
     <ul class="feed-list">
       <li class="feed-link"><%= link_to "Post Project to Website", "/opportunities/new" %></li>
     </ul>

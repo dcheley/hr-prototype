@@ -1,25 +1,30 @@
 <% if current_user && current_user.co_op == nil %>
   <div class="quarter">
-    <%= image_tag('CSD-logo.jpg', class:"csd-logo") %>
+    <div class=white-box>
+      <%= image_tag('CSD-logo.jpg', class:"csd-logo") %>
+    </div>
+
     <p class="feed-title">New Career Advancement Opportunities</p>
-      <ul class="feed-list">
-        <% @opportunities.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |b| %>
-          <li class="feed-item">
-            <%= link_to "#{b.name}", "/opportunities/#{b.id}" %>
-          </li>
-        <% end %>
-      </ul>
+
+    <ul class="feed-list">
+      <% @opportunities.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |b| %>
+        <li class="feed-item">
+          <%= link_to "#{b.name}", "/opportunities/#{b.id}" %>
+        </li>
+      <% end %>
+    </ul>
 
     <p class="feed-title">Who's been recognized?</p>
-      <ul class="feed-list">
-        <% @received_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |r| %>
-          <li class="feed-item">
-            <%= link_to "#{User.find(r.receiver_id).name}", "/users/#{r.receiver_id}" %>
-            <%= " by " + User.find(r.recognizer_id).name + " for " %>
-            <%= link_to "#{r.name}", "/users/#{r.receiver_id}/recognitions/#{r.id}" %>
-          </li>
-        <% end %>
-      </ul>
+
+    <ul class="feed-list">
+      <% @received_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |r| %>
+        <li class="feed-item">
+          <%= link_to "#{User.find(r.receiver_id).name}", "/users/#{r.receiver_id}" %>
+          <%= " by " + User.find(r.recognizer_id).name + " for " %>
+          <%= link_to "#{r.name}", "/users/#{r.receiver_id}/recognitions/#{r.id}" %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 
   <div class="three-quarters">
@@ -44,8 +49,7 @@
     <section class="org-container">
       <div id="level-1" class="level">
         <div class="level-wrap">
-          <div id="level-1-active" class="col-1-3 active">
-          </div>
+          <div id="level-1-active" class="col-1-3 active"></div>
           <div id="level-1-list" class="col-1-3 list">
             <ul>
               <% @users.each do |b| %>
