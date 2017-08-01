@@ -23,8 +23,15 @@
 
 .org-container {
   margin: 2rem auto;
-  width: 75%;
   float: right;
+}
+
+.org-container {
+  width: 75%;
+}
+
+#coop-org-container {
+  width: 90%;
 }
 
 .org-container * {
@@ -100,6 +107,7 @@
 .level {
   display: block;
   width: 90%;
+  margin: auto;
 }
 
 .level-wrap {
