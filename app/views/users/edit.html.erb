@@ -1,141 +1,146 @@
-<div class="background">
-  <% if current_user == @user %>
-  <div class="container" style="margin-top: 10px; text-align: center;">
-    <h1 class="form-title">Edit Account Settings</h1>
+<div class="quarter">
+  <div class="white-box">
+    <%= image_tag('CSD-logo.jpg', class:"csd-logo") %>
+  </div>
+</div>
 
-      <%= form_for(@user) do |f| %>
-        <% if @user.errors.any? %>
-          <h2 class="error-header"><%= pluralize(@user.errors.count, "error") %> occurred!</h2>
+<% if current_user == @user %>
+<div class="three-quarters" style="margin-top: 10px; text-align: center;">
+  <h1 class="form-title">Edit Account Settings</h1>
 
-          <ul class="error-list">
-            <% @user.errors.full_messages.each do |msg| %>
-              <li class="error-msg"><%= msg %></li>
-            <% end %>
-          </ul>
-        <% end %>
+    <%= form_for(@user) do |f| %>
+      <% if @user.errors.any? %>
+        <h2 class="error-header"><%= pluralize(@user.errors.count, "error") %> occurred!</h2>
 
-        <div class="field">
-          <%= f.label :name, class:"field-label" %>
-          <%= f.text_field :name, class:"field-input" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :email, "Email (*This also changes your username login*)", class:"field-label" %>
-          <%= f.text_field :email, class:"field-input" %>
-        </div>
-
-        <!-- <div class="field">
-          <%= f.label :password, "New Password", class:"field-label" %>
-          <%= f.password_field :password, class:"field-input", placeholder: "Enter a new password" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :password_confirmation, "Confirm New Password", class:"field-label" %>
-          <%= f.password_field :password_confirmation, class:"field-input", placeholder: "Re-enter your new password" %>
-        </div> -->
-
-        <div class="field">
-          <%= f.label :title, class:"field-label" %>
-          <%= f.text_field :title, class:"field-input" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :direct_report, "Direct Manager", class:"field-label" %>
-          <%= f.text_field :direct_report, class:"field-input" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :career_aspirations, "What skills do you hope to develop throughout the year?", class:"field-label" %>
-          <%= f.text_field :career_aspirations, class:"field-input" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :job_description, "Job Description", class:"field-label" %>
-          <%= f.text_area :job_description, class:"field-input", placeholder:"Describe your job experience in 500 characters or less." %>
-        </div>
-
-        <div class="field-label" style="padding-top: 15px;">
-          <b>Profile Picture</b>
-        </div>
-
-        <div class="avatar_container">
-          <%= f.file_field :avatar %>
-        </div>
-        </br>
-        <div style="text-align: left;">
-          <b>OR</b>
-        </div>
-
-        <div class="check-box">
-          <%= f.check_box :intranet, class:"uncheck" %>
-          <%= f.label :intranet, "Request intranet photo upload (takes up to 24 hours)" %>
-        </div>
-
-        <div class="check-box">
-          <%= f.check_box :image_delete, class:"uncheck" %>
-          <%= f.label :image_delete, "Delete Image" %>
-        </div>
-
-        <div class="divider"></div>
-
-        <!-- <h5 style="padding-top: 15px;">Please check the relevant Branch/Office</h5>
-
-        <div class="check-box">
-          <%= f.check_box :adm_office %>
-          <%= f.label :adm_office, "ADM Office" %>
-        </div>
-
-        <div class="check-box">
-          <%= f.check_box :strategic_human_resources %>
-          <%= f.label :strategic_human_resources, "Strategic Human Resources" %>
-        </div>
-
-        <div class="check-box">
-          <%= f.check_box :service_management_and_facilities %>
-          <%= f.label :service_management_and_facilities, "Service Management and Facilities" %>
-        </div>
-
-        <div class="check-box">
-          <%= f.check_box :business_planning_and_finance %>
-          <%= f.label :business_planning_and_finance, "Business Planning and Finance" %>
-        </div>
-
-        <div class="divider"></div>
-
-        <h5 style="padding-top: 15px;">Please check the relevant managerial level</h5>
-
-        <div class="check-box">
-          <%= f.check_box :adm %>
-          <%= f.label :adm, "ADM" %>
-        </div>
-
-        <div class="check-box">
-          <%= f.check_box :director %>
-          <%= f.label :director %>
-        </div>
-
-        <div class="check-box">
-          <%= f.check_box :manager %>
-          <%= f.label :manager %>
-        </div>
-
-        <div class="check-box">
-          <%= f.check_box :staff %>
-          <%= f.label :staff %>
-        </div> -->
-
-        <div class="center-float-wrap">
-          <div class="float">
-            <%= f.submit "SUBMIT", class:"submit-green" %>
-          </div>
-
-          <div class="float">
-            <%= link_to "CANCEL", "/users/#{current_user.id}", class:"delete", style:"margin-left: 15px;" %>
-          </div>
-        </div>
-
+        <ul class="error-list">
+          <% @user.errors.full_messages.each do |msg| %>
+            <li class="error-msg"><%= msg %></li>
+          <% end %>
+        </ul>
       <% end %>
-    </div>
+
+      <div class="field">
+        <%= f.label :name, class:"field-label" %>
+        <%= f.text_field :name, class:"field-input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email, "Email (*This also changes your username login*)", class:"field-label" %>
+        <%= f.text_field :email, class:"field-input" %>
+      </div>
+
+      <!-- <div class="field">
+        <%= f.label :password, "New Password", class:"field-label" %>
+        <%= f.password_field :password, class:"field-input", placeholder: "Enter a new password" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, "Confirm New Password", class:"field-label" %>
+        <%= f.password_field :password_confirmation, class:"field-input", placeholder: "Re-enter your new password" %>
+      </div> -->
+
+      <div class="field">
+        <%= f.label :title, class:"field-label" %>
+        <%= f.text_field :title, class:"field-input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :direct_report, "Direct Manager", class:"field-label" %>
+        <%= f.text_field :direct_report, class:"field-input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :career_aspirations, "What skills do you hope to develop throughout the year?", class:"field-label" %>
+        <%= f.text_field :career_aspirations, class:"field-input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :job_description, "Job Description", class:"field-label" %>
+        <%= f.text_area :job_description, class:"field-input", placeholder:"Describe your job experience in 500 characters or less." %>
+      </div>
+
+      <div class="field-label" style="padding-top: 15px;">
+        <b>Profile Picture</b>
+      </div>
+
+      <div class="avatar_container">
+        <%= f.file_field :avatar %>
+      </div>
+      </br>
+      <div style="text-align: left;">
+        <b>OR</b>
+      </div>
+
+      <div class="check-box">
+        <%= f.check_box :intranet, class:"uncheck" %>
+        <%= f.label :intranet, "Request intranet photo upload (takes up to 24 hours)" %>
+      </div>
+
+      <div class="check-box">
+        <%= f.check_box :image_delete, class:"uncheck" %>
+        <%= f.label :image_delete, "Delete Image" %>
+      </div>
+
+      <div class="divider" style="border-color: rgb(102,102,102);"></div>
+
+      <!-- <h5 style="padding-top: 15px;">Please check the relevant Branch/Office</h5>
+
+      <div class="check-box">
+        <%= f.check_box :adm_office %>
+        <%= f.label :adm_office, "ADM Office" %>
+      </div>
+
+      <div class="check-box">
+        <%= f.check_box :strategic_human_resources %>
+        <%= f.label :strategic_human_resources, "Strategic Human Resources" %>
+      </div>
+
+      <div class="check-box">
+        <%= f.check_box :service_management_and_facilities %>
+        <%= f.label :service_management_and_facilities, "Service Management and Facilities" %>
+      </div>
+
+      <div class="check-box">
+        <%= f.check_box :business_planning_and_finance %>
+        <%= f.label :business_planning_and_finance, "Business Planning and Finance" %>
+      </div>
+
+      <div class="divider"></div>
+
+      <h5 style="padding-top: 15px;">Please check the relevant managerial level</h5>
+
+      <div class="check-box">
+        <%= f.check_box :adm %>
+        <%= f.label :adm, "ADM" %>
+      </div>
+
+      <div class="check-box">
+        <%= f.check_box :director %>
+        <%= f.label :director %>
+      </div>
+
+      <div class="check-box">
+        <%= f.check_box :manager %>
+        <%= f.label :manager %>
+      </div>
+
+      <div class="check-box">
+        <%= f.check_box :staff %>
+        <%= f.label :staff %>
+      </div> -->
+
+      <div class="center-float-wrap">
+        <div class="float">
+          <%= f.submit "SUBMIT", class:"submit-green" %>
+        </div>
+
+        <div class="float">
+          <%= link_to "CANCEL", "/users/#{current_user.id}", class:"delete", style:"margin-left: 15px;" %>
+        </div>
+      </div>
+
+    <% end %>
+
   <% else %>
     <h1 class="login-message"><%= link_to "LOGIN", :login %> to edit profile</h1>
   <% end %>
