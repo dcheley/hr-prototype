@@ -8,20 +8,8 @@
 
     <ul class="feed-list">
       <% @opportunities.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |b| %>
-        <li class="feed-item">
-          <%= link_to "#{b.name}", "/opportunities/#{b.id}" %>
-        </li>
-      <% end %>
-    </ul>
-
-    <p class="feed-title">Who's been recognized?</p>
-
-    <ul class="feed-list">
-      <% @received_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |r| %>
-        <li class="feed-item">
-          <%= link_to "#{User.find(r.receiver_id).name}", "/users/#{r.receiver_id}" %>
-          <%= " by " + User.find(r.recognizer_id).name + " for " %>
-          <%= link_to "#{r.name}", "/users/#{r.receiver_id}/recognitions/#{r.id}" %>
+        <li class="feed-item" id="csd-blue">
+          <%= link_to "#{b.name}", "/opportunities/#{b.id}", class:'feed-link' %>
         </li>
       <% end %>
     </ul>
@@ -29,18 +17,39 @@
 
   <div class="three-quarters">
     <%= image_tag('homepage-bg.jpg', class:'home-image') %>
-    <h1 class="left-title">Welcome</h1>
 
-    <p class="paragraph">
-      <!-- Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-      when an unknown printer took a galley of type and scrambled it to make a type
-      specimen book. It has survived not only five centuries, but also the leap into
-      electronic typesetting, remaining essentially unchanged. It was popularised in
-      the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-      and more recently with desktop publishing software like Aldus PageMaker including
-      versions of Lorem Ipsum. -->
-    </p>
+    <div class="three-thirds">
+      <h1 class="left-title">Welcome</h1>
+
+      <p class="paragraph">
+        <!-- Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type
+        specimen book. It has survived not only five centuries, but also the leap into
+        electronic typesetting, remaining essentially unchanged. It was popularised in
+        the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+        and more recently with desktop publishing software like Aldus PageMaker including
+        versions of Lorem Ipsum. -->
+      </p>
+    </div>
+
+    <div class="right-third">
+      <p class="feed-title" style="margin-top: 0;">Who's been recognized?</p>
+
+      <ul class="feed-list">
+        <% @received_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |r| %>
+          <li class="feed-item" id="csd-blue">
+            <%= link_to "#{User.find(r.receiver_id).name}:", "/users/#{r.receiver_id}", class:'feed-link' %>
+          </li>
+          <li class="feed-item" id="no-bullet">
+            <%= link_to "#{r.name}", "/users/#{r.receiver_id}/recognitions/#{r.id}", class:'feed-link' %>
+          </li>
+          <li class="feed-item" id="no-bullet">
+            <span><%= "From " + User.find(r.recognizer_id).name %></span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 
   <% elsif current_user && current_user.co_op != nil %>

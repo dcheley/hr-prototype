@@ -140,37 +140,59 @@ a:hover {
   margin-left: 2.5%;
 }
 
+.three-thirds {
+  float: left;
+  width: 66%;
+}
+
+.right-third {
+  margin-top: 30px;
+  width: 33%;
+  float: right;
+  border-left: 2px solid $dark-blue;
+}
+
 .csd-logo {
   width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.feed-title {
+.feed-title,
+.feed-list {
   text-align: left;
   font-weight: bold;
-  font-size: 18px;
-  margin-top: 15px;
+  font-size: 16px;
   margin-left: 30px;
   margin-right: 10px;
+}
+
+.feed-title {
+  margin-top: 15px;
 }
 
 .feed-list {
-  text-align: left;
-  list-style: none;
-  margin-left: 30px;
-  margin-right: 10px;
+  list-style-position: inside;
   padding-left: 0;
 }
 
-.feed-item,
-.feed-link {
-  font-size: 14px;
+.feed-link,
+.feed-item span {
+  position: relative;
+  left: -15px;
+}
+
+#no-bullet {
+  list-style-type: none;
+  margin-left: 30px;
 }
 
 .feed-link {
-  margin-top: 15px;
+  color: $blue !important;
+}
 
+.feed-link:hover {
+  border-bottom: 2px solid $blue;
 }
 
 .paragraph {
@@ -311,6 +333,10 @@ a:hover {
     width: 1px;
     height: 32px !important;
   }
+}
+
+#csd-blue {
+  color: $blue;
 }
 
 @media screen and (max-width: 900px) {
