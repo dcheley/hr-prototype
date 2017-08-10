@@ -110,11 +110,17 @@
   width: 38px;
   padding-top: 10px;
   padding-bottom: 10px;
+  display: block;
+  margin: auto;
 }
 
 .thumbs-up:hover,
 .thumbs-empty:hover {
   width: 48px;
+}
+
+.likes {
+  text-align: center;
 }
 
 .likes a {

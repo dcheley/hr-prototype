@@ -2,15 +2,15 @@
   <%= render 'opportunities-sidebar'%>
 
   <div class='three-quarters'>
-    <h1 class="form-title"><%= @opportunity.name %></h2>
-
     <div class="opp-photo-frame">
       <% if @opportunity.avatar.file? != true %>
-        <%= image_tag('huddle.png', class:"tile__img") %>
+        <%= image_tag('huddle.png', class:"home-image") %>
       <% else %>
-        <%= image_tag @opportunity.avatar.url(:medium), class:"tile__img" %>
+        <%= image_tag @opportunity.avatar.url(:medium), class:"home-image" %>
       <% end %>
     </div>
+
+    <h1 class="form-title"><%= @opportunity.name %></h1>
 
     <div class="opp-details">
       <p class="opp-info"><%= @opportunity.bonus %></p></br>
@@ -35,18 +35,19 @@
       <%= render 'likes' %>
     <% end %>
 
-    <div class="center-float-wrap">
-      <% if @opportunity.creator_id == current_user.id %>
-        <div class="float" style="margin-right: 7.5px;">
-          <%= link_to 'EDIT', "/opportunities/#{@opportunity.id}/edit", class:"submit-blue" %>
-        </div>
+    <div style="text-align: center">
+      <div class="center-float-wrap">
+        <% if @opportunity.creator_id == current_user.id %>
+          <div class="float" style="margin-right: 7.5px;">
+            <%= link_to 'EDIT', "/opportunities/#{@opportunity.id}/edit", class:"submit-blue" %>
+          </div>
 
-        <div class="float" style="margin-left: 7.5px;">
-          <%= button_to 'DELETE', {:controller => 'opportunities', :action =>
-             'destroy', :user_id => current_user.id, :id => "#{@opportunity.id}"},
-              method: :delete, data: { confirm: "You sure? Opportunity will be permanently removed!" }, class:"delete" %>
-        </div>
-      <% end %>
+          <div class="float" style="display: inline-block;">
+            <%= button_to 'DELETE', {:controller => 'opportunities', :action =>
+               'destroy', :user_id => current_user.id, :id => "#{@opportunity.id}"},
+                method: :delete, data: { confirm: "You sure? Opportunity will be permanently removed!" }, class:"delete" %>
+          </div>
+        <% end %>
 
         <div class="float" style="margin-left: 7.5px;">
           <%= form_for([@opportunity, @badge]) do |f| %>
@@ -59,6 +60,7 @@
             <%= f.submit "VERIFY COMMITTEE MEMBERSHIP BADGE", class:"submit-green", style:"margin: 35px auto;" %>
           <% end %>
         </div>
+      </div>
     </div>
   </div>
 <% else %>

@@ -8,7 +8,7 @@
 
     <ul class="home-feed-list">
       <% @opportunities.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |b| %>
-        <li class="feed-item" id="csd-blue">
+        <li id="csd-blue">
           <%= link_to "#{b.name}", "/opportunities/#{b.id}", class:'home-feed-link' %>
         </li>
       <% end %>
@@ -38,10 +38,10 @@
 
       <ul class="home-feed-list">
         <% @received_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |r| %>
-          <li class="feed-item" id="csd-blue">
+          <li id="csd-blue">
             <%= link_to "#{User.find(r.receiver_id).name}:", "/users/#{r.receiver_id}", class:'home-feed-link' %>
           </li>
-          <li class="feed-item" id="no-bullet">
+          <li id="no-bullet">
             <%= link_to "#{r.name}", "/users/#{r.receiver_id}/recognitions/#{r.id}", class:'home-feed-link' %>
           </li>
           <li class="feed-item" id="no-bullet">
