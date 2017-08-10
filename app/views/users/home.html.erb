@@ -6,10 +6,10 @@
 
     <p class="feed-title">New Career Advancement Opportunities</p>
 
-    <ul class="feed-list">
+    <ul class="home-feed-list">
       <% @opportunities.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |b| %>
         <li class="feed-item" id="csd-blue">
-          <%= link_to "#{b.name}", "/opportunities/#{b.id}", class:'feed-link' %>
+          <%= link_to "#{b.name}", "/opportunities/#{b.id}", class:'home-feed-link' %>
         </li>
       <% end %>
     </ul>
@@ -34,15 +34,15 @@
     </div>
 
     <div class="right-third">
-      <p class="feed-title" style="margin-top: 0;">Who's been recognized?</p>
+      <p class="feed-title" style="margin-top: 0;">WHO'S BEEN RECOGNIZED?</p>
 
-      <ul class="feed-list">
+      <ul class="home-feed-list">
         <% @received_badges.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |r| %>
           <li class="feed-item" id="csd-blue">
-            <%= link_to "#{User.find(r.receiver_id).name}:", "/users/#{r.receiver_id}", class:'feed-link' %>
+            <%= link_to "#{User.find(r.receiver_id).name}:", "/users/#{r.receiver_id}", class:'home-feed-link' %>
           </li>
           <li class="feed-item" id="no-bullet">
-            <%= link_to "#{r.name}", "/users/#{r.receiver_id}/recognitions/#{r.id}", class:'feed-link' %>
+            <%= link_to "#{r.name}", "/users/#{r.receiver_id}/recognitions/#{r.id}", class:'home-feed-link' %>
           </li>
           <li class="feed-item" id="no-bullet">
             <span><%= "From " + User.find(r.recognizer_id).name %></span>

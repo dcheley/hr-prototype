@@ -158,25 +158,35 @@ a:hover {
   padding-bottom: 10px;
 }
 
+.feed-title {
+  margin-top: 15px;
+}
+
 .feed-title,
-.feed-list {
+.feed-list,
+.home-feed-list {
   text-align: left;
   font-weight: bold;
   font-size: 16px;
   margin-left: 30px;
   margin-right: 10px;
-}
-
-.feed-title {
-  margin-top: 15px;
-}
-
-.feed-list {
-  list-style-position: inside;
   padding-left: 0;
 }
 
-.feed-link,
+.home-feed-list {
+  list-style-position: inside;
+}
+
+.feed-list {
+  list-style: none;
+}
+
+.feed-link {
+  margin-top: 15px;
+  margin-right: 5px;
+}
+
+.home-feed-link,
 .feed-item span {
   position: relative;
   left: -15px;
@@ -187,11 +197,11 @@ a:hover {
   margin-left: 30px;
 }
 
-.feed-link {
+.home-feed-link {
   color: $blue !important;
 }
 
-.feed-link:hover {
+.home-feed-link:hover {
   border-bottom: 2px solid $blue;
 }
 
