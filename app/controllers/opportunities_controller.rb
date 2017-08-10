@@ -1,8 +1,8 @@
 class OpportunitiesController < ApplicationController
   before_action :load_opportunity, only: [:show, :edit, :update, :destroy, :like, :unlike]
+  before_action :load_opportunities, only: [:show, :edit, :new, :index]
 
   def index
-    @opportunities = Opportunity.all
     if current_user
       @badge = current_user.badges.build
     end
@@ -23,7 +23,6 @@ class OpportunitiesController < ApplicationController
   end
 
   def show
-    @opportunities = Opportunity.all
     if current_user
       @badge = current_user.badges.build
     end
@@ -68,6 +67,10 @@ class OpportunitiesController < ApplicationController
 private
   def load_opportunity
     @opportunity = Opportunity.find(params[:id])
+  end
+
+  def load_opportunities
+    @opportunities = Opportunity.all
   end
 
   def opportunity_params
