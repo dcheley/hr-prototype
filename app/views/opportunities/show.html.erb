@@ -10,7 +10,11 @@
       <% end %>
     </div>
 
-    <h1 class="form-title"><%= @opportunity.name %></h1>
+    <div style='position: relative;'>
+      <h1 class="form-title"><%= @opportunity.name.titleize %></h1>
+
+      <%= link_to "Post Project", "/opportunities/new", class:'submit-blue', id:'opp-button' %>
+    </div>
 
     <div class="opp-details">
       <p class="opp-info"><%= @opportunity.bonus %></p></br>
@@ -42,7 +46,7 @@
             <%= link_to 'EDIT', "/opportunities/#{@opportunity.id}/edit", class:"submit-blue" %>
           </div>
 
-          <div class="float" style="display: inline-block;">
+          <div class="float">
             <%= button_to 'DELETE', {:controller => 'opportunities', :action =>
                'destroy', :user_id => current_user.id, :id => "#{@opportunity.id}"},
                 method: :delete, data: { confirm: "You sure? Opportunity will be permanently removed!" }, class:"delete" %>
