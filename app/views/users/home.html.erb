@@ -69,11 +69,11 @@
                 <%= link_to "/users/#{b.id}" do %>
                   <li class="element" style="width: 240px;">
                     <div class="org-box">
-                        <div class="org-details">
-                          <p class="boss-name" style="margin-left: 38%;"><%= b.name %></p>
-                          <p class="badge-count" style="font-size: 12px; margin-left: 38%;"><b>Bucket List Badges:</b> <%= b.badges.where.not(opportunity_id: nil).count %></p>
-                          <p class="badge-count" style="font-size: 12px; margin-left: 38%;"><b>Recognition Badges:</b> <%= b.received_badges.count %></p>
-                        </div>
+                      <div class="org-details">
+                        <p class="boss-name" style="margin-left: 38%;"><%= b.name %></p>
+                        <p class="badge-count" style="font-size: 12px; margin-left: 38%;"><b>Bucket List Badges:</b> <%= b.badges.where.not(opportunity_id: nil).count %></p>
+                        <p class="badge-count" style="font-size: 12px; margin-left: 38%;"><b>Recognition Badges:</b> <%= b.received_badges.count %></p>
+                      </div>
                       <% if b.avatar.file? != true %>
                         <div class="info-coop-btn" id="team-one">
                           <span class="glyphicon glyphicon-user"></span>

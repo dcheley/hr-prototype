@@ -18,7 +18,7 @@
 
     <div class="opp-details">
       <p class="opp-info"><%= @opportunity.bonus %></p></br>
-      <p class="opp-info"><%= @opportunity.description %></p></br>
+      <p class="paragraph" style="margin-right: 0;"><%= @opportunity.description %></p></br>
       <% if current_user.co_op == nil && @opportunity.skills.blank? != true %>
         <p class="opp-info"><b>Skills candidate will gain:</b> <%= @opportunity.skills %></p></br>
       <% end %>
