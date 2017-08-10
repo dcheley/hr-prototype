@@ -23,6 +23,7 @@ class OpportunitiesController < ApplicationController
   end
 
   def show
+    @opportunities = Opportunity.all
     if current_user
       @badge = current_user.badges.build
     end

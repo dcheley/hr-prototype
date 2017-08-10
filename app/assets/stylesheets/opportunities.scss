@@ -20,12 +20,6 @@
   margin-bottom: 30px;
 }
 
-.opp-headers {
-  width: 80%;
-  margin: auto;
-  line-height: 1.5;
-}
-
 .opp-details {
   font-size: 16px;
   margin: auto;
@@ -35,6 +29,13 @@
 .opp-info {
   text-align: left;
   width: 100%;
+}
+
+#opp-button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-top: 15px;
 }
 
 //Image gallery

@@ -1,10 +1,8 @@
 <% if current_user %>
-  <div class="background" style="text-align: center;">
-    <div style="text-align: center;">
-      <%= link_to "BACK TO OPPORTUNITIES", opportunities_url, class:"submit-blue", style:"width: 260px;" %>
-    </div>
+  <%= render 'opportunities-feed'%>
 
-    <h2 class="opp-headers"><%= @opportunity.name %></h2>
+  <div class='three-quarters'>
+    <h1 class="form-title"><%= @opportunity.name %></h2>
 
     <div class="opp-photo-frame">
       <% if @opportunity.avatar.file? != true %>
@@ -62,7 +60,6 @@
           <% end %>
         </div>
     </div>
-
   </div>
 <% else %>
   <h1 class="login-message"><%= link_to "LOGIN", :login %> to view <%= @opportunity.name %> details</h1>

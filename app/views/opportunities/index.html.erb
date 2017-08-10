@@ -1,23 +1,12 @@
 <% if current_user && current_user.co_op == nil %>
-  <div class="quarter">
-    <div class="white-box">
-      <%= image_tag('CSD-logo.jpg', class:"csd-logo") %>
-    </div>
-
-    <ul class="feed-list">
-      <% @opportunities.where(career: true).each do |o| %>
-        <li class="feed-link"><%= link_to o.name, "/opportunities/#{o.id}" %></li>
-      <% end %>
-    </ul>
-  </div>
+  <%= render 'opportunities-feed'%>
 
   <div class="three-quarters">
     <%= image_tag 'self-improvement', class:'home-image' %>
     <div style='position: relative;'>
       <h1 class="form-title" style="margin-top: 15px;">ENHANCE YOUR SKILLS</h1>
 
-      <%= link_to "Post Project", "/opportunities/new", class:'submit-blue',
-        style:'position: absolute; top: 0; right: 0; margin-top: 15px;' %>
+      <%= link_to "Post Project", "/opportunities/new", class:'submit-blue', id:'opp-button' %>
     </div>
   </div>
 
