@@ -135,6 +135,7 @@ a:hover {
 }
 
 .three-quarters {
+  position: relative;
   float: right;
   width: 72.5%;
   margin-left: 2.5%;
@@ -218,7 +219,7 @@ a:hover {
   display: block;
   margin: 35px auto;
   padding: 15px 30px;
-  border-radius: 10px;
+  border-radius: 22px;
   font-weight: bold;
   cursor: pointer;
   display: inline-block;
