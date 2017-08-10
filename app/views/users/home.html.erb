@@ -18,19 +18,23 @@
   <div class="three-quarters">
     <%= image_tag('homepage-bg.jpg', class:'home-image') %>
 
-    <div class="three-thirds">
-      <h1 class="left-title">Welcome</h1>
+    <div class="three-thirds" style="text-align: center;">
+      <h1 class="left-title">Welcome to the Employee Engagement Application!</h1>
 
       <p class="paragraph">
-        <!-- Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a type
-        specimen book. It has survived not only five centuries, but also the leap into
-        electronic typesetting, remaining essentially unchanged. It was popularised in
-        the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-        and more recently with desktop publishing software like Aldus PageMaker including
-        versions of Lorem Ipsum. -->
+        The application aims to foster development, inclusion and recognition within
+        the Corporate Services Division. Check out the interactive organizational
+        chart in order to learn more about your colleagues, recognize them for their
+        hard work or to invite them to a work related activity. Click on the Enhance
+        Your Skills tab to find events, committees, volunteering opportunities, working
+        groups and other development opportunities that are going on within the CSD.
+        Following the release of the 2017 OPS Employee Survey results, work has been
+        ongoing to develop a divisional action plan. A survey is now being rolled out
+        to gain further insight and to get recommendations from staff at all levels.
+        You are invited to complete the survey which will remain open until <b>Wednesday, August 16.</b>
       </p>
+
+      <%= link_to 'Take Survey', 'https://www.surveymonkey.com/r/EESFeedback', target:'_blank', class:'submit-blue' %>
     </div>
 
     <div class="right-third">
