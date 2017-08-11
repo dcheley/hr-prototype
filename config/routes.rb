@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   resources :pulse_surveys, only: [:edit, :update]
 
   resources :users do
-    resources :badges, only: [:new, :create, :show, :update, :edit, :destroy]
+    resources :badges, only: [:new, :create, :update, :edit, :destroy]
     resources :recognitions, only: [:new, :create, :show, :update, :edit, :destroy]
   end
 

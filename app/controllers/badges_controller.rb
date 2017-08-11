@@ -1,5 +1,5 @@
 class BadgesController < ApplicationController
-  before_action :load_badge, only: [:show, :edit, :update, :destroy, :like, :unlike]
+  before_action :load_badge, only: [:edit, :update, :destroy, :like, :unlike]
   before_action :load_user, only: [:new, :show, :edit, :update, :destroy]
 
   def new
@@ -44,13 +44,10 @@ class BadgesController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def update
     if @badge.update_attributes(badge_params)
       flash[:notice] = "#{@badge.name} badge successfully updated!"
-      redirect_to "/users/#{@user.id}/badges/#{@badge.id}"
+      redirect_to user_url(@user)
     else
       render :edit
     end
