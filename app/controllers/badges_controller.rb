@@ -12,7 +12,6 @@ class BadgesController < ApplicationController
 
   def create
     @badge = Badge.new(badge_params)
-    # @badge.signup ||= Signup.new
 
     # Use current_user when signing up for an opportunity (No implicit @user in this case)
     if params[:user_id] != nil
