@@ -15,7 +15,15 @@
 
       <div class='blank-quarter' style='width: 23%; margin-right: 2%;'>
         <div class="float" id="badge-button">
-          <!-- Likes -->
+          <% if current_user.liked? b %>
+            <%= link_to image_tag('thumbs-up-empty.svg', class:"thumbs-empty"), unlike_badge_path(b.id), method: :put, remote: true, id: "like_#{b.id}" %>
+            <p class="profile-badges"></p>
+            <%= render 'likes', b: b %>
+          <% else %>
+            <%= link_to image_tag('thumbs-up.svg', class:"thumbs-up"), like_badge_path(b.id), method: :put, remote: true, id: "like_#{b.id}" %>
+            <p class="profile-badges"></p>
+            <%= render 'likes', b: b %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -39,7 +47,15 @@
 
       <div class='blank-quarter' style='width: 23%; margin-right: 2%;'>
         <div class="float" id="badge-button">
-          <!-- Likes -->
+          <% if current_user.liked? b %>
+            <%= link_to image_tag('thumbs-up-empty.svg', class:"thumbs-empty"), unlike_badge_path(b.id), method: :put, remote: true, id: "like_#{b.id}" %>
+            <p class="profile-badges"></p>
+            <%= render 'likes', b: b %>
+          <% else %>
+            <%= link_to image_tag('thumbs-up.svg', class:"thumbs-up"), like_badge_path(b.id), method: :put, remote: true, id: "like_#{b.id}" %>
+            <p class="profile-badges"></p>
+            <%= render 'likes', b: b %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -63,7 +79,15 @@
 
       <div class='blank-quarter' style='width: 23%; margin-right: 2%;'>
         <div class="float" id="badge-button">
-          <!-- Likes -->
+          <% if current_user.liked? b %>
+            <%= link_to image_tag('thumbs-up-empty.svg', class:"thumbs-empty"), unlike_badge_path(b.id), method: :put, remote: true, id: "like_#{b.id}" %>
+            <p class="profile-badges"></p>
+            <%= render 'likes', b: b %>
+          <% else %>
+            <%= link_to image_tag('thumbs-up.svg', class:"thumbs-up"), like_badge_path(b.id), method: :put, remote: true, id: "like_#{b.id}" %>
+            <p class="profile-badges"></p>
+            <%= render 'likes', b: b %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -87,7 +111,15 @@
 
       <div class='blank-quarter' style='width: 23%; margin-right: 2%;'>
         <div class="float" id="badge-button">
-          <!-- Put likes -->
+          <% if current_user.liked? b %>
+            <%= link_to image_tag('thumbs-up-empty.svg', class:"thumbs-empty"), unlike_recognition_path(b.id), method: :put, remote: true, id: "like_#{b.id}" %>
+            <p class="profile-badges"></p>
+            <%= render 'likes', b: b %>
+          <% else %>
+            <%= link_to image_tag('thumbs-up.svg', class:"thumbs-up"), like_recognition_path(b.id), method: :put, remote: true, id: "like_#{b.id}" %>
+            <p class="profile-badges"></p>
+            <%= render 'likes', b: b %>
+          <% end %>
         </div>
       </div>
     </div>

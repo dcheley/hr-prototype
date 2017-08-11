@@ -3,13 +3,30 @@
 
   <!-- Display Exp/skills Badges -->
   <% @user.badges.where.not(opportunity_id: nil).each do |b| %>
-    <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
-      <div class="new-badge">
-        <li class="profile-badges-name">
-          <%= "#{b.name}" %>
-        </li></br>
+    <div class='row' style='margin-top: 15px; margin-bottom: 20px;'>
+      <div class='blank-quarter'>
+        <%= image_tag 'education_icon.png', class:'badge-icon' %>
       </div>
-    <% end %>
+
+      <div class='half'>
+        <p class="badge-text"><%= b.name %></p>
+        <p class="badge-text"><%= b.description %></p>
+      </div>
+
+      <div class='blank-quarter' style='width: 23%; margin-right: 2%;'>
+        <div class="float" id="badge-button">
+          <% if current_user.liked? b %>
+            <%= link_to image_tag('thumbs-up-empty.svg', class:"thumbs-empty"), unlike_badge_path(b.id), method: :put, remote: true, id: "like_#{b.id}" %>
+            <p class="profile-badges"></p>
+            <%= render 'likes', b: b %>
+          <% else %>
+            <%= link_to image_tag('thumbs-up.svg', class:"thumbs-up"), like_badge_path(b.id), method: :put, remote: true, id: "like_#{b.id}" %>
+            <p class="profile-badges"></p>
+            <%= render 'likes', b: b %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
 
@@ -30,7 +47,15 @@
 
       <div class='blank-quarter' style='width: 23%; margin-right: 2%;'>
         <div class="float" id="badge-button">
-          <!-- Likes -->
+          <% if current_user.liked? b %>
+            <%= link_to image_tag('thumbs-up-empty.svg', class:"thumbs-empty"), unlike_recognition_path(b.id), method: :put, remote: true, id: "like_#{b.id}" %>
+            <p class="profile-badges"></p>
+            <%= render 'likes', b: b %>
+          <% else %>
+            <%= link_to image_tag('thumbs-up.svg', class:"thumbs-up"), like_recognition_path(b.id), method: :put, remote: true, id: "like_#{b.id}" %>
+            <p class="profile-badges"></p>
+            <%= render 'likes', b: b %>
+          <% end %>
         </div>
       </div>
     </div>

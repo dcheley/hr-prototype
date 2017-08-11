@@ -89,8 +89,7 @@
   font-weight: bold;
 }
 
-.new-badge,
-.badge-show-green {
+.new-badge {
   color: white;
   background-color: $dark-blue;
 }
@@ -104,18 +103,6 @@
   li {
     color: $medium-grey;
   }
-}
-
-.badge-show-green {
-  margin: 5px auto;
-  background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
-  border: 3px solid $grey;
-  border-radius: 12px; /* one half of ( (border * 2) + height + padding ) */
-  box-shadow: 1px 1px 1px black;
-  text-align: center;
-  height: 300px;
-  width: 300px;
-  border-radius: 150px;
 }
 
 .thumbs-up,
