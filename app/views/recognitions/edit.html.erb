@@ -21,14 +21,10 @@
     <%= render 'recognitions_form' %>
 
     <div class="float">
-      <%= link_to "CANCEL", user_url(@user), class:"delete", style:"margin-left: 15px;" %>
-    </div>
-
-    <div class="float" style="clear: both;">
       <%= link_to "BACK TO #{@user.name.upcase}'S PROFILE", "/users/#{@user.id}",
-          class:"submit-blue", style:"margin: 15px auto;" %>
+          class:"submit-blue", style:"margin: 15px;" %>
     </div>
-
+  </div>
   <% else %>
     <h1 class="login-message"><%= link_to "LOGIN", :login %> to edit <%= User.find(@recognition.receiver_id).name %>'s badge</h1>
   <% end %>

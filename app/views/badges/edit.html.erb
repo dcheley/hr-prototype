@@ -46,13 +46,10 @@
     <% end %>
 
         <div class="float">
-          <%= link_to "CANCEL", user_url(@user), class:"delete", style:"margin-left: 15px;" %>
-        </div>
-
-        <div class="float" style="clear: both;">
-          <%= link_to "BACK TO PROFILE", "/users/#{@user.id}", class:"submit-blue", style:"margin-top: 0; margin-left: 30px;" %>
+          <%= link_to "BACK TO PROFILE", "/users/#{@user.id}", class:"submit-blue", style:"margin-left: 15px;" %>
         </div>
       </div>
+
   <% else %>
     <h1 class="login-message"><%= link_to "LOGIN", :login %> to edit <%= User.find(@badge.user_id).name %>'s badge</h1>
   <% end %>
