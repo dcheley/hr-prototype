@@ -27,7 +27,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :badges, only: [:new, :create, :update, :edit, :destroy]
-    resources :recognitions, only: [:new, :create, :show, :update, :edit, :destroy]
+    resources :recognitions, only: [:new, :create, :update, :edit, :destroy]
   end
 
   resources :opportunities do
