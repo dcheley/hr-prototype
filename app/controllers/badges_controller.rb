@@ -1,6 +1,6 @@
 class BadgesController < ApplicationController
   before_action :load_badge, only: [:edit, :update, :destroy, :like, :unlike]
-  before_action :load_user, only: [:new, :show, :edit, :update, :destroy]
+  before_action :load_user, only: [:new, :edit, :update, :destroy]
 
   def new
     @badge = Badge.new
@@ -26,13 +26,13 @@ class BadgesController < ApplicationController
     end
 
     if @badge.save && @badge.opportunity_id == nil && @badge.signup == nil
-      redirect_to "/users/#{current_user.id}/badges/#{@badge.id}", notice: "#{@badge.name} badge created!"
+      redirect_to user_url(@user), notice: "#{@badge.name} badge created!"
     elsif @badge.save && @badge.opportunity_id == nil && @badge.signup.step_four == true
       redirect_to "/signups/step_five", notice: "#{@badge.name} badge added to profile! Now add an experience badge"
     elsif @badge.save && @badge.opportunity_id == nil && @badge.signup.step_five == true
       redirect_to "/signups/step_six", notice: "#{@badge.name} badge added to profile! Verify your Sign Up below to start using the App"
     elsif @badge.save && @badge.opportunity_id != nil
-      redirect_to "/users/#{current_user.id}/badges/#{@badge.id}", notice: "Successfully signed up for #{@badge.name}!"
+      redirect_to user_url(@user), notice: "Successfully signed up for #{@badge.name}!"
     elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup == nil
       render :new
     elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup.step_four == true
