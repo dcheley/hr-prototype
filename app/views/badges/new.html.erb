@@ -21,7 +21,34 @@
 
     <h2 class="form-title" style="clear: both; padding-top: 50px;">Can't find your education credentials? Create a custom badge below</h2>
 
-    <%= render 'badges_form' %>
+    <%= form_for([@user, @badge]) do |f| %>
+      <% if @badge.errors.any? %>
+        <h2 class="error-header"><%= pluralize(@badge.errors.count, "error") %> occurred!</h2>
+
+        <ul class="error-list">
+          <% @badge.errors.full_messages.each do |msg| %>
+            <li class="error-msg"><%= msg %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
+      <div class="field">
+        <%= f.label :name, "Name of Credential", class:"field-label" %>
+        <%= f.text_field :name, class:"field-input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :description, class:"field-label" %>
+        <%= f.text_area :description, class:"field-input", placeholder:"Describe your credentials in 500 characters or less." %>
+      </div>
+
+      <%= f.hidden_field :education, value: true %>
+
+      <div class="center-float-wrap" style="margin-top: 15px;">
+        <div class="float">
+          <%= f.submit "SUBMIT", class:"submit-green" %>
+        </div>
+      <% end %>
 
       <div class="float">
         <%= link_to "BACK TO PROFILE", "/users/#{current_user.id}", class:"submit-blue", style:"margin-left: 15px;" %>
