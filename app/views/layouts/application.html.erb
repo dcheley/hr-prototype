@@ -69,7 +69,7 @@
                 <span class="nav-divider"></span>
               </li>
               <li class="<%= current_page?("/users/#{current_user.id}/edit") ? 'active-nav' : 'nav-link' %>">
-                <%= link_to "Settings", "/users/#{current_user.id}/edit" %>
+                <%= link_to "Account Settings", "/users/#{current_user.id}/edit" %>
                 <span class="nav-divider"></span>
               </li>
               <li>
@@ -82,15 +82,13 @@
 
       <% if flash[:alert] %>
         <div class="alert"><%= flash[:alert] %></div>
-      <% end %>
-
-      <% if flash[:notice] %>
+      <% elsif flash[:notice] %>
         <div class="alert"><%= flash[:notice] %></div>
       <% end %>
 
       <%= yield %>
     </div>
-    
+
     <div class="white-space"></div>
   </body>
 </html>

@@ -19,8 +19,28 @@
   width: 50%;
 }
 
+.half {
+  float: left;
+  width: 47.5%;
+  margin-left: 2.5%;
+}
+
 .center-float-wrap {
   display: inline-block;
+}
+
+.new-badge {
+  margin: 7px 10px;
+  background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
+  border: 3px solid $grey;
+  border-radius: 12px; /* one half of ( (border * 2) + height + padding ) */
+  box-shadow: 1px 1px 1px black;
+  text-align: center;
+  height: 120px;
+  width: 120px;
+  border-radius: 60px;
+  overflow: hidden;
+  float: left;
 }
 
 .badge-detail-title {
@@ -31,19 +51,13 @@
 }
 
 .profile-badges,
-.badge-show-title,
-.profile-badges-name {
+.badge-show-title {
   margin: auto;
   width: 80%;
   font-style: italic;
   color: black;
   list-style: none;
   min-width: 30px;
-}
-
-.profile-badges-name {
-  color: white;
-  font-size: 12px;
 }
 
 .badge-show-title {
@@ -62,27 +76,26 @@
   font-size: 20px;
 }
 
-.badge-green {
-  margin: 7px 10px;
-  background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
-  border: 3px solid $grey;
-  border-radius: 12px; /* one half of ( (border * 2) + height + padding ) */
+.badge-icon {
+  margin: auto;
   box-shadow: 1px 1px 1px black;
-  text-align: center;
-  height: 120px;
+  display: block;
+  height: 90px;
   width: 120px;
-  border-radius: 60px;
-  overflow: hidden;
-  float: left;
 }
 
-.badge-green,
+.badge-text {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.new-badge,
 .badge-show-green {
   color: white;
   background-color: $dark-blue;
 }
 
-.badge-green li {
+.new-badge li {
   margin-top: 15px;
 }
 
@@ -98,7 +111,7 @@
   border-radius: 150px;
 }
 
-.badge-green:hover {
+.new-badge:hover {
   background-color: $darker-blue;
   li {
     color: $medium-grey;

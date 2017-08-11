@@ -4,7 +4,7 @@
   <!-- Display Exp/skills Badges -->
   <% @user.badges.where.not(opportunity_id: nil).each do |b| %>
     <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
-      <div class="badge-green">
+      <div class="new-badge">
         <li class="profile-badges-name">
           <%= "#{b.name}" %>
         </li></br>
@@ -19,7 +19,7 @@
   <!-- Display Recognition Badges -->
   <% @user.received_badges.each do |b| %>
     <%= link_to "/users/#{@user.id}/recognitions/#{b.id}" do %>
-      <div class="badge-green">
+      <div class="new-badge">
         <li class="profile-badges-name">
           <%= "#{b.name}" %>
         </li></br>

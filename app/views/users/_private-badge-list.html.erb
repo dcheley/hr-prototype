@@ -4,13 +4,30 @@
 
   <!-- Display Education Badges -->
   <% @user.badges.where(opportunity_id: nil, education: true).each do |b| %>
-    <%= link_to "/users/#{@user.id}/badges/#{b.id}" do %>
-      <div class="badge-green">
-        <li class="profile-badges-name">
-          <%= "#{b.name}" %>
-        </li></br>
+    <div class='row' style='margin-top: 15px; margin-bottom: 10px;'>
+      <div class='blank-quarter'>
+        <%= image_tag 'education_icon.png', class:'badge-icon' %>
       </div>
-    <% end %>
+
+      <div class='half'>
+        <p class="badge-text"><%= b.name %></p>
+        <p class="badge-text"><%= b.description %></p>
+      </div>
+
+      <div class='blank-quarter' style='width: 23%; margin-right: 2%;'>
+        <div class="float" id="badge-button">
+          <%= link_to "EDIT", "/users/#{@user.id}/badges/#{b.id}/edit",
+              class:"submit-green", style:"margin: 15px auto;" %>
+        </div>
+
+        <div class="float" id="badge-button">
+          <%= button_to 'DELETE', {:controller => 'badges', :action =>
+             'destroy', :user_id => current_user.id, :id => b.id},
+              method: :delete, data: { confirm: "You sure? Badge will be permanently removed!" },
+              class:"delete", style: "margin: 15px auto;" %>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
 
