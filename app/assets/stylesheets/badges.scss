@@ -1,8 +1,4 @@
 //Badges
-.badge-details {
-  margin-top: 0;
-}
-
 .form-option {
   text-align: center;
   margin-bottom: 0;
@@ -43,15 +39,7 @@
   float: left;
 }
 
-.badge-detail-title {
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 30px;
-  padding-top: 2%;
-}
-
-.profile-badges,
-.badge-show-title {
+.profile-badges {
   margin: auto;
   width: 80%;
   font-style: italic;
@@ -60,20 +48,9 @@
   min-width: 30px;
 }
 
-.badge-show-title {
-  color: white;
-  margin-top: 80px;
-  font-size: 26px;
-}
-
 .badge-description-wrap {
   width: 75%;
   margin: auto;
-}
-
-.badge-description {
-  padding-top: 2%;
-  font-size: 20px;
 }
 
 .badge-icon {
@@ -132,10 +109,4 @@
   font-weight: bold;
   color: $dark-grey;
   text-decoration: none;
-}
-
-@media screen and (max-width: 939px) {
-  .badge-title {
-    padding-left: 0;
-  }
 }
