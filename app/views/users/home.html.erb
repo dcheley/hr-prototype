@@ -56,7 +56,7 @@
             <%= link_to "#{User.find(r.receiver_id).name}:", "/users/#{r.receiver_id}", class:'home-feed-link' %>
           </li>
           <li id="no-bullet">
-            <%= link_to "#{r.name}", "/users/#{r.receiver_id}/recognitions/#{r.id}", class:'home-feed-link' %>
+            <%= link_to "#{r.name}", "/users/#{r.receiver_id}", class:'home-feed-link' %>
           </li>
           <li class="feed-item" id="no-bullet">
             <span><%= "From " + User.find(r.recognizer_id).name %></span>
