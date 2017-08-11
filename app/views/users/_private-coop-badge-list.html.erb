@@ -44,7 +44,7 @@
       </div>
 
       <div class='half'>
-        <p class="badge-text"><%= b.name %></p>
+        <p class="badge-text"><%= b.name %> <p><b><%= link_to "by #{b.recognizer.name}", user_url(b.recognizer_id) %></b></p></p>
         <p class="badge-text" style="font-weight: normal;"><%= b.description %></p>
         <p class="badge-text"><%= display_likes(b) %></p>
       </div>
