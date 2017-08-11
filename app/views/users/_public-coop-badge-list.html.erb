@@ -57,6 +57,13 @@
             <%= render 'likes', b: b %>
           <% end %>
         </div>
+
+        <% if current_user.id == b.recognizer_id %>
+          <div class='float' id='badge-button'>
+            <%= link_to "EDIT", "/users/#{@user.id}/recognitions/#{b.id}/edit",
+                class:"submit-green", style:"margin: 15px auto;" %>
+          </div>
+        <% end %>
       </div>
     </div>
   <% end %>

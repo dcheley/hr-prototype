@@ -15,14 +15,14 @@
 </div>
 
 <div class="three-quarters" style="margin-top: 10px; text-align: center;">
-  <% if current_user.id == @recognition.receiver_id || current_user.id == @recognition.recognizer_id %>
+  <% if current_user.id == @recognition.recognizer_id %>
     <h1 class="form-title" style="padding-top: 3%;">Edit Badge</h1>
 
     <%= render 'recognitions_form' %>
 
     <div class="float">
       <%= link_to "BACK TO #{@user.name.upcase}'S PROFILE", "/users/#{@user.id}",
-          class:"submit-blue", style:"margin: 15px;" %>
+          class:"submit-blue", style:"margin-left: 15px;" %>
     </div>
   </div>
   <% else %>

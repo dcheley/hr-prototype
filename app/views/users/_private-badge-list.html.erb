@@ -118,11 +118,6 @@
 
       <div class='blank-quarter' style='width: 23%; margin-right: 2%;'>
         <div class="float" id="badge-button">
-          <%= link_to "EDIT", "/users/#{@user.id}/recognitions/#{b.id}/edit",
-              class:"submit-green", style:"margin: 15px auto;" %>
-        </div>
-
-        <div class="float" id="badge-button">
           <%= button_to 'DELETE', {:controller => 'recognitions', :action =>
              'destroy', :user_id => current_user.id, :id => b.id},
               method: :delete, data: { confirm: "You sure? Badge will be permanently removed!" },
