@@ -11,19 +11,17 @@ class BadgesController < ApplicationController
   end
 
   def create
-    @users = User.all
     @badge = Badge.new(badge_params)
+    # @badge.signup ||= Signup.new
+
+    # Use current_user when signing up for an opportunity (No implicit @user in this case)
     if params[:user_id] != nil
       @user = User.find(params[:user_id])
     else
       @user = current_user
     end
 
-    if current_user != @user
-      @badge.user_id = @user.id
-    else
-      @badge.user_id = current_user.id
-    end
+    @badge.user_id = @user.id
 
     if @badge.save && @badge.opportunity_id == nil && @badge.signup == nil
       redirect_to user_url(@user), notice: "#{@badge.name} badge created!"
@@ -33,14 +31,16 @@ class BadgesController < ApplicationController
       redirect_to "/signups/step_six", notice: "#{@badge.name} badge added to profile! Verify your Sign Up below to start using the App"
     elsif @badge.save && @badge.opportunity_id != nil
       redirect_to user_url(@user), notice: "Successfully signed up for #{@badge.name}!"
-    elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup == nil
+    elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup == nil && @badge.education == true
       render :new
+    elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup == nil && @badge.exp == true
+      render :exp
     elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup.step_four == true
       render 'signups/step_four'
     elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup.step_five == true
       render 'signups/step_five'
     else
-      render 'users/org_charts'
+      render 'users/home', notice: "Uh oh! Something unexpected occurred"
     end
   end
 

@@ -11,33 +11,35 @@
   </div>
 
   <div class="container" style="width: 80%; text-align: center; margin-top: 0; margin-bottom: 0;">
-    <h1 class="form-title">Review Your Info:</h1></br>
+    <div style="display: inline-block;">
+      <h1 class="form-title">Review Your Info:</h1></br>
 
-    <li class="profile-info"><b>Email:</b> <%= current_user.email %></li>
-    <li class="profile-info"><b>Title:</b> <%= current_user.title %></li>
-    <li class="profile-info"><b>Direct Manager:</b> <%= current_user.direct_report %></li>
-    <li class="profile-info"><b>Skills I'm currently developing:</b> <%= current_user.career_aspirations %></li>
-    <li class="profile-info"><b>Job Description:</b> <%= current_user.job_description %></li>
-    <li class="profile-info"><b>Badges created:</b></li>
-    <% current_user.badges.each_with_index do |b, index| %>
-      <li class="profile-info" id="badge-count">Badge <%= (index + 1) %>:</li>
-      <li class="profile-info"><%= b.name %></li>
-      <li class="profile-info"><%= b.description %></li>
-    <% end %>
+      <li class="profile-info"><b>Email:</b> <%= current_user.email %></li>
+      <li class="profile-info"><b>Title:</b> <%= current_user.title %></li>
+      <li class="profile-info"><b>Direct Manager:</b> <%= current_user.direct_report %></li>
+      <li class="profile-info"><b>Skills I'm currently developing:</b> <%= current_user.career_aspirations %></li>
+      <li class="profile-info"><b>Job Description:</b> <%= current_user.job_description %></li>
+      <li class="profile-info"><b>Badges created:</b></li>
+      <% current_user.badges.each_with_index do |b, index| %>
+        <li class="profile-info" id="badge-count">Badge <%= (index + 1) %>:</li>
+        <li class="profile-info"><%= b.name %></li>
+        <li class="profile-info"><%= b.description %></li>
+      <% end %>
 
-    <div class="center-float-wrap">
-      <div class="float" style="width: 50%;">
-        <%= form_for(current_user) do |f| %>
-          <%= f.hidden_field :agreement, value: true %>
-          <%= f.fields_for :signup_attributes do |s| %>
-            <%= s.hidden_field :step_six, value: true %>
+      <div class="center-float-wrap">
+        <div class="float" style="width: 50%;">
+          <%= form_for(current_user) do |f| %>
+            <%= f.hidden_field :agreement, value: true %>
+            <%= f.fields_for :signup_attributes do |s| %>
+              <%= s.hidden_field :step_six, value: true %>
+            <% end %>
+            <%= f.submit "COMPLETE SIGN UP", class:"submit-green" %>
           <% end %>
-          <%= f.submit "COMPLETE SIGN UP", class:"submit-green" %>
-        <% end %>
-      </div>
+        </div>
 
-      <div class="float" style="width: 50%;">
-        <%= link_to "RESTART", :logout, class:"delete", style:"margin-left: 30px;" %>
+        <div class="float" style="width: 50%;">
+          <%= link_to "RESTART", :logout, class:"delete", style:"margin-left: 30px;" %>
+        </div>
       </div>
     </div>
   </div>
