@@ -21,6 +21,6 @@ Features:
 * Upload profile pictures & Opportunity images (paperclip)
 * S3 Amazon file storage system for uploaded images
 * 5 Star Rating System through PulseSurveys (ratyrate)
-* Activity feed displaying Badge, Recognition & Opportunity CRUD actions with links
+* Activity feed displaying Recognition & Opportunity CRUD actions with links
 * 6 Step User Sign Up process
 * Onboarding version currently tested on Co-Op Students
