@@ -17,6 +17,7 @@ db/seeds.rb
 latest.dump
 # Ignore Byebug command history file.
 .byebug_history
+secrets.yml
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
