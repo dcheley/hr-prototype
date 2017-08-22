@@ -44,7 +44,6 @@ User.create([{ name: "Robert B", email: "robb@email.com", phone: "(416) 222-2222
   { name: "Robert C", email: "rc@email.com", phone: "(416) 222-2222", title: "Facilities Mgmt Coordinator", service_management_and_facilities: true, staff: true, password: "501548" },
   { name: "Sue S", email: "ss@email.com", phone: "(416) 111-1111", title: "Project Manager", service_management_and_facilities: true, staff: true, password: "588308" },
   { name: "Beatriz V", email: "bv@email.com", phone: "(416) 333-333", title: "Manager", service_management_and_facilities: true, manager: true, password: "550207" },
-  { name: "Michael N", email: "miken.@email.com", phone: "(416) 222-2222", title: "Information Services Officer", service_management_and_facilities: true, staff: true, password: "632316" },
   { name: "Casey C", email: "caco@email.com", phone: "(416) 111-1111", title: "Client Relations Assistant", service_management_and_facilities: true, staff: true, password: "287741" },
   { name: "Amber B", email: "amb@email.com", phone: "(416) 111-1111", title: "Client Relations Assistant", service_management_and_facilities: true, staff: true, password: "486237" },
   { name: "Rajaa R", email: "rr@email.com", phone: "(416) 222-2222", title: "Client Relations Rep", service_management_and_facilities: true, staff: true, password: "300329" },
