@@ -24,5 +24,14 @@
     <li class="profile-info"><b><%= @user.email %></b></li>
     <li class="profile-info"><b>Manager: <%= @user.direct_report %></b></li>
     <li class="profile-info"><b>Skills I'm currently developing:</b> <%= @user.career_aspirations %></li>
+    <% if @user.adm_office == true %>
+      <li class="profile-info"><%= link_to "ADM's Office", "/users/admo_org_chart", class:'team-link' %></li>
+    <% elsif @user.service_management_and_facilities == true %>
+      <li class="profile-info"><%= link_to "Service Management & Facilities", "/users/smf_org_chart", class:'team-link' %></li>
+    <% elsif @user.business_planning_and_finance == true %>
+      <li class="profile-info"><%= link_to "Business Planning & Finance", "/users/bpf_org_chart", class:'team-link' %></li>
+    <% elsif @user.strategic_human_resources == true %>
+      <li class="profile-info"><%= link_to "Strategic Human Resources", "/users/hr_org_chart", class:'team-link' %></li>
+    <% end %>
   </ul>
 </div>
