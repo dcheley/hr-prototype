@@ -9,7 +9,7 @@
     <ul class="home-feed-list">
       <% @opportunities.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |b| %>
         <li class='home-opp-item'>
-          <%= link_to "#{b.name}", "/opportunities/#{b.id}", class:'home-list-link' %>
+          <%= link_to "#{b.name}", "/opportunities/#{b.id}", class:'home-link-list' %>
         </li>
       <% end %>
     </ul>
