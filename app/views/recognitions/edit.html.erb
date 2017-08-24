@@ -7,8 +7,8 @@
 
   <ul class="home-feed-list">
     <% @user.received_badges.each do |b| %>
-      <li id="csd-blue">
-        <%= link_to "#{b.name}", "/users/#{@user.id}/recognitions/#{b.id}/edit", class:'home-feed-link' %>
+      <li class="linked-list-item">
+        <%= link_to "#{b.name}", "/users/#{@user.id}/recognitions/#{b.id}/edit", class:'list-link' %>
       </li>
     <% end %>
   </ul>
