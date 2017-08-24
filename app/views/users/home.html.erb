@@ -8,8 +8,8 @@
 
     <ul class="home-feed-list">
       <% @opportunities.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |b| %>
-        <li style='color: #2096A5;'>
-          <%= link_to "#{b.name}", "/opportunities/#{b.id}", class:'home-feed-link' %>
+        <li class='home-opp-item'>
+          <%= link_to "#{b.name}", "/opportunities/#{b.id}", class:'home-list-link' %>
         </li>
       <% end %>
     </ul>

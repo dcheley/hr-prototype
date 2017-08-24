@@ -178,6 +178,15 @@ a:hover {
   list-style-position: inside;
 }
 
+.home-link-list {
+  list-style: none;
+}
+
+.home-opp-item {
+  color: $blue;
+  margin-bottom: 10px;
+}
+
 .feed-list {
   list-style: none;
 }
