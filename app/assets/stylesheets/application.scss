@@ -71,14 +71,6 @@ a:hover {
   text-align: center;
 }
 
-.navbar-default .navbar-nav > li > a:hover {
-  color: $blue;
-}
-
-.active-nav a {
-  color: $blue !important;
-}
-
 .search-button {
   background-color: $dark-blue;
   border: none;
@@ -88,6 +80,13 @@ a:hover {
     vertical-align: middle;
     margin-bottom: 5px;
   }
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.quarter a:hover,
+.home-link-list,
+.active-nav a {
+  color: $blue !important;
 }
 
 .search-button:hover {
@@ -128,10 +127,6 @@ a:hover {
 .quarter a {
   color: $dark-blue;
   font-weight: bold;
-}
-
-.quarter a:hover {
-  color: $blue;
 }
 
 .three-quarters {
@@ -178,10 +173,6 @@ a:hover {
   list-style-position: inside;
 }
 
-.home-link-list {
-  color: $blue !important;
-}
-
 .home-opp-item {
   margin-bottom: 10px;
   list-style: none;
@@ -211,7 +202,8 @@ a:hover {
   color: $blue !important;
 }
 
-.home-feed-link:hover {
+.home-feed-link:hover,
+.home-link-list:hover {
   border-bottom: 2px solid $blue;
 }
 
