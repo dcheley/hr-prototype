@@ -22,7 +22,7 @@
       <li class="profile-info" style="font-style: italic;"><%= @user.job_description %></li>
     <% end %>
     <li class="profile-info"><b><%= @user.email %></b></li>
-    <li class="profile-info"><b>Direct report: <%= @user.direct_report %></b></li>
+    <li class="profile-info"><b>Direct report:</b> <%= @user.direct_report %></li>
     <li class="profile-info"><b>Skills I'm currently developing:</b> <%= @user.career_aspirations %></li>
     <% if @user.adm_office == true %>
       <li class="profile-info"><%= link_to "ADM's Office", "/users/admo_org_chart", class:'team-link' %></li>
