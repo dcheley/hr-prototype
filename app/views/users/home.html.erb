@@ -4,7 +4,7 @@
       <%= image_tag('CSD-logo.jpg', class:"csd-logo") %>
     </div>
 
-    <p class="feed-title">New Opportunities</p>
+    <p class="feed-title" style="margin-bottom: 15px;">New Opportunities</p>
 
     <ul class="home-feed-list">
       <% @opportunities.where("created_at > ? or updated_at > ?", @reset_time, @reset_time).each do |b| %>
