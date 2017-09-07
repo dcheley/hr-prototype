@@ -11,10 +11,10 @@
     </div>
 
     <div style='position: relative;'>
-      <h1 class="form-title"><%= @opportunity.name.titleize %></h1>
-
       <%= link_to "Post Project", "/opportunities/new", class:'submit-blue', id:'opp-button' %>
     </div>
+
+    <h1 class="org-title"><%= @opportunity.name.titleize %></h1>
 
     <div class="opp-details">
       <p class="opp-info"><%= @opportunity.bonus %></p></br>
