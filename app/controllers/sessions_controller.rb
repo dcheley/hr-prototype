@@ -4,10 +4,10 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:email])
-    if user && user.authenticate(params[:password]) && user.agreement != true
+    if user && Argon2::Password.verify_password("#{params[:password]}", user.encrypted_password) == true && user.agreement != true
       session[:user_id] = user.id
       redirect_to "/signups/new", notice: "Agree to terms to begin sign up"
-    elsif user && user.authenticate(params[:password]) && user.agreement == true
+    elsif user && Argon2::Password.verify_password("#{params[:password]}", user.encrypted_password) == false && user.agreement == true
       session[:user_id] = user.id
       redirect_to "/users/home"
     else

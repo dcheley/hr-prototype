@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170728175519) do
+ActiveRecord::Schema.define(version: 20171010183545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -135,7 +135,7 @@ ActiveRecord::Schema.define(version: 20170728175519) do
     t.boolean  "strategic_human_resources"
     t.boolean  "service_management_and_facilities"
     t.boolean  "business_planning_and_finance"
-    t.string   "password_digest"
+    t.string   "encrypted_password"
     t.boolean  "staff"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
