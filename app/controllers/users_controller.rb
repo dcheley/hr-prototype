@@ -94,12 +94,6 @@ private
   end
 
   def user_params
-<<<<<<< HEAD
-    params.require(:user).permit(:name, :email, :password, :password_confirmation,
-    :phone, :title, :avatar, :job_description, :adm, :director, :manager, :staff,
-    :adm_office, :strategic_human_resources, :service_management_and_facilities,
-    :business_planning_and_finance)
-=======
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone,
     :title, :avatar, :job_description, :adm, :director, :manager, :staff, :adm_office,
     :strategic_human_resources, :service_management_and_facilities, :business_planning_and_finance,
@@ -109,6 +103,5 @@ private
 
   def reset_time
     @reset_time = Date.new(2017, 6, 5)
->>>>>>> 7ead23e78ffc8c66d8517cb50827a3b004407752
   end
 end

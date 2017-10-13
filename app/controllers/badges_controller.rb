@@ -91,11 +91,7 @@ private
 
   def badge_params
     params.require(:badge).permit(:user_id, :opportunity_id, :name, :red, :blue,
-<<<<<<< HEAD
-    :yellow, :green, :grey, :purple, :pink, :description)
-=======
     :yellow, :green, :grey, :purple, :pink, :description, :exp, :education,
     signup_attributes: [:step_four, :step_five])
->>>>>>> 7ead23e78ffc8c66d8517cb50827a3b004407752
   end
 end
