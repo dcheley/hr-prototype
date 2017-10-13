@@ -1,0 +1,77 @@
+<% if current_user %>
+  <div class="container" style="margin-top: 10px; text-align: center;">
+    <ol class="track-progress" data-steps="6">
+      <li class="done"><span>Disclaimer</span></li><!--
+      --><li class="done"><span>Personal Info</span></li><!--
+      --><li class="done"><span>Career Info</span></li><!--
+      --><li class="done"><span>Education Badge</span></li><!--
+      --><li class="done"><span>Experience Badge</span></li><!--
+      --><li><span>Complete Sign Up</span></li>
+    </ol>
+  </div>
+
+  <div class="container" style="width: 80%; text-align: center; margin-top: 0; margin-bottom: 0;">
+    <h2 class="form-title" style="clear: both; padding-top: 50px;">Create Badges to Depict your Skills, Experiences & Awards</h2>
+
+    <%= form_for([current_user, @badge]) do |f| %>
+      <% if @badge.errors.any? %>
+        <h2 class="error-header"><%= pluralize(@badge.errors.count, "error") %> occurred!</h2>
+
+        <ul class="error-list">
+          <% @badge.errors.full_messages.each do |msg| %>
+            <li class="error-msg"><%= msg %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
+      <div class="field">
+        <%= f.label :name, "Type of Experience", class:"field-label" %>
+        <%= f.text_field :name, class:"field-input", placeholder:"(e.g) 15 years in finance" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :description, class:"field-label" %>
+        <%= f.text_area :description, class:"field-input", placeholder:"(e.g) Headed finance department at Rona" %>
+      </div>
+
+      <%= f.hidden_field :exp, value: true %>
+
+      <%= f.fields_for :signup_attributes do |s| %>
+        <%= s.hidden_field :step_one, value: nil %>
+        <%= s.hidden_field :step_two, value: nil %>
+        <%= s.hidden_field :step_three, value: nil %>
+        <%= s.hidden_field :step_four, value: nil %>
+        <%= s.hidden_field :step_five, value: true %>
+        <%= s.hidden_field :step_six, value: nil %>
+      <% end %>
+
+      <div class="center-float-wrap">
+        <div class="float">
+          <%= f.submit "SUBMIT", class:"submit-green" %>
+        </div>
+
+      <% end %>
+
+        <div class="float">
+          <%= link_to "CANCEL", :logout, class:"delete", style:"margin-left: 15px;" %>
+        </div>
+
+        <div class="float" style="clear: both; width: 100%;">
+          <%= form_for(current_user) do |f2| %>
+            <%= f2.fields_for :signup do |s| %>
+              <%= s.hidden_field :step_one, value: nil %>
+              <%= s.hidden_field :step_two, value: nil %>
+              <%= s.hidden_field :step_three, value: nil %>
+              <%= s.hidden_field :step_four, value: nil %>
+              <%= s.hidden_field :step_five, value: true %>
+              <%= s.hidden_field :step_six, value: nil %>
+            <% end %>
+            <%= f2.submit "SKIP", class:"submit-blue", style:"margin: auto;" %>
+          <% end %>
+        </div>
+      </div>
+
+<% else %>
+  <h1 class="login-message"><%= link_to "LOGIN", :login %> to create a badge</h1>
+<% end %>
+  </div>

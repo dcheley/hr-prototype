@@ -12,7 +12,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-.DS-store
+.DS_store
 /db/seeds.rb
 
 # Ignore Byebug command history file.
