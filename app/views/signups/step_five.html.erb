@@ -37,12 +37,16 @@
       <%= f.hidden_field :exp, value: true %>
 
       <%= f.fields_for :signup_attributes do |s| %>
+<<<<<<< HEAD
         <%= s.hidden_field :step_one, value: nil %>
         <%= s.hidden_field :step_two, value: nil %>
         <%= s.hidden_field :step_three, value: nil %>
         <%= s.hidden_field :step_four, value: nil %>
         <%= s.hidden_field :step_five, value: true %>
         <%= s.hidden_field :step_six, value: nil %>
+=======
+        <%= s.hidden_field :step_five, value: true %>
+>>>>>>> 7ead23e78ffc8c66d8517cb50827a3b004407752
       <% end %>
 
       <div class="center-float-wrap">
@@ -53,12 +57,19 @@
       <% end %>
 
         <div class="float">
+<<<<<<< HEAD
           <%= link_to "CANCEL", :logout, class:"delete", style:"margin-left: 15px;" %>
+=======
+          <%= link_to :logout, class:"cancel-link" do %>
+            <div class="delete">CANCEL</div>
+          <% end %>
+>>>>>>> 7ead23e78ffc8c66d8517cb50827a3b004407752
         </div>
 
         <div class="float" style="clear: both; width: 100%;">
           <%= form_for(current_user) do |f2| %>
             <%= f2.fields_for :signup do |s| %>
+<<<<<<< HEAD
               <%= s.hidden_field :step_one, value: nil %>
               <%= s.hidden_field :step_two, value: nil %>
               <%= s.hidden_field :step_three, value: nil %>
@@ -67,6 +78,13 @@
               <%= s.hidden_field :step_six, value: nil %>
             <% end %>
             <%= f2.submit "SKIP", class:"submit-blue", style:"margin: auto;" %>
+=======
+              <%= s.hidden_field :step_four, value: true %>
+              <%= s.hidden_field :step_five, value: true %>
+              <%= s.hidden_field :step_six, value: nil %>
+            <% end %>
+            <%= f2.submit "SKIP", class:"submit-blue", style:"margin-left: 35%;" %>
+>>>>>>> 7ead23e78ffc8c66d8517cb50827a3b004407752
           <% end %>
         </div>
       </div>

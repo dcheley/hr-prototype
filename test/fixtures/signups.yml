@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  step_one: false
+  step_two: false
+  step_three: false
+  step_four: false
+  step_five: false
+  step_six: false
+
+two:
+  step_one: false
+  step_two: false
+  step_three: false
+  step_four: false
+  step_five: false
+  step_six: false

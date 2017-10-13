@@ -3,27 +3,28 @@
 <% else %>
   <div class="default-pic">
     <span class="glyphicon glyphicon-user" style="font-size: 80px;"></span>
-    <%= link_to "ADD PIC", edit_user_url(@user), class:"submit-green", style:"margin: 2.5 auto; width: 120px;" %>
   </div>
 <% end %>
 
-<ul style="padding-left: 0;">
+<ul class="profile-details">
   <% if @user.adm_office == true %>
-    <li class="team-info"><%= link_to "ADM Office", "/users/admo_org_chart", class:"team-link" %></li>
+    <li class="team-info"><%= link_to "Back to ADM Office org chart", "/users/admo_org_chart", class:"team-link" %></li>
   <% elsif @user.strategic_human_resources == true %>
-    <li class="team-info"><%= link_to "Human Resources", "/users/hr_org_chart", class:"team-link" %></li>
+    <li class="team-info"><%= link_to "Back to Human Resources org chart", "/users/hr_org_chart", class:"team-link" %></li>
   <% elsif @user.service_management_and_facilities == true %>
-    <li class="team-info"><%= link_to "Service Management & Facilities", "/users/smf_org_chart", class:"team-link" %></li>
+    <li class="team-info"><%= link_to "Back to Service Management & Facilities org chart", "/users/smf_org_chart", class:"team-link" %></li>
   <% elsif @user.business_planning_and_finance == true %>
-    <li class="team-info"><%= link_to "Business Planning and Finance", "/users/bpf_org_chart", class:"team-link" %></li>
+    <li class="team-info"><%= link_to "Back to Business Planning and Finance org chart", "/users/bpf_org_chart", class:"team-link" %></li>
   <% end %>
+  <li class="profile-info"><b>Email:</b> <%= @user.email %></li>
   <li class="profile-info"><b>Title:</b> <%= @user.title %></li>
-  <!-- <li class="profile-info"><b>Email:</b> <%= @user.email %></li> -->
-  <!-- <li class="profile-info"><b>Phone:</b> <%= @user.phone %></li> -->
-  <% if @user.job_description == nil %>
-    <%= link_to "ADD JOB DESCRIPTION", edit_user_url(@user), class:"submit-green", style:"margin: 2.5 auto; text-align: center; width: 160px;" %>
+  <li class="profile-info"><b>Direct Manager:</b> <%= @user.direct_report %></li>
+  <li class="profile-info"><b>Skills I'm currently developing:</b> <%= @user.career_aspirations %></li>
+  <li class="profile-info"><b>Job Description:</b></li>
+
+  <% if @user.job_description == nil || @user.job_description == "" %>
+    <li class="profile-info">Describe your responsibilities and experience in 500 characters or less.</li>
   <% else %>
-    <li class="team-info" style="font-size: 16px;"><b>Job Description</b></li>
-    <li class="team-info" style="font-size: 16px;"><%= @user.job_description %></li>
+    <li class="profile-info" style="overflow-x: scroll;"><%= @user.job_description %></li>
   <% end %>
 </ul>

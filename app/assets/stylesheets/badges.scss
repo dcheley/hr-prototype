@@ -13,25 +13,6 @@
   padding-right: 3%;
 }
 
-.inner-left {
-  float: left;
-  width: 30%;
-  margin: 5px;
-}
-
-.inner-middle {
-  float: left;
-  width: 30%;
-  margin: 5px;
-  margin-left: 5%;
-}
-
-.inner-right {
-  float: right;
-  width: 30%;
-  margin: 5px;
-}
-
 .badge-details {
   margin-top: 0;
 }
@@ -43,10 +24,19 @@
   clear: both;
 }
 
-.cancel-link {
+.cancel-link,
+.cancel-center-link {
   color: white;
   display: inline-block;
+}
+
+.cancel-link {
   margin-left: 30%;
+}
+
+.cancel-link:hover,
+.cancel-center-link:hover {
+  text-decoration: none;
 }
 
 .float {
@@ -88,13 +78,12 @@
 
 .profile-badges-name {
   color: white;
-  margin-top: 40%;
   font-size: 12px;
 }
 
 .badge-show-title {
   color: white;
-  margin-top: 40%;
+  margin-top: 80px;
   font-size: 26px;
 }
 
@@ -108,22 +97,23 @@
   font-size: 20px;
 }
 
-.badge-green, {
-  margin: 5px auto;
-  // position: relative;
+.badge-green {
+  margin: 7px 10px;
   background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
   border: 3px solid $grey;
   border-radius: 12px; /* one half of ( (border * 2) + height + padding ) */
   box-shadow: 1px 1px 1px black;
-  // font: bold 15px/13px;
-  // padding: 4px 3px 0 3px;
   text-align: center;
-  height: 100px;
-  width: 100px;
-  border-radius: 50px;
+  height: 120px;
+  width: 120px;
+  border-radius: 60px;
+  overflow: hidden;
+  float: left;
 }
 
-.badge-green, .badge-show-green {
+.badge-green,
+.badge-show-green {
+  color: white;
   background-color: $green;
 }
 
@@ -131,7 +121,7 @@
   margin-top: 15px;
 }
 
-.badge-show-green, {
+.badge-show-green {
   margin: 5px auto;
   background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
   border: 3px solid $grey;
@@ -143,36 +133,38 @@
   border-radius: 150px;
 }
 
-
 .badge-green:hover {
+  background-color: $dark-green;
   li {
     color: $medium-grey;
   }
 }
 
-.glyphicon.glyphicon-heart,
-.glyphicon.glyphicon-heart-empty, {
-  font-size: 32px;
-  color: $grey;
+.thumbs-up,
+.thumbs-empty, {
+  width: 38px;
   padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-.glyphicon.glyphicon-heart:hover,
-.glyphicon.glyphicon-heart-empty:hover, {
-  color: $dark-grey;
-  text-decoration: none;
-}
-
-.likes {
-  color: black;
+.thumbs-up:hover,
+.thumbs-empty:hover {
+  width: 48px;
 }
 
 .likes a {
   font-weight: bold;
-  color: $grey;
+  color: $bright-dark-blue;
 }
 
 .likes a:hover {
   font-weight: bold;
   color: $dark-grey;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 939px) {
+  .badge-title {
+    padding-left: 0;
+  }
 }

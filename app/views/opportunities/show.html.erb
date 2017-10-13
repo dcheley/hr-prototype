@@ -1,0 +1,64 @@
+<% if current_user %>
+  <div class="background" style="text-align: center;">
+    <div style="text-align: center;">
+      <%= link_to "/users/opps", class:"cancel-center-link" do %>
+        <div class="submit-blue">BACK TO OPPORTUNITIES</div>
+      <% end %>
+    </div>
+
+    <h2 class="opp-headers"><%= @opportunity.name %></h2>
+
+    <div class="opp-photo-frame">
+      <% if @opportunity.avatar.file? != true %>
+        <%= image_tag('huddle.png', class:"tile__img") %>
+      <% else %>
+        <%= image_tag @opportunity.avatar.url(:medium), class:"tile__img" %>
+      <% end %>
+    </div>
+
+    <div class="opp-details">
+      <p class="opp-info"><%= @opportunity.bonus %></p></br>
+      <p class="opp-info"><%= @opportunity.description %></p></br>
+      <p class="opp-info"><%= link_to "#{@opportunity.link}", "#{@opportunity.link}", target: "_blank" %></p>
+    </div>
+
+    <% if current_user.liked? @opportunity %>
+      <%= link_to image_tag('thumbs-up-empty.svg', class:"thumbs-empty"), unlike_opportunity_path(@opportunity.id), method: :put, remote: true, id: "like_#{@opportunity.id}" %>
+      <p class="profile-badges"></p>
+      <%= render 'likes' %>
+    <% else %>
+      <%= link_to image_tag('thumbs-up.svg', class:"thumbs-up"), like_opportunity_path(@opportunity.id), method: :put, remote: true, id: "like_#{@opportunity.id}" %>
+      <p class="profile-badges"></p>
+      <%= render 'likes' %>
+    <% end %>
+
+    <div class="center-float-wrap">
+      <% if @opportunity.creator_id == current_user.id %>
+        <div class="float" style="margin-right: 7.5px;">
+          <%= link_to 'EDIT', "/opportunities/#{@opportunity.id}/edit", class:"submit-blue" %>
+        </div>
+
+        <div class="float" style="margin-left: 7.5px;">
+          <%= button_to 'DELETE', {:controller => 'opportunities', :action =>
+             'destroy', :user_id => current_user.id, :id => "#{@opportunity.id}"},
+              method: :delete, data: { confirm: "You sure? Opportunity will be permanenetly removed!" }, class:"delete" %>
+        </div>
+      <% end %>
+
+        <div class="float" style="clear: both; width: 100%; margin-top: 10px;">
+          <%= form_for([@opportunity, @badge]) do |f| %>
+            <%= f.hidden_field :name, value: @opportunity.name %>
+            <%= f.hidden_field :description, value: @opportunity.description %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            <%= f.hidden_field :opportunity_id, value: @opportunity.id %>
+            <%= f.hidden_field :green, value: true %>
+            <%= f.hidden_field :exp, value: true %>
+            <%= f.submit "VERIFY SIGN UP", class:"submit-green", style:"margin: auto;" %>
+          <% end %>
+        </div>
+    </div>
+
+  </div>
+<% else %>
+  <h1 class="login-message"><%= link_to "LOGIN", :login %> to view <%= @opportunity.name %> details</h1>
+<% end %>

@@ -1,31 +1,37 @@
-<div class="background">
-  <%= image_tag("homepage-bg.jpeg", class:"background-image")%>
+<%= image_tag("meeting.jpeg", class:"background-image")%>
 
-  <div class="home-right">
-    <div class="container">
+<div class="home-right" style="text-align: center;">
+  <div class="login-wrap">
+    <h1 class="form-title">Employee Engagement App</h1>
 
-      <h1 class="form-title">Career Advancement Application</h1>
+    <% if !current_user %>
+      <h5 class="form-instructions">Enter account info below:</h5>
 
-      <% if !current_user %>
-        <h5 class="form-instructions">Enter account info below:</h5>
+      <%= form_tag login_path, html: { autocomplete: "off" } do %>
+        <div class="field">
+          <div class="field-label"><%= label_tag :username %></div>
+          <%= text_field_tag :email, params[:email], class:"field-input" %>
+        </div>
 
-        <%= form_tag login_path do %>
-          <div class="field">
-            <div class="field-label"><%= label_tag :username %></div>
-            <%= text_field_tag :email, params[:email], class:"field-input" %>
-          </div>
+        <div class="field">
+          <div class="field-label"><%= label_tag :password %></div>
+          <%= password_field_tag :password, nil, class:"field-input", placeholder:"At least 6 characters" %>
+        </div>
 
-          <div class="field">
-            <div class="field-label"><%= label_tag :password %></div>
-            <%= password_field_tag :password, nil, class:"field-input", placeholder:"At least 6 characters" %>
-          </div>
-
-          <div class="actions"><%= submit_tag "LOGIN", class:"submit-blue" %></div>
-        <% end %>
-      <% else %>
-          <p class="form-title">Use the <b>links</b> in the <b>top right</b> to navigate through content</p>
+        <div class="actions">
+          <%= submit_tag "LOGIN", class:"submit-blue" %>
+        </div>
       <% end %>
-    </div>
-  </div>
 
+    <% else %>
+        <p class="form-title">Use the <b>links</b> in the <b>top right</b> to navigate through content</p>
+        <% if current_user.agreement != true %>
+          <b><%= link_to "Woops, Logout to restart Account Sign Up", :logout %></b>
+        <% end %>
+    <% end %>
+  </div>
 </div>
+
+<footer class="footer">
+  <div class="container"><p>Employee Engagement App</p></div>
+</footer>

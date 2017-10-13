@@ -1,0 +1,16 @@
+<div class="container" style="width: 80%; text-align: center; margin-top: 0; margin-bottom: 0;">
+  <% if current_user %>
+    <h2 class="form-option" style="padding-bottom: 30px;">Create Badges to Depict your Skills, Experiences & Awards</h2>
+
+    <%= render 'badges_form' %>
+
+      <div class="float">
+        <%= link_to "/users/#{current_user.id}", class:"cancel-link" do %>
+          <div class="submit-blue">BACK TO PROFILE</div>
+        <% end %>
+      </div>
+    </div>
+  <% else %>
+    <h1 class="login-message"><%= link_to "LOGIN", :login %> to create a badge</h1>
+  <% end %>
+</div>

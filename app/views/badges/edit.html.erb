@@ -4,6 +4,19 @@
 
     <div class="container" style="margin-top: 15px; text-align: center;">
       <%= render 'badges_form' %>
+
+        <div class="float">
+          <%= link_to "/users/#{@user.id}/badges/#{@badge.id}", class:"cancel-link" do %>
+            <div class="delete">CANCEL</div>
+          <% end %>
+        </div>
+
+        <div class="float" style="clear: both;">
+          <%= link_to "/users/#{@user.id}", class:"cancel-link" do %>
+            <div class="submit-blue">BACK TO PROFILE</div>
+          <% end %>
+        </div>
+      </div>
     </div>
 
   <% else %>

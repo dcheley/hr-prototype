@@ -16,26 +16,28 @@ class UsersController < ApplicationController
   end
 
   def index
+    @users = User.all
+    if params[:search]
+      @users = User.search(params[:search]).order("name ASC").distinct
+    end
+  end
+
+  def home
+    @received_badges = Recognition.where.not(receiver_id: nil).order("created_at DESC")
+    @opportunity_badges = Badge.where.not(opportunity_id: nil).order("created_at DESC")
+    @edu_badges = Badge.where(opportunity_id: nil, education: true).order("created_at DESC")
+    @exp_badges = Badge.where(opportunity_id: nil, exp: true).order("created_at DESC")
+    reset_time
   end
 
   def org_charts
-    @opportunity_1 = Opportunity.find(1)
-    @opportunity_2 = Opportunity.find(2)
-    @opportunity_3 = Opportunity.find(3)
-    @opportunity_4 = Opportunity.find(4)
-    @opportunity_5 = Opportunity.find(5)
-    @opportunity_6 = Opportunity.find(6)
-    @opportunity_7 = Opportunity.find(7)
-    @opportunity_8 = Opportunity.find(8)
-    @opportunity_9 = Opportunity.find(9)
-    @opportunity_10 = Opportunity.find(10)
-    @opportunity_11 = Opportunity.find(11)
-    @opportunity_12 = Opportunity.find(12)
-    @opportunity_13 = Opportunity.find(13)
-    @opportunity_14 = Opportunity.find(14)
-    @opportunity_15 = Opportunity.find(15)
-    @opportunity_16 = Opportunity.find(16)
-    @badge = current_user.badges.build
+  end
+
+  def opps
+    @opportunities = Opportunity.all
+    if current_user
+      @badge = current_user.badges.build
+    end
   end
 
   def admo_org_chart
@@ -57,9 +59,26 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(user_params)
-      flash[:alert] = "Settings successfully updated!"
+    if @user.update_attributes(user_params) && @user.agreement == true && PulseSurvey.exists?(@user.id) == false
+      flash[:alert] = "Account Sign Up complete"
+      PulseSurvey.create(id: current_user.id)
       redirect_to user_url
+    elsif @user.update_attributes(user_params) && @user.agreement == true && PulseSurvey.exists?(@user.id) == true
+      redirect_to user_url, notice: "Account Settings Updated"
+    elsif @user.update_attributes(user_params) && @user.signup.step_two == true && @user.signup.step_three != true
+      redirect_to "/signups/step_three", notice: "Describe your Career Aspirations and Job Responsibilities below"
+    elsif @user.update_attributes(user_params) && @user.signup.step_three == true && @user.signup.step_four != true
+      redirect_to "/signups/step_four", notice: "Choose or Create your Education Badges below"
+    elsif @user.update_attributes(user_params) && @user.signup.step_four == true && @user.signup.step_five != true
+      redirect_to "/signups/step_five", notice: "Choose or Create your Experience Badges below"
+    elsif @user.update_attributes(user_params) && @user.signup.step_five == true && @user.signup.step_six != true
+      redirect_to "/signups/step_six", notice: "Verify your Sign Up below to start using the App"
+    elsif @user.update_attributes(user_params) == false && @user.signup.step_two == true && @user.signup.step_three != true
+      render 'signups/step_two'
+    elsif @user.update_attributes(user_params) == false && @user.signup.step_three == true && @user.signup.step_four != true
+      render 'signups/step_three'
+    elsif @user.update_attributes(user_params) == false && @user.signup.step_three == true && @user.signup.step_four == true
+      render 'signups/step_three'
     else
       render :edit
     end
@@ -75,9 +94,21 @@ private
   end
 
   def user_params
+<<<<<<< HEAD
     params.require(:user).permit(:name, :email, :password, :password_confirmation,
     :phone, :title, :avatar, :job_description, :adm, :director, :manager, :staff,
     :adm_office, :strategic_human_resources, :service_management_and_facilities,
     :business_planning_and_finance)
+=======
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone,
+    :title, :avatar, :job_description, :adm, :director, :manager, :staff, :adm_office,
+    :strategic_human_resources, :service_management_and_facilities, :business_planning_and_finance,
+    :co_op, :image_delete, :career_aspirations, :direct_report, :agreement, :intranet,
+    signup_attributes: [:id, :user_id, :step_one, :step_two, :step_three, :step_four, :step_five, :step_six])
+  end
+
+  def reset_time
+    @reset_time = Date.new(2017, 6, 5)
+>>>>>>> 7ead23e78ffc8c66d8517cb50827a3b004407752
   end
 end

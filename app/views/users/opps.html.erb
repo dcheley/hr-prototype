@@ -1,0 +1,76 @@
+<% if current_user && current_user.co_op == nil %>
+  <h1 class="org-title">Upcoming Development Opportunities</h1>
+
+  <div style="text-align: center;">
+    <%= link_to "/opportunities/new", class:"cancel-center-link" do %>
+      <div class="submit-blue">ADD OPPORTUNITY</div>
+    <% end %>
+  </div>
+
+  <div class="carousel-container">
+    <ul class="nav nav-pills nav-stacked" style="text-align: center;">
+      <li role="presentation" class="active"><a href="#opp-one" data-toggle="pill">Working Groups, Special Projects & Networking Events</a></li>
+      <li role="presentation"><a href="#opp-two" data-toggle="pill">Courses & Learning Opportunities</a></li>
+      <li role="presentation"><a href="#opp-three" data-toggle="pill">Hobbies, Interests & Extra Curriculars</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div role="tabpane1" class="tab-pane active" id="opp-one">
+        <% @opportunities.where(career: true).each do |o| %>
+          <div class="third">
+            <%= link_to o.name, "/opportunities/#{o.id}", class:"csd-opp-name", id:"blue" %>
+          </div>
+        <% end %>
+      </div>
+
+      <div role="tabpane1" class="tab-pane" id="opp-two">
+        <% @opportunities.where(learning: true).each do |l| %>
+          <div class="third">
+            <%= link_to l.name, "/opportunities/#{l.id}", class:"csd-opp-name", id:"blue" %>
+          </div>
+        <% end %>
+      </div>
+
+      <div role="tabpane1" class="tab-pane" id="opp-three">
+        <% @opportunities.where(hobby: true).each do |h| %>
+          <div class="third">
+            <%= link_to h.name, "/opportunities/#{h.id}", class:"csd-opp-name", id:"blue" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+<% elsif current_user && current_user.co_op != nil %>
+  <h1 class="org-title">Bucket List</h1>
+
+  <p class="opportunity-info">
+    Know of other opportunities? Email them to us through <b>nadeem.aljaber@ontario.ca</b> OR <b>danielcheley@hotmail.com</b>
+  </p>
+
+  <div class="bucket-gallery">
+    <div id="fifth">
+      <%= link_to "Lunch N' Learn", "/opportunities/17", class:"co-opp-name", id:"blue" %>
+      <%= link_to "Planning Committee", "/opportunities/18", class:"co-opp-name", id:"purple" %>
+    </div>
+    <div id="fifth">
+      <%= link_to "Learn On", "/opportunities/19", class:"co-opp-name", id:"green" %>
+      <%= link_to @opportunities.find(20).name, "/opportunities/20", class:"co-opp-name", id:"red" %>
+    </div>
+    <div id="fifth">
+      <%= link_to "Student Orientation", "/opportunities/21", class:"co-opp-name", id:"red" %>
+      <%= link_to "Informational Interview", "/opportunities/22", class:"co-opp-name" , id:"orange"%>
+    </div>
+    <div id="fifth">
+      <%= link_to "Restaurant", "/opportunities/23", class:"co-opp-name", id:"orange" %>
+      <%= link_to "Social Event", "/opportunities/24", class:"co-opp-name", id:"green" %>
+    </div>
+    <div id="fifth">
+      <%= link_to "Networking Event", "/opportunities/25", class:"co-opp-name", id:"purple" %>
+      <%= link_to "OPS/TOPS Network", "/opportunities/26", class:"co-opp-name", id:"blue" %>
+    </div>
+  </div>
+
+<% else %>
+  <h1 class="login-message"><%= link_to "LOGIN", :login %> to view Opportunities</h1>
+<% end %>

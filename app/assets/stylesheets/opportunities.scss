@@ -30,17 +30,8 @@ a:hover {
   max-width: 1088px;
 }
 
-.row {
-  overflow-x: scroll;
-  width: 100%;
-}
-
-.row__inner {
-  transition: $duration transform;
-  font-size: 0;
-  white-space: nowrap;
-  margin: 60px 0;
-  padding-bottom: 10px; // Account for OS X scroll bar
+.nav-pills > li {
+  font-size: 16px;
 }
 
 .tile {
@@ -48,7 +39,7 @@ a:hover {
   display: inline-block;
   width: $tileWidth;
   height: $tileHeight;
-  margin-right: 10px;
+  margin: 15px;
   font-size: 20px;
   cursor: pointer;
   transition: $duration all;
@@ -56,10 +47,12 @@ a:hover {
 }
 
 .tile-header {
-  margin-top: -2.5%;
-  margin-left: 5%;
-  margin-bottom: 0;
-  font-size: 12px;
+  color: white;
+  background-color: black;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 16px;
+  text-align: center;
 }
 
 .tile__img {
@@ -109,8 +102,6 @@ a:hover {
     left: 0;
     width: 100%;
     font-size: 30px;
-    margin-left: 7px;
-    margin-top: -18px;
     text-align: center;
     z-index: 2;
   }
@@ -121,31 +112,192 @@ a:hover {
 }
 
 .tile__title {
-  // position: absolute;
-  padding: 15px;
   color: white;
   max-width: 200px;
 }
 
 // * Hover effects
-// We assume when you hover .row, you're also hovering a .tile
-// First, move the whole row towards the left
-.row__inner:hover {
-  transform: translate3d($moveLeft, 0, 0);
-}
-
-.row__inner:hover .tile {
+.tile:hover {
   // Fade out every tile
-  opacity: .3;
-  // And then grow the current tile and make it opaque again
-  &:hover {
-    transform: scale($growFactor);
-    opacity: 1;
-  }
+  opacity: .6;
 }
 
-// And finally move all tiles right of the current tile to the right,
-// so its flush against the hovered tile
-.tile:hover ~ .tile {
-  transform: translate3d($moveRight, 0, 0);
+.opp-photo-frame {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.opp-headers {
+  width: 80%;
+  margin: auto;
+  line-height: 1.5;
+}
+
+.opp-details {
+  text-align: justify;
+  font-size: 16px;
+  margin: auto;
+  width: 80%;
+}
+
+.opp-info {
+  text-align: center;
+  width: 100%;
+}
+
+.opp-info a {
+  text-decoration: none;
+}
+
+//Image gallery
+.bucket-gallery {
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.third {
+  float: left;
+  width: 33.3%;
+  margin: auto;
+}
+
+.co-opp-name,
+.csd-opp-name {
+  width: 100%;
+  display: inline-block;
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  font-weight: bold;
+}
+
+.co-opp-name {
+  font-size: 16px;
+}
+
+.csd-opp-name {
+  font-size: 24px;
+  overflow: hidden;
+}
+
+#fifth {
+  float: left;
+  width: 20%;
+  margin: auto;
+}
+
+.co-opp-name:hover {
+  text-decoration: none;
+}
+
+#blue {
+  color: $dark-turquoise;
+}
+
+#blue:hover {
+  color: $bright-dark-blue;
+  text-decoration: none;
+}
+
+#green {
+  color: $green;
+}
+
+#green:hover {
+  color: $bright-green;
+  text-decoration: none;
+}
+
+#red {
+  color: $red;
+}
+
+#red:hover {
+  color: $dark-red;
+  text-decoration: none;
+}
+
+#orange {
+  color: $orange;
+}
+
+#orange:hover {
+  color: $dark-orange;
+  text-decoration: none;
+}
+
+#purple {
+  color: $purple;
+}
+
+#purple:hover {
+  color: $dark-purple;
+  text-decoration: none;
+}
+
+//3d Carousel
+.containery {
+	margin: 4% auto;
+	width: 210px;
+	height: 140px;
+	position: relative;
+	perspective: 1000px;
+}
+
+#carouselz {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transform-style: preserve-3d;
+	animation: rotation 20s infinite linear;
+}
+
+#carouselz:hover {
+	animation-play-state: paused;
+}
+
+#carouselz figure {
+	display: block;
+	position: absolute;
+	width: 200px;
+	height: 116px;
+	left: 10px;
+	top: 10px;
+	background: black;
+	overflow: hidden;
+	border: solid 5px black;
+}
+
+#carouselz figure:nth-child(1) { transform: rotateY(0deg) translateZ(288px);}
+#carouselz figure:nth-child(2) { transform: rotateY(40deg) translateZ(288px);}
+#carouselz figure:nth-child(3) { transform: rotateY(80deg) translateZ(288px);}
+#carouselz figure:nth-child(4) { transform: rotateY(120deg) translateZ(288px);}
+#carouselz figure:nth-child(5) { transform: rotateY(160deg) translateZ(288px);}
+#carouselz figure:nth-child(6) { transform: rotateY(200deg) translateZ(288px);}
+#carouselz figure:nth-child(7) { transform: rotateY(240deg) translateZ(288px);}
+#carouselz figure:nth-child(8) { transform: rotateY(280deg) translateZ(288px);}
+#carouselz figure:nth-child(9) { transform: rotateY(320deg) translateZ(288px);}
+#carouselz figure:nth-child(10) { transform: rotateY(360deg) translateZ(288px);}
+
+.threed-image img {
+	-webkit-filter: grayscale(1);
+	cursor: pointer;
+	transition: all .5s ease;
+}
+
+.threed-image img:hover{
+	-webkit-filter: grayscale(0);
+  transform: scale(1.2,1.2);
+}
+
+@keyframes rotation{
+	from{
+		transform: rotateY(0deg);
+	}
+	to{
+		transform: rotateY(360deg);
+	}
 }

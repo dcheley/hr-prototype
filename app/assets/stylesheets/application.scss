@@ -5,25 +5,18 @@
 @import "badges";
 @import "org_charts";
 @import "opportunities";
-@import "practice";
-
-.background {
-  height: 1000px;
-  width: 100%;
-}
-
-.container {
-  width: 90%;
-  margin-bottom: 50px;
-  border-radius: 25px;
-  padding-bottom: 3px;
-  background-position: center;
-  margin-top: 12.5%;
-}
+@import "signups";
+@import "pulse_surveys";
 
 .home-right {
   float: right;
   width: 55%;
+}
+
+.login-wrap {
+  width: 90%;
+  margin: auto;
+  margin-top: 60px;
 }
 
 .background-image {
@@ -31,7 +24,7 @@
   -webkit-filter: brightness(80%);
   // -webkit-filter: hue-rotate(260deg);
   z-index: -1;
-	height: 65%;
+	height: 800px;
 	width: 45%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -61,6 +54,12 @@
   color: $white-smoke;
   background-color: $bright-dark-blue;
   border: 0;
+}
+
+.footer {
+  background-color: $light-grey;
+  height: 40px;
+  line-height: 40px;
 }
 
 .submit-blue,
@@ -119,6 +118,8 @@
 }
 
 .error-msg {
+  color: $red;
+  font-size: 16px;
   text-align: center;
   list-style: none;
 }
@@ -141,7 +142,7 @@
 }
 
 .login-message a {
-  color: $dark-red;
+  color: $bright-dark-blue;
 }
 
 .alert {
@@ -153,4 +154,33 @@
   padding-top: 45px;
   padding-bottom: 60px;
   color: $bright-dark-blue;
+}
+
+.disclaimer-text {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.disclaimer-body {
+  margin-top: 15px;
+  text-align: left;
+}
+
+@media screen and (max-width: 767px) {
+  .alert {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .home-right {
+    float: none;
+    width: 100%;
+    margin: auto;
+  }
+
+  .background-image {
+  	height: 418px;
+  	width: 100%;
+  }
 }

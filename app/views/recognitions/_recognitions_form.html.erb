@@ -1,0 +1,31 @@
+<%= form_for([@user, @recognition]) do |f| %>
+  <% if @recognition.errors.any? %>
+    <h2 class="error-header"><%= pluralize(@recognition.errors.count, "error") %> occurred!</h2>
+
+    <ul class="error-list">
+      <% @recognition.errors.full_messages.each do |msg| %>
+        <li class="error-msg"><%= msg %></li>
+      <% end %>
+    </ul>
+
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, "Badge Title", class:"field-label" %>
+    <%= f.text_field :name, class:"field-input", placeholder:"What act deserves recognition" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description, class:"field-label" %>
+    <%= f.text_area :description, class:"field-input", placeholder:"Give a deeper description of this act" %>
+  </div>
+
+  <%= f.hidden_field :receiver_id, value: @user.id %>
+  <%= f.hidden_field :recognizer_id, value: current_user.id %>
+
+  <div class="center-float-wrap">
+    <div class="float">
+      <%= f.submit "SUBMIT", class:"submit-green" %>
+    </div>
+
+<% end %>

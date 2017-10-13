@@ -1,40 +1,36 @@
-<div class="profile-background">
-  <% if current_user && current_user == @user %>
-    <div class="left-profile">
-      <!-- <h1 class="profile-title"><%= link_to "Edit Settings", "/users/#{@user.id}/edit" %></h1> -->
-    </br><h1 class="profile-title"><b>Your Profile</b></h1>
+<% if current_user && current_user == @user %>
+  <div class="left-profile"style="margin-top: 30px;">
+    <%= render 'profile-info' %>
+  </div>
 
-      <%= render 'profile-info' %>
-    </div>
+  <div class="right-profile" style="margin-top: 30px;">
+    <% if current_user.co_op == nil %>
+      <%= render 'private-badge-show-list' %>
+    <% else %>
+      <%= render 'private-coop-show-list' %>
+    <% end %>
+  </div>
 
-    <div class="right-profile">
-      <h1 class="badge-title"><b>Your badges</b></h1>
+<% elsif current_user && current_user != @user %>
+  <div class="left-profile">
+    </br><h1 class="profile-title"><%= @user.name %>'s Profile</h1>
 
-      <p class="badge-new-wrap"><%= link_to "ADD BADGE", new_badge_url, class:"submit-green", style:"margin: auto; width: 160px;" %></p>
+    <%= render 'profile-info' %>
+  </div>
 
-      <h5 class="badge-title" style="font-size: 16px;"><b>*Click</b> on a <b>badge</b> to <b>add</b> a <b>description</b> of your experience</h5>
+  <div class="right-profile">
+    <h1 class="badge-title" style="margin-bottom: 0;"><%= "#{@user.name}" %>'s badges</h1>
 
-      <%= render 'badge-show-list' %>
-    </div>
+    <p class="badge-new-wrap" style="margin-bottom: 30px;"><%= link_to 'GIVE Recognition Badge', "/users/#{@user.id}/recognitions/new", class:"submit-green", style:"margin: auto; width: 260px;" %></p>
 
-  <% elsif current_user && current_user != @user %>
-    <div class="left-profile">
-      </br><h1 class="profile-title"><%= @user.name %>'s Profile</h1>
+    <% if @user.co_op == nil %>
+      <%= render 'public-badge-show-list' %>
+  </div>
+    <% else %>
+      <%= render 'public-coop-show-list' %>
+    <% end %>
+  </div>
 
-      <%= render 'profile-info' %>
-    </div>
-
-    <div class="right-profile">
-      <h1 class="badge-title"><%= "#{@user.name}" %>'s badges</h1>
-
-      <p class="badge-new-wrap"><%= link_to 'GIVE Recognition Badge', "/users/#{@user.id}/badges/new", class:"badge-new-link" %></p>
-
-      <p class="badge-title" style="font-size: 16px;"><b>*Click</b> a <b>badge</b> to learn more about their skills and experience.</p>
-
-      <%= render 'badge-show-list' %>
-    </div>
-
-  <% else %>
-    <h1 class="login-message"><%= link_to "LOGIN", :login %> to view profiles</h1>
-  <% end %>
-</div>
+<% else %>
+  <h1 class="login-message"><%= link_to "LOGIN", :login %> to view profiles</h1>
+<% end %>

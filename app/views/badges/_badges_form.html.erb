@@ -11,27 +11,38 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name, class:"field-label" %>
-    <%= f.text_field :name, class:"field-input", placeholder:"Skill or Experience" %>
+    <% if current_page?(action: "new") %>
+      <%= f.label :name, "Name of Credential", class:"field-label" %>
+      <%= f.text_field :name, class:"field-input" %>
+    <% elsif current_page?(action: "exp") %>
+      <%= f.label :name, "Type of Experience", class:"field-label" %>
+      <%= f.text_field :name, class:"field-input", placeholder:"(e.g) 15 years in finance" %>
+    <% else %>
+      <%= f.label :name, "Badge title", class:"field-label" %>
+      <%= f.text_field :name, class:"field-input" %>
+   <% end %>
   </div>
 
   <div class="field">
     <%= f.label :description, class:"field-label" %>
-    <%= f.text_area :description, class:"field-input", placeholder:"Describe your skill or experience in 500 characters or less." %>
+    <% if current_page?(action: "new") %>
+      <%= f.text_area :description, class:"field-input", placeholder:"Describe your credentials in 500 characters or less." %>
+    <% elsif current_page?(action: "exp") %>
+      <%= f.text_area :description, class:"field-input", placeholder:"(e.g) Headed finance department at Rona" %>
+    <% else %>
+      <%= f.text_area :description, class:"field-input", placeholder:"Describe your #{@badge.name} badge in 500 characters or less."%>
+   <% end %>
   </div>
+
+  <% if current_page?(action: "new") %>
+    <%= f.hidden_field :education, value: true %>
+  <% elsif current_page?(action: "exp")%>
+    <%= f.hidden_field :exp, value: true %>
+  <% end %>
 
   <div class="center-float-wrap">
     <div class="float">
       <%= f.submit "SUBMIT", class:"submit-green" %>
     </div>
 
-    <div class="float">
-      <%= link_to "/users/#{current_user.id}", class:"cancel-link" do %>
-        <div class="submit-blue">
-          CANCEL
-        </div>
-      <% end %>
-    </div>
-  </div>
-
-<% end %>
+  <% end %>

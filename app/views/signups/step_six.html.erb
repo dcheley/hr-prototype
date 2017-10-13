@@ -1,0 +1,50 @@
+<% if current_user && current_user.signup.step_six != true %>
+  <div class="container" style="margin-top: 10px; text-align: center;">
+    <ol class="track-progress" data-steps="6">
+      <li class="done"><span>Disclaimer</span></li><!--
+      --><li class="done"><span>Personal Info</span></li><!--
+      --><li class="done"><span>Career Info</span></li><!--
+      --><li class="done"><span>Education Badge</span></li><!--
+      --><li class="done"><span>Experience Badge</span></li><!--
+      --><li class="done"><span>Complete Sign Up</span></li>
+    </ol>
+  </div>
+
+  <div class="container" style="width: 80%; text-align: center; margin-top: 0; margin-bottom: 0;">
+    <h1 class="form-title">Review Your Info:</h1></br>
+
+    <li class="profile-info"><b>Email:</b> <%= current_user.email %></li>
+    <li class="profile-info"><b>Title:</b> <%= current_user.title %></li>
+    <li class="profile-info"><b>Direct Manager:</b> <%= current_user.direct_report %></li>
+    <li class="profile-info"><b>Skills I'm currently developing:</b> <%= current_user.career_aspirations %></li>
+    <li class="profile-info"><b>Job Description:</b> <%= current_user.job_description %></li>
+    <li class="profile-info"><b>Badges created:</b></li>
+    <% current_user.badges.each_with_index do |b, index| %>
+      <li class="profile-info" id="badge-count">Badge <%= (index + 1) %>:</li>
+      <li class="profile-info"><%= b.name %></li>
+      <li class="profile-info"><%= b.description %></li>
+    <% end %>
+
+    <div class="center-float-wrap">
+      <div class="float" style="width: 50%;">
+        <%= form_for(current_user) do |f| %>
+          <%= f.hidden_field :agreement, value: true %>
+          <%= f.fields_for :signup_attributes do |s| %>
+            <%= s.hidden_field :step_six, value: true %>
+          <% end %>
+          <%= f.submit "COMPLETE SIGN UP", class:"submit-green" %>
+        <% end %>
+      </div>
+
+      <div class="float" style="width: 50%;">
+        <%= link_to :logout, class:"cancel-link" do %>
+          <div class="delete">RESTART</div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% elsif current_user && current_user.signup.step_six == true %>
+  <h1 class="signup-login-message"><%= "#{current_user.name}'s account already signed up. Use the nav located top right to view app content."%></h1>
+<% else %>
+  <h1 class="login-message"><%= link_to "LOGIN", :login %> to create verify sign up</h1>
+<% end %>

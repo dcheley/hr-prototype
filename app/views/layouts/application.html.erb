@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Career Advancement Application</title>
+    <title>Employee Engagement App</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -18,28 +18,35 @@
   </head>
 
   <body>
-    <% if current_user %>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <!-- <a class="navbar-brand" href="/">
-            <span class="glyphicon glyphicon-home" style="color: white;"></span>
-          </a> -->
-        </div>
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="COMING SOON">
+    <% if current_user && current_user.agreement == true %>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <!-- <a class="navbar-brand" href="/">
+              <span class="glyphicon glyphicon-home" style="color: white;"></span>
+            </a> -->
           </div>
-          <button type="submit" class="btn btn-default">Search</button>
-        </form>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="/users/org_charts">Home</a></li>
-          <li><%= link_to "Profile", "/users/#{current_user.id}" %></li>
-          <li><%= link_to "Settings", "/users/#{current_user.id}/edit" %></li>
-          <li><%= link_to "Logout", :logout %></li>
-        </ul>
-      </div>
-    </nav>
+          <nav class="navbar-form navbar-left">
+            <%= form_tag(users_url, :method => "get", class: "form-group") do %>
+              <%= text_field_tag :search, params[:search], placeholder: "By Name", required: true, class:"form-control" %>
+              <%= submit_tag "Search", name: nil, class:"btn btn-default" %></br>
+            <% end %>
+          </nav>
+          <ul class="nav navbar-nav navbar-right">
+            <% if current_user.co_op == nil %>
+              <li><a href="/users/home">Home</a></li>
+              <li><a href="/users/org_charts">Organizational Charts</a></li>
+              <li><a href="/users/opps">Opportunities</a></li>
+            <% else %>
+              <li><a href="/users/org_charts">Co-op Students</a></li>
+              <li><a href="/users/opps">Bucket list</a></li>
+            <% end %>
+            <li><%= link_to "Profile", "/users/#{current_user.id}" %></li>
+            <li><%= link_to "Settings", "/users/#{current_user.id}/edit" %></li>
+            <li><%= link_to "Logout", "/pulse_surveys/#{current_user.id}/edit" %></li>
+          </ul>
+        </div>
+      </nav>
     <% end %>
 
     <% if flash[:alert] %>

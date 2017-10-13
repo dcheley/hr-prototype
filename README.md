@@ -1,24 +1,24 @@
-# README
+# Employee Engagement Software
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Configuration:
 
-Things you may want to cover:
+* Ruby v. 2.4.0
+* Rails v. 5.0.2
+* Bcrypt v. 3.1.11
+* Paperclip v. 5.0.0
+* Acts_as_votable v. 0.10.0
+* Ratyrate v. 1.2.2.alpha
 
-* Ruby version
+Features:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Interactive Org Chart with User profile links
+* User sessions/login & encrypted password (bcrypt)
+* Recognition & Self-promotion system through Badges
+* Endorse Badges & Recognition Badges (acts_as_votable)
+* Search Users by their name or Badge names (SQL)
+* Post, Show Interest in & Sign Up for various Opportunities
+* Upload profile pictures & Opportunity images (paperclip)
+* 5 Star Rating System through PulseSurveys (ratyrate)
+* Activity feed displaying Badge, Recognition & Opportunity CRUD actions with links
+* 6 Step User Sign Up process
+* Onboarding version currently tested on Co-Op Students
