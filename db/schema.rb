@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171013170824) do
+ActiveRecord::Schema.define(version: 20171013175905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -116,11 +116,7 @@ ActiveRecord::Schema.define(version: 20171013170824) do
     t.string   "name"
     t.string   "title"
     t.string   "phone"
-    t.boolean  "adm"
-    t.boolean  "director"
-    t.boolean  "manager"
     t.string   "encrypted_password"
-    t.boolean  "staff"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
@@ -132,6 +128,7 @@ ActiveRecord::Schema.define(version: 20171013170824) do
     t.boolean  "intranet"
     t.integer  "team"
     t.integer  "office"
+    t.integer  "chart_level"
   end
 
   create_table "votes", force: :cascade do |t|
