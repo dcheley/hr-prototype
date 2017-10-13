@@ -1,6 +1,6 @@
 class OpportunitiesController < ApplicationController
   before_action :load_opportunity, only: [:show, :edit, :update, :destroy, :like, :unlike]
-  before_action :load_opportunities, only: [:show, :edit, :new, :index]
+  before_action :load_opportunities, only: [:new, :create, :show, :edit, :update, :index]
 
   def index
     if current_user
