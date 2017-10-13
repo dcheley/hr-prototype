@@ -90,7 +90,7 @@ private
     params.require(:user).permit(:name, :email, :encrypted_password, :password_confirmation,
     :phone, :title, :avatar, :job_description, :adm, :director, :manager, :staff, :office,
     :co_op, :image_delete, :career_aspirations, :direct_report, :agreement, :intranet,
-    signup_attributes: [:user_id, :current_step])
+    signup_attributes: [:id, :user_id, :current_step])
   end
 
   def reset_time

@@ -26,7 +26,6 @@
         <li class="profile-info"><%= b.description %></li>
       <% end %>
 
-<<<<<<< HEAD
     <div class="center-float-wrap">
       <div class="float" style="width: 50%;">
         <%= form_for(current_user) do |f| %>
@@ -34,18 +33,6 @@
           <%= f.submit "COMPLETE SIGN UP", class:"submit-green" %>
         <% end %>
       </div>
-=======
-      <div class="center-float-wrap">
-        <div class="float" style="width: 50%;">
-          <%= form_for(current_user) do |f| %>
-            <%= f.hidden_field :agreement, value: true %>
-            <%= f.fields_for :signup_attributes do |s| %>
-              <%= s.hidden_field :step_six, value: true %>
-            <% end %>
-            <%= f.submit "COMPLETE SIGN UP", class:"submit-green" %>
-          <% end %>
-        </div>
->>>>>>> a13c36fdb68844e776042e853990ec3c24d851d9
 
         <div class="float" style="width: 50%;">
           <%= link_to "RESTART", :logout, class:"delete", style:"margin-left: 30px;" %>
@@ -53,6 +40,7 @@
       </div>
     </div>
   </div>
+  
 <% elsif current_user.signup.current_step == 6 && current_user.agreement == true %>
   <h1 class="signup-login-message"><%= "#{current_user.name}'s account already signed up. Use the nav located top right to view app content."%></h1>
 <% else %>

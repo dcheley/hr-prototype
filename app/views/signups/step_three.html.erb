@@ -34,27 +34,14 @@
             <%= f.text_area :job_description, placeholder:"Describe your job experience in 500 characters or less.", class:"field-input" %>
           </div>
 
-<<<<<<< HEAD
-        <% if current_user.co_op == nil %>
-          <%= f.fields_for :signup do |s| %>
-            <%= s.hidden_field :current_step, value: 4 %>
-          <% end %>
-        <% else %>
-          <%= f.fields_for :signup do |s| %>
-            <%= s.hidden_field :current_step, value: 5 %>
-=======
           <% if current_user.co_op == nil %>
             <%= f.fields_for :signup do |s| %>
-              <%= s.hidden_field :step_three, value: true %>
-              <%= s.hidden_field :step_four, value: nil %>
+              <%= s.hidden_field :current_step, value: 4 %>
             <% end %>
           <% else %>
             <%= f.fields_for :signup do |s| %>
-              <%= s.hidden_field :step_three, value: true %>
-              <%= s.hidden_field :step_four, value: true %>
-              <%= s.hidden_field :step_five, value: true %>
+              <%= s.hidden_field :current_step, value: 5 %>
             <% end %>
->>>>>>> a13c36fdb68844e776042e853990ec3c24d851d9
           <% end %>
 
           <div class="divider" style="border-color: rgb(102,102,102);"></div>
@@ -68,8 +55,8 @@
               <%= link_to "CANCEL", :logout, class:"delete", style:"margin-left: 15px;" %>
             </div>
           </div>
-
         <% end %>
+        
       </div>
     </div>
   <% else %>
