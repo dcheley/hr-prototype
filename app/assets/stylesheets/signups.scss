@@ -43,8 +43,8 @@
 }
 
 .track-progress li.done > span {
-  color: #666;
-  background-color: #ccc;
+  color: white;
+  background-color: $dark-blue;
 }
 
 //Arrow Shape
@@ -74,7 +74,7 @@
 }
 
 .track-progress li.done + li > span:before {
-  border-left-color: #ccc;
+  border-left-color: $dark-blue;
 }
 
 .track-progress li:first-child > span:after,

@@ -1,25 +1,32 @@
 <% if current_user %>
-  <div class="background" style="text-align: center;">
-    <div style="text-align: center;">
-      <%= link_to "/users/opps", class:"cancel-center-link" do %>
-        <div class="submit-blue">BACK TO OPPORTUNITIES</div>
-      <% end %>
-    </div>
+  <%= render 'opportunities-sidebar'%>
 
-    <h2 class="opp-headers"><%= @opportunity.name %></h2>
-
+  <div class='three-quarters'>
     <div class="opp-photo-frame">
       <% if @opportunity.avatar.file? != true %>
-        <%= image_tag('huddle.png', class:"tile__img") %>
+        <%= image_tag('huddle.png', class:"home-image") %>
       <% else %>
-        <%= image_tag @opportunity.avatar.url(:medium), class:"tile__img" %>
+        <%= image_tag @opportunity.avatar.url(:medium), class:"home-image" %>
       <% end %>
     </div>
+
+    <div style='position: relative;'>
+      <%= link_to "Post Project", "/opportunities/new", class:'submit-blue', id:'opp-button' %>
+    </div>
+
+    <h1 class="opp-title"><%= @opportunity.name.titleize %></h1>
 
     <div class="opp-details">
       <p class="opp-info"><%= @opportunity.bonus %></p></br>
-      <p class="opp-info"><%= @opportunity.description %></p></br>
-      <p class="opp-info"><%= link_to "#{@opportunity.link}", "#{@opportunity.link}", target: "_blank" %></p>
+      <p class="paragraph" style="margin-right: 0;"><%= @opportunity.description %></p></br>
+      <% if current_user.co_op == nil && @opportunity.skills.blank? != true %>
+        <p class="opp-info"><b>Skills candidate will gain:</b> <%= @opportunity.skills %></p></br>
+      <% end %>
+      <p class="opp-info"><b>If interested, please visit the link</b> <%= link_to "#{@opportunity.link}", "#{@opportunity.link}", target: '_blank' %></p>
+
+      <% if @opportunity.second_link.blank? != true %>
+        <p class="opp-info"><b>Additional information</b> <%= link_to "#{@opportunity.second_link}", "#{@opportunity.second_link}", target: '_blank' %></p>
+      <% end %>
     </div>
 
     <% if current_user.liked? @opportunity %>
@@ -32,20 +39,21 @@
       <%= render 'likes' %>
     <% end %>
 
-    <div class="center-float-wrap">
-      <% if @opportunity.creator_id == current_user.id %>
-        <div class="float" style="margin-right: 7.5px;">
-          <%= link_to 'EDIT', "/opportunities/#{@opportunity.id}/edit", class:"submit-blue" %>
-        </div>
+    <div style="text-align: center">
+      <div class="center-float-wrap">
+        <% if @opportunity.creator_id == current_user.id %>
+          <div class="float" style="margin-right: 7.5px;">
+            <%= link_to 'EDIT', "/opportunities/#{@opportunity.id}/edit", class:"submit-blue" %>
+          </div>
+
+          <div class="float">
+            <%= button_to 'DELETE', {:controller => 'opportunities', :action =>
+               'destroy', :user_id => current_user.id, :id => "#{@opportunity.id}"},
+                method: :delete, data: { confirm: "You sure? Opportunity will be permanently removed!" }, class:"delete" %>
+          </div>
+        <% end %>
 
         <div class="float" style="margin-left: 7.5px;">
-          <%= button_to 'DELETE', {:controller => 'opportunities', :action =>
-             'destroy', :user_id => current_user.id, :id => "#{@opportunity.id}"},
-              method: :delete, data: { confirm: "You sure? Opportunity will be permanenetly removed!" }, class:"delete" %>
-        </div>
-      <% end %>
-
-        <div class="float" style="clear: both; width: 100%; margin-top: 10px;">
           <%= form_for([@opportunity, @badge]) do |f| %>
             <%= f.hidden_field :name, value: @opportunity.name %>
             <%= f.hidden_field :description, value: @opportunity.description %>
@@ -53,11 +61,11 @@
             <%= f.hidden_field :opportunity_id, value: @opportunity.id %>
             <%= f.hidden_field :green, value: true %>
             <%= f.hidden_field :exp, value: true %>
-            <%= f.submit "VERIFY SIGN UP", class:"submit-green", style:"margin: auto;" %>
+            <%= f.submit "VERIFY COMMITTEE MEMBERSHIP BADGE", class:"submit-green", style:"margin: 35px auto;" %>
           <% end %>
         </div>
+      </div>
     </div>
-
   </div>
 <% else %>
   <h1 class="login-message"><%= link_to "LOGIN", :login %> to view <%= @opportunity.name %> details</h1>

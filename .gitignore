@@ -13,10 +13,16 @@
 !/log/.keep
 !/tmp/.keep
 .DS_store
+<<<<<<< HEAD
 /db/seeds.rb
 
+=======
+db/seeds.rb
+latest.dump
+>>>>>>> a13c36fdb68844e776042e853990ec3c24d851d9
 # Ignore Byebug command history file.
 .byebug_history
+secrets.yml
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*

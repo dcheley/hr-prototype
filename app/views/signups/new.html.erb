@@ -11,7 +11,7 @@
   </div>
 
   <div class="background" style="text-align: center;">
-    <h1 class="org-title">Disclaimer</h1>
+    <h1 class="center-title">Disclaimer</h1>
 
     <div class="badge-description-wrap">
       <p class="disclaimer-text">
@@ -51,16 +51,18 @@
       <div class="center-float-wrap">
         <div class="float">
           <%= form_for(@signup) do |f| %>
+<<<<<<< HEAD
             <%= f.hidden_field :user_id, value: current_user.id %>
             <!-- <%= f.hidden_field :current_step, value: 2 %> -->
+=======
+            <%= f.hidden_field :step_one, value: true %>
+>>>>>>> a13c36fdb68844e776042e853990ec3c24d851d9
             <%= f.submit "AGREE", class:"submit-green" %>
           <% end %>
         </div>
 
         <div class="float">
-          <%= link_to :logout, class:"cancel-link" do %>
-            <div class="delete">DISAGREE</div>
-          <% end %>
+          <%= link_to "DISAGREE", :logout, class:"delete", style:"margin-left: 15px;" %>
         </div>
       </div>
 

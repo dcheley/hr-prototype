@@ -8,6 +8,30 @@
 @import "signups";
 @import "pulse_surveys";
 
+.middle {
+  width: 90%;
+  margin: auto;
+}
+
+.white-space {
+  float: both;
+  width: 5%;
+}
+
+.banner-image {
+  width: 100%;
+  height: 150px;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+.white-box {
+  background-color: white;
+}
+
 .home-right {
   float: right;
   width: 55%;
@@ -24,7 +48,7 @@
   -webkit-filter: brightness(80%);
   // -webkit-filter: hue-rotate(260deg);
   z-index: -1;
-	height: 800px;
+	height: 600px;
 	width: 45%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -34,14 +58,46 @@
 
 //Navbar
 .navbar {
-  background-color: $grey;
+  background-color: $dark-blue;
   margin-bottom: 0;
   border: none;
+  border-radius: 0;
 }
 
 .navbar-default .navbar-nav > li > a {
   font-weight: bold;
+  font-size: 14px;
   color: $white-smoke;
+  text-align: center;
+}
+
+.nav > li > a {
+  padding: 15px 12px;
+}
+
+.search-button {
+  background-color: $dark-blue;
+  border: none;
+  span {
+    color: $white-smoke;
+    font-size: 24px;
+    vertical-align: middle;
+    margin-bottom: 5px;
+  }
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.quarter a:hover,
+.list-link,
+.active-nav a,
+.home-feed-link {
+  color: $blue !important;
+}
+
+.search-button:hover {
+  span {
+    color: $blue;
+  }
 }
 
 .btn-default {
@@ -57,9 +113,103 @@
 }
 
 .footer {
-  background-color: $light-grey;
+  background-color: $teal;
   height: 40px;
   line-height: 40px;
+}
+
+.quarter,
+.blank-quarter {
+  float: left;
+  width: 25%;
+}
+
+.quarter {
+  background-color: $teal;
+  height: 1500px;
+}
+
+.quarter a {
+  color: $dark-blue;
+  font-weight: bold;
+}
+
+.three-quarters {
+  position: relative;
+  float: right;
+  width: 72.5%;
+  margin-left: 2.5%;
+}
+
+.three-thirds {
+  float: left;
+  width: 66%;
+}
+
+.right-third {
+  margin-top: 30px;
+  width: 33%;
+  float: right;
+  border-left: 2px solid $dark-blue;
+}
+
+.csd-logo {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.feed-title {
+  margin-top: 15px;
+}
+
+.feed-title,
+.feed-list,
+.home-feed-list {
+  text-align: left;
+  font-weight: bold;
+  font-size: 16px;
+  margin-left: 30px;
+  margin-right: 20px;
+  padding-left: 0;
+}
+
+.home-feed-list {
+  list-style-position: inside;
+}
+
+.linked-list-item {
+  margin-bottom: 15px;
+  list-style: none;
+}
+
+.feed-list {
+  list-style: none;
+}
+
+.feed-link {
+  margin-top: 30px;
+}
+
+.home-feed-link,
+.feed-item span {
+  position: relative;
+  left: -15px;
+}
+
+#no-bullet {
+  list-style-type: none;
+  margin-left: 30px;
+}
+
+.home-feed-link:hover,
+.list-link:hover {
+  border-bottom: 2px solid $blue;
+}
+
+.paragraph {
+  margin-right: 10px;
+  text-align: justify;
 }
 
 .submit-blue,
@@ -68,12 +218,12 @@
 .submit-grey {
   color: white;
   border: none;
-  display: block;
   margin: 35px auto;
   padding: 15px 30px;
-  border-radius: 10px;
+  border-radius: 22px;
   font-weight: bold;
   cursor: pointer;
+  display: inline-block;
 }
 
 .submit-blue {
@@ -85,47 +235,56 @@
 }
 
 .submit-green {
-  background-color: $green;
+  background-color: $dark-blue;
 }
-
 
 .submit-grey {
   background-color: $grey;
 }
 
 .submit-green:hover {
-  background-color: $dark-green;
+  background-color: $darker-blue;
   color: white;
   text-decoration: none;
 }
 
 .submit-blue:hover {
   background-color: $bright-dark-blue;
+  text-decoration: none;
+  color: white;
 }
 
 .submit-grey:hover {
   background-color: $dark-grey;
+  text-decoration: none;
 }
 
 .delete:hover {
   background-color: $dark-red;
+  text-decoration: none;
+  color: white;
+}
+
+.left-title {
+  text-align: left;
 }
 
 //Form Field Errors
 .error-header {
   padding-top: 15px;
-  text-align: center;
+  text-align: left;
 }
 
 .error-msg {
   color: $red;
   font-size: 16px;
-  text-align: center;
+  text-align: left;
   list-style: none;
 }
 
 .error-list {
   margin-bottom: 0;
+  padding-left: 0;
 }
 
 .home-link {
@@ -147,8 +306,9 @@
 
 .alert {
   text-align: center;
-  font-size: 32px;
-  // background-color: $medium-grey;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: $teal;
   margin: auto;
   height: 100px;
   padding-top: 45px;
@@ -166,9 +326,28 @@
   text-align: left;
 }
 
-@media screen and (max-width: 767px) {
-  .alert {
-    font-size: 16px;
+#csd-blue {
+  color: $blue;
+}
+
+@media screen and (min-width: 768px) {
+  .form-control {
+    width: 250px !important;
+  }
+
+  .navbar-default .navbar-nav > li {
+    padding-right: 9px;
+    padding-left: 9px;
+  }
+
+  .nav-divider {
+    margin-top: 0 !important;
+    border-right: 2px solid $white-smoke;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 1px;
+    height: 32px !important;
   }
 }
 

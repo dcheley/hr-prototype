@@ -26,7 +26,7 @@
     <% else %>
         <p class="form-title">Use the <b>links</b> in the <b>top right</b> to navigate through content</p>
         <% if current_user.agreement != true %>
-          <b><%= link_to "Woops, Logout to restart Account Sign Up", :logout %></b>
+          <p class="form-title"><b><%= link_to "Woops, Logout to restart Account Sign Up", :logout %></b></p>
         <% end %>
     <% end %>
   </div>

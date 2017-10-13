@@ -18,45 +18,77 @@
   </head>
 
   <body>
-    <% if current_user && current_user.agreement == true %>
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <!-- <a class="navbar-brand" href="/">
-              <span class="glyphicon glyphicon-home" style="color: white;"></span>
-            </a> -->
+    <div class="white-space"></div>
+
+    <div class="middle">
+      <%= image_tag('banner.png', class:'banner-image') %>
+
+      <% if current_user && current_user.agreement == true %>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <!-- <a class="navbar-brand" href="/">
+                <span class="glyphicon glyphicon-home" style="color: white;"></span>
+              </a> -->
+            </div>
+            <nav class="navbar-form navbar-left">
+              <%= form_tag(users_url, :method => "get", class: "form-group") do %>
+                <%= text_field_tag :search, params[:search], placeholder: "By Name OR Skill", required: true, class:"form-control" %>
+                <!-- <%= submit_tag "Search", name: nil, class:"btn btn-default" %></br> -->
+                <button type="submit" class="search-button">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+              <% end %>
+            </nav>
+            <ul class="nav navbar-nav navbar-right">
+              <% if current_user.co_op == nil %>
+                <li class="<%= current_page?('/users/home') ? 'active-nav' : 'nav-link' %>">
+                  <a href="/users/home">Home</a>
+                  <span class="nav-divider"></span>
+                </li>
+                <li class="<%= params[:controller] == 'users' && %w(admo_org_chart hr_org_chart bpf_org_chart smf_org_chart).include?(params[:action]) ? 'active-nav' : 'nav-link' %>">
+                  <a href="/users/admo_org_chart">Organizational Charts</a>
+                  <span class="nav-divider"></span>
+                </li>
+                <li class="<%= params[:controller] == 'opportunities' && %w(index new edit show) ? 'active-nav' : 'nav-link' %>">
+                  <a href="/opportunities">Enhance Your Skills</a>
+                  <span class="nav-divider"></span>
+                </li>
+              <% else %>
+                <li class="<%= current_page?('/users/home') ? 'active-nav' : 'nav-link' %>">
+                  <a href="/users/home">Co-op Students</a>
+                  <span class="nav-divider"></span>
+                </li>
+                <li class="<%= current_page?('/opportunities') ? 'active-nav' : 'nav-link' %>">
+                  <a href="/opportunities">Bucket list</a>
+                  <span class="nav-divider"></span>
+                </li>
+              <% end %>
+              <li class="<%= current_page?("/users/#{current_user.id}") ? 'active-nav' : 'nav-link' %>">
+                <%= link_to "Profile", "/users/#{current_user.id}" %>
+                <span class="nav-divider"></span>
+              </li>
+              <li class="<%= current_page?("/users/#{current_user.id}/edit") ? 'active-nav' : 'nav-link' %>">
+                <%= link_to "Account Settings", "/users/#{current_user.id}/edit" %>
+                <span class="nav-divider"></span>
+              </li>
+              <li>
+                <%= link_to "Logout", "/pulse_surveys/#{current_user.id}/edit" %>
+              </li>
+            </ul>
           </div>
-          <nav class="navbar-form navbar-left">
-            <%= form_tag(users_url, :method => "get", class: "form-group") do %>
-              <%= text_field_tag :search, params[:search], placeholder: "By Name", required: true, class:"form-control" %>
-              <%= submit_tag "Search", name: nil, class:"btn btn-default" %></br>
-            <% end %>
-          </nav>
-          <ul class="nav navbar-nav navbar-right">
-            <% if current_user.co_op == nil %>
-              <li><a href="/users/home">Home</a></li>
-              <li><a href="/users/org_charts">Organizational Charts</a></li>
-              <li><a href="/users/opps">Opportunities</a></li>
-            <% else %>
-              <li><a href="/users/org_charts">Co-op Students</a></li>
-              <li><a href="/users/opps">Bucket list</a></li>
-            <% end %>
-            <li><%= link_to "Profile", "/users/#{current_user.id}" %></li>
-            <li><%= link_to "Settings", "/users/#{current_user.id}/edit" %></li>
-            <li><%= link_to "Logout", "/pulse_surveys/#{current_user.id}/edit" %></li>
-          </ul>
-        </div>
-      </nav>
-    <% end %>
+        </nav>
+      <% end %>
 
-    <% if flash[:alert] %>
-      <div class="alert"><%= flash[:alert] %></div>
-    <% end %>
+      <% if flash[:alert] %>
+        <div class="alert"><%= flash[:alert] %></div>
+      <% elsif flash[:notice] %>
+        <div class="alert"><%= flash[:notice] %></div>
+      <% end %>
 
-    <% if flash[:notice] %>
-      <div class="alert"><%= flash[:notice] %></div>
-    <% end %>
+      <%= yield %>
+    </div>
 
-    <%= yield %>
+    <div class="white-space"></div>
   </body>
 </html>

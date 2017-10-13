@@ -1,6 +1,6 @@
 class RecognitionsController < ApplicationController
-  before_action :load_recognition, only: [:show, :edit, :update, :destroy, :like, :unlike]
-  before_action :load_user, only: [:new, :create, :show, :edit, :update, :destroy]
+  before_action :load_recognition, only: [:edit, :update, :destroy, :like, :unlike]
+  before_action :load_user, only: [:new, :create, :edit, :update, :destroy]
 
   def new
     @recognition = Recognition.new
@@ -16,13 +16,10 @@ class RecognitionsController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def update
     if @recognition.update_attributes(recognition_params)
       flash[:notice] = "#{@recognition.name} badge successfully updated!"
-      redirect_to "/users/#{@user.id}/recognitions/#{@recognition.id}"
+      redirect_to user_url(@user)
     else
       render :edit
     end

@@ -1,33 +1,26 @@
 <% if current_user && current_user == @user %>
-  <div class="left-profile"style="margin-top: 30px;">
-    <%= render 'profile-info' %>
-  </div>
+  <%= render 'office-sidebar' %>
 
-  <div class="right-profile" style="margin-top: 30px;">
+  <div class="three-quarters">
+    <%= render 'profile-info' %>
+
     <% if current_user.co_op == nil %>
-      <%= render 'private-badge-show-list' %>
+      <%= render 'private-badge-list' %>
     <% else %>
-      <%= render 'private-coop-show-list' %>
+      <%= render 'private-coop-badge-list' %>
     <% end %>
   </div>
 
 <% elsif current_user && current_user != @user %>
-  <div class="left-profile">
-    </br><h1 class="profile-title"><%= @user.name %>'s Profile</h1>
+  <%= render 'office-sidebar' %>
 
+  <div class="three-quarters">
     <%= render 'profile-info' %>
-  </div>
-
-  <div class="right-profile">
-    <h1 class="badge-title" style="margin-bottom: 0;"><%= "#{@user.name}" %>'s badges</h1>
-
-    <p class="badge-new-wrap" style="margin-bottom: 30px;"><%= link_to 'GIVE Recognition Badge', "/users/#{@user.id}/recognitions/new", class:"submit-green", style:"margin: auto; width: 260px;" %></p>
 
     <% if @user.co_op == nil %>
-      <%= render 'public-badge-show-list' %>
-  </div>
+      <%= render 'public-badge-list' %>
     <% else %>
-      <%= render 'public-coop-show-list' %>
+      <%= render 'public-coop-badge-list' %>
     <% end %>
   </div>
 

@@ -1,6 +1,6 @@
 class BadgesController < ApplicationController
-  before_action :load_badge, only: [:show, :edit, :update, :destroy, :like, :unlike]
-  before_action :load_user, only: [:new, :show, :edit, :update, :destroy]
+  before_action :load_badge, only: [:edit, :update, :destroy, :like, :unlike]
+  before_action :load_user, only: [:new, :edit, :update, :destroy]
 
   def new
     @badge = Badge.new
@@ -11,46 +11,51 @@ class BadgesController < ApplicationController
   end
 
   def create
-    @users = User.all
     @badge = Badge.new(badge_params)
+
+    # Use current_user when signing up for an opportunity (No implicit @user in this case)
     if params[:user_id] != nil
       @user = User.find(params[:user_id])
     else
       @user = current_user
     end
 
-    if current_user != @user
-      @badge.user_id = @user.id
-    else
-      @badge.user_id = current_user.id
-    end
+    @badge.user_id = @user.id
 
     if @badge.save && @badge.opportunity_id == nil && @badge.signup == nil
+<<<<<<< HEAD
       redirect_to "/users/#{current_user.id}/badges/#{@badge.id}", notice: "#{@badge.name} badge created!"
     elsif @badge.save && @badge.opportunity_id == nil && @badge.signup.current_step == 5
+=======
+      redirect_to user_url(@user), notice: "#{@badge.name} badge created!"
+    elsif @badge.save && @badge.opportunity_id == nil && @badge.signup.step_four == true
+>>>>>>> a13c36fdb68844e776042e853990ec3c24d851d9
       redirect_to "/signups/step_five", notice: "#{@badge.name} badge added to profile! Now add an experience badge"
     elsif @badge.save && @badge.opportunity_id == nil && @badge.signup.current_step == 6
       redirect_to "/signups/step_six", notice: "#{@badge.name} badge added to profile! Verify your Sign Up below to start using the App"
     elsif @badge.save && @badge.opportunity_id != nil
-      redirect_to "/users/#{current_user.id}/badges/#{@badge.id}", notice: "Successfully signed up for #{@badge.name}!"
-    elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup == nil
+      redirect_to user_url(@user), notice: "Successfully signed up for #{@badge.name}!"
+    elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup == nil && @badge.education == true
       render :new
+<<<<<<< HEAD
     elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup.current_step == 4
+=======
+    elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup == nil && @badge.exp == true
+      render :exp
+    elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup.step_four == true
+>>>>>>> a13c36fdb68844e776042e853990ec3c24d851d9
       render 'signups/step_four'
     elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup.current_step == 5
       render 'signups/step_five'
     else
-      render 'users/org_charts'
+      render 'users/home', notice: "Uh oh! Something unexpected occurred"
     end
-  end
-
-  def show
   end
 
   def update
     if @badge.update_attributes(badge_params)
       flash[:notice] = "#{@badge.name} badge successfully updated!"
-      redirect_to "/users/#{@user.id}/badges/#{@badge.id}"
+      redirect_to user_url(@user)
     else
       render :edit
     end

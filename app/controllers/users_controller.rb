@@ -23,21 +23,16 @@ class UsersController < ApplicationController
   end
 
   def home
+    @opportunities = Opportunity.all.order("created_at DESC")
     @received_badges = Recognition.where.not(receiver_id: nil).order("created_at DESC")
     @opportunity_badges = Badge.where.not(opportunity_id: nil).order("created_at DESC")
     @edu_badges = Badge.where(opportunity_id: nil, education: true).order("created_at DESC")
     @exp_badges = Badge.where(opportunity_id: nil, exp: true).order("created_at DESC")
+    @users = User.where.not(co_op: nil).order("name DESC")
     reset_time
   end
 
   def org_charts
-  end
-
-  def opps
-    @opportunities = Opportunity.all
-    if current_user
-      @badge = current_user.badges.build
-    end
   end
 
   def admo_org_chart
@@ -88,11 +83,11 @@ private
   end
 
   def load_users
-    @users = User.all
+    @users = User.all.order("team ASC")
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone,
+    params.require(:user).permit(:name, :email, :encrypted_password, :password_confirmation, :phone,
     :title, :avatar, :job_description, :adm, :director, :manager, :staff, :adm_office,
     :strategic_human_resources, :service_management_and_facilities, :business_planning_and_finance,
     :co_op, :image_delete, :career_aspirations, :direct_report, :agreement, :intranet,

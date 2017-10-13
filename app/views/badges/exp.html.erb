@@ -2,12 +2,37 @@
   <% if current_user %>
     <h2 class="form-option" style="padding-bottom: 30px;">Create Badges to Depict your Skills, Experiences & Awards</h2>
 
-    <%= render 'badges_form' %>
+    <%= form_for([@user, @badge]) do |f| %>
+      <% if @badge.errors.any? %>
+        <h2 class="error-header"><%= pluralize(@badge.errors.count, "error") %> occurred!</h2>
+
+        <ul class="error-list">
+          <% @badge.errors.full_messages.each do |msg| %>
+            <li class="error-msg"><%= msg %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
+      <div class="field">
+        <%= f.label :name, "Type of Experience", class:"field-label" %>
+        <%= f.text_field :name, class:"field-input", placeholder:"(e.g) 15 years in finance" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :description, class:"field-label" %>
+        <%= f.text_area :description, class:"field-input", placeholder:"(e.g) Headed finance department at Rona" %>
+      </div>
+
+      <%= f.hidden_field :exp, value: true %>
+
+      <div class="center-float-wrap" style="margin-top: 15px;">
+        <div class="float">
+          <%= f.submit "SUBMIT", class:"submit-green" %>
+        </div>
+    <% end %>
 
       <div class="float">
-        <%= link_to "/users/#{current_user.id}", class:"cancel-link" do %>
-          <div class="submit-blue">BACK TO PROFILE</div>
-        <% end %>
+        <%= link_to "BACK TO PROFILE", "/users/#{current_user.id}", class:"submit-blue", style:"margin-left: 15px;" %>
       </div>
     </div>
   <% else %>

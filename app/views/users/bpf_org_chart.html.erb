@@ -1,44 +1,40 @@
 <% if current_user %>
-  <div style="text-align: center;">
-    <%= link_to "/users/org_charts", class:"cancel-center-link" do %>
-      <div class="submit-blue">BACK TO CSD ORG CHART</div>
-    <% end %>
-  </div>
-
-  <h1 class="org-title">Business Planning & Finance</h1>
+  <%= render 'office-sidebar' %>
 
   <section class="org-container">
+    <h1 class="org-title">Business Planning & Finance</h1>
+
+    <p class="legend-title">Unit by colour</p>
+
+    <ul class="legend">
+      <li class="legend-item"><span class="team-1"></span>Kate J</li>
+      <li class="legend-item"><span class="team-2"></span>Amanda L</li>
+      <li class="legend-item"><span class="team-3"></span>Andrew N</li>
+      <li class="legend-item"><span class="team-4"></span>Tai A</li>
+      <li class="legend-item"><span class="team-5"></span>Asokan S</li>
+    </ul>
+
     <% @users.where(business_planning_and_finance: true, director: true).each do |a| %>
       <div id="level-0" class="level expanded">
         <div class="level-wrap">
           <div id="level-0-active" class="col-1-3 active">
-
             <%= link_to "/users/#{a.id}" do %>
               <div class="element">
                 <div class="org-box">
-
-                  <div class="org-header">
-                    <h4 class="branch"><%= a.title %><span class=""></span></h4>
-
-                    <!-- <div class="context">
-                      <span class="glyphicon glyphicon-menu-down"></span>
-                    </div> -->
+                  <div class="org-details">
+                    <p class="boss-name"><%= a.name.upcase %></p>
+                    <p class="boss-name"><%= a.title %></p>
                   </div>
                   <% if a.avatar.file? != true %>
-                    <div class="org-details">
-                      <p class="boss-name"><%= a.name %></p>
+                    <div class="info-btn" id="team-one">
+                      <span class="glyphicon glyphicon-user"></span>
                     </div>
-                    <div class="info-btn"><span class="glyphicon glyphicon-user"></span></div>
                   <% else %>
-                    <div class="org-details">
-                      <p class="boss-name"><%= a.name %></p>
-                    </div>
-                    <%= image_tag a.avatar.url(:medium), class:"org-profile-pic" %>
+                    <%= image_tag a.avatar.url(:medium), class:"org-profile-pic", id:"team-one" %>
                   <% end %>
                 </div>
               </div>
             <% end %>
-
           </div>
         </div>
       </div>
@@ -46,37 +42,42 @@
 
     <div id="level-1" class="level">
       <div class="level-wrap">
-
-        <div id="level-1-active" class="col-1-3 active">
-          <!-- <div class="element"></div> -->
-        </div>
-
         <div id="level-1-list" class="col-1-3 list">
-
-          <!-- <h3 style="text-align: center;">Managers</h3> -->
-
           <ul>
             <% @users.where(business_planning_and_finance: true, manager: true).each do |b| %>
               <%= link_to "/users/#{b.id}" do %>
                 <li class="element">
                   <div class="org-box">
-                    <div class="org-header">
-                      <h4 class="branch"><%= b.title %><span class=""></span></h4>
-                      <!-- <div class="context">
-                        <span class="glyphicon glyphicon-menu-down"></span>
-                      </div> -->
+                    <div class="org-details">
+                      <p class="boss-name"><%= b.name.upcase %></p>
+                      <p class="boss-name"><%= b.title %></p>
                     </div>
-
                     <% if b.avatar.file? != true %>
-                      <div class="org-details">
-                        <p class="boss-name"><%= b.name %></p>
-                      </div>
-                      <div class="info-btn"><span class="glyphicon glyphicon-user"></span></div>
+                      <% if b.team == 1 %>
+                        <div class="info-btn" id="team-one">
+                      <% elsif b.team == 2 %>
+                        <div class="info-btn" id="team-two">
+                      <% elsif b.team == 3 %>
+                        <div class="info-btn" id="team-three">
+                      <% elsif b.team == 4 %>
+                        <div class="info-btn" id="team-four">
+                      <% elsif b.team == 5 %>
+                        <div class="info-btn" id="team-five">
+                      <% end %>
+                          <span class="glyphicon glyphicon-user"></span>
+                        </div>
                     <% else %>
-                      <div class="org-details">
-                        <p class="boss-name"><%= b.name %></p>
-                      </div>
-                      <%= image_tag b.avatar.url(:medium), class:"org-profile-pic" %>
+                      <% if b.team == 1 %>
+                        <%= image_tag b.avatar.url(:medium), class:"org-profile-pic", id:"team-one" %>
+                      <% elsif b.team == 2 %>
+                        <%= image_tag b.avatar.url(:medium), class:"org-profile-pic", id:"team-two" %>
+                      <% elsif b.team == 3 %>
+                        <%= image_tag b.avatar.url(:medium), class:"org-profile-pic", id:"team-three" %>
+                      <% elsif b.team == 4 %>
+                        <%= image_tag b.avatar.url(:medium), class:"org-profile-pic", id:"team-four" %>
+                      <% elsif b.team == 5 %>
+                        <%= image_tag b.avatar.url(:medium), class:"org-profile-pic", id:"team-five" %>
+                      <% end %>
                     <% end %>
                   </div>
                 </li>
@@ -84,43 +85,47 @@
             <% end %>
           </ul>
         </div>
-
       </div>
     </div>
-    <!--  "level hidden" to hide-->
+
     <div id="level-2" class="level">
       <div class="level-wrap">
-
-        <!-- <div id="level-2-active" class="col-1-3 active">
-          <div class="element"></div>
-        </div> -->
-
         <div id="level-2-list" class="col-1-3 list">
-
-          <!-- <h3 style="text-align: center;">Staff</h3> -->
-
           <ul>
             <% @users.where(business_planning_and_finance: true, staff: true).each do |c| %>
               <%= link_to "/users/#{c.id}" do %>
                 <li class="element">
                   <div class="org-box">
-                    <div class="org-header">
-                      <h4 class="branch"><%= c.title %><span class=""></span></h4>
-                      <!-- <div class="context">
-                        <span class="glyphicon glyphicon-menu-down"></span>
-                      </div> -->
+                    <div class="org-details">
+                      <p class="boss-name"><%= c.name.upcase %></p>
+                      <p class="boss-name"><%= c.title %></p>
                     </div>
-
                     <% if c.avatar.file? != true %>
-                      <div class="org-details">
-                        <p class="boss-name"><%= c.name %></p>
-                      </div>
-                      <div class="info-btn"><span class="glyphicon glyphicon-user"></span></div>
+                      <% if c.team == 1 %>
+                        <div class="info-btn" id="team-one">
+                      <% elsif c.team == 2 %>
+                        <div class="info-btn" id="team-two">
+                      <% elsif c.team == 3 %>
+                        <div class="info-btn" id="team-three">
+                      <% elsif c.team == 4 %>
+                        <div class="info-btn" id="team-four">
+                      <% elsif c.team == 5 %>
+                        <div class="info-btn" id="team-five">
+                      <% end %>
+                          <span class="glyphicon glyphicon-user"></span>
+                        </div>
                     <% else %>
-                      <div class="org-details">
-                        <p class="boss-name"><%= c.name %></p>
-                      </div>
-                      <%= image_tag c.avatar.url(:medium), class:"org-profile-pic" %>
+                      <% if c.team == 1 %>
+                        <%= image_tag c.avatar.url(:medium), class:"org-profile-pic", id:"team-one" %>
+                      <% elsif c.team == 2 %>
+                        <%= image_tag c.avatar.url(:medium), class:"org-profile-pic", id:"team-two" %>
+                      <% elsif c.team == 3 %>
+                        <%= image_tag c.avatar.url(:medium), class:"org-profile-pic", id:"team-three" %>
+                      <% elsif c.team == 4 %>
+                        <%= image_tag c.avatar.url(:medium), class:"org-profile-pic", id:"team-four" %>
+                      <% elsif c.team == 5 %>
+                        <%= image_tag c.avatar.url(:medium), class:"org-profile-pic", id:"team-five" %>
+                      <% end %>
                     <% end %>
                   </div>
                 </li>
@@ -128,7 +133,6 @@
             <% end %>
           </ul>
         </div>
-
       </div>
     </div>
   </section>

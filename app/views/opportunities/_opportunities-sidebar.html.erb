@@ -1,0 +1,11 @@
+<div class="quarter">
+  <div class="white-box">
+    <%= image_tag('CSD-logo.jpg', class:"csd-logo") %>
+  </div>
+
+  <ul class="feed-list">
+    <% @opportunities.where(career: true).each do |o| %>
+      <li class="feed-link"><%= link_to o.name, "/opportunities/#{o.id}" %></li>
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,70 @@
+<div class="row">
+  <h4 class="profile-title">Bucket List</h4>
+
+  <!-- Display Exp/skills Badges -->
+  <% @user.badges.where.not(opportunity_id: nil).each do |b| %>
+    <div class='row' style='margin-top: 15px; margin-bottom: 20px;'>
+      <div class='blank-quarter'>
+        <%= image_tag 'education_icon.png', class:'badge-icon' %>
+      </div>
+
+      <div class='half'>
+        <p class="badge-text"><%= b.name %></p>
+        <p class="badge-text" style="font-weight: normal;"><%= b.description %></p>
+      </div>
+
+      <div class='blank-quarter' style='width: 23%; margin-right: 2%;'>
+        <div class="float" id="badge-button">
+          <% if current_user.liked? b %>
+            <%= link_to image_tag('thumbs-up-empty.svg', class:"thumbs-empty"), unlike_badge_path(b.id), method: :put, remote: true, id: "like_#{b.id}" %>
+            <p class="profile-badges"></p>
+            <%= render 'likes', b: b %>
+          <% else %>
+            <%= link_to image_tag('thumbs-up.svg', class:"thumbs-up"), like_badge_path(b.id), method: :put, remote: true, id: "like_#{b.id}" %>
+            <p class="profile-badges"></p>
+            <%= render 'likes', b: b %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="row">
+  <h4 class="profile-title">Recognition</h4>
+
+  <!-- Display Recognition Badges -->
+  <% @user.received_badges.each do |b| %>
+    <div class='row' style='margin-top: 15px; margin-bottom: 20px;'>
+      <div class='blank-quarter'>
+        <%= image_tag 'recognition_icon.png', class:'badge-icon' %>
+      </div>
+
+      <div class='half'>
+        <p class="badge-text"><%= b.name %> <p><b><%= link_to "by #{b.recognizer.name}", user_url(b.recognizer_id) %></b></p></p>
+        <p class="badge-text" style="font-weight: normal;"><%= b.description %></p>
+      </div>
+
+      <div class='blank-quarter' style='width: 23%; margin-right: 2%;'>
+        <div class="float" id="badge-button">
+          <% if current_user.liked? b %>
+            <%= link_to image_tag('thumbs-up-empty.svg', class:"thumbs-empty"), unlike_recognition_path(b.id), method: :put, remote: true, id: "like_#{b.id}" %>
+            <p class="profile-badges"></p>
+            <%= render 'likes', b: b %>
+          <% else %>
+            <%= link_to image_tag('thumbs-up.svg', class:"thumbs-up"), like_recognition_path(b.id), method: :put, remote: true, id: "like_#{b.id}" %>
+            <p class="profile-badges"></p>
+            <%= render 'likes', b: b %>
+          <% end %>
+        </div>
+
+        <% if current_user.id == b.recognizer_id %>
+          <div class='float' id='badge-button'>
+            <%= link_to "EDIT", "/users/#{@user.id}/recognitions/#{b.id}/edit",
+                class:"submit-green", style:"margin: 15px auto;" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

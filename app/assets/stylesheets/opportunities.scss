@@ -1,125 +1,13 @@
-//Carousel
-* {
-  box-sizing: border-box
+.container {
+	width: 90%;
 }
 
-.opportunity-info {
+.coop-opportunity-info {
   width: 100%;
   margin: auto;
   padding-top: 2.5%;
-  text-align: center;
+  text-align: left;
   font-size: 18px;
-}
-
-a:link
-a:hover
-a:active
-a:visited {
-  transition: color 150ms;
-  color: #95a5a6;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #7f8c8d
-  text-decoration underline;
-}
-
-.carousel-container {
-  margin: 2rem auto;
-  max-width: 1088px;
-}
-
-.nav-pills > li {
-  font-size: 16px;
-}
-
-.tile {
-  position: relative;
-  display: inline-block;
-  width: $tileWidth;
-  height: $tileHeight;
-  margin: 15px;
-  font-size: 20px;
-  cursor: pointer;
-  transition: $duration all;
-  transform-origin: center left;
-}
-
-.tile-header {
-  color: white;
-  background-color: black;
-  margin-left: 5px;
-  margin-right: 5px;
-  font-size: 16px;
-  text-align: center;
-}
-
-.tile__img {
-  width: $tileWidth;
-  height: 200px;
-  object-fit: cover;
-}
-
-.tile__details {
-  overflow: hidden;
-  color: $grey;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  font-size: 8px;
-  opacity: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
-  transition: $duration opacity;
-
-  &:after
-  &:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: black
-  }
-
-  &:after {
-    margin-top: (-($iconSize / 2));
-    margin-left: (-($iconSize / 2));
-    width: $iconSize;
-    height: $iconSize;
-    border: 3px solid #ecf0f1;
-    line-height: $iconSize;
-    text-align: center;
-    border-radius: 100%;
-    background: rgba(0,0,0,0.5);
-    z-index: 1;
-  }
-
-  &:before {
-    // content: '▶';
-    content: '';
-    left: 0;
-    width: 100%;
-    font-size: 30px;
-    text-align: center;
-    z-index: 2;
-  }
-
-  .tile:hover & {
-    opacity: 1;
-  }
-}
-
-.tile__title {
-  color: white;
-  max-width: 200px;
-}
-
-// * Hover effects
-.tile:hover {
-  // Fade out every tile
-  opacity: .6;
 }
 
 .opp-photo-frame {
@@ -127,26 +15,25 @@ a:hover {
   margin-bottom: 30px;
 }
 
-.opp-headers {
-  width: 80%;
-  margin: auto;
-  line-height: 1.5;
+.opp-title {
+	margin-top: 100px;
+	padding-top: 15px;
+	text-align: left;
 }
 
 .opp-details {
-  text-align: justify;
   font-size: 16px;
   margin: auto;
-  width: 80%;
 }
 
 .opp-info {
-  text-align: center;
-  width: 100%;
+  text-align: left;
 }
 
-.opp-info a {
-  text-decoration: none;
+#opp-button {
+	position: absolute;
+	top: 0;
+	margin-top: 15px;
 }
 
 //Image gallery
@@ -163,24 +50,16 @@ a:hover {
   margin: auto;
 }
 
-.co-opp-name,
-.csd-opp-name {
+.co-opp-name {
   width: 100%;
   display: inline-block;
   margin-top: 30px;
-  margin-right: auto;
-  margin-left: auto;
-  text-align: center;
+  text-align: left;
   font-weight: bold;
 }
 
 .co-opp-name {
   font-size: 16px;
-}
-
-.csd-opp-name {
-  font-size: 24px;
-  overflow: hidden;
 }
 
 #fifth {
@@ -189,17 +68,12 @@ a:hover {
   margin: auto;
 }
 
-.co-opp-name:hover {
-  text-decoration: none;
-}
-
 #blue {
   color: $dark-turquoise;
 }
 
 #blue:hover {
   color: $bright-dark-blue;
-  text-decoration: none;
 }
 
 #green {
@@ -208,7 +82,6 @@ a:hover {
 
 #green:hover {
   color: $bright-green;
-  text-decoration: none;
 }
 
 #red {
@@ -217,7 +90,6 @@ a:hover {
 
 #red:hover {
   color: $dark-red;
-  text-decoration: none;
 }
 
 #orange {
@@ -226,7 +98,6 @@ a:hover {
 
 #orange:hover {
   color: $dark-orange;
-  text-decoration: none;
 }
 
 #purple {
@@ -235,69 +106,4 @@ a:hover {
 
 #purple:hover {
   color: $dark-purple;
-  text-decoration: none;
-}
-
-//3d Carousel
-.containery {
-	margin: 4% auto;
-	width: 210px;
-	height: 140px;
-	position: relative;
-	perspective: 1000px;
-}
-
-#carouselz {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	transform-style: preserve-3d;
-	animation: rotation 20s infinite linear;
-}
-
-#carouselz:hover {
-	animation-play-state: paused;
-}
-
-#carouselz figure {
-	display: block;
-	position: absolute;
-	width: 200px;
-	height: 116px;
-	left: 10px;
-	top: 10px;
-	background: black;
-	overflow: hidden;
-	border: solid 5px black;
-}
-
-#carouselz figure:nth-child(1) { transform: rotateY(0deg) translateZ(288px);}
-#carouselz figure:nth-child(2) { transform: rotateY(40deg) translateZ(288px);}
-#carouselz figure:nth-child(3) { transform: rotateY(80deg) translateZ(288px);}
-#carouselz figure:nth-child(4) { transform: rotateY(120deg) translateZ(288px);}
-#carouselz figure:nth-child(5) { transform: rotateY(160deg) translateZ(288px);}
-#carouselz figure:nth-child(6) { transform: rotateY(200deg) translateZ(288px);}
-#carouselz figure:nth-child(7) { transform: rotateY(240deg) translateZ(288px);}
-#carouselz figure:nth-child(8) { transform: rotateY(280deg) translateZ(288px);}
-#carouselz figure:nth-child(9) { transform: rotateY(320deg) translateZ(288px);}
-#carouselz figure:nth-child(10) { transform: rotateY(360deg) translateZ(288px);}
-
-.threed-image img {
-	-webkit-filter: grayscale(1);
-	cursor: pointer;
-	transition: all .5s ease;
-}
-
-.threed-image img:hover{
-	-webkit-filter: grayscale(0);
-  transform: scale(1.2,1.2);
-}
-
-@keyframes rotation{
-	from{
-		transform: rotateY(0deg);
-	}
-	to{
-		transform: rotateY(360deg);
-	}
 }
