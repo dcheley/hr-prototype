@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170608152929) do
+ActiveRecord::Schema.define(version: 20171013163444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,22 +106,17 @@ ActiveRecord::Schema.define(version: 20170608152929) do
   end
 
   create_table "signups", force: :cascade do |t|
-    t.boolean  "step_one"
-    t.boolean  "step_two"
-    t.boolean  "step_three"
-    t.boolean  "step_four"
-    t.boolean  "step_five"
-    t.boolean  "step_six"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.integer  "user_id"
     t.integer  "badge_id"
+    t.integer  "current_step"
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "job_description"
     t.string   "name"
     t.string   "title"
@@ -129,10 +124,6 @@ ActiveRecord::Schema.define(version: 20170608152929) do
     t.boolean  "adm"
     t.boolean  "director"
     t.boolean  "manager"
-    t.boolean  "adm_office"
-    t.boolean  "strategic_human_resources"
-    t.boolean  "service_management_and_facilities"
-    t.boolean  "business_planning_and_finance"
     t.string   "password_digest"
     t.boolean  "staff"
     t.string   "avatar_file_name"
@@ -144,10 +135,8 @@ ActiveRecord::Schema.define(version: 20170608152929) do
     t.string   "career_aspirations"
     t.boolean  "agreement"
     t.boolean  "intranet"
-    t.integer  "team_1"
-    t.integer  "team_2"
-    t.integer  "team_3"
-    t.integer  "team_4"
+    t.integer  "team_number"
+    t.integer  "office"
   end
 
   create_table "votes", force: :cascade do |t|

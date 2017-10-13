@@ -65,19 +65,17 @@ class UsersController < ApplicationController
       redirect_to user_url
     elsif @user.update_attributes(user_params) && @user.agreement == true && PulseSurvey.exists?(@user.id) == true
       redirect_to user_url, notice: "Account Settings Updated"
-    elsif @user.update_attributes(user_params) && @user.signup.step_two == true && @user.signup.step_three != true
+    elsif @user.update_attributes(user_params) && @user.signup.current_step == 3
       redirect_to "/signups/step_three", notice: "Describe your Career Aspirations and Job Responsibilities below"
-    elsif @user.update_attributes(user_params) && @user.signup.step_three == true && @user.signup.step_four != true
+    elsif @user.update_attributes(user_params) && @user.signup.current_step == 4
       redirect_to "/signups/step_four", notice: "Choose or Create your Education Badges below"
-    elsif @user.update_attributes(user_params) && @user.signup.step_four == true && @user.signup.step_five != true
+    elsif @user.update_attributes(user_params) && @user.signup.current_step == 5
       redirect_to "/signups/step_five", notice: "Choose or Create your Experience Badges below"
-    elsif @user.update_attributes(user_params) && @user.signup.step_five == true && @user.signup.step_six != true
+    elsif @user.update_attributes(user_params) && @user.signup.current_step == 6
       redirect_to "/signups/step_six", notice: "Verify your Sign Up below to start using the App"
-    elsif @user.update_attributes(user_params) == false && @user.signup.step_two == true && @user.signup.step_three != true
+    elsif @user.update_attributes(user_params) == false && @user.signup.current_step == 2
       render 'signups/step_two'
-    elsif @user.update_attributes(user_params) == false && @user.signup.step_three == true && @user.signup.step_four != true
-      render 'signups/step_three'
-    elsif @user.update_attributes(user_params) == false && @user.signup.step_three == true && @user.signup.step_four == true
+    elsif @user.update_attributes(user_params) == false && @user.signup.current_step == 3
       render 'signups/step_three'
     else
       render :edit
@@ -98,7 +96,7 @@ private
     :title, :avatar, :job_description, :adm, :director, :manager, :staff, :adm_office,
     :strategic_human_resources, :service_management_and_facilities, :business_planning_and_finance,
     :co_op, :image_delete, :career_aspirations, :direct_report, :agreement, :intranet,
-    signup_attributes: [:id, :user_id, :step_one, :step_two, :step_three, :step_four, :step_five, :step_six])
+    signup_attributes: [:user_id, :current_step])
   end
 
   def reset_time

@@ -52,7 +52,7 @@
         <div class="float">
           <%= form_for(@signup) do |f| %>
             <%= f.hidden_field :user_id, value: current_user.id %>
-            <%= f.hidden_field :step_one, value: true %>
+            <!-- <%= f.hidden_field :current_step, value: 2 %> -->
             <%= f.submit "AGREE", class:"submit-green" %>
           <% end %>
         </div>

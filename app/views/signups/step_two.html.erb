@@ -66,8 +66,7 @@
         </div>
 
         <%= f.fields_for :signup do |s| %>
-          <%= s.hidden_field :step_two, value: true %>
-          <%= s.hidden_field :step_three, value: nil %>
+          <%= s.hidden_field :current_step, value: 3 %>
         <% end %>
 
         <div class="divider"></div>

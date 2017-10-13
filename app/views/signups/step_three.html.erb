@@ -35,14 +35,11 @@
 
         <% if current_user.co_op == nil %>
           <%= f.fields_for :signup do |s| %>
-            <%= s.hidden_field :step_three, value: true %>
-            <%= s.hidden_field :step_four, value: nil %>
+            <%= s.hidden_field :current_step, value: 4 %>
           <% end %>
         <% else %>
           <%= f.fields_for :signup do |s| %>
-            <%= s.hidden_field :step_three, value: true %>
-            <%= s.hidden_field :step_four, value: true %>
-            <%= s.hidden_field :step_five, value: true %>
+            <%= s.hidden_field :current_step, value: 5 %>
           <% end %>
         <% end %>
 

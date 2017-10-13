@@ -39,7 +39,6 @@ class SignupsController < ApplicationController
 private
 
   def signup_params
-    params.require(:signup).permit(:user_id, :badge_id, :step_one, :step_two,
-    :step_three, :step_four, :step_five, :step_six)
+    params.require(:signup).permit(:user_id, :badge_id, :current_step)
   end
 end
