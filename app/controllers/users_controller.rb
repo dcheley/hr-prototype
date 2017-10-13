@@ -87,9 +87,8 @@ private
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :encrypted_password, :password_confirmation, :phone,
-    :title, :avatar, :job_description, :adm, :director, :manager, :staff, :adm_office,
-    :strategic_human_resources, :service_management_and_facilities, :business_planning_and_finance,
+    params.require(:user).permit(:name, :email, :encrypted_password, :password_confirmation,
+    :phone, :title, :avatar, :job_description, :adm, :director, :manager, :staff, :office,
     :co_op, :image_delete, :career_aspirations, :direct_report, :agreement, :intranet,
     signup_attributes: [:user_id, :current_step])
   end

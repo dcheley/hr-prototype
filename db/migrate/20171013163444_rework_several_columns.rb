@@ -1,10 +1,5 @@
 class ReworkSeveralColumns < ActiveRecord::Migration[5.0]
   def change
-    rename_column :users, :team_4, :team_number
-
-    remove_column :users, :team_1
-    remove_column :users, :team_2
-    remove_column :users, :team_3
     remove_column :users, :service_management_and_facilities
     remove_column :users, :strategic_human_resources
     remove_column :users, :business_planning_and_finance

@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20171013170824) do
-=======
-ActiveRecord::Schema.define(version: 20171010183545) do
->>>>>>> a13c36fdb68844e776042e853990ec3c24d851d9
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -123,15 +119,7 @@ ActiveRecord::Schema.define(version: 20171010183545) do
     t.boolean  "adm"
     t.boolean  "director"
     t.boolean  "manager"
-<<<<<<< HEAD
-    t.string   "password_digest"
-=======
-    t.boolean  "adm_office"
-    t.boolean  "strategic_human_resources"
-    t.boolean  "service_management_and_facilities"
-    t.boolean  "business_planning_and_finance"
     t.string   "encrypted_password"
->>>>>>> a13c36fdb68844e776042e853990ec3c24d851d9
     t.boolean  "staff"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
@@ -142,12 +130,8 @@ ActiveRecord::Schema.define(version: 20171010183545) do
     t.string   "career_aspirations"
     t.boolean  "agreement"
     t.boolean  "intranet"
-<<<<<<< HEAD
-    t.integer  "team_number"
-    t.integer  "office"
-=======
     t.integer  "team"
->>>>>>> a13c36fdb68844e776042e853990ec3c24d851d9
+    t.integer  "office"
   end
 
   create_table "votes", force: :cascade do |t|
