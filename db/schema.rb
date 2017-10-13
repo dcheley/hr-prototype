@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171013163444) do
+ActiveRecord::Schema.define(version: 20171013170824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,13 +26,6 @@ ActiveRecord::Schema.define(version: 20171013163444) do
 
   create_table "badges", force: :cascade do |t|
     t.string   "name"
-    t.boolean  "red"
-    t.boolean  "blue"
-    t.boolean  "yellow"
-    t.boolean  "green"
-    t.boolean  "purple"
-    t.boolean  "pink"
-    t.boolean  "grey"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "user_id"

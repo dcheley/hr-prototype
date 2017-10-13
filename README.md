@@ -4,7 +4,7 @@ Configuration:
 
 * Ruby v. 2.4.0
 * Rails v. 5.0.2
-* Bcrypt v. 3.1.11
+* Argon2 v. 1.1.3
 * Paperclip v. 5.0.0
 * Acts_as_votable v. 0.10.0
 * Ratyrate v. 1.2.2.alpha
@@ -12,7 +12,7 @@ Configuration:
 Features:
 
 * Interactive Org Chart with User profile links
-* User sessions/login & encrypted password (bcrypt)
+* User sessions/login & encrypted password (argon2)
 * Recognition & Self-promotion system through Badges
 * Endorse Badges & Recognition Badges (acts_as_votable)
 * Search Users by their name or Badge names (SQL)

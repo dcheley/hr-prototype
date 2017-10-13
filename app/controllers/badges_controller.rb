@@ -90,8 +90,7 @@ private
   end
 
   def badge_params
-    params.require(:badge).permit(:user_id, :opportunity_id, :name, :red, :blue,
-    :yellow, :green, :grey, :purple, :pink, :description, :exp, :education,
+    params.require(:badge).permit(:user_id, :opportunity_id, :name, :description, :exp, :education,
     signup_attributes: [:id, :badge_id, :current_step])
   end
 end
