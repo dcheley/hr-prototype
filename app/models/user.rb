@@ -1,6 +1,14 @@
 class User < ApplicationRecord
   attr_accessor :password
 
+  scope :adm_office, -> { where(office: 1) }
+  scope :business_planning_and_finance, -> { where(office: 2) }
+  scope :strategic_human_resources, -> { where(office: 3) }
+  scope :service_management_and_facilities, -> { where(office: 4) }
+  scope :director, -> { where(chart_level: 1) }
+  scope :manager, -> { where(chart_level: 2) }
+  scope :staff, -> { where(chart_level: 3) }
+
   acts_as_voter
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   ratyrate_rater
