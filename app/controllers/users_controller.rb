@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to edit_user_url(@user), notice: "#{@user.email} account created! Please update your settings"
+      redirect_to '/users/home', notice: "#{@user.email} account created! Please update your settings"
     else
       render :new
     end
@@ -87,10 +87,10 @@ private
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :encrypted_password, :phone,
-    :title, :avatar, :job_description, :chart_level, :office, :team, :co_op,
-    :image_delete, :career_aspirations, :direct_report, :agreement, :intranet,
-    signup_attributes: [:id, :user_id, :current_step])
+    params.require(:user).permit(:name, :email, :encrypted_password, :password,
+    :password_confirmation, :phone, :title, :avatar, :job_description, :chart_level,
+    :office, :team, :co_op, :image_delete, :career_aspirations, :direct_report,
+    :agreement, :intranet, signup_attributes: [:id, :user_id, :current_step])
   end
 
   def reset_time

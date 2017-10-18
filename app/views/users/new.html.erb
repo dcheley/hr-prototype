@@ -27,6 +27,7 @@
         <%= f.text_field :name, class:"field-input" %>
       </div>
 
+      <!-- Inject default password to be changed later -->
       <div class="field">
         <%= f.label :password, class:"field-label" %>
         <%= f.password_field :password, class:"field-input", placeholder:"At least 6 characters" %>
@@ -38,8 +39,18 @@
       </div>
 
       <div class="field">
-        <%= f.label :feedback, class:"field-label" %>
-        <%= f.text_area :feedback, class:"field-input", placeholder:"What sort of progress were you hoping to achieve by signing up for this service?" %>
+        <%= f.label :office, class:"field-label" %>
+        <%= f.number_field :office, class:"field-input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :chart_level, class:"field-label" %>
+        <%= f.number_field :chart_level, class:"field-input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :team, class:"field-label" %>
+        <%= f.number_field :team, class:"field-input" %>
       </div>
 
       <%= f.submit "SIGN UP", class:"submit-blue" %>
