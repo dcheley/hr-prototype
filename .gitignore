@@ -13,7 +13,6 @@
 !/log/.keep
 !/tmp/.keep
 .DS_store
-/db/seeds.rb
 
 latest.dump
 # Ignore Byebug command history file.
