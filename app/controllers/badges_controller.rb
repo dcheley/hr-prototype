@@ -13,13 +13,12 @@ class BadgesController < ApplicationController
   def create
     @badge = Badge.new(badge_params)
 
-    # Use current_user when signing up for an opportunity (No implicit @user in this case)
+    # Use current_user for user_id when signing up for an opportunity (No implicit @user in this case)
     if params[:user_id] != nil
       @user = User.find(params[:user_id])
     else
       @user = current_user
     end
-
     @badge.user_id = @user.id
 
     if @badge.save && @badge.opportunity_id == nil && @badge.signup == nil
@@ -32,6 +31,8 @@ class BadgesController < ApplicationController
       redirect_to user_url(@user), notice: "Successfully signed up for #{@badge.name}!"
     elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup == nil && @badge.education == true
       render :new
+    elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup == nil && @badge.exp == true
+      render 'badges/exp'
     elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup.current_step == 5
       render 'signups/step_four'
     elsif @badge.save == false && @badge.opportunity_id == nil && @badge.signup.current_step == 6
