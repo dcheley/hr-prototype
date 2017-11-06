@@ -54,23 +54,24 @@ class UsersController < ApplicationController
   end
 
   def update
+    @signup = @user.signup
     if @user.update_attributes(user_params) && @user.agreement == true && PulseSurvey.exists?(@user.id) == false
       flash[:alert] = "Account Sign Up complete"
       PulseSurvey.create(id: current_user.id)
       redirect_to user_url
     elsif @user.update_attributes(user_params) && @user.agreement == true && PulseSurvey.exists?(@user.id) == true
       redirect_to user_url, notice: "Account Settings Updated"
-    elsif @user.update_attributes(user_params) && @user.signup.current_step == 3
+    elsif @user.update_attributes(user_params) && @signup.current_step == 3
       redirect_to "/signups/step_three", notice: "Describe your Career Aspirations and Job Responsibilities below"
-    elsif @user.update_attributes(user_params) && @user.signup.current_step == 4
+    elsif @user.update_attributes(user_params) && @signup.current_step == 4
       redirect_to "/signups/step_four", notice: "Choose or Create your Education Badges below"
-    elsif @user.update_attributes(user_params) && @user.signup.current_step == 5
+    elsif @user.update_attributes(user_params) && @signup.current_step == 5
       redirect_to "/signups/step_five", notice: "Choose or Create your Experience Badges below"
-    elsif @user.update_attributes(user_params) && @user.signup.current_step == 6
+    elsif @user.update_attributes(user_params) && @signup.current_step == 6
       redirect_to "/signups/step_six", notice: "Verify your Sign Up below to start using the App"
-    elsif @user.update_attributes(user_params) == false && @user.signup.current_step == 2
+    elsif @user.update_attributes(user_params) == false && @signup.current_step == 2
       render 'signups/step_two'
-    elsif @user.update_attributes(user_params) == false && @user.signup.current_step == 3
+    elsif @user.update_attributes(user_params) == false && @signup.current_step == 3
       render 'signups/step_three'
     else
       render :edit

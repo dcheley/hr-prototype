@@ -1,11 +1,13 @@
 class SignupsController < ApplicationController
+  before_action :load_user_and_signup, only: [:step_two, :step_three, :step_four, :step_five, :step_six]
+
   def new
     @signup = Signup.new
   end
 
   def create
     @signup = Signup.new(signup_params)
-    @signup.user_id = current_user.id
+    @signup.current_step = 2
     if @signup.save
       redirect_to "/signups/step_two", notice: "Start setting up your account details below"
     else
@@ -18,11 +20,9 @@ class SignupsController < ApplicationController
   end
 
   def step_two
-    @user = current_user
   end
 
   def step_three
-    @user = current_user
   end
 
   def step_four
@@ -37,6 +37,10 @@ class SignupsController < ApplicationController
   end
 
 private
+  def load_user_and_signup
+    @user = current_user
+    @signup = @user.signup
+  end
 
   def signup_params
     params.require(:signup).permit(:user_id, :badge_id, :current_step)

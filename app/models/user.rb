@@ -33,7 +33,7 @@ class User < ApplicationRecord
   validates :email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/, :on => :create }
   validates :email, uniqueness: true
   validates :name, presence: true
-  validates :job_description, length: {maximum: 500}
+  validates :job_description, length: { maximum: 500 } 
 
   accepts_nested_attributes_for :badges
   accepts_nested_attributes_for :signup

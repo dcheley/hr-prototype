@@ -34,15 +34,15 @@
             <%= f.text_area :job_description, placeholder:"Describe your job experience in 500 characters or less.", class:"field-input" %>
           </div>
 
-          <% if current_user.co_op == nil %>
+          <!-- <% if current_user.co_op == nil %> -->
             <%= f.fields_for :signup do |s| %>
               <%= s.hidden_field :current_step, value: 4 %>
             <% end %>
-          <% else %>
+          <!-- <% else %>
             <%= f.fields_for :signup do |s| %>
               <%= s.hidden_field :current_step, value: 5 %>
             <% end %>
-          <% end %>
+          <% end %> -->
 
           <div class="divider" style="border-color: rgb(102,102,102);"></div>
 
@@ -56,7 +56,7 @@
             </div>
           </div>
         <% end %>
-        
+
       </div>
     </div>
   <% else %>

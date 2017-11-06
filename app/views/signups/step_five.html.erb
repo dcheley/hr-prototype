@@ -13,7 +13,7 @@
   <div class="container" style="width: 80%; text-align: center; margin-top: 0; margin-bottom: 0;">
     <h2 class="form-title" style="clear: both; padding-top: 50px;">Create Badges to Depict your Skills, Experiences & Awards</h2>
 
-    <%= form_for([current_user, @badge]) do |f| %>
+    <%= form_for([@user, @badge]) do |f| %>
       <% if @badge.errors.any? %>
         <h2 class="error-header"><%= pluralize(@badge.errors.count, "error") %> occurred!</h2>
 
@@ -26,7 +26,7 @@
 
       <div class="field">
         <%= f.label :name, "Type of Experience", class:"field-label" %>
-        <%= f.text_field :name, class:"field-input", placeholder:"(e.g) 15 years in finance" %>
+        <%= f.text_field :name, class:"field-input", placeholder:"(e.g) 15 years in finance", required: true %>
       </div>
 
       <div class="field">
@@ -51,7 +51,7 @@
         </div>
 
         <div class="float" style="clear: both; width: 100%;">
-          <%= form_for(current_user) do |f2| %>
+          <%= form_for(@user) do |f2| %>
             <%= f2.fields_for :signup do |s| %>
               <%= s.hidden_field :current_step, value: 6 %>
             <% end %>

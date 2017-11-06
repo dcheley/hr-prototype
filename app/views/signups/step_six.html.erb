@@ -1,4 +1,4 @@
-<% if current_user.signup.current_step == 6 && current_user.agreement != true %>
+<% if @user.agreement != true %>
   <div class="container" style="margin-top: 10px; text-align: center;">
     <ol class="track-progress" data-steps="6">
       <li class="done"><span>Disclaimer</span></li><!--
@@ -20,7 +20,7 @@
       <li class="profile-info"><b>Skills I'm currently developing:</b> <%= current_user.career_aspirations %></li>
       <li class="profile-info"><b>Job Description:</b> <%= current_user.job_description %></li>
       <li class="profile-info"><b>Badges created:</b></li>
-      <% current_user.badges.each_with_index do |b, index| %>
+      <% @user.badges.each_with_index do |b, index| %>
         <li class="profile-info" id="badge-count">Badge <%= (index + 1) %>:</li>
         <li class="profile-info"><%= b.name %></li>
         <li class="profile-info"><%= b.description %></li>
@@ -28,8 +28,11 @@
 
     <div class="center-float-wrap">
       <div class="float" style="width: 50%;">
-        <%= form_for(current_user) do |f| %>
+        <%= form_for(@user) do |f| %>
           <%= f.hidden_field :agreement, value: true %>
+          <%= f.fields_for :signup do |s| %>
+            <%= s.hidden_field :current_step, value: 7 %>
+          <% end %>
           <%= f.submit "COMPLETE SIGN UP", class:"submit-green" %>
         <% end %>
       </div>
@@ -40,8 +43,8 @@
       </div>
     </div>
   </div>
-  
-<% elsif current_user.signup.current_step == 6 && current_user.agreement == true %>
+
+<% elsif @user.agreement == true %>
   <h1 class="signup-login-message"><%= "#{current_user.name}'s account already signed up. Use the nav located top right to view app content."%></h1>
 <% else %>
   <h1 class="login-message"><%= link_to "LOGIN", :login %> to verify sign up</h1>
