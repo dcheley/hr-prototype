@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   attr_accessor :password
+  attr_accessor :password_confirmation
 
   # Offices
   scope :adm_office, -> { where(office: 1) }
@@ -28,12 +29,10 @@ class User < ApplicationRecord
   has_many :given_badges, class_name: :Recognition, foreign_key: :recognizer_id
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
-  validates :password, length: { minimum: 6, :on => :create }
-  validates :password, confirmation: true
-  validates :email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/, :on => :create }
-  validates :email, uniqueness: true
+  validates :password, length: { in: 8..16 }, confirmation: true, format: { with: /\A((?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[!@#$%&])).*\Z/, message: "must include at least one lowercase letter, one uppercase letter, one digit and symbol (!@#$%&)" }
+  validates :email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/ }, uniqueness: true
   validates :name, presence: true
-  validates :job_description, length: { maximum: 500 } 
+  validates :job_description, length: { maximum: 500 }
 
   accepts_nested_attributes_for :badges
   accepts_nested_attributes_for :signup
@@ -56,6 +55,8 @@ class User < ApplicationRecord
     @image_delete = value
   end
 
+  private
+
   def encrypt_password
     if password.present?
       self.encrypted_password = Argon2::Password.create("#{self.password}")
@@ -66,7 +67,6 @@ class User < ApplicationRecord
     self.password = nil
   end
 
-private
   def destroy_image?
     self.avatar.clear if @image_delete == "1"
   end

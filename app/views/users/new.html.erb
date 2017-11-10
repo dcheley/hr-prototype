@@ -20,21 +20,20 @@
         <%= f.label :name, class:"field-label" %>
         <%= f.text_field :name, class:"field-input", required: true %>
       </div>
-      
+
       <div class="field">
         <%= f.label :email, class:"field-label" %>
         <%= f.email_field :email, class:"field-input", type: 'email', required: true %>
       </div>
 
-      <!-- Inject default password to be changed later -->
       <div class="field">
         <%= f.label :password, class:"field-label" %>
-        <%= f.password_field :password, class:"field-input", placeholder:"At least 6 characters" %>
+        <%= f.password_field :password, class:"field-input", placeholder:"Requirements liste above" %>
       </div>
 
       <div class="field">
         <%= f.label :password_confirmation, class:"field-label" %>
-        <%= f.password_field :password_confirmation, class:"field-input", placeholder:"At least 6 characters" %>
+        <%= f.password_field :password_confirmation, class:"field-input", placeholder:"Requirements listed above" %>
       </div>
 
       <div class="field">
