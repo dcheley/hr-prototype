@@ -29,7 +29,9 @@ class User < ApplicationRecord
   has_many :given_badges, class_name: :Recognition, foreign_key: :recognizer_id
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
-  validates :password, length: { in: 8..16 }, confirmation: true, format: { with: /\A((?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[!@#$%&])).*\Z/, message: "must include at least one lowercase letter, one uppercase letter, one digit and symbol (!@#$%&)" }
+  validates :password, length: { in: 8..16 }, confirmation: true, format: { with: /\A((?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[!@#$%&])).*\Z/, message: "must include at least one lowercase letter, one uppercase letter, one digit and symbol (!@#$%&)" }, on: :create
+  validates :password, length: { in: 8..16 }, confirmation: true, format: { with: /\A((?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[!@#$%&])).*\Z/, message: "must include at least one lowercase letter, one uppercase letter, one digit and symbol (!@#$%&)" }, on: :update, if: :password_changed?
+
   validates :email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/ }, uniqueness: true
   validates :name, presence: true
   validates :job_description, length: { maximum: 500 }
@@ -65,6 +67,10 @@ class User < ApplicationRecord
 
   def clear_password
     self.password = nil
+  end
+
+  def password_changed?
+    !password.blank?
   end
 
   def destroy_image?
